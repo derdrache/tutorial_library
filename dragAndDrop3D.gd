@@ -30,7 +30,8 @@ func _process(delta):
 		draggingCollider.global_position = mousePosition
 
 func drag_and_drop(intersect):
-	if !draggingCollider && doDrag:
+	var canMove = intersect.collider in get_tree().get_nodes_in_group("moveable")
+	if !draggingCollider && doDrag && canMove:
 		draggingCollider = intersect.collider
 	elif draggingCollider:
 		draggingCollider = null
