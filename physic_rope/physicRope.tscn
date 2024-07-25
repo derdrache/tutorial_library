@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh6grcpn31qea"]
+
+[ext_resource type="Texture2D" uid="uid://b18k88vm580qv" path="res://assets/sprites/ropes/Rope2 3px.png" id="1_ekre2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcmnc"]
+size = Vector2(3, 16)
+
+[node name="PhysicRope" type="Node2D"]
+
+[node name="Anker" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="Rope1" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Rope1"]
+texture = ExtResource("1_ekre2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope1"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jcmnc")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Rope1"]
+position = Vector2(0.5, -8)
+node_a = NodePath("..")
+node_b = NodePath("../../Anker")
+
+[node name="Rope2" type="RigidBody2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rope2"]
+texture = ExtResource("1_ekre2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jcmnc")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Rope2"]
+position = Vector2(0.5, -8)
+node_a = NodePath("..")
+node_b = NodePath("../../Rope1")
+
+[node name="Rope3" type="RigidBody2D" parent="."]
+position = Vector2(0, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rope3"]
+texture = ExtResource("1_ekre2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope3"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jcmnc")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Rope3"]
+position = Vector2(0.5, -8)
+node_a = NodePath("..")
+node_b = NodePath("../../Rope2")
+
+[node name="Rope4" type="RigidBody2D" parent="."]
+position = Vector2(0, 48)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rope4"]
+texture = ExtResource("1_ekre2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope4"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jcmnc")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Rope4"]
+position = Vector2(0.5, -8)
+node_a = NodePath("..")
+node_b = NodePath("../../Rope3")
