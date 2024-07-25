@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://llcbpqaufgje"]
+
+[ext_resource type="Script" path="res://tutorial_collection/dragon_fireball/Fireball.gd" id="1_2dtx2"]
+[ext_resource type="PackedScene" uid="uid://xpw6fudgskam" path="res://tutorial_collection/spark_effect.tscn" id="1_qo2u1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8h6u2"]
+albedo_color = Color(0.921569, 0.290196, 0.180392, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xs0xx"]
+material = SubResource("StandardMaterial3D_8h6u2")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rv125"]
+
+[node name="Fireball" type="Area3D"]
+script = ExtResource("1_2dtx2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_xs0xx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_rv125")
+
+[node name="SparkEffect" parent="." instance=ExtResource("1_qo2u1")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
