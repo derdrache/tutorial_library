@@ -1,6 +1,6 @@
 [gd_scene load_steps=110 format=3 uid="uid://bgdiv5d8aq421"]
 
-[ext_resource type="Script" path="res://tutorial_collection/gta style/speed_car.gd" id="1_wgnsq"]
+[ext_resource type="Script" path="res://tutorial_collection/gta style/car.gd" id="1_wgnsq"]
 [ext_resource type="Texture2D" uid="uid://ng45qtqp3n8h" path="res://assets/car/Blue_SPORT_CLEAN_SOUTH_000-sheet.png" id="2_x5woe"]
 [ext_resource type="Texture2D" uid="uid://ddc5nb1kxv1e5" path="res://assets/car/Blue_SPORT_CLEAN_SOUTHWEST_000-sheet.png" id="3_0eoto"]
 [ext_resource type="Texture2D" uid="uid://csn2bnw416oti" path="res://assets/car/Blue_SPORT_CLEAN_SOUTHEAST_000-sheet.png" id="4_mkmkx"]
