@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c348musbces41"]
+
+[ext_resource type="Script" path="res://tutorial_collection/jungle/rope.gd" id="1_ymuno"]
+[ext_resource type="Texture2D" uid="uid://b18k88vm580qv" path="res://assets/sprites/ropes/Rope2 3px.png" id="2_6ca5w"]
+
+[node name="Rope" type="Node2D"]
+script = ExtResource("1_ymuno")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6ca5w")
