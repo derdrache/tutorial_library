@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://heeb1ryqld07"]
+
+[ext_resource type="Script" path="res://tutorial_collection/chop_tree/tree.gd" id="1_6osnf"]
+[ext_resource type="Texture2D" uid="uid://40584ffk1kxm" path="res://assets/tile_sets/top_down/Tree.png" id="1_iw280"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e34xm"]
+atlas = ExtResource("1_iw280")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inxbv"]
+atlas = ExtResource("1_iw280")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj1pk"]
+atlas = ExtResource("1_iw280")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkgsu"]
+atlas = ExtResource("1_iw280")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdcm1"]
+atlas = ExtResource("1_iw280")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ghev"]
+atlas = ExtResource("1_iw280")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hg7y4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e34xm")
+}],
+"loop": false,
+"name": &"chop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inxbv")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj1pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkgsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdcm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ghev")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evpco"]
+size = Vector2(58, 27)
+
+[node name="Tree" type="StaticBody2D"]
+script = ExtResource("1_6osnf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hg7y4")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 66.5)
+shape = SubResource("RectangleShape2D_evpco")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
