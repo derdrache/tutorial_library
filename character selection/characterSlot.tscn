@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://jo702td1q0uk"]
+
+[ext_resource type="Texture2D" uid="uid://cole04bbj4s5a" path="res://assets/sprites/tiny swords chars/archer single.png" id="1_8kntx"]
+[ext_resource type="Script" path="res://tutorial_collection/ui/character_selection/characterSlot.gd" id="1_vdytj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxauf"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Character1" type="Panel"]
+custom_minimum_size = Vector2(120, 120)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxauf")
+script = ExtResource("1_vdytj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 110.0
+texture = ExtResource("1_8kntx")
+stretch_mode = 1
