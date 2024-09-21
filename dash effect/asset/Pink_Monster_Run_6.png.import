@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cd6pg13ji0bln"
+path="res://.godot/imported/Pink_Monster_Run_6.png-f4668f15aa9c2354334759c78de7d89c.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://dash effect/asset/Pink_Monster_Run_6.png"
+dest_files=["res://.godot/imported/Pink_Monster_Run_6.png-f4668f15aa9c2354334759c78de7d89c.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
