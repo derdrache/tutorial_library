@@ -1,0 +1,129 @@
+[gd_scene load_steps=3 format=3 uid="uid://djey0asy8hu8i"]
+
+[ext_resource type="Texture2D" uid="uid://yu1jm60w5bei" path="res://assets/wood_tileset.png" id="1_jeska"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_14jjv"]
+radius = 4.00184
+height = 22.0
+
+[node name="PhysicBridge" type="Node2D"]
+
+[node name="Anchor" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(12, 4)
+mass = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_jeska")
+region_enabled = true
+region_rect = Rect2(133, 16, 21, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+rotation = 1.56895
+shape = SubResource("CapsuleShape2D_14jjv")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D"]
+position = Vector2(-10, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../Anchor")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(35, 4)
+mass = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+texture = ExtResource("1_jeska")
+region_enabled = true
+region_rect = Rect2(133, 16, 21, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+rotation = 1.56895
+shape = SubResource("CapsuleShape2D_14jjv")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D2"]
+position = Vector2(-10, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(58, 4)
+mass = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+texture = ExtResource("1_jeska")
+region_enabled = true
+region_rect = Rect2(133, 16, 21, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+rotation = 1.56895
+shape = SubResource("CapsuleShape2D_14jjv")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D3"]
+position = Vector2(-10, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D2")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(81, 4)
+mass = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
+texture = ExtResource("1_jeska")
+region_enabled = true
+region_rect = Rect2(133, 16, 21, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+rotation = 1.56895
+shape = SubResource("CapsuleShape2D_14jjv")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D4"]
+position = Vector2(-10, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D3")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="."]
+position = Vector2(104, 4)
+mass = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D5"]
+texture = ExtResource("1_jeska")
+region_enabled = true
+region_rect = Rect2(133, 16, 21, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
+rotation = 1.56895
+shape = SubResource("CapsuleShape2D_14jjv")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D5"]
+position = Vector2(-10, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D4")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="."]
+position = Vector2(127, 4)
+mass = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D6"]
+texture = ExtResource("1_jeska")
+region_enabled = true
+region_rect = Rect2(133, 16, 21, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6"]
+rotation = 1.56895
+shape = SubResource("CapsuleShape2D_14jjv")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D6"]
+position = Vector2(-10, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D5")
+
+[node name="Anchor end" type="RigidBody2D" parent="."]
+position = Vector2(142, 0)
+freeze = true
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Anchor end"]
+position = Vector2(-2, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D6")
