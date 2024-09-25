@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://eba7ygh6strt"]
+
+[ext_resource type="Script" path="res://first_person_camera/first_person_player.gd" id="1_3xueb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vntxa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_68vwf"]
+
+[node name="FirstPersonPlayer" type="CharacterBody3D"]
+script = ExtResource("1_3xueb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vntxa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_68vwf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0.7, 0)
+fov = 60.0
