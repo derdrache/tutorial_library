@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhr20rgudot3a"]
+
+[ext_resource type="Script" path="res://store_items_cupboard/kitchen_counter.gd" id="1_mu08b"]
+[ext_resource type="PackedScene" uid="uid://66m3aaj6d0p8" path="res://assets/kitchen prototype/kitchencounter_straight_B.gltf" id="1_shlui"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wudxg"]
+points = PackedVector3Array(-0.19569, 0.502372, 1.00801, 0.986749, 0.0035771, 0.8, -0.984207, 0, -0.983794, 0.984451, 1, -0.9745, -0.972227, 0.998659, 0.951341, -0.974867, 1, -0.974306, 0.993791, 0, -0.983794, -0.977165, 0.0035771, 0.8, 0.981819, 0.998663, 0.951337, 0.866561, 0.126377, 0.929817, -0.860824, 0.124699, 0.933874, 1, 0.628754, -0.990102, 0.981619, 0.967568, 0.982432, -0.972227, 0.967568, 0.982432, 1, 0.628754, 0.526476, -0.196362, 0.59505, 1.01132, 0.202695, 0.502372, 0.995317)
+
+[node name="KitchenCounter" type="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_mu08b")
+
+[node name="kitchencounter_straight_B2" parent="." instance=ExtResource("1_shlui")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_wudxg")
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="ObjectPlaces" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="ObjectPlaces"]
+transform = Transform3D(0.5, 2.18557e-08, 2.18557e-08, -2.18557e-08, -2.18557e-08, 0.5, 2.18557e-08, -0.5, -2.18557e-08, -0.5, 1.14967, -2.18557e-08)
+
+[node name="Marker3D2" type="Marker3D" parent="ObjectPlaces"]
+transform = Transform3D(0.5, 2.18557e-08, 2.18557e-08, -2.18557e-08, -2.18557e-08, 0.5, 2.18557e-08, -0.5, -2.18557e-08, 0, 1.14967, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="ObjectPlaces"]
+transform = Transform3D(0.5, 2.18557e-08, 2.18557e-08, -2.18557e-08, -2.18557e-08, 0.5, 2.18557e-08, -0.5, -2.18557e-08, 0.5, 1.14967, 2.18557e-08)
+
+[connection signal="child_exiting_tree" from="Objects" to="." method="_on_objects_child_exiting_tree"]
+
+[editable path="kitchencounter_straight_B2"]
