@@ -17,6 +17,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotation.y -= event.relative.x * CAMERA_SENS
 		rotation.x -= event.relative.y * CAMERA_SENS
+		rotation.x = clamp(rotation.x, -0.5, 1.2)
 
 func _physics_process(delta):
 	# Add the gravity.
