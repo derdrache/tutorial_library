@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://io0ckv78xnll"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a0bqf"]
+load_path = "res://.godot/imported/circle.png-fc1672b5e792adaa49f58df55d148bf6.ctex"
+
+[sub_resource type="GDScript" id="GDScript_ee2a5"]
+script/source = "extends Line2D
+
+@export var hide:= true
+
+var connectionPoints: Array
+
+func _ready() -> void:
+	connectionPoints = points
+	
+	if hide: clear_points()
+	
+	show_animation()
+	
+func show_animation() -> void:
+	hide = true
+	
+	for point in connectionPoints:
+		add_point(point)
+		await get_tree().create_timer(0.2).timeout
+"
+
+[node name="WayConnection" type="Line2D"]
+texture_repeat = 2
+points = PackedVector2Array(445, 380, 463, 369, 476, 356, 484, 346, 483, 331, 486, 318, 494, 309, 500, 297, 509, 284, 517, 272, 521, 258, 532, 243, 539, 227, 549, 216, 559, 208, 570, 198, 579, 192, 589, 183)
+texture = SubResource("CompressedTexture2D_a0bqf")
+texture_mode = 1
+joint_mode = 1
+script = SubResource("GDScript_ee2a5")
