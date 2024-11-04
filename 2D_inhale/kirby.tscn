@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://crgjdc686048e"]
+
+[ext_resource type="Texture2D" uid="uid://b17akkty3yfic" path="res://inhale_2D/assets/kirby-like.png" id="1_fk4tm"]
+[ext_resource type="Script" path="res://inhale_2D/kirby.gd" id="1_t7dku"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wf8x"]
+atlas = ExtResource("1_fk4tm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agmna"]
+atlas = ExtResource("1_fk4tm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1r14"]
+atlas = ExtResource("1_fk4tm")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2607m"]
+atlas = ExtResource("1_fk4tm")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cggla"]
+atlas = ExtResource("1_fk4tm")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oltsu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wf8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agmna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1r14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2607m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cggla")
+}],
+"loop": true,
+"name": &"inhale",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0qk8"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwch8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3svby"]
+size = Vector2(14, 14)
+
+[node name="Kirby" type="CharacterBody2D"]
+script = ExtResource("1_t7dku")
+
+[node name="normalSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_fk4tm")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="inhaleSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_fk4tm")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="fullSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_fk4tm")
+region_enabled = true
+region_rect = Rect2(33, 0, 15, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(14, 0)
+sprite_frames = SubResource("SpriteFrames_oltsu")
+animation = &"inhale"
+autoplay = "inhale"
+frame_progress = 0.534293
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_h0qk8")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_wwch8")
+target_position = Vector2(50, 0)
+max_results = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_3svby")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
