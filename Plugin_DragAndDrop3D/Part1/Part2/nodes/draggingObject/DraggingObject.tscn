@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://70t8mynrkn4s"]
+
+[ext_resource type="Script" path="res://addons/DragAndDrop3D/nodes/draggingObject/dragging_object.gd" id="1_mpfnw"]
+
+[node name="DraggingObject" type="Node3D"]
+script = ExtResource("1_mpfnw")
+heightOffset = null
