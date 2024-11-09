@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://hrabpyt5vveb"]
+
+[ext_resource type="Script" path="res://calendar/date_label.gd" id="1_2dy86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifurh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bo4h"]
+bg_color = Color(0.164744, 0.470097, 0.882332, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="DateLabel" type="MarginContainer"]
+custom_minimum_size = Vector2(100, 50)
+script = ExtResource("1_2dy86")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ifurh")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ifurh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bo4h")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
