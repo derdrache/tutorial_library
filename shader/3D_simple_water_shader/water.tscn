@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0k0k2v3ru7d"]
+
+[ext_resource type="Material" uid="uid://byot4ja320vrv" path="res://simple_water_shader/water.tres" id="2_ogomo"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8w3hm"]
+material = ExtResource("2_ogomo")
+size = Vector2(20, 20)
+
+[node name="Water" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("PlaneMesh_8w3hm")
