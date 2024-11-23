@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TalentResource" load_steps=3 format=3 uid="uid://bu87vpypxlrf1"]
+
+[ext_resource type="Script" path="res://Talent_Tree/resource/talent_resource.gd" id="1_83hsy"]
+[ext_resource type="Texture2D" uid="uid://bwvc853plyfdi" path="res://assets/ui/icons/Icon_Small_Diamond.png" id="2_xibxg"]
+
+[resource]
+script = ExtResource("1_83hsy")
+talentIcon = ExtResource("2_xibxg")
+is_unlocked = false
+unlockTalents = Array[ExtResource("1_83hsy")]([])

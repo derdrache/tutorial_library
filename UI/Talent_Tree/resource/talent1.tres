@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TalentResource" load_steps=5 format=3 uid="uid://betibw7krqhn2"]
+
+[ext_resource type="Script" path="res://Talent_Tree/resource/talent_resource.gd" id="1_l3nvk"]
+[ext_resource type="Texture2D" uid="uid://fwgpsd80m1rk" path="res://assets/ui/icons/Icon_Focus.png" id="2_0jaii"]
+[ext_resource type="Resource" uid="uid://mf7ehea3kfpr" path="res://Talent_Tree/resource/talent2.tres" id="2_se35r"]
+[ext_resource type="Resource" uid="uid://bu87vpypxlrf1" path="res://Talent_Tree/resource/talent3.tres" id="3_mss0x"]
+
+[resource]
+script = ExtResource("1_l3nvk")
+talentIcon = ExtResource("2_0jaii")
+is_unlocked = false
+unlockTalents = Array[ExtResource("1_l3nvk")]([ExtResource("2_se35r"), ExtResource("3_mss0x")])
