@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://dk1ikw1aoav1l"]
+
+[ext_resource type="Script" path="res://3D_fez_camera/2d_player.gd" id="1_ebvm7"]
+[ext_resource type="Texture2D" uid="uid://bh00irenjf5xa" path="res://tutorial_collection/2D_Sprite_character/assets/DinoSprites - mort.png" id="2_r4oxu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2hsn"]
+atlas = ExtResource("2_r4oxu")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8hch"]
+atlas = ExtResource("2_r4oxu")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ndgw"]
+atlas = ExtResource("2_r4oxu")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq0ts"]
+atlas = ExtResource("2_r4oxu")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg6l5"]
+atlas = ExtResource("2_r4oxu")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p80h"]
+atlas = ExtResource("2_r4oxu")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keewy"]
+atlas = ExtResource("2_r4oxu")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxh7p"]
+atlas = ExtResource("2_r4oxu")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6tl3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2hsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8hch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ndgw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq0ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg6l5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p80h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keewy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxh7p")
+}],
+"loop": true,
+"name": &"run",
+"speed": 3.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1ra1"]
+size = Vector3(0.420898, 0.484619, 0.494141)
+
+[node name="Dino" type="CharacterBody3D"]
+script = ExtResource("1_ebvm7")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_6tl3w")
+animation = &"run"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_x1ra1")
+
+[node name="pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7)
+fov = 25.0
