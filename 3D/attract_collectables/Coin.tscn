@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://drtb47to53a5p"]
+
+[ext_resource type="Script" path="res://3D_attract_collectables/coin.gd" id="1_bio7a"]
+[ext_resource type="PackedScene" uid="uid://c3refnh1611v7" path="res://assets/collectable/Coin.gltf" id="1_yf2io"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s7lnx"]
+radius = 0.0981099
+
+[node name="Coin" type="Area3D"]
+script = ExtResource("1_bio7a")
+
+[node name="Coin2" parent="." instance=ExtResource("1_yf2io")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_s7lnx")

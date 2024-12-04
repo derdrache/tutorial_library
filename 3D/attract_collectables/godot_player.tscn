@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0rrivbcgblx6"]
+
+[ext_resource type="PackedScene" uid="uid://kue2njcp3dvk" path="res://assets/Chars/godot_plushie/godot_plushie_animated.glb" id="1_luuhc"]
+[ext_resource type="Script" path="res://3D_attract_collectables/godot_player.gd" id="1_ochuo"]
+[ext_resource type="PackedScene" uid="uid://cmsk4mphh74rx" path="res://tutorial_collection/camera/thirdPersonCamera.tscn" id="3_jghr4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6uuxn"]
+radius = 0.238358
+height = 1.0544
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fl3tc"]
+radius = 4.0
+
+[node name="GodotPlayer" type="CharacterBody3D"]
+script = ExtResource("1_ochuo")
+
+[node name="godot_plushie_animated" parent="." instance=ExtResource("1_luuhc")]
+transform = Transform3D(0.25, 0, 4.37114e-08, 0, 0.25, 0, -4.37114e-08, 0, 0.25, 0, 0, 0)
+
+[node name="Skeleton3D" parent="godot_plushie_animated/Armature" index="0"]
+bones/0/position = Vector3(-4.74415e-09, 0.154834, 0)
+bones/0/scale = Vector3(1, 1.0918, 1)
+bones/1/position = Vector3(-0.5536, -0.646209, -1.43324e-07)
+bones/1/rotation = Quaternion(-0.704308, 0.0628538, 0.704308, -0.0628544)
+bones/1/scale = Vector3(1, 1, 0.99999)
+bones/2/rotation = Quaternion(1.53101e-08, 5.00256e-07, -0.146675, 0.989185)
+bones/3/rotation = Quaternion(2.21017e-07, -8.2201e-07, 0.568302, 0.82282)
+bones/4/rotation = Quaternion(0.64042, -0.299771, -0.64042, -0.299771)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.62217, -2.15851e-07, 2.37333e-07, 0.782882)
+bones/6/rotation = Quaternion(0.0389903, 7.18915e-08, -1.86119e-07, 0.99924)
+bones/7/rotation = Quaternion(0.245597, -1.38559e-08, 1.81012e-09, 0.969372)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/position = Vector3(0.5536, -0.646209, -1.42008e-07)
+bones/8/rotation = Quaternion(0.704308, 0.0628538, 0.704308, 0.0628544)
+bones/8/scale = Vector3(1, 1, 0.99999)
+bones/9/rotation = Quaternion(1.53101e-08, -5.00256e-07, 0.146675, 0.989185)
+bones/10/rotation = Quaternion(2.21017e-07, 8.2201e-07, -0.568302, 0.82282)
+bones/11/rotation = Quaternion(0.64042, 0.299771, 0.64042, -0.299771)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(0.62217, 2.15851e-07, -2.37333e-07, 0.782882)
+bones/13/rotation = Quaternion(0.0389903, -7.18915e-08, 1.86119e-07, 0.99924)
+bones/14/rotation = Quaternion(0.245597, 1.38559e-08, -1.81011e-09, 0.969372)
+bones/14/scale = Vector3(1, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571827, 0)
+shape = SubResource("CapsuleShape3D_6uuxn")
+
+[node name="Camera" parent="." instance=ExtResource("3_jghr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.245, 0)
+
+[node name="AttractCollectablesArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractCollectablesArea"]
+shape = SubResource("SphereShape3D_fl3tc")
+
+[connection signal="area_entered" from="AttractCollectablesArea" to="." method="_on_attract_collectables_area_area_entered"]
+
+[editable path="godot_plushie_animated"]
+[editable path="Camera"]
