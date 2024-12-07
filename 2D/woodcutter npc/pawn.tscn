@@ -1,0 +1,283 @@
+[gd_scene load_steps=23 format=3 uid="uid://dwqgned0wuxdl"]
+
+[ext_resource type="Texture2D" uid="uid://jvel4f6hn2ul" path="res://assets/sprites/tiny swords chars/Pawn_Blue.png" id="1_bi2pb"]
+
+[sub_resource type="GDScript" id="GDScript_o4qy5"]
+script/source = "extends CharacterBody2D
+
+@onready var animated_sprite_2d = $flip/AnimatedSprite2D
+@onready var damage_box = $flip/damageBox
+@onready var flip = $flip
+@onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+
+@export var onMission = false
+
+enum mission_states {PRODUCTION, STORAGE}
+
+const SPEED = 100.0
+
+var mission = mission_states.PRODUCTION
+var doChop = false
+var targetTree
+
+func _physics_process(delta):
+	if not onMission: 
+		_get_new_mission()
+	else:
+		var next_path_position: Vector2 = navigation_agent_2d.get_next_path_position()
+		velocity = global_position.direction_to(next_path_position) * SPEED
+		
+	_set_animation()
+
+	move_and_slide()
+
+func _get_new_mission():
+		if mission == mission_states.PRODUCTION: 
+			targetTree = _get_nearest_tree()
+			navigation_agent_2d.target_position = targetTree.global_position
+			
+		else:
+			pass
+		onMission = true
+
+func _get_nearest_tree():
+	var trees = get_tree().get_nodes_in_group(\"trees\")
+	var nearestDistance
+	var selectedTree
+	
+	for tree in trees:
+		var distance = global_position.distance_to(tree.global_position)
+		if not nearestDistance or distance < nearestDistance: 
+			nearestDistance = distance
+			selectedTree = tree
+	
+	return selectedTree
+
+func _set_animation():
+	if velocity.x < 0:
+		flip.scale.x = -1
+	elif velocity.x > 0: 
+		flip.scale.x = 1
+		
+	if doChop: return
+	
+	if velocity:
+		animated_sprite_2d.play(\"run\")
+	else:
+		animated_sprite_2d.play(\"idle\")
+
+func _do_chop():
+	if doChop: return
+	
+	doChop = true
+	animated_sprite_2d.play(\"chop\")		
+
+func _hit_tree():
+	var hasCollision = len(damage_box.get_overlapping_bodies()) > 0
+	
+	if not hasCollision: return
+
+	var collisionBody = damage_box.get_overlapping_bodies()[0]
+	
+	if collisionBody in get_tree().get_nodes_in_group(\"trees\"):
+		collisionBody.get_hit(flip.scale.x)
+
+func _on_animated_sprite_2d_animation_finished():
+	doChop = false
+	
+	animated_sprite_2d.play(\"idle\")
+
+func _on_animated_sprite_2d_frame_changed():
+	if animated_sprite_2d == null: return
+	
+	var frame = animated_sprite_2d.frame
+	
+	if animated_sprite_2d.animation == \"chop\" && frame == 3:
+		_hit_tree()
+
+func _change_mission():
+	if mission == mission_states.PRODUCTION: mission = mission_states.STORAGE
+	else: mission = mission_states.PRODUCTION
+
+func _on_navigation_agent_2d_target_reached() -> void:
+	set_physics_process(false)
+	_do_chop()
+	
+	
+	#_change_mission()
+	#
+	#onMission = false
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nebgm"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6puf"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oa68"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58dax"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ug37"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnug0"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvvim"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85p7q"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu6lc"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hewpd"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ofbt"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a5jl"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k20r3"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lktx"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eldc0"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84tta"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb07d"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0c8u1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nebgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6puf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oa68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58dax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ug37")
+}],
+"loop": false,
+"name": &"chop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnug0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvvim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85p7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu6lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hewpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ofbt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a5jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k20r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lktx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eldc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84tta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb07d")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0huvm"]
+size = Vector2(30, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1li2"]
+size = Vector2(35, 45)
+
+[node name="Woodcutter" type="CharacterBody2D"]
+script = SubResource("GDScript_o4qy5")
+
+[node name="flip" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="flip"]
+sprite_frames = SubResource("SpriteFrames_0c8u1")
+animation = &"chop"
+autoplay = "idle"
+frame = 4
+frame_progress = 0.555566
+
+[node name="damageBox" type="Area2D" parent="flip"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flip/damageBox"]
+position = Vector2(52, 17)
+shape = SubResource("RectangleShape2D_0huvm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 3.5)
+shape = SubResource("RectangleShape2D_q1li2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 2
+path_postprocessing = 1
+
+[connection signal="animation_finished" from="flip/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="flip/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

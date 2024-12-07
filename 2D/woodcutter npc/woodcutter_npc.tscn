@@ -1,0 +1,156 @@
+[gd_scene load_steps=21 format=3 uid="uid://7ly15hd8gmu2"]
+
+[ext_resource type="Texture2D" uid="uid://jvel4f6hn2ul" path="res://assets/sprites/tiny swords chars/Pawn_Blue.png" id="1_bi2pb"]
+[ext_resource type="Script" path="res://2D_woodcutter npc/woodcutter_npc.gd" id="1_jtc3v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nebgm"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6puf"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oa68"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58dax"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ug37"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnug0"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvvim"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85p7q"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu6lc"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hewpd"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ofbt"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a5jl"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k20r3"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lktx"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eldc0"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84tta"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb07d"]
+atlas = ExtResource("1_bi2pb")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0c8u1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nebgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6puf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oa68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58dax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ug37")
+}],
+"loop": false,
+"name": &"chop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnug0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvvim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85p7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu6lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hewpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ofbt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a5jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k20r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lktx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eldc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84tta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb07d")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Pawn" type="CharacterBody2D"]
+script = ExtResource("1_jtc3v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0c8u1")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 2
+path_postprocessing = 1
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
