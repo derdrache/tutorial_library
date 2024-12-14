@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8l2814xdoku8"]
+
+[ext_resource type="Script" path="res://2D_manage_materials/woodcutter_house.gd" id="1_bcaor"]
+[ext_resource type="Texture2D" uid="uid://bffs40gyo62rw" path="res://assets/tile_sets/top_down/House_Blue.png" id="2_owfmx"]
+[ext_resource type="Texture2D" uid="uid://dkieweu8q2ltx" path="res://assets/tile_sets/top_down/W_Idle.png" id="2_p3kfr"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_s8u0a"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_f4dr2"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7vqj"]
+texture = ExtResource("2_owfmx")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+0:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_s8u0a")
+1:2/0 = 0
+1:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f4dr2")
+
+[sub_resource type="TileSet" id="TileSet_u14v5"]
+tile_size = Vector2i(64, 64)
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_a7vqj")
+
+[node name="WoodcutterHouse" type="Node2D" groups=["floor_navigation", "way_navigation"]]
+script = ExtResource("1_bcaor")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_u14v5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131073, 0, 0, -65537, 0, 1, -1, 0, 2, -196608, 65536, 0, -131072, 65536, 1, -65536, 65536, 2)
+
+[node name="WIdle" type="Sprite2D" parent="."]
+position = Vector2(-40, -36)
+texture = ExtResource("2_p3kfr")

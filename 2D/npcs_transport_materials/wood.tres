@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Materials" load_steps=2 format=3 uid="uid://byrpb10o0kty"]
+
+[ext_resource type="Script" path="res://material.gd" id="1_8rnyo"]
+
+[resource]
+script = ExtResource("1_8rnyo")
+type = 0
+quantity = 0

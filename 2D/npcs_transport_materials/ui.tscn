@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsw87g36wcvlp"]
+
+[ext_resource type="Script" path="res://2D_manage_materials/ui.gd" id="1_0g0tt"]
+[ext_resource type="Texture2D" uid="uid://bqtyrtyvpymo8" path="res://assets/tile_sets/top_down/wood.png" id="1_rrmnp"]
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_0g0tt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_rrmnp")
+
+[node name="WoodLabel" type="Label" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "0"
