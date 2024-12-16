@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo1cpe7ekrm1q"]
+
+[ext_resource type="Script" path="res://2D_move_character_in_grid/grid.gd" id="1_u48it"]
+
+[node name="Grid" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+script = ExtResource("1_u48it")
