@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3j82an517bx"]
+
+[ext_resource type="PackedScene" uid="uid://bllm3fxbjgi2b" path="res://assets/car_race/start line.glb" id="1_3amwb"]
+[ext_resource type="Script" path="res://3D_racer_track_rounds/start_point.gd" id="1_e05dl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yajhs"]
+size = Vector3(0.7, 1, 1.7)
+
+[node name="StartPoint" type="Area3D"]
+script = ExtResource("1_e05dl")
+
+[node name="start line" parent="." instance=ExtResource("1_3amwb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_yajhs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

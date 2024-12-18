@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://msk06opfn0kh"]
+
+[ext_resource type="PackedScene" uid="uid://cum2a7c32163j" path="res://assets/car_race/Finish.fbx" id="1_hmvs2"]
+[ext_resource type="Script" path="res://3D_racer_track_rounds/check_point.gd" id="1_t0u1y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_svjxo"]
+size = Vector3(2, 1.7, 0.4)
+
+[node name="CheckPoint" type="Area3D"]
+script = ExtResource("1_t0u1y")
+
+[node name="Finish" parent="." instance=ExtResource("1_hmvs2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.85, -1)
+shape = SubResource("BoxShape3D_svjxo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
