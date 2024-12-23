@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://xvd7o1ek1eyv"]
+
+[ext_resource type="Script" path="res://2D_day_and_night_cycle/day_and_night_cycle.gd" id="1_6jxuu"]
+
+[sub_resource type="Animation" id="Animation_h5wth"]
+resource_name = "new_animation"
+length = 24.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0.170833, 0.25, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ildbw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ut2fq"]
+_data = {
+"RESET": SubResource("Animation_ildbw"),
+"new_animation": SubResource("Animation_h5wth")
+}
+
+[node name="DayAndNightCycle" type="CanvasModulate"]
+script = ExtResource("1_6jxuu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ut2fq")
+}
+autoplay = "new_animation"
