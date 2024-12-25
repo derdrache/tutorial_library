@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c78movk3u851i"]
+
+[ext_resource type="Script" path="res://3D_car_Ki_with_navigation/car_ki.gd" id="1_w32pu"]
+[ext_resource type="PackedScene" uid="uid://d07aq67gkv4ye" path="res://assets/car_race/Car.fbx" id="2_7su0w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gbje8"]
+radius = 0.1
+
+[node name="Car" type="RigidBody3D"]
+linear_damp = 6.0
+script = ExtResource("1_w32pu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_gbje8")
+
+[node name="Car" parent="." instance=ExtResource("2_7su0w")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.1, 0)
+
+[node name="Car" parent="Car" index="0"]
+transform = Transform3D(1, 1.77636e-15, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0, 0, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 2.5
+path_postprocessing = 1
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
+
+[editable path="Car"]
