@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://br01qv71h3hg7"]
+
+[ext_resource type="Script" path="res://Map_Fast_Travel/way_point.gd" id="1_fan3u"]
+[ext_resource type="Texture2D" uid="uid://ciedljb0jctda" path="res://Map_Fast_Travel/assets/IconButton_Small_Red_Circle.png" id="1_kmcgy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yftq3"]
+
+[node name="WayPoint" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fan3u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("1_kmcgy")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_yftq3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yftq3")
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
