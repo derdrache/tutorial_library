@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://caudkeobo5m8"]
+
+[ext_resource type="Script" path="res://unit_drag_and_drop/unit selection.gd" id="1_7hibe"]
+[ext_resource type="PackedScene" uid="uid://brcv17byla0u8" path="res://unit_drag_and_drop/unit_container.tscn" id="1_7sely"]
+[ext_resource type="PackedScene" uid="uid://cp445e3ip8e32" path="res://unit_drag_and_drop/archer.tscn" id="3_aaa4h"]
+[ext_resource type="Texture2D" uid="uid://c5ui7u45elvse" path="res://unit_drag_and_drop/archer single.png" id="4_drol6"]
+[ext_resource type="PackedScene" uid="uid://baef6r3rptnxy" path="res://unit_drag_and_drop/pawn.tscn" id="5_k77i8"]
+[ext_resource type="Texture2D" uid="uid://bcgcrjfrxysgo" path="res://unit_drag_and_drop/pawn single.png" id="6_4dy31"]
+[ext_resource type="PackedScene" uid="uid://dwplwqx84g7w0" path="res://unit_drag_and_drop/warrior.tscn" id="7_1q4t8"]
+[ext_resource type="Texture2D" uid="uid://epajpeu0gfm6" path="res://unit_drag_and_drop/warrior.png" id="8_kxtrf"]
+
+[node name="UnitSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7hibe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -104.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" parent="HBoxContainer" instance=ExtResource("1_7sely")]
+layout_mode = 2
+charScene = ExtResource("3_aaa4h")
+icon = ExtResource("4_drol6")
+
+[node name="PanelContainer2" parent="HBoxContainer" instance=ExtResource("1_7sely")]
+layout_mode = 2
+charScene = ExtResource("5_k77i8")
+icon = ExtResource("6_4dy31")
+
+[node name="PanelContainer3" parent="HBoxContainer" instance=ExtResource("1_7sely")]
+layout_mode = 2
+charScene = ExtResource("7_1q4t8")
+icon = ExtResource("8_kxtrf")

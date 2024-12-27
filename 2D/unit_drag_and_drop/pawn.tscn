@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://baef6r3rptnxy"]
+
+[ext_resource type="Texture2D" uid="uid://bcgcrjfrxysgo" path="res://unit_drag_and_drop/pawn single.png" id="1_q1jqi"]
+
+[node name="Pawn" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q1jqi")
