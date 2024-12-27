@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://clp3n4uqnf32f"]
+
+[ext_resource type="Script" path="res://2D_handle_bridge_top_down/layer_switch.gd" id="1_5x2vf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy8li"]
+size = Vector2(125, 61)
+
+[node name="layer_switch" type="Area2D"]
+script = ExtResource("1_5x2vf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(704.5, 480.5)
+shape = SubResource("RectangleShape2D_jy8li")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
