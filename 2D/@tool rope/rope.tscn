@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://duq8682s3qda3"]
+
+[ext_resource type="Script" path="res://tutorial_collection/toolRope/rope.gd" id="1_dunjd"]
+[ext_resource type="Texture2D" uid="uid://b18k88vm580qv" path="res://assets/sprites/ropes/Rope2 3px.png" id="2_4yfor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2f2l"]
+size = Vector2(3, 176)
+
+[node name="Rope" type="Area2D" groups=["rope"]]
+script = ExtResource("1_dunjd")
+ropeTexture = ExtResource("2_4yfor")
+length = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 80)
+shape = SubResource("RectangleShape2D_r2f2l")
