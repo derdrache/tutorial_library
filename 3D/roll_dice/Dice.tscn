@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://w1hi6fc1pafw"]
+
+[ext_resource type="PackedScene" uid="uid://c08wppjj6g6rs" path="res://assets/boardGame/dice.glb" id="1_hxono"]
+[ext_resource type="Script" path="res://tutorial_collection/board_game/roll dice/Dice.gd" id="1_xqggy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53br2"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Dice" type="RigidBody3D"]
+script = ExtResource("1_xqggy")
+
+[node name="dice" parent="." instance=ExtResource("1_hxono")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_53br2")
+
+[node name="Faces" type="Node3D" parent="."]
+
+[node name="1" type="Node3D" parent="Faces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100107, 0)
+
+[node name="2" type="Node3D" parent="Faces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999966, 0, 0)
+
+[node name="3" type="Node3D" parent="Faces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="4" type="Node3D" parent="Faces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
+[node name="5" type="Node3D" parent="Faces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100359, 0, 0)
+
+[node name="6" type="Node3D" parent="Faces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0994736, 0)
+
+[editable path="dice"]
