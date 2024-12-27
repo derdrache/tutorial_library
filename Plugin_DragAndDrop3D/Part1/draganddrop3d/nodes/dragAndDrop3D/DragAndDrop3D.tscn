@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnfygaxd2xpf8"]
-
-[ext_resource type="Script" path="res://addons/draganddrop3d/nodes/dragAndDrop3D/drag_and_drop_3d.gd" id="1_buak0"]
-
-[node name="DragAndDrop3d" type="Node3D"]
-script = ExtResource("1_buak0")
