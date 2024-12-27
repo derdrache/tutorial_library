@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1res74tqp3ds"]
+
+[ext_resource type="Texture2D" uid="uid://b17akkty3yfic" path="res://inhale_2D/assets/kirby-like.png" id="1_bwn2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1b2w"]
+size = Vector2(14, 15)
+
+[node name="Enemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bwn2c")
+region_enabled = true
+region_rect = Rect2(17, 33, 15, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_h1b2w")
