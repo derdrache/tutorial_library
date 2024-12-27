@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp445e3ip8e32"]
-
-[ext_resource type="Texture2D" uid="uid://c5ui7u45elvse" path="res://unit_drag_and_drop/archer single.png" id="1_llulc"]
-
-[node name="Archer" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_llulc")
