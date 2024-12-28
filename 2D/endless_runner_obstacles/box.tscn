@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccygkuytievgr"]
+
+[ext_resource type="Texture2D" uid="uid://dm0nkwmhar3ve" path="res://block-big.png" id="1_h5ub7"]
+[ext_resource type="Script" path="res://2D_endless_runner_obstacles/obstacle.gd" id="1_q4ii0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ackgu"]
+size = Vector2(32, 32)
+
+[node name="Box" type="CharacterBody2D"]
+script = ExtResource("1_q4ii0")
+spawnPoint = Vector2(350, 160)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h5ub7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ackgu")

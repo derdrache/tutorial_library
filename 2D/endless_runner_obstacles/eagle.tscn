@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckd5bn5hkd17i"]
+
+[ext_resource type="Script" path="res://2D_endless_runner_obstacles/eagle.gd" id="1_glngd"]
+[ext_resource type="Texture2D" uid="uid://bnfufs810nn72" path="res://eagle-attack.png" id="2_wlxbu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk2rb"]
+atlas = ExtResource("2_wlxbu")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnjdm"]
+atlas = ExtResource("2_wlxbu")
+region = Rect2(40, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rghkl"]
+atlas = ExtResource("2_wlxbu")
+region = Rect2(80, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3s8v"]
+atlas = ExtResource("2_wlxbu")
+region = Rect2(120, 0, 40, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7teop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk2rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnjdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rghkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3s8v")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4g1su"]
+radius = 15.1327
+
+[node name="Eagle" type="CharacterBody2D"]
+script = ExtResource("1_glngd")
+spawnPoint = Vector2(350, 100)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7teop")
+animation = &"fly"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4g1su")
