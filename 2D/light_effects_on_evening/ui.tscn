@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1yffi23t16ct"]
+
+[ext_resource type="Script" path="res://2D_day_and_night_events/ui.gd" id="1_gee7v"]
+[ext_resource type="Texture2D" uid="uid://ntgu88rqfq1a" path="res://assets/ui/icons/sun.png" id="2_q8hsl"]
+[ext_resource type="Texture2D" uid="uid://c44pjwjdd84lw" path="res://assets/ui/icons/moon.png" id="3_vbwwu"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_gee7v")
+
+[node name="Sun" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+texture = ExtResource("2_q8hsl")
+
+[node name="Moon" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+texture = ExtResource("3_vbwwu")

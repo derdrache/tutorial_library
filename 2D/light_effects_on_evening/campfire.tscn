@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://s0a46xyjis8u"]
+
+[ext_resource type="Script" path="res://2D_day_and_night_events/campfire.gd" id="1_bfwdk"]
+[ext_resource type="Texture2D" uid="uid://dbqsy3r1jf6jc" path="res://assets/Campfire36.png" id="1_v4pxa"]
+[ext_resource type="Texture2D" uid="uid://0m57gdawwxih" path="res://assets/light_point.webp" id="2_vshdk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tnf3"]
+atlas = ExtResource("1_v4pxa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av6a5"]
+atlas = ExtResource("1_v4pxa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfvnj"]
+atlas = ExtResource("1_v4pxa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l211o"]
+atlas = ExtResource("1_v4pxa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajfjt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tnf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av6a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfvnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l211o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Campfire" type="StaticBody2D"]
+position = Vector2(1405, 725)
+script = ExtResource("1_bfwdk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -4)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ajfjt")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.603667, 0.18, 1)
+texture = ExtResource("2_vshdk")
