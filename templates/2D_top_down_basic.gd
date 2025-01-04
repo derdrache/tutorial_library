@@ -4,6 +4,9 @@ extends CharacterBody2D
 
 const SPEED = 75.0
 
+func _ready() -> void:
+	add_to_group("player")
+
 func _physics_process(delta: float) -> void:
 	var direction := Vector2.ZERO
 	direction.x = Input.get_axis("ui_left", "ui_right")
