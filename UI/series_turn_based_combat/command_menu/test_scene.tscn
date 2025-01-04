@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd0y6vr04ui3t"]
+
+[ext_resource type="Script" path="res://turt_based_combat_series/command_menu/test_scene.gd" id="1_ebdyh"]
+[ext_resource type="Texture2D" uid="uid://brq7nvcsmx0fa" path="res://assets/icon.svg" id="2_yjhjq"]
+[ext_resource type="PackedScene" uid="uid://dd7ey27i52xjy" path="res://turt_based_combat_series/command_menu/command_menu.tscn" id="4_63c4r"]
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_ebdyh")
+
+[node name="Enemy" type="StaticBody2D" parent="."]
+position = Vector2(398, 149)
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_yjhjq")
+
+[node name="Enemy2" type="StaticBody2D" parent="."]
+position = Vector2(616, 146)
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_yjhjq")
+
+[node name="Enemy3" type="StaticBody2D" parent="."]
+position = Vector2(839, 143)
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy3"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_yjhjq")
+
+[node name="Player" type="StaticBody2D" parent="."]
+position = Vector2(527, 550)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_yjhjq")
+
+[node name="Player2" type="StaticBody2D" parent="."]
+position = Vector2(792, 541)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_yjhjq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CommandMenu" parent="CanvasLayer" instance=ExtResource("4_63c4r")]
+
+[node name="CommandLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+
+[connection signal="command_selected" from="CanvasLayer/CommandMenu" to="." method="_on_command_menu_command_selected"]

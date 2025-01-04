@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://3i0ealkwjmqb"]
+
+[ext_resource type="Script" path="res://turt_based_combat_series/targeting_and_attack/skillResource.gd" id="1_0l2vu"]
+
+[resource]
+script = ExtResource("1_0l2vu")
+name = "Slash"
+targetType = 0
