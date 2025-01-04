@@ -1,8 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ddssghhbn1p42"]
-
-[ext_resource type="Script" path="res://turt_based_combat_series/targeting_and_attack/skillResource.gd" id="1_u2b1t"]
-
-[resource]
-script = ExtResource("1_u2b1t")
-name = "Attack"
-targetType = 0
