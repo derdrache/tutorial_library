@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://grhar0ssyqud"]
+
+[ext_resource type="Script" path="res://interactive_grass/interactive_grass.gd" id="1_b7818"]
+[ext_resource type="Shader" path="res://interactive_grass/interactive_grass.gdshader" id="1_dwx6j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phfal"]
+resource_local_to_scene = true
+shader = ExtResource("1_dwx6j")
+shader_parameter/skew = 0.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_si152"]
+load_path = "res://.godot/imported/grass.png-79cf597cc1adecdff9d12adae9606f9b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hh1w"]
+size = Vector2(9, 12)
+
+[node name="InteractiveGrass" type="Area2D"]
+script = ExtResource("1_b7818")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_phfal")
+scale = Vector2(0.6, 0.6)
+texture = SubResource("CompressedTexture2D_si152")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0hh1w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
