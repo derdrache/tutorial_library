@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://l57v2rn8xgrr"]
+
+[ext_resource type="Script" path="res://create_gun/player.gd" id="1_2wu60"]
+[ext_resource type="PackedScene" uid="uid://ivread0rtkas" path="res://create_gun/gun.tscn" id="2_u1xr2"]
+[ext_resource type="Texture2D" uid="uid://dxes0i0or774f" path="res://create_gun/assets/crosshair007.png" id="3_db7aq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gxorx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fjqli"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_2wu60")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_gxorx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fjqli")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.708381, 0)
+
+[node name="Gun" parent="Camera3D" instance=ExtResource("2_u1xr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.545, -0.57)
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -1.205)
+texture = ExtResource("3_db7aq")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -10)
+collide_with_areas = true
