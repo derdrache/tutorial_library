@@ -14,6 +14,8 @@ func _set_selection():
 
 func _on_previous_button_pressed() -> void:
 	var scrollValue = targetScroll - _get_space_between()
+
+	if scrollValue < 0 : scrollValue = _get_space_between() * 2
 	
 	await _tween_scroll(scrollValue)
 	
@@ -21,7 +23,9 @@ func _on_previous_button_pressed() -> void:
 
 func _on_next_button_pressed() -> void:
 	var scrollValue = targetScroll + _get_space_between()
-	
+
+	if scrollValue > _get_space_between() * 2: scrollValue = 0
+
 	await _tween_scroll(scrollValue)
 	
 	_select_deselect_highlight()
