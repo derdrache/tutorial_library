@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://cifvuy5q37b2l"]
+
+[ext_resource type="Script" path="res://turn_based_combat_series/targeting_and_attack/character.gd" id="1_t20us"]
+[ext_resource type="Texture2D" uid="uid://brq7nvcsmx0fa" path="res://assets/icon.svg" id="2_c27in"]
+[ext_resource type="PackedScene" uid="uid://byvy758rff1s8" path="res://turn_based_combat_series/targeting_and_attack/turn_based_agent.tscn" id="3_g7xn3"]
+[ext_resource type="PackedScene" uid="uid://dd7ey27i52xjy" path="res://turn_based_combat_series/command_menu/command_menu.tscn" id="4_iw8iv"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Enemy" type="StaticBody2D" parent="."]
+position = Vector2(398, 149)
+script = ExtResource("1_t20us")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_c27in")
+
+[node name="TurnBasedAgent" parent="Enemy" instance=ExtResource("3_g7xn3")]
+character_type = 1
+
+[node name="Enemy2" type="StaticBody2D" parent="."]
+position = Vector2(616, 146)
+script = ExtResource("1_t20us")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_c27in")
+
+[node name="TurnBasedAgent" parent="Enemy2" instance=ExtResource("3_g7xn3")]
+character_type = 1
+
+[node name="Enemy3" type="StaticBody2D" parent="."]
+position = Vector2(839, 143)
+script = ExtResource("1_t20us")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy3"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_c27in")
+
+[node name="TurnBasedAgent" parent="Enemy3" instance=ExtResource("3_g7xn3")]
+character_type = 1
+
+[node name="Player" type="StaticBody2D" parent="."]
+position = Vector2(527, 550)
+script = ExtResource("1_t20us")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_c27in")
+
+[node name="TurnBasedAgent" parent="Player" instance=ExtResource("3_g7xn3")]
+isActive = true
+
+[node name="Player2" type="StaticBody2D" parent="."]
+position = Vector2(792, 541)
+script = ExtResource("1_t20us")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_c27in")
+
+[node name="TurnBasedAgent" parent="Player2" instance=ExtResource("3_g7xn3")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CommandMenu" parent="CanvasLayer" instance=ExtResource("4_iw8iv")]
+script = null
+
+[node name="CommandLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
