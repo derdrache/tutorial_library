@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ivread0rtkas"]
+
+[ext_resource type="Script" path="res://gun_effects/gun.gd" id="1_6wlrm"]
+[ext_resource type="Resource" uid="uid://ddebq8fpyktj6" path="res://gun_effects/resources/guns/gun_1.tres" id="2_367en"]
+
+[node name="Gun" type="Node3D"]
+script = ExtResource("1_6wlrm")
+gunResource = ExtResource("2_367en")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153104, 0.171201, 0.3514)

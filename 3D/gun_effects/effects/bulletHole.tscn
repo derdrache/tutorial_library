@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://uxt2pckwso32"]
+
+[ext_resource type="Script" path="res://gun_effects/effects/bullet_hole.gd" id="1_uwhgx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyjst"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0wkpp"]
+material = SubResource("StandardMaterial3D_jyjst")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.001
+
+[node name="BulletHole" type="Node3D"]
+script = ExtResource("1_uwhgx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0wkpp")
