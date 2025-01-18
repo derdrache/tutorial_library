@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=2 format=3 uid="uid://cq8638rwf8wtf"]
+
+[ext_resource type="Script" path="res://skillResource.gd" id="1_ywkhk"]
+
+[resource]
+script = ExtResource("1_ywkhk")
+name = "Heal"
+targetType = 1

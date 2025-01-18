@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlgavv5k6wxh"]
+
+[ext_resource type="PackedScene" uid="uid://bqqe74h3n5fph" path="res://turn_based_controller.tscn" id="1_q3jef"]
+[ext_resource type="Script" path="res://character.gd" id="2_gauvx"]
+[ext_resource type="Texture2D" uid="uid://brq7nvcsmx0fa" path="res://assets/icon.svg" id="3_k4tdg"]
+[ext_resource type="PackedScene" uid="uid://byvy758rff1s8" path="res://turn_based_agent.tscn" id="4_1x5dl"]
+[ext_resource type="Resource" uid="uid://c57bpy17mn2gi" path="res://Attack.tres" id="5_6x3pe"]
+[ext_resource type="Resource" uid="uid://y0eokcelipqm" path="res://heal.tres" id="6_7ux16"]
+[ext_resource type="Resource" uid="uid://b68hd1we65p73" path="res://slash.tres" id="7_jivg4"]
+[ext_resource type="PackedScene" uid="uid://dd7ey27i52xjy" path="res://turn_based_combat_series/command_menu/command_menu.tscn" id="8_4ct65"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="TurnBasedController" parent="." instance=ExtResource("1_q3jef")]
+
+[node name="Enemy" type="StaticBody2D" parent="."]
+position = Vector2(398, 149)
+script = ExtResource("2_gauvx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_k4tdg")
+
+[node name="TurnBasedAgent" parent="Enemy" instance=ExtResource("4_1x5dl")]
+character_type = 1
+basicAttack = ExtResource("5_6x3pe")
+
+[node name="Enemy2" type="StaticBody2D" parent="."]
+position = Vector2(616, 146)
+script = ExtResource("2_gauvx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_k4tdg")
+
+[node name="TurnBasedAgent" parent="Enemy2" instance=ExtResource("4_1x5dl")]
+character_type = 1
+basicAttack = ExtResource("5_6x3pe")
+
+[node name="Enemy3" type="StaticBody2D" parent="."]
+position = Vector2(839, 143)
+script = ExtResource("2_gauvx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy3"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_k4tdg")
+
+[node name="TurnBasedAgent" parent="Enemy3" instance=ExtResource("4_1x5dl")]
+character_type = 1
+basicAttack = ExtResource("5_6x3pe")
+
+[node name="Player" type="StaticBody2D" parent="."]
+position = Vector2(527, 550)
+script = ExtResource("2_gauvx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_k4tdg")
+
+[node name="TurnBasedAgent" parent="Player" instance=ExtResource("4_1x5dl")]
+basicAttack = ExtResource("5_6x3pe")
+skills = Array[Resource]([ExtResource("6_7ux16")])
+
+[node name="Player2" type="StaticBody2D" parent="."]
+position = Vector2(792, 541)
+script = ExtResource("2_gauvx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_k4tdg")
+
+[node name="TurnBasedAgent" parent="Player2" instance=ExtResource("4_1x5dl")]
+basicAttack = ExtResource("5_6x3pe")
+skills = Array[Resource]([ExtResource("7_jivg4")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CommandMenu" parent="CanvasLayer" instance=ExtResource("8_4ct65")]
+
+[node name="CommandLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ag1jyowesyf"]
+
+[ext_resource type="Script" path="res://turn_based_agent.gd" id="1_lmo7u"]
+[ext_resource type="Texture2D" uid="uid://dcyy2h2m51q0p" path="res://turn_based_combat_series/assets/Icon_Down.png" id="2_0ou6f"]
+[ext_resource type="Texture2D" uid="uid://bmjw1wsb7cmce" path="res://turn_based_combat_series/assets/Icon_Left.png" id="3_jku4p"]
+
+[node name="TurnBasedAgent" type="Node"]
+script = ExtResource("1_lmo7u")
+
+[node name="onTurnIconNode" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(25, 25)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0ou6f")
+expand_mode = 1
+
+[node name="targetIconNode" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(25, 25)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_jku4p")
+expand_mode = 1

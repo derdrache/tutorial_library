@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=2 format=3 uid="uid://b15nbqr4qq0rb"]
+
+[ext_resource type="Script" path="res://skillResource.gd" id="1_yhvr1"]
+
+[resource]
+script = ExtResource("1_yhvr1")
+name = "Slash"
+targetType = 0
