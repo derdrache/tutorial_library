@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://g70irsugfuqk"]
+
+[ext_resource type="Texture2D" uid="uid://bsi3j01ue30qh" path="res://assets/ui/icons/potion/Red Potion 3.png" id="1_jmcxp"]
+[ext_resource type="Script" path="res://hotbar_with_cooldown/hotbar_item.gd" id="2_3afy5"]
+
+[node name="HotbarItem" type="TextureRect"]
+texture = ExtResource("1_jmcxp")
+script = ExtResource("2_3afy5")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="CooldownContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CooldownCountLabel" type="Label" parent="CooldownContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "2"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

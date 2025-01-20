@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bhauhgki6kakl"]
+
+[ext_resource type="Texture2D" uid="uid://l8u7ao6vfvoi" path="res://assets/ui/icons/potion/Blue Potion 3.png" id="1_6kweu"]
+[ext_resource type="Script" path="res://hotbar_with_cooldown/item_resource/item_resource.gd" id="2_cqwnd"]
+
+[resource]
+script = ExtResource("2_cqwnd")
+icon = ExtResource("1_6kweu")
+cooldown = 14.0

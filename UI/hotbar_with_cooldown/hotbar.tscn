@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddror3tp3tekf"]
+
+[ext_resource type="Texture2D" uid="uid://ycs81jopou3c" path="res://hotbar_with_cooldown/assets/Inventory_Bar.png" id="1_mk6yw"]
+[ext_resource type="Script" path="res://hotbar_with_cooldown/hotbar.gd" id="1_sdyns"]
+[ext_resource type="Resource" uid="uid://c4lk0ry7j8a7" path="res://hotbar_with_cooldown/item_resource/health_potion.tres" id="2_tih5c"]
+[ext_resource type="Resource" uid="uid://bhauhgki6kakl" path="res://hotbar_with_cooldown/item_resource/mana_potion.tres" id="3_i25fg"]
+[ext_resource type="Resource" uid="uid://cugbehux4is4v" path="res://hotbar_with_cooldown/item_resource/mix_potion.tres" id="4_m6r18"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sdyns")
+items = Array[Resource]([ExtResource("2_tih5c"), ExtResource("3_i25fg"), ExtResource("4_m6r18")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(406, 80)
+layout_mode = 2
+texture = ExtResource("1_mk6yw")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+
+[node name="hotbar_item_container" type="HBoxContainer" parent="MarginContainer/TextureRect/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 6

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c4lk0ry7j8a7"]
+
+[ext_resource type="Script" path="res://hotbar_with_cooldown/item_resource/item_resource.gd" id="1_1mgta"]
+[ext_resource type="Texture2D" uid="uid://bsi3j01ue30qh" path="res://assets/ui/icons/potion/Red Potion 3.png" id="1_nv1wp"]
+
+[resource]
+script = ExtResource("1_1mgta")
+icon = ExtResource("1_nv1wp")
+cooldown = 4.0
