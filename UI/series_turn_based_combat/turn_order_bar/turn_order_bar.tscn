@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://dge5d1pfacnfa"]
+
+[ext_resource type="Script" path="res://turn_based_combat_series/turn_order_bar/turn_order_bar.gd" id="1_e1n3o"]
+[ext_resource type="PackedScene" uid="uid://wclf2xcrkfjj" path="res://turn_based_combat_series/turn_order_bar/character_display_container.tscn" id="2_xbuyo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fw8a6"]
+bg_color = Color(0.6, 0.6, 0.6, 0.588235)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="TurnOrderBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1n3o")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fw8a6")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+
+[node name="CharacterContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="CharacterDisplayContainer" parent="MarginContainer/PanelContainer/ScrollContainer/MarginContainer/CharacterContainer" instance=ExtResource("2_xbuyo")]
+layout_mode = 2
