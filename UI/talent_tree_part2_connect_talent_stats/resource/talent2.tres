@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TalentResource" load_steps=4 format=3 uid="uid://d0gdb6yayfbmu"]
+
+[ext_resource type="Script" path="res://Connect_talent_tree/resource/talent_resource.gd" id="1_xsatv"]
+[ext_resource type="Texture2D" uid="uid://c8mo0isrieqkl" path="res://assets/ui/icons/Icon_Heart_Full.png" id="2_7fm58"]
+[ext_resource type="Resource" uid="uid://hycixnpcec74" path="res://Connect_talent_tree/resource/talent1.tres" id="3_lv3gs"]
+
+[resource]
+script = ExtResource("1_xsatv")
+talentIcon = ExtResource("2_7fm58")
+is_unlocked = false
+unlockTalents = Array[ExtResource("1_xsatv")]([ExtResource("3_lv3gs")])
+stat = 0
+statValue = 50

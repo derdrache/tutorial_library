@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TalentResource" load_steps=4 format=3 uid="uid://dyvqlmlp0fwp0"]
+
+[ext_resource type="Script" path="res://Connect_talent_tree/resource/talent_resource.gd" id="1_5tom1"]
+[ext_resource type="Texture2D" uid="uid://dl1vkf5g5v1wg" path="res://assets/ui/icons/sword.png" id="2_xjime"]
+[ext_resource type="Resource" uid="uid://d0gdb6yayfbmu" path="res://Connect_talent_tree/resource/talent2.tres" id="3_37al5"]
+
+[resource]
+script = ExtResource("1_5tom1")
+talentIcon = ExtResource("2_xjime")
+is_unlocked = false
+unlockTalents = Array[ExtResource("1_5tom1")]([ExtResource("3_37al5")])

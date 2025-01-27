@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TalentResource" load_steps=3 format=3 uid="uid://hycixnpcec74"]
+
+[ext_resource type="Texture2D" uid="uid://fwgpsd80m1rk" path="res://assets/ui/icons/Icon_Focus.png" id="2_cgson"]
+[ext_resource type="Script" path="res://Connect_talent_tree/resource/talent_resource.gd" id="3_05mw2"]
+
+[resource]
+script = ExtResource("3_05mw2")
+talentIcon = ExtResource("2_cgson")
+is_unlocked = true
+unlockTalents = Array[ExtResource("3_05mw2")]([])
+stat = 1
+statValue = 10

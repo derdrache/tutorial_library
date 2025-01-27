@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=5 format=3 uid="uid://d2e2uvank832h"]
+
+[ext_resource type="Script" path="res://Connect_talent_tree/resource/talent_resource.gd" id="1_1y7ea"]
+[ext_resource type="Script" path="res://Connect_talent_tree/resource/character_resource.gd" id="1_47rdb"]
+[ext_resource type="Resource" uid="uid://hycixnpcec74" path="res://Connect_talent_tree/resource/talent1.tres" id="2_v5xlh"]
+[ext_resource type="Resource" uid="uid://d0gdb6yayfbmu" path="res://Connect_talent_tree/resource/talent2.tres" id="3_07cal"]
+
+[resource]
+script = ExtResource("1_47rdb")
+level = 1
+health = 100
+attack = 30
+talents = Array[ExtResource("1_1y7ea")]([ExtResource("2_v5xlh"), ExtResource("3_07cal")])

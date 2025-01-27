@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TalentResource" load_steps=4 format=3 uid="uid://qw6e0mfldceu"]
+
+[ext_resource type="Script" path="res://Connect_talent_tree/resource/talent_resource.gd" id="1_jkpxn"]
+[ext_resource type="Texture2D" uid="uid://rr5610bouoc1" path="res://assets/ui/icons/Icon_Small_Coin.png" id="2_cay0u"]
+[ext_resource type="Resource" uid="uid://bvuwsq6qkypwr" path="res://Connect_talent_tree/resource/talent3.tres" id="3_kqgis"]
+
+[resource]
+script = ExtResource("1_jkpxn")
+talentIcon = ExtResource("2_cay0u")
+is_unlocked = false
+unlockTalents = Array[ExtResource("1_jkpxn")]([ExtResource("3_kqgis")])
