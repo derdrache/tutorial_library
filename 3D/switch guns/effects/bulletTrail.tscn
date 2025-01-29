@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2w18qybwbgj0"]
+
+[ext_resource type="Script" path="res://switch guns/effects/bullet_trail.gd" id="1_aehn4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etxfa"]
+albedo_color = Color(0.803922, 0.654902, 0.137255, 1)
+emission_enabled = true
+emission = Color(0.803922, 0.654902, 0.137255, 1)
+emission_energy_multiplier = 6.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jd6lk"]
+material = SubResource("StandardMaterial3D_etxfa")
+radius = 0.05
+height = 0.2
+
+[node name="BulletTrail" type="Node3D"]
+script = ExtResource("1_aehn4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_jd6lk")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 0.15)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GunResource" load_steps=3 format=3 uid="uid://b2fgo7mh1gaw4"]
+
+[ext_resource type="PackedScene" uid="uid://b7iqvbdemkcmi" path="res://assets/blaster_packages/blasterF.glb" id="1_4ea7u"]
+[ext_resource type="Script" path="res://switch guns/resources/guns/gun_resource.gd" id="2_txlov"]
+
+[resource]
+script = ExtResource("2_txlov")
+model = ExtResource("1_4ea7u")
+bulletSpawnOffset = Vector3(-0.162194, 0.0908785, 0.47537)
+damage = 100
+shootCooldown = 0.5
+reloadTime = 6.0
+magazineSize = 1
+bullets = 10

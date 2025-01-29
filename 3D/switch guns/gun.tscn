@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ivread0rtkas"]
+
+[ext_resource type="Script" path="res://switch guns/gun.gd" id="1_6wlrm"]
+[ext_resource type="Resource" uid="uid://ddebq8fpyktj6" path="res://switch guns/resources/guns/gun_1.tres" id="2_367en"]
+
+[node name="Gun" type="Node3D"]
+script = ExtResource("1_6wlrm")
+gunResource = ExtResource("2_367en")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162194, 0.0908785, 0.47537)
+
+[node name="shootCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="reloadTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
