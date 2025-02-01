@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://obxvdcooy1xa"]
+
+[ext_resource type="Script" path="res://turn_based_combat_series/status_bar/resource/character_resource.gd" id="1_i5x71"]
+
+[resource]
+script = ExtResource("1_i5x71")
+name = "Name"
+maxHealth = 100
+currentHealth = 100
+maxMana = 50
+currentMana = 50
+speed = 50
+overDriveValue = 0

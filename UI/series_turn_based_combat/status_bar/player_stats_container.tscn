@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2dc5d587b00y"]
+
+[ext_resource type="StyleBox" uid="uid://b7uvcrl8w8hm4" path="res://turn_based_combat_series/status_bar/focus_player_stats.tres" id="1_01t3c"]
+[ext_resource type="Script" path="res://turn_based_combat_series/status_bar/player_stats_container.gd" id="1_wpd00"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r48qr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcmgi"]
+bg_color = Color(0.8146, 0.531818, 0, 1)
+
+[node name="PlayerStatsContainer" type="PanelContainer"]
+theme_override_styles/panel = ExtResource("1_01t3c")
+script = ExtResource("1_wpd00")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Name"
+
+[node name="HP1" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "HP"
+
+[node name="HP2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "5555"
+
+[node name="Mana1" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "MP"
+
+[node name="Mana2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "555"
+
+[node name="OverDriveBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_r48qr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pcmgi")
+step = 1.0
+value = 30.0
+show_percentage = false
