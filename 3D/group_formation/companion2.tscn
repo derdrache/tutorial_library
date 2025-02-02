@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5jysk3386ey8"]
+
+[ext_resource type="PackedScene" uid="uid://by82rjr3oyggr" path="res://assets/platform/character/character_bear.gltf" id="1_ao4j4"]
+[ext_resource type="Script" path="res://group_formation/companion.gd" id="1_yfgep"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8we8r"]
+
+[node name="Companion" type="CharacterBody3D"]
+script = ExtResource("1_yfgep")
+companionNumber = 2
+
+[node name="character_bear2" parent="." instance=ExtResource("1_ao4j4")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_8we8r")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
