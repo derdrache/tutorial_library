@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3kqdnk0vhk7l"]
+
+[ext_resource type="Script" path="res://handle_multiple_floors/switch_layer_point.gd" id="1_yndve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmotm"]
+size = Vector2(16, 16)
+
+[node name="SwitchLayerPoint" type="Area2D"]
+script = ExtResource("1_yndve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nmotm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
