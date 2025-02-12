@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://ct0aaeblg76o0"]
+
+[ext_resource type="PackedScene" uid="uid://dkcjsisc0fenr" path="res://assets/soccer/football_field.fbx" id="1_is2yf"]
+[ext_resource type="PackedScene" uid="uid://b5iwnw04xujo1" path="res://rigidBody3D/ball.tscn" id="2_j74gp"]
+[ext_resource type="PackedScene" uid="uid://co3hyb612arn2" path="res://rigidBody3D/player.tscn" id="3_jyv6p"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vwdwg"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_pxnn0"]
+sky_material = SubResource("ProceduralSkyMaterial_vwdwg")
+
+[sub_resource type="Environment" id="Environment_4dpkk"]
+background_mode = 2
+sky = SubResource("Sky_pxnn0")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjfvh"]
+size = Vector3(16.0107, 1, 23.99)
+
+[node name="SoccerField" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4dpkk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Field" type="StaticBody3D" parent="."]
+
+[node name="football_field" parent="Field" instance=ExtResource("1_is2yf")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Field"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.578639, 0)
+shape = SubResource("BoxShape3D_fjfvh")
+
+[node name="Ball" parent="." instance=ExtResource("2_j74gp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21438, 0.0575468)
+
+[node name="player" parent="." instance=ExtResource("3_jyv6p")]
+
+[editable path="Field/football_field"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5iwnw04xujo1"]
+
+[ext_resource type="PackedScene" uid="uid://b4k2kxrf1wcqr" path="res://assets/soccer/soccer_ball.fbx" id="1_6a88s"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tb82g"]
+radius = 0.10538
+
+[node name="StaticBody3D2" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86245, 0)
+linear_damp = 1.0
+
+[node name="soccer_ball" parent="." instance=ExtResource("1_6a88s")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_tb82g")
+
+[editable path="soccer_ball"]

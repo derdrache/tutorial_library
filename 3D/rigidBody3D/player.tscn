@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://co3hyb612arn2"]
+
+[ext_resource type="Script" path="res://rigidBody3D/player.gd" id="1_vn4xs"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8hccs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofu45"]
+size = Vector3(0.339844, 0.599365, 0.341553)
+
+[node name="player" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44481, 1.94021)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 100.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 1, 0)
+linear_damp = 3.0
+script = ExtResource("1_vn4xs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_8hccs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ofu45")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906307, 0.422618, 0, -0.422618, 0.906307, 0, 3.322, 5.74)
+fov = 20.0
