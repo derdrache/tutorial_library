@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdtpcwonvm6tl"]
+
+[ext_resource type="Script" path="res://respawn/worldEnd.gd" id="1_u3oni"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d7tcb"]
+
+[node name="WorldEnd" type="Area2D"]
+script = ExtResource("1_u3oni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-97, 158)
+shape = SubResource("WorldBoundaryShape2D_d7tcb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
