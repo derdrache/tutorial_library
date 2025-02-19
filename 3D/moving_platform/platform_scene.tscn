@@ -1,0 +1,173 @@
+[gd_scene load_steps=9 format=3 uid="uid://drxuumypw2ouu"]
+
+[ext_resource type="PackedScene" uid="uid://qe5uketsnmwc" path="res://moving_platform/platform_character.tscn" id="1_tb6q1"]
+[ext_resource type="PackedScene" uid="uid://b451pd2swildd" path="res://assets/platform/tiles/tileHigh_forest.gltf.glb" id="2_a1mle"]
+[ext_resource type="PackedScene" uid="uid://drfkabmm7jaof" path="res://moving_platform/movingPlatform.tscn" id="3_i6uvu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0kvkr"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_edw3u"]
+sky_material = SubResource("ProceduralSkyMaterial_0kvkr")
+
+[sub_resource type="Environment" id="Environment_it631"]
+background_mode = 2
+sky = SubResource("Sky_edw3u")
+
+[sub_resource type="Curve3D" id="Curve3D_j87xo"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.120926, -2.43783e-05, 0.0726585, 0, 0, 0, 0, 0, 0, 0.0788465, -2.43783e-05, 19.1347),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_1u0pc"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.13842, 4.88162e-05, -0.000431538, 0, 0, 0, 0, 0, 0, -16.1464, 4.88162e-05, -0.252908),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="PlatformScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_it631")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Platform1" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23)
+
+[node name="tileHigh_forest_gltf10" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -7)
+
+[node name="tileHigh_forest_gltf11" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -7)
+
+[node name="tileHigh_forest_gltf12" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, -7)
+
+[node name="tileHigh_forest_gltf13" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -9)
+
+[node name="tileHigh_forest_gltf14" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -9)
+
+[node name="tileHigh_forest_gltf15" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, -9)
+
+[node name="tileHigh_forest_gltf16" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -11)
+
+[node name="tileHigh_forest_gltf17" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -11)
+
+[node name="tileHigh_forest_gltf18" parent="Node3D/Platform1" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, -11)
+
+[node name="Platform2" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -23)
+
+[node name="tileHigh_forest_gltf19" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -2, -7)
+
+[node name="tileHigh_forest_gltf20" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -2, -7)
+
+[node name="tileHigh_forest_gltf21" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, -7)
+
+[node name="tileHigh_forest_gltf22" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -2, -9)
+
+[node name="tileHigh_forest_gltf23" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -2, -9)
+
+[node name="tileHigh_forest_gltf24" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, -9)
+
+[node name="tileHigh_forest_gltf25" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -2, -11)
+
+[node name="tileHigh_forest_gltf26" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -2, -11)
+
+[node name="tileHigh_forest_gltf27" parent="Node3D/Platform2" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, -11)
+
+[node name="Platform3" type="Node3D" parent="Node3D"]
+transform = Transform3D(4.2, 0, 0, 0, 4.2, 0, 0, 0, 4.2, 21, 0, 0)
+
+[node name="tileHigh_forest_gltf28" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 1.90476, -0.47619, 0.238095)
+
+[node name="tileHigh_forest_gltf29" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 2.38095, -0.47619, 0.238095)
+
+[node name="tileHigh_forest_gltf30" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 1.42857, -0.47619, 0.238095)
+
+[node name="tileHigh_forest_gltf31" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 1.90476, -0.47619, -0.238095)
+
+[node name="tileHigh_forest_gltf32" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 2.38095, -0.47619, -0.238095)
+
+[node name="tileHigh_forest_gltf33" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 1.42857, -0.47619, -0.238095)
+
+[node name="tileHigh_forest_gltf34" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 1.90476, -0.47619, -0.714286)
+
+[node name="tileHigh_forest_gltf35" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 2.38095, -0.47619, -0.714286)
+
+[node name="tileHigh_forest_gltf36" parent="Node3D/Platform3" instance=ExtResource("2_a1mle")]
+transform = Transform3D(0.238095, 0, 0, 0, 0.238095, 0, 0, 0, 0.238095, 1.42857, -0.47619, -0.714286)
+
+[node name="Platform4" type="Node3D" parent="Node3D"]
+
+[node name="tileHigh_forest_gltf" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1)
+
+[node name="tileHigh_forest_gltf2" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 1)
+
+[node name="tileHigh_forest_gltf3" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, 1)
+
+[node name="tileHigh_forest_gltf4" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -1)
+
+[node name="tileHigh_forest_gltf5" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -1)
+
+[node name="tileHigh_forest_gltf6" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, -1)
+
+[node name="tileHigh_forest_gltf7" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3)
+
+[node name="tileHigh_forest_gltf8" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -3)
+
+[node name="tileHigh_forest_gltf9" parent="Node3D/Platform4" instance=ExtResource("2_a1mle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, -3)
+
+[node name="PlatformCharacter" parent="." instance=ExtResource("1_tb6q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.9)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("3_i6uvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, -25.9)
+curve = SubResource("Curve3D_j87xo")
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("3_i6uvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, -0.7, -1)
+curve = SubResource("Curve3D_1u0pc")

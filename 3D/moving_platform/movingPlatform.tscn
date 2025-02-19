@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://drfkabmm7jaof"]
+
+[ext_resource type="PackedScene" uid="uid://dmigphkcnrohy" path="res://assets/platform/tiles/tileLarge_forest.gltf.glb" id="1_6yc8m"]
+
+[sub_resource type="Curve3D" id="Curve3D_hofev"]
+resource_local_to_scene = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pyct"]
+size = Vector3(6, 1, 6)
+
+[sub_resource type="Animation" id="Animation_xqeax"]
+resource_name = "move"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ndbtk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ligp1"]
+_data = {
+"RESET": SubResource("Animation_ndbtk"),
+"move": SubResource("Animation_xqeax")
+}
+
+[node name="MovingPlatform" type="Path3D"]
+curve = SubResource("Curve3D_hofev")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="PathFollow3D"]
+remote_path = NodePath("../../AnimatableBody3D")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="tileLarge_forest_gltf" parent="AnimatableBody3D" instance=ExtResource("1_6yc8m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_1pyct")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody3D"]
+libraries = {
+"": SubResource("AnimationLibrary_ligp1")
+}
+autoplay = "move"
