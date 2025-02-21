@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfb7ociwktpa7"]
+
+[ext_resource type="Texture2D" uid="uid://fnjgpme4bmdw" path="res://tutorial_collection/map_full_video/assets/Map.png" id="1_5lkxu"]
+[ext_resource type="PackedScene" uid="uid://io0ckv78xnll" path="res://tutorial_collection/map_full_video/way_connection.tscn" id="2_fm1ya"]
+[ext_resource type="PackedScene" uid="uid://br01qv71h3hg7" path="res://tutorial_collection/map_full_video/way_point.tscn" id="2_mjhyt"]
+[ext_resource type="PackedScene" uid="uid://bd2tloxei5r2t" path="res://tutorial_collection/map_full_video/info_window.tscn" id="3_chn4m"]
+
+[node name="Map" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(2000, 1400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -285.0
+offset_right = 595.0
+offset_bottom = 395.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5lkxu")
+expand_mode = 1
+
+[node name="WayConnection" parent="Control" instance=ExtResource("2_fm1ya")]
+points = PackedVector2Array(530, 493, 547, 478, 567, 460, 584, 444, 600, 429, 617, 411, 626, 399, 630, 381, 628, 358, 635, 339, 649, 315, 664, 285, 672, 259, 687, 220, 698, 201, 715, 164, 733, 138, 748, 120, 768, 101, 792, 77)
+
+[node name="WayPoints" type="Control" parent="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WayPoint" parent="Control/WayPoints" instance=ExtResource("2_mjhyt")]
+offset_left = 517.0
+offset_top = 485.0
+offset_right = 557.0
+offset_bottom = 525.0
+title = "Fox City"
+
+[node name="WayPoint2" parent="Control/WayPoints" instance=ExtResource("2_mjhyt")]
+offset_left = 787.0
+offset_top = 67.0
+offset_right = 827.0
+offset_bottom = 107.0
+title = "Forest"
+sceneNumber = 1
+
+[node name="InfoWindow" parent="Control" instance=ExtResource("3_chn4m")]
+visible = false
+layout_mode = 1
