@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://chgu20yg3k1d4"]
+
+[ext_resource type="PackedScene" uid="uid://bcbujl2yb7tei" path="res://assets/platform/character/character_duck.gltf" id="1_ljjvx"]
+[ext_resource type="Script" path="res://simple_enemy_ki/enemy.gd" id="1_ycc44"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wu8nl"]
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_ycc44")
+
+[node name="character_duck2" parent="." instance=ExtResource("1_ljjvx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950016, 0)
+shape = SubResource("CapsuleShape3D_wu8nl")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 1.5
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
