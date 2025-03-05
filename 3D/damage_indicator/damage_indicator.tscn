@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://soly4tbrwp7m"]
+
+[ext_resource type="Script" path="res://damage_indicator/damage_indicator.gd" id="1_vguvn"]
+
+[node name="damageIndicator" type="Node3D"]
+script = ExtResource("1_vguvn")
