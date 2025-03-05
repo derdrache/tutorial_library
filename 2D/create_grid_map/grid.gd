@@ -21,14 +21,18 @@ extends GridContainer
 		cellHeight = value
 		_remove_grid()
 		_create_grid()
+@export var borderSize = 0:
+	set(value):
+		borderSize = value
+		_remove_grid()
+		_create_grid()
 
-const GRID_CELL = preload("res://grid_cell.tscn")
-const borderSize = 4
+const GRID_CELL = preload("res://grid_map/grid_cell.tscn")
 
-func _ready() -> void:
-	_create_grid()
-	
 func _create_grid():
+	add_theme_constant_override("h_separation", borderSize)
+	add_theme_constant_override("v_separation", borderSize)
+	
 	columns = width
 
 	for i in width * height:
