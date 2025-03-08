@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddjtke3xneuu6"]
+
+[ext_resource type="Script" path="res://dynamic_inspector/dynamic_inspector.gd" id="1_v67ty"]
+
+[node name="Test" type="Node3D"]
+script = ExtResource("1_v67ty")
+option = 2
