@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://6uns4s1mja3c"]
+
+[ext_resource type="Script" path="res://3D_simple_state_machine/boss_duck.gd" id="1_geb8c"]
+[ext_resource type="PackedScene" uid="uid://bcbujl2yb7tei" path="res://assets/platform/character/character_duck.gltf" id="1_lfwin"]
+[ext_resource type="Script" path="res://3D_simple_state_machine/idle.gd" id="3_edkfe"]
+[ext_resource type="Script" path="res://3D_simple_state_machine/follow.gd" id="4_7knl3"]
+[ext_resource type="Script" path="res://3D_simple_state_machine/push.gd" id="5_m0j5d"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wu8nl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_60y46"]
+radius = 5.205
+
+[node name="BossDuck" type="CharacterBody3D"]
+script = ExtResource("1_geb8c")
+
+[node name="character_duck2" parent="." instance=ExtResource("1_lfwin")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.973122, 0)
+shape = SubResource("CapsuleShape3D_wu8nl")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 1.5
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_60y46")
+
+[node name="StateNodes" type="Node" parent="."]
+
+[node name="IDLE" type="Node" parent="StateNodes"]
+script = ExtResource("3_edkfe")
+
+[node name="FOLLOW" type="Node" parent="StateNodes"]
+script = ExtResource("4_7knl3")
+
+[node name="PUSH" type="Node" parent="StateNodes"]
+script = ExtResource("5_m0j5d")
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

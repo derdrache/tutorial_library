@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://sjgbt6c11ptc"]
+
+[ext_resource type="Script" path="res://platform_character.gd" id="1_lkhak"]
+[ext_resource type="PackedScene" uid="uid://by82rjr3oyggr" path="res://assets/platform/character/character_bear.gltf" id="2_rnf7s"]
+[ext_resource type="PackedScene" uid="uid://bcbujl2yb7tei" path="res://assets/platform/character/character_duck.gltf" id="3_rc3f6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xpj2"]
+height = 1.71945
+
+[node name="PlatformCharacter" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.63422, 1.40906)
+script = ExtResource("1_lkhak")
+
+[node name="character_bear2" parent="." instance=ExtResource("2_rnf7s")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.898568, 0)
+
+[node name="character_duck2" parent="." instance=ExtResource("3_rc3f6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.897495, 0)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0408654, 0)
+shape = SubResource("CapsuleShape3D_0xpj2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 5.414, 22.029)
+fov = 20.0

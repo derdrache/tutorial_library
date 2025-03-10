@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://byxxxyslb3fv1"]
+
+[ext_resource type="PackedScene" uid="uid://cbjvh1yjabxob" path="res://assets/platform/tiles/tileLarge_desert.gltf.glb" id="1_lfmak"]
+[ext_resource type="PackedScene" uid="uid://4nhrd64b1pdi" path="res://assets/platform/tiles/tileHigh_desert.gltf.glb" id="2_n2jkc"]
+[ext_resource type="PackedScene" uid="uid://fexjuymc5mbd" path="res://assets/platform/detail_desert.gltf.glb" id="3_itheg"]
+[ext_resource type="PackedScene" uid="uid://cqdu2g10kslxn" path="res://assets/platform/tree_desert.gltf.glb" id="4_u8va6"]
+[ext_resource type="PackedScene" uid="uid://6uns4s1mja3c" path="res://collection/3D_simple_state_machine/boss_duck.tscn" id="6_garlc"]
+[ext_resource type="PackedScene" uid="uid://sjgbt6c11ptc" path="res://platform_character.tscn" id="6_ykd6y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qmcj5"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_fm38k"]
+sky_material = SubResource("ProceduralSkyMaterial_qmcj5")
+
+[sub_resource type="Environment" id="Environment_xhgwa"]
+background_mode = 2
+sky = SubResource("Sky_fm38k")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_j6a4i"]
+vertices = PackedVector3Array(1.25, 1.5, -5.25, -1.25, 1.5, -5.25, -1.25, 1.5, -4.25, 3.25, 1.5, -8.25, 2, 1.5, -8.25, 1.75, 1.5, -5.75, -2, 1.5, -3.75, 1.75, 1.5, 3.5, 3, 1.5, 3.5, 3.75, 1.5, -8.75, 8.25, 1.5, -10.25, 4.75, 1.5, 4.75, 4.5, 1.5, 6.25, 8.25, 1.5, 6.25, 3.75, 1.5, -10.25, 1, 1.5, 4.5, -1.75, 1.5, -8.25, -2.25, 1.5, -8.25, -2.75, 1.5, -7.25, -1.75, 1.5, -6.25, -4.25, 1.5, -3.75, -5, 1.5, -4.5, -8.25, 1.5, -7.25, -4.25, 1.5, -6.25, 2.25, 1.5, 6.75, 2.75, 1.5, 6.25, 1, 1.5, 5.25, 2.25, 1.5, 8.25, -3.25, 1.5, 8.25, -8.25, 1.5, 9.25, -5, 1.5, -5.5, -3.75, 1.5, 9.25, -0.25, 2.5, -7.25, -0.25, 2.5, -6.75, 0.25, 2.5, -6.75, 0.25, 2.5, -7.25)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(2, 0, 6), PackedInt32Array(6, 0, 7), PackedInt32Array(7, 0, 8), PackedInt32Array(3, 9, 5), PackedInt32Array(5, 9, 10), PackedInt32Array(13, 12, 11), PackedInt32Array(9, 14, 10), PackedInt32Array(11, 8, 13), PackedInt32Array(13, 8, 0), PackedInt32Array(13, 0, 5), PackedInt32Array(13, 5, 10), PackedInt32Array(7, 15, 6), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(20, 22, 21), PackedInt32Array(19, 23, 18), PackedInt32Array(18, 23, 22), PackedInt32Array(26, 25, 24), PackedInt32Array(24, 27, 26), PackedInt32Array(26, 27, 28), PackedInt32Array(26, 28, 15), PackedInt32Array(15, 28, 29), PackedInt32Array(15, 29, 20), PackedInt32Array(20, 29, 22), PackedInt32Array(22, 23, 30), PackedInt32Array(22, 30, 21), PackedInt32Array(28, 31, 29), PackedInt32Array(20, 6, 15), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33)]
+geometry_source_geometry_mode = 1
+agent_radius = 0.75
+
+[node name="PlatformerScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xhgwa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="map" type="Node3D" parent="." groups=["navigation_mesh_source_group"]]
+
+[node name="tileLarge_desert_gltf" parent="map" instance=ExtResource("1_lfmak")]
+
+[node name="tileLarge_desert_gltf2" parent="map" instance=ExtResource("1_lfmak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+
+[node name="tileLarge_desert_gltf3" parent="map" instance=ExtResource("1_lfmak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="tileLarge_desert_gltf4" parent="map" instance=ExtResource("1_lfmak")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, -8)
+
+[node name="tileLarge_desert_gltf6" parent="map" instance=ExtResource("1_lfmak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -5)
+
+[node name="tileLarge_desert_gltf7" parent="map" instance=ExtResource("1_lfmak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 1)
+
+[node name="tileHigh_desert_gltf3" parent="map" instance=ExtResource("2_n2jkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="tileLarge_desert_gltf8" parent="map" instance=ExtResource("1_lfmak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="tileLarge_desert_gltf9" parent="map" instance=ExtResource("1_lfmak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="tileLarge_desert_gltf10" parent="map" instance=ExtResource("1_lfmak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7)
+
+[node name="detail_desert_gltf2" parent="map" instance=ExtResource("3_itheg")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -5.93185, 1, 5.48236)
+
+[node name="detail_desert_gltf3" parent="map" instance=ExtResource("3_itheg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 1, -2)
+
+[node name="detail_desert_gltf4" parent="map" instance=ExtResource("3_itheg")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6, 1, -6)
+
+[node name="tree_desert_gltf" parent="map" instance=ExtResource("4_u8va6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, 1, -5)
+
+[node name="tree_desert_gltf2" parent="map" instance=ExtResource("4_u8va6")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2.9, 1, 5)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_j6a4i")
+
+[node name="PlatformCharacter" parent="." instance=ExtResource("6_ykd6y")]
+transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, -6.7, 1.43422, 8.40906)
+
+[node name="BossDuck" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_garlc")]
+transform = Transform3D(-1.73205, 0, 1, 0, 2, 0, -1, 0, -1.73205, 4, 1, -6)
+target = NodePath("../PlatformCharacter")
