@@ -12,7 +12,6 @@ func _set_target():
 	target = get_tree().get_first_node_in_group("player")
 
 func _physics_process(delta: float) -> void:
-	return
 	var nextPathPosition = navigation_agent_3d.get_next_path_position()
 	
 	var direction = global_position.direction_to(nextPathPosition)
