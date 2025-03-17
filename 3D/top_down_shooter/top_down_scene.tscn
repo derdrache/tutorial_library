@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0cius4neofw7"]
+
+[ext_resource type="PackedScene" uid="uid://cmybc24gw8lj6" path="res://top_down_shooter/tank.tscn" id="1_f4jft"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="3_708dy"]
+[ext_resource type="Texture2D" uid="uid://iu1ubys7lnix" path="res://assets/prototype/Orange/texture_06.png" id="3_sum8v"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s0hs8"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_okqct"]
+sky_material = SubResource("ProceduralSkyMaterial_s0hs8")
+
+[sub_resource type="Environment" id="Environment_lwmmm"]
+background_mode = 2
+sky = SubResource("Sky_okqct")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84y6c"]
+albedo_texture = ExtResource("3_708dy")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5iojh"]
+albedo_texture = ExtResource("3_sum8v")
+uv1_triplanar = true
+
+[node name="TopDownScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lwmmm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_84y6c")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.9, 0)
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_5iojh")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.9, 0)
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_5iojh")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.9, 11)
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_5iojh")
+
+[node name="Tank" parent="." instance=ExtResource("1_f4jft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)

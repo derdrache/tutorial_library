@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmybc24gw8lj6"]
+
+[ext_resource type="Script" path="res://top_down_shooter/tank.gd" id="1_j5jw0"]
+[ext_resource type="PackedScene" uid="uid://klbn3u2cxyd6" path="res://assets/tank/CartoonTank.fbx" id="3_fqkg2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aihsp"]
+
+[node name="Tank" type="CharacterBody3D"]
+script = ExtResource("1_j5jw0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_aihsp")
+
+[node name="rotationNode" type="Node3D" parent="."]
+
+[node name="CartoonTank" parent="rotationNode" instance=ExtResource("3_fqkg2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="bulletStartMarker" type="Marker3D" parent="rotationNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.9)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, -23.06, 33.08, 23.78)
+fov = 20.0
