@@ -1,0 +1,183 @@
+[gd_scene load_steps=31 format=3 uid="uid://c4oi8ym0pj8f6"]
+
+[ext_resource type="PackedScene" uid="uid://byaiedxobsii5" path="res://move_on_grid/grid.tscn" id="1_snv1w"]
+[ext_resource type="PackedScene" uid="uid://b5bmxy7nuk7qp" path="res://move_on_grid/grid_character.tscn" id="2_sfu20"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v7hf"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_uec10"]
+sky_material = SubResource("ProceduralSkyMaterial_2v7hf")
+
+[sub_resource type="Environment" id="Environment_8c8h1"]
+background_mode = 2
+sky = SubResource("Sky_uec10")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oshmn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_46uw3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o5gcc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oefso"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kec2e"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jehn0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lt47g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_851ac"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nosql"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4wkgg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cjwsc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_atw33"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j2eib"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uqfox"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jw6gd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8bp80"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xtg35"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vgnok"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cms5m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ikydd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_06gax"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gg6w6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m52ah"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4nw7l"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8osya"]
+
+[node name="Test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8c8h1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Grid" parent="." instance=ExtResource("1_snv1w")]
+
+[node name="@MeshInstance3D@17263" type="MeshInstance3D" parent="Grid"]
+mesh = SubResource("PlaneMesh_oshmn")
+
+[node name="@MeshInstance3D@17264" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 0)
+mesh = SubResource("PlaneMesh_46uw3")
+
+[node name="@MeshInstance3D@17265" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 0)
+mesh = SubResource("PlaneMesh_o5gcc")
+
+[node name="@MeshInstance3D@17266" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 0)
+mesh = SubResource("PlaneMesh_oefso")
+
+[node name="@MeshInstance3D@17267" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 0)
+mesh = SubResource("PlaneMesh_kec2e")
+
+[node name="@MeshInstance3D@17268" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.2)
+mesh = SubResource("PlaneMesh_jehn0")
+
+[node name="@MeshInstance3D@17269" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 2.2)
+mesh = SubResource("PlaneMesh_lt47g")
+
+[node name="@MeshInstance3D@17270" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 2.2)
+mesh = SubResource("PlaneMesh_851ac")
+
+[node name="@MeshInstance3D@17271" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 2.2)
+mesh = SubResource("PlaneMesh_nosql")
+
+[node name="@MeshInstance3D@17272" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 2.2)
+mesh = SubResource("PlaneMesh_4wkgg")
+
+[node name="@MeshInstance3D@17273" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.4)
+mesh = SubResource("PlaneMesh_cjwsc")
+
+[node name="@MeshInstance3D@17274" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 4.4)
+mesh = SubResource("PlaneMesh_atw33")
+
+[node name="@MeshInstance3D@17275" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 4.4)
+mesh = SubResource("PlaneMesh_j2eib")
+
+[node name="@MeshInstance3D@17276" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 4.4)
+mesh = SubResource("PlaneMesh_uqfox")
+
+[node name="@MeshInstance3D@17277" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.4)
+mesh = SubResource("PlaneMesh_jw6gd")
+
+[node name="@MeshInstance3D@17278" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.6)
+mesh = SubResource("PlaneMesh_8bp80")
+
+[node name="@MeshInstance3D@17279" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 6.6)
+mesh = SubResource("PlaneMesh_xtg35")
+
+[node name="@MeshInstance3D@17280" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 6.6)
+mesh = SubResource("PlaneMesh_vgnok")
+
+[node name="@MeshInstance3D@17281" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 6.6)
+mesh = SubResource("PlaneMesh_cms5m")
+
+[node name="@MeshInstance3D@17282" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 6.6)
+mesh = SubResource("PlaneMesh_ikydd")
+
+[node name="@MeshInstance3D@17283" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8)
+mesh = SubResource("PlaneMesh_06gax")
+
+[node name="@MeshInstance3D@17284" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 8.8)
+mesh = SubResource("PlaneMesh_gg6w6")
+
+[node name="@MeshInstance3D@17285" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 8.8)
+mesh = SubResource("PlaneMesh_m52ah")
+
+[node name="@MeshInstance3D@17286" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 8.8)
+mesh = SubResource("PlaneMesh_4nw7l")
+
+[node name="@MeshInstance3D@17287" type="MeshInstance3D" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 8.8)
+mesh = SubResource("PlaneMesh_8osya")
+
+[node name="GridCharacter" parent="." node_paths=PackedStringArray("grid") instance=ExtResource("2_sfu20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+grid = NodePath("../Grid")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 4.3, 23.37, 30.475)
+fov = 20.0

@@ -1,0 +1,155 @@
+[gd_scene load_steps=27 format=3 uid="uid://byaiedxobsii5"]
+
+[ext_resource type="Script" path="res://move_on_grid/grid.gd" id="1_4ciwe"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7p0r0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bt6pf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d0s0a"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mg87l"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xe4w3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jo12q"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yeti5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ki8es"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c74qo"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u3lj2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_562c3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ndg2g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h43jr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n42p4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qm8n6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mfqsi"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nokgw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qqqns"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n0u5k"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6gw3o"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_phyav"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tv82g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tsymc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2f10g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_na5vm"]
+
+[node name="Grid" type="Node3D"]
+script = ExtResource("1_4ciwe")
+
+[node name="@MeshInstance3D@47818" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_7p0r0")
+
+[node name="@MeshInstance3D@47819" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 0)
+mesh = SubResource("PlaneMesh_bt6pf")
+
+[node name="@MeshInstance3D@47820" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 0)
+mesh = SubResource("PlaneMesh_d0s0a")
+
+[node name="@MeshInstance3D@47821" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 0)
+mesh = SubResource("PlaneMesh_mg87l")
+
+[node name="@MeshInstance3D@47822" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 0)
+mesh = SubResource("PlaneMesh_xe4w3")
+
+[node name="@MeshInstance3D@47823" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.2)
+mesh = SubResource("PlaneMesh_jo12q")
+
+[node name="@MeshInstance3D@47824" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 2.2)
+mesh = SubResource("PlaneMesh_yeti5")
+
+[node name="@MeshInstance3D@47825" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 2.2)
+mesh = SubResource("PlaneMesh_ki8es")
+
+[node name="@MeshInstance3D@47826" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 2.2)
+mesh = SubResource("PlaneMesh_c74qo")
+
+[node name="@MeshInstance3D@47827" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 2.2)
+mesh = SubResource("PlaneMesh_u3lj2")
+
+[node name="@MeshInstance3D@47828" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.4)
+mesh = SubResource("PlaneMesh_562c3")
+
+[node name="@MeshInstance3D@47829" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 4.4)
+mesh = SubResource("PlaneMesh_ndg2g")
+
+[node name="@MeshInstance3D@47830" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 4.4)
+mesh = SubResource("PlaneMesh_h43jr")
+
+[node name="@MeshInstance3D@47831" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 4.4)
+mesh = SubResource("PlaneMesh_n42p4")
+
+[node name="@MeshInstance3D@47832" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.4)
+mesh = SubResource("PlaneMesh_qm8n6")
+
+[node name="@MeshInstance3D@47833" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.6)
+mesh = SubResource("PlaneMesh_mfqsi")
+
+[node name="@MeshInstance3D@47834" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 6.6)
+mesh = SubResource("PlaneMesh_nokgw")
+
+[node name="@MeshInstance3D@47835" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 6.6)
+mesh = SubResource("PlaneMesh_qqqns")
+
+[node name="@MeshInstance3D@47836" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 6.6)
+mesh = SubResource("PlaneMesh_n0u5k")
+
+[node name="@MeshInstance3D@47837" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 6.6)
+mesh = SubResource("PlaneMesh_6gw3o")
+
+[node name="@MeshInstance3D@47838" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8)
+mesh = SubResource("PlaneMesh_phyav")
+
+[node name="@MeshInstance3D@47839" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 8.8)
+mesh = SubResource("PlaneMesh_tv82g")
+
+[node name="@MeshInstance3D@47840" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, 8.8)
+mesh = SubResource("PlaneMesh_tsymc")
+
+[node name="@MeshInstance3D@47841" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0, 8.8)
+mesh = SubResource("PlaneMesh_2f10g")
+
+[node name="@MeshInstance3D@47842" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 8.8)
+mesh = SubResource("PlaneMesh_na5vm")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5bmxy7nuk7qp"]
+
+[ext_resource type="Script" path="res://move_on_grid/grid_character.gd" id="1_alt72"]
+[ext_resource type="PackedScene" uid="uid://by82rjr3oyggr" path="res://assets/platform/character/character_bear.gltf" id="2_0d6qw"]
+
+[node name="GridCharacter" type="CharacterBody3D"]
+script = ExtResource("1_alt72")
+
+[node name="character_bear" parent="." instance=ExtResource("2_0d6qw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.898568, 0)
