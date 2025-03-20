@@ -5,7 +5,6 @@ extends RigidBody3D
 @export var turnSpeed := 1.5
 
 func _physics_process(delta: float) -> void:
-	var force = Vector3.ZERO
 	var massMultiplicator = mass * 100
 	
 	var speedForce = Input.get_axis("ui_up", "ui_down") * movementSpeed * massMultiplicator
@@ -13,7 +12,7 @@ func _physics_process(delta: float) -> void:
 	
 	rotate_y(turnDegree)
 	 
-	force = global_transform.basis.z * speedForce
+	var force = global_transform.basis.z * speedForce
 	apply_force(force)
 
 
