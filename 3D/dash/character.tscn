@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://drd0hwuh7rad5"]
+
+[ext_resource type="Script" path="res://dash/character.gd" id="1_0kp13"]
+[ext_resource type="PackedScene" uid="uid://by82rjr3oyggr" path="res://assets/platform/character/character_bear.gltf" id="2_jid4c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xpj2"]
+height = 1.71945
+
+[node name="PlatformCharacter" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_0kp13")
+
+[node name="character_bear2" parent="." instance=ExtResource("2_jid4c")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.00171554, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.832782, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_0xpj2")
+
+[editable path="character_bear2"]
