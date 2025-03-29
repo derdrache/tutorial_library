@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd66owr70btdy"]
+
+[ext_resource type="Texture2D" uid="uid://bl81l8w1umxkb" path="res://assets/random_dungeon/Dungeon_Slimes1.png" id="1_p4spj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rqvc"]
+atlas = ExtResource("1_p4spj")
+region = Rect2(72, 128, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujh0m"]
+atlas = ExtResource("1_p4spj")
+region = Rect2(96, 128, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e44b"]
+atlas = ExtResource("1_p4spj")
+region = Rect2(120, 128, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3hb7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rqvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujh0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e44b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="SlimeEnemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3hb7p")
+autoplay = "default"
+frame_progress = 0.163775

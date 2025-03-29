@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cof2s3le8s4ok"]
+
+[ext_resource type="Script" path="res://random_dungeon_part3/random_dungeon.gd" id="1_rmweh"]
+
+[node name="RandomDungeon" type="Node2D"]
+position = Vector2(85, 3)
+script = ExtResource("1_rmweh")
+
+[node name="rooms" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(326, 178)
+zoom = Vector2(0.4, 0.4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 69.0
+offset_top = 65.0
+offset_right = 145.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 50
+text = "REFRESH"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
