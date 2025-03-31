@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg0emttdfu7rb"]
+
+[ext_resource type="Texture2D" uid="uid://ca8nntypuc8vk" path="res://assets/Earth-Like planet.png" id="2_yqr2q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xef8m"]
+radius = 32.0624
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwwbg"]
+radius = 47.3814
+
+[node name="Planet" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xef8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yqr2q")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="GravityPoint" type="Area2D" parent="."]
+gravity_space_override = 3
+gravity_point = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityPoint"]
+shape = SubResource("CircleShape2D_vwwbg")
