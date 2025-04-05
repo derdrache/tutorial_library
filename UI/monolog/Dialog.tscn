@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c85mavf8c27yi"]
+
+[ext_resource type="Script" path="res://monolog/dialog.gd" id="1_2ph12"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ancqg"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Dialog" type="Node"]
+process_mode = 3
+script = ExtResource("1_2ph12")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 217.0
+offset_top = -307.0
+offset_right = 297.0
+offset_bottom = -172.0
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ancqg")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "test test"
+visible_characters = 0
+visible_ratio = 0.0

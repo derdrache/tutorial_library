@@ -1,0 +1,226 @@
+[gd_scene load_steps=32 format=3 uid="uid://c6spbhvmlthrk"]
+
+[ext_resource type="Script" path="res://monolog/frog_npc.gd" id="1_lvdgv"]
+[ext_resource type="Texture2D" uid="uid://c2jlt10djf7na" path="res://assets/pixel_adventure/Ninja Frog/Idle (32x32).png" id="2_pkgx4"]
+[ext_resource type="Texture2D" uid="uid://dqmn23spyrywn" path="res://assets/pixel_adventure/Ninja Frog/Run (32x32).png" id="3_p7k3v"]
+[ext_resource type="PackedScene" uid="uid://c85mavf8c27yi" path="res://monolog/Dialog.tscn" id="4_24m2m"]
+[ext_resource type="Texture2D" uid="uid://b1puej8a7hr8v" path="res://assets/icons/speech-bubble_5036451.png" id="5_8r4i7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eckp0"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7076"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrjfw"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxwho"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hioy6"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cr3k"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj224"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vuxx"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x35v2"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1shdt"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pvmd"]
+atlas = ExtResource("2_pkgx4")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi7qa"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8cky"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id06i"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1edkr"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42mlc"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y017a"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d2ec"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfayv"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41jv4"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w06lm"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vny4i"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j66mb"]
+atlas = ExtResource("3_p7k3v")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ls8w3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eckp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7076")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrjfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxwho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hioy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cr3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj224")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vuxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x35v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1shdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pvmd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi7qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8cky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id06i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1edkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42mlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y017a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d2ec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfayv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41jv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w06lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vny4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j66mb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0bun"]
+size = Vector2(20, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt55j"]
+size = Vector2(54, 27)
+
+[node name="frog_npc" type="CharacterBody2D"]
+scale = Vector2(-1, 1)
+script = ExtResource("1_lvdgv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ls8w3")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.519472
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_n0bun")
+
+[node name="Dialog" parent="." instance=ExtResource("4_24m2m")]
+unique_name_in_owner = true
+strings = Array[String](["Hi my friend, how are you?", "I speak to you in a simple form of dialog
+(monolog)", "you enter the next line with
+ctrl + enter
+in the text enter box"])
+
+[node name="DialogIndicator" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+offset_top = -34.0
+offset_right = 24.0
+offset_bottom = -10.0
+texture = ExtResource("5_8r4i7")
+expand_mode = 1
+
+[node name="TalkRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkRange"]
+position = Vector2(-1, 3.5)
+shape = SubResource("RectangleShape2D_gt55j")
+
+[connection signal="body_entered" from="TalkRange" to="." method="_on_talk_range_body_entered"]
+[connection signal="body_exited" from="TalkRange" to="." method="_on_talk_range_body_exited"]
