@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://dptxsn1bdk8uk"]
+
+[ext_resource type="Texture2D" uid="uid://dovlekehejs4s" path="res://hex_movement/Soldier.png" id="1_qliua"]
+[ext_resource type="Script" path="res://hex_movement/hex_agent.gd" id="3_bu3iv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w80pq"]
+atlas = ExtResource("1_qliua")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erc10"]
+atlas = ExtResource("1_qliua")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8kv3"]
+atlas = ExtResource("1_qliua")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiwlw"]
+atlas = ExtResource("1_qliua")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1sok"]
+atlas = ExtResource("1_qliua")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjdey"]
+atlas = ExtResource("1_qliua")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_233n1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w80pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erc10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8kv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiwlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1sok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjdey")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(17, 128)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_233n1")
+animation = &"idle"
+
+[node name="HexAgent" type="Node2D" parent="."]
+script = ExtResource("3_bu3iv")
