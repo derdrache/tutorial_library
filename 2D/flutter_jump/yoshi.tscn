@@ -1,0 +1,156 @@
+[gd_scene load_steps=18 format=3 uid="uid://bl35bhnpkxpm8"]
+
+[ext_resource type="Script" path="res://yoshis_island/flutter_jump/yoshi.gd" id="1_06poo"]
+[ext_resource type="Texture2D" uid="uid://c4hjk7wcb4v1p" path="res://yoshis_island/assets/yoshi.png" id="1_c4hvo"]
+[ext_resource type="Texture2D" uid="uid://cbkv17i44gen" path="res://yoshis_island/assets/yoshi_2.png" id="3_cmofr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxoot"]
+atlas = ExtResource("3_cmofr")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en55k"]
+atlas = ExtResource("3_cmofr")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh613"]
+atlas = ExtResource("3_cmofr")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1w2x"]
+atlas = ExtResource("3_cmofr")
+region = Rect2(80, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lfx0"]
+atlas = ExtResource("1_c4hvo")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qyrf"]
+atlas = ExtResource("1_c4hvo")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph7id"]
+atlas = ExtResource("1_c4hvo")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn3sd"]
+atlas = ExtResource("1_c4hvo")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p2ud"]
+atlas = ExtResource("1_c4hvo")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in2nw"]
+atlas = ExtResource("3_cmofr")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4q7x"]
+atlas = ExtResource("1_c4hvo")
+region = Rect2(0, 120, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_naj6a"]
+atlas = ExtResource("1_c4hvo")
+region = Rect2(40, 120, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8m0tu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxoot")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en55k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh613")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1w2x")
+}],
+"loop": true,
+"name": &"flutter_jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lfx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qyrf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph7id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn3sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p2ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn3sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p2ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn3sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p2ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph7id")
+}],
+"loop": true,
+"name": &"idleChin",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in2nw")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4q7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_naj6a")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqt1n"]
+size = Vector2(22, 30)
+
+[node name="Yoshi" type="CharacterBody2D"]
+script = ExtResource("1_06poo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8m0tu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_tqt1n")
+
+[node name="flutterJumpTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="flutterJumpTimer" to="." method="_on_flutter_jump_timer_timeout"]
