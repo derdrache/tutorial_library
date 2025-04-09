@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxd05sewfn205"]
+
+[ext_resource type="Script" path="res://simple_random_dungeon/dungeon.gd" id="1_2qoue"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hej6l"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ii6ts"]
+sky_material = SubResource("ProceduralSkyMaterial_hej6l")
+
+[sub_resource type="Environment" id="Environment_o0i6t"]
+background_mode = 2
+sky = SubResource("Sky_ii6ts")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Dungeon" type="Node3D"]
+script = ExtResource("1_2qoue")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o0i6t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="rooms" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 220.69, 0)
+fov = 20.0
