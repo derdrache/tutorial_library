@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	
 	if direction:
 		_set_last_direction(direction)
-		velocity = direction.normalized() * SPEED
+		velocity = direction * SPEED
 	else:
 		velocity = Vector2.ZERO
 		
