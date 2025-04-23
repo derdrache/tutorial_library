@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://chyhqy8gxa5m7"]
+
+[ext_resource type="Script" path="res://get_and_cut_cheese/cheese_box.gd" id="1_vr4yk"]
+[ext_resource type="PackedScene" uid="uid://ivf8j5h5j4is" path="res://assets/kitchen prototype/crate_cheese.gltf" id="2_icy5q"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c6ok6"]
+points = PackedVector3Array(-0.973292, 0.00482914, -0.973292, -0.973292, 0.00482914, 0.973292, 0.973292, 0.00482914, -0.973292, -0.972826, 0.79531, -0.972826, 0.973292, 0.00482914, 0.973292, 0.972826, 0.79531, -0.972826, -0.972826, 0.79531, 0.972826, 0.972826, 0.79531, 0.972826, 0.57118, 0.968158, 0.190327, 0.222148, 0.968158, 0.476116, 0.28559, 0.968158, 0.349032, 0.476116, 0.968158, 0.222148, 0.222148, 0.968158, 0.412674)
+
+[node name="CheeseBox" type="StaticBody3D"]
+script = ExtResource("1_vr4yk")
+
+[node name="crate_cheese2" parent="." instance=ExtResource("2_icy5q")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_c6ok6")
+
+[editable path="crate_cheese2"]

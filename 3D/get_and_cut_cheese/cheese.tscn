@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvqibvcusojc5"]
+
+[ext_resource type="Script" path="res://get_and_cut_cheese/cheese.gd" id="1_vqpni"]
+[ext_resource type="PackedScene" uid="uid://sfldrr51cr5t" path="res://assets/kitchen prototype/food_ingredient_cheese.gltf" id="2_pgpjr"]
+
+[node name="Cheese" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_vqpni")
+
+[node name="model" type="Node3D" parent="."]
+
+[node name="food_ingredient_cheese2" parent="model" instance=ExtResource("2_pgpjr")]

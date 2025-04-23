@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt41eyo427l8q"]
+
+[ext_resource type="Script" path="res://get_and_cut_cheese/cutting_board.gd" id="1_cbtlx"]
+[ext_resource type="PackedScene" uid="uid://cgpdet801jjey" path="res://assets/kitchen prototype/cuttingboard.gltf" id="1_jmdqb"]
+[ext_resource type="PackedScene" uid="uid://cfmn4qo82xwdk" path="res://assets/kitchen prototype/knife.gltf" id="2_3tjya"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_24gbu"]
+points = PackedVector3Array(0.682723, 0.148531, 0.451469, -0.761756, -0.0119048, -0.511905, -0.761756, -0.0119048, 0.511905, 0.761756, -0.0119048, -0.511905, -0.682723, 0.148531, -0.451469, 0.761756, -0.0119048, 0.511905, -0.682723, 0.148531, 0.451469, 0.682723, 0.148531, -0.451469, -0.704635, 0.12648, 0.47352, 0.704635, 0.12648, -0.47352, -0.704635, 0.12648, -0.47352, 0.704635, 0.12648, 0.47352)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nof7t"]
+size = Vector3(1, 0.420898, 2)
+
+[node name="CuttingBoard" type="StaticBody3D"]
+script = ExtResource("1_cbtlx")
+
+[node name="cuttingboard2" parent="." instance=ExtResource("1_jmdqb")]
+
+[node name="knife2" parent="." instance=ExtResource("2_3tjya")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.1, 0, 0.3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_24gbu")
+
+[node name="ObjectPlace" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152508, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_nof7t")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631798, 0)
+billboard = 1
+text = "left click to cut"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="cuttingboard2"]
