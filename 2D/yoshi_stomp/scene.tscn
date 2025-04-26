@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm6gq0j0s8oga"]
+
+[ext_resource type="Texture2D" uid="uid://bsn7j0u06nfyd" path="res://yoshis_island/assets/island-objects.png" id="1_8ps8k"]
+[ext_resource type="Script" path="res://stomp/camera_shake.gd" id="2_4gvda"]
+[ext_resource type="PackedScene" uid="uid://d4l2rplh5aqhp" path="res://stomp/yoshi.tscn" id="2_ujvp6"]
+[ext_resource type="PackedScene" uid="uid://d3nwdckv8w1ma" path="res://stomp/pale.tscn" id="3_l6gy5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpxcj"]
+size = Vector2(725, 82)
+
+[node name="Test" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(218, 300)
+texture = ExtResource("1_8ps8k")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+position = Vector2(362, 300)
+texture = ExtResource("1_8ps8k")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+position = Vector2(506, 300)
+texture = ExtResource("1_8ps8k")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor"]
+position = Vector2(650, 300)
+texture = ExtResource("1_8ps8k")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Floor"]
+position = Vector2(795, 300)
+texture = ExtResource("1_8ps8k")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(508.5, 301)
+shape = SubResource("RectangleShape2D_lpxcj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(221, 115)
+anchor_mode = 0
+zoom = Vector2(3.5, 3.5)
+script = ExtResource("2_4gvda")
+
+[node name="Yoshi" parent="." instance=ExtResource("2_ujvp6")]
+position = Vector2(412, 240)
+
+[node name="Pale" parent="." instance=ExtResource("3_l6gy5")]
+position = Vector2(392, 248)
+
+[node name="Pale2" parent="." instance=ExtResource("3_l6gy5")]
+position = Vector2(492, 249)

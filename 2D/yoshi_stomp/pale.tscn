@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3nwdckv8w1ma"]
+
+[ext_resource type="Script" path="res://stomp/pale.gd" id="1_lp48o"]
+[ext_resource type="Texture2D" uid="uid://bsn7j0u06nfyd" path="res://yoshis_island/assets/island-objects.png" id="1_yn6qd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g71x5"]
+size = Vector2(14, 30)
+
+[node name="Pale" type="StaticBody2D"]
+z_index = -1
+position = Vector2(1, -16)
+script = ExtResource("1_lp48o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_g71x5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yn6qd")
+region_enabled = true
+region_rect = Rect2(197, 124, 14, 32)
