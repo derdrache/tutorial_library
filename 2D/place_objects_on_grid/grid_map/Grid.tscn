@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo1cpe7ekrm1q"]
+
+[ext_resource type="Script" uid="uid://n5hsjfry046q" path="res://place_objects_in_grid/grid_map/grid.gd" id="1_xm2js"]
+[ext_resource type="PackedScene" uid="uid://dubpphj3layjp" path="res://place_objects_in_grid/grid_map/grid_cell.tscn" id="2_y0eii"]
+
+[node name="Grid" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 7
+script = ExtResource("1_xm2js")
+
+[node name="PanelContainer2" parent="." instance=ExtResource("2_y0eii")]
+layout_mode = 2

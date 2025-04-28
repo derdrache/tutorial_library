@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5y26y845kq8q"]
+
+[ext_resource type="Texture2D" uid="uid://c2h8c7hnojlpx" path="res://assets/tiny_swords/House_Blue.png" id="1_3xuqs"]
+[ext_resource type="Script" uid="uid://wkjwjg6p64bp" path="res://place_objects_in_grid/object.gd" id="1_l2ofb"]
+
+[node name="Object" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.392157)
+texture = ExtResource("1_3xuqs")
+script = ExtResource("1_l2ofb")
+rect = Rect2(0, 0, 128, 192)
