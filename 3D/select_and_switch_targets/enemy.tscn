@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl7lhlo7yodo2"]
+
+[ext_resource type="Script" uid="uid://bbattg22ngqu7" path="res://enemy_targeting/enemy.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://dducp31asd3a4" path="res://assets/platform/character/character_dog.gltf" id="1_7k104"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gyqm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qi2p4"]
+material = SubResource("StandardMaterial3D_4gyqm")
+top_radius = 0.75
+bottom_radius = 0.75
+height = 0.01
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_4gyqm")
+
+[node name="character_dog2" parent="." instance=ExtResource("1_7k104")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_4gyqm")
+
+[node name="selectionIndicator" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+mesh = SubResource("CylinderMesh_qi2p4")

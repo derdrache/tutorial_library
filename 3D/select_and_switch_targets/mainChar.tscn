@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch3n5kc01gt8u"]
+
+[ext_resource type="Script" uid="uid://cypxkcjjgyj48" path="res://enemy_targeting/main_char.gd" id="1_jl3no"]
+[ext_resource type="Script" uid="uid://cd7ti1xquipne" path="res://collection/group_formation_3D/camera_target.gd" id="2_48qap"]
+[ext_resource type="PackedScene" uid="uid://bcbujl2yb7tei" path="res://assets/platform/character/character_duck.gltf" id="3_u17qb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qknna"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jl3no"]
+radius = 6.0
+
+[node name="Character1" type="CharacterBody3D"]
+script = ExtResource("1_jl3no")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_qknna")
+
+[node name="Camera" type="Node3D" parent="." node_paths=PackedStringArray("camera_target")]
+script = ExtResource("2_48qap")
+camera_target = NodePath("CameraTarget")
+
+[node name="CameraTarget" type="Node3D" parent="Camera"]
+
+[node name="Camera3D" type="Camera3D" parent="Camera/CameraTarget"]
+transform = Transform3D(-1, -5.01436e-08, 7.16125e-08, 0, 0.819152, 0.573576, -8.74228e-08, 0.573576, -0.819152, 0, 16.475, -20.715)
+fov = 20.0
+
+[node name="rotationNode" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="character_duck2" parent="rotationNode" instance=ExtResource("3_u17qb")]
+
+[node name="targetingArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="targetingArea"]
+shape = SubResource("CylinderShape3D_jl3no")
+
+[connection signal="body_entered" from="targetingArea" to="." method="_on_targeting_area_body_entered"]
+[connection signal="body_exited" from="targetingArea" to="." method="_on_targeting_area_body_exited"]
