@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl7b8ydeqhce7"]
+
+[ext_resource type="Texture2D" uid="uid://bsn7j0u06nfyd" path="res://yoshis_island/assets/island-objects.png" id="1_0yjax"]
+[ext_resource type="PackedScene" uid="uid://cqmh0hnviwpd8" path="res://yoshis_island/swallow_enemies/enemy.tscn" id="2_s0y7l"]
+[ext_resource type="PackedScene" uid="uid://buar1m3o022av" path="res://yoshis_island/create_egg/yoshi.tscn" id="3_8m4rt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpxcj"]
+size = Vector2(725, 82)
+
+[node name="Test" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(218, 300)
+texture = ExtResource("1_0yjax")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+position = Vector2(362, 300)
+texture = ExtResource("1_0yjax")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+position = Vector2(506, 300)
+texture = ExtResource("1_0yjax")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor"]
+position = Vector2(650, 300)
+texture = ExtResource("1_0yjax")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Floor"]
+position = Vector2(795, 300)
+texture = ExtResource("1_0yjax")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(508.5, 301)
+shape = SubResource("RectangleShape2D_lpxcj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(233, 86)
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="Enemy" parent="." instance=ExtResource("2_s0y7l")]
+position = Vector2(313, 250)
+
+[node name="Yoshi" parent="." instance=ExtResource("3_8m4rt")]
+position = Vector2(441, 240)
