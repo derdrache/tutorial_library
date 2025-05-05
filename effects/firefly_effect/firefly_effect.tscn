@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://euq7qyegjv43"]
+
+[ext_resource type="Texture2D" uid="uid://dxiq6v8i51nje" path="res://firefly_effect/Flare_small.PNG" id="1_ig64u"]
+[ext_resource type="Script" uid="uid://b5ijm4cltljdb" path="res://firefly_effect/firefly_effect.gd" id="2_biqiu"]
+
+[sub_resource type="Gradient" id="Gradient_ig64u"]
+colors = PackedColorArray(0, 1, 0, 1, 0.946997, 0.642893, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_biqiu"]
+gradient = SubResource("Gradient_ig64u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_whvn5"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(640, 360, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 0.999998
+scale_min = 0.1
+scale_max = 0.27
+color_ramp = SubResource("GradientTexture1D_biqiu")
+turbulence_enabled = true
+
+[node name="Node2D" type="GPUParticles2D"]
+position = Vector2(648, 383)
+amount = 300
+texture = ExtResource("1_ig64u")
+lifetime = 50.0
+process_material = SubResource("ParticleProcessMaterial_whvn5")
+script = ExtResource("2_biqiu")
