@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cchm5660qat0b"]
+
+[ext_resource type="Texture2D" uid="uid://dkx3pxf7572hh" path="res://yoshis_island/assets/misc1.png" id="1_6upkn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6upkn"]
+size = Vector2(12, 16)
+
+[node name="Egg" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6upkn")
+region_enabled = true
+region_rect = Rect2(61, 220, 12, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6upkn")
+disabled = true
