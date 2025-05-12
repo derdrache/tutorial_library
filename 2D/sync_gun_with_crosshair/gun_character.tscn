@@ -1,0 +1,114 @@
+[gd_scene load_steps=21 format=3 uid="uid://b2efpsqis5c1g"]
+
+[ext_resource type="Texture2D" uid="uid://dh8f0eb0ydati" path="res://shooter/gun_idle/idle_0.png" id="1_2twbq"]
+[ext_resource type="Script" uid="uid://6nrusf5cqv0j" path="res://shooter/sync_gun_with_crosshair/gun_character.gd" id="1_r6y84"]
+[ext_resource type="Texture2D" uid="uid://yrc3vcfslyt7" path="res://shooter/gun_idle/idle_1.png" id="2_xc7ve"]
+[ext_resource type="Texture2D" uid="uid://bw8dvlkonbrj5" path="res://shooter/gun_idle/idle_2.png" id="3_wsjk6"]
+[ext_resource type="Texture2D" uid="uid://dx2c1k6cbhs8c" path="res://shooter/gun_idle/idle_3.png" id="4_n78wm"]
+[ext_resource type="Texture2D" uid="uid://cat28qwip7cs0" path="res://shooter/gun_idle/idle_4.png" id="5_wart5"]
+[ext_resource type="Texture2D" uid="uid://dxleqy058mejt" path="res://shooter/gun_idle/idle_5.png" id="6_qgfdy"]
+[ext_resource type="Texture2D" uid="uid://b3pfkndgkf7ur" path="res://shooter/gun_walk/walk_0.png" id="7_race5"]
+[ext_resource type="Texture2D" uid="uid://d30ugjexh3a3e" path="res://shooter/gun_walk/walk_1.png" id="8_crpip"]
+[ext_resource type="Texture2D" uid="uid://vlq8p1wfv7dv" path="res://shooter/gun_walk/walk_2.png" id="9_5wv1i"]
+[ext_resource type="Texture2D" uid="uid://bkf6akmmekm8r" path="res://shooter/gun_walk/walk_3.png" id="10_r6y84"]
+[ext_resource type="Texture2D" uid="uid://b0png0owv4twl" path="res://shooter/gun_walk/walk_4.png" id="11_16ilx"]
+[ext_resource type="Texture2D" uid="uid://cs1j2q1o633f7" path="res://shooter/gun_walk/walk_5.png" id="12_5x2sq"]
+[ext_resource type="Texture2D" uid="uid://vvdm01dvcl3w" path="res://shooter/gun_walk/walk_6.png" id="13_lgs7t"]
+[ext_resource type="Texture2D" uid="uid://brso2k13f1xqn" path="res://shooter/gun_walk/walk_7.png" id="14_ytmco"]
+[ext_resource type="Texture2D" uid="uid://0m166shvpamx" path="res://shooter/weaponR2.png" id="15_crpip"]
+[ext_resource type="Texture2D" uid="uid://b7c1tqfwakgik" path="res://shooter/crosshair.png" id="16_5wv1i"]
+[ext_resource type="Texture2D" uid="uid://dmoekjm5he4co" path="res://shooter/hand.png" id="18_16ilx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ub65c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2twbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xc7ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wsjk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n78wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wart5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qgfdy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_race5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_crpip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5wv1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r6y84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_16ilx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5x2sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lgs7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ytmco")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_race5"]
+size = Vector2(33, 65)
+
+[node name="GunCharacter" type="CharacterBody2D"]
+script = ExtResource("1_r6y84")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.3113e-06, -45.6)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ub65c")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.599998, -1.6)
+shape = SubResource("RectangleShape2D_race5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(10.4, 2.4)
+zoom = Vector2(2, 2)
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+position = Vector2(81, -55)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_5wv1i")
+
+[node name="rotationNode" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 12)
+
+[node name="WeaponR2" type="Sprite2D" parent="rotationNode"]
+position = Vector2(6.4, -33.6)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("15_crpip")
+
+[node name="Hand" type="Sprite2D" parent="rotationNode"]
+position = Vector2(17.4, -59.6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("18_16ilx")
