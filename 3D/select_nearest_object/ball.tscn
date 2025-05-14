@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://u3o0uhteqio1"]
+
+[ext_resource type="Script" uid="uid://b56m72dax1r7k" path="res://select_nearest_object/ball.gd" id="1_41u45"]
+[ext_resource type="PackedScene" uid="uid://dke133an3pctl" path="res://assets/platform/items/ball.gltf.glb" id="1_x8fbi"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_41u45"]
+points = PackedVector3Array(-0.304752, -0.914255, -0.259499, 0.183914, 0.981646, 0.0146501, 0.15332, 0.981402, 0.106563, 0.882323, -0.334516, 0.318672, -0.487424, -0.0303447, 0.867453, -0.42571, 0.212855, -0.867303, 0.605997, -0.0301859, -0.773244, -0.979366, 0.183487, 0.0146146, 0.665818, 0.484335, 0.559164, 0.151585, -0.606342, 0.772525, 0.486939, -0.852382, -0.167772, 0.664541, 0.543784, -0.49907, -0.45327, 0.815848, 0.346735, -0.757368, -0.636265, 0.0447317, -0.152138, -0.51723, -0.837493, -0.302443, 0.786427, -0.529699, 0.182347, 0.304102, 0.926826, -0.726617, -0.332954, -0.590999, 0.978043, -0.0304442, -0.107542, -0.273231, -0.850325, 0.439667, 0.182163, 0.303795, -0.927049, -0.818336, 0.485038, -0.288383, 0.515694, -0.151686, 0.833662, 0.66454, -0.543783, -0.499069, -0.699329, -0.395289, 0.592279, -0.699326, 0.395288, 0.592277, -0.151586, 0.606343, 0.772526, 0.733312, 0.672059, 0.0144009, 0.273998, -0.912945, 0.288376, 0.272729, 0.817808, -0.50043, -0.182083, -0.394798, 0.89514, 0.272484, -0.696096, -0.651361)
+
+[node name="Ball" type="RigidBody3D"]
+script = ExtResource("1_41u45")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_41u45")
+
+[node name="ball_gltf" parent="." instance=ExtResource("1_x8fbi")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+billboard = 1
+text = "E"
+font_size = 70
+
+[editable path="ball_gltf"]
