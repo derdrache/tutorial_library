@@ -3,7 +3,7 @@ extends Control
 @onready var month_year_label: Label = %MonthYearLabel
 @onready var columns_box: HBoxContainer = %ColumnsBox
 
-const DATE_LABEL = preload("res://calendar/DateLabel.tscn")
+const DATE_LABEL = preload("res://tutorial_collection/calendar/DateLabel.tscn")
 const MONTH_NAMES = ["January", "February", "March", "April", "May", 
 	"June", "July", "August", "September", "October", "November", "December"]
 const DAY_IN_UNIX_TIME = 86400
@@ -47,22 +47,38 @@ func _get_first_of_month(date: Dictionary):
 
 func _create_label(date : Dictionary, index: int):
 		var dateLabel = DATE_LABEL.instantiate()
+		
 		dateLabel.date = date
 
-		columns_box.get_children()[index].add_child(dateLabel)	
+		columns_box.get_children()[index].add_child(dateLabel)
 	
 func _get_next_day(date: Dictionary):
 		var nextDayUnixTime = Time.get_unix_time_from_datetime_dict(date) + DAY_IN_UNIX_TIME
 		return Time.get_datetime_dict_from_unix_time(nextDayUnixTime)	
 
 func _on_previous_month_button_pressed() -> void:
-	pass
-	#selectedDate.month -= 1
-	#
-	#_refresh_calendar()
+	selectedDate.month -= 1
+	
+	_refresh_calendar()
 
 func _on_next_month_button_pressed() -> void:
-	pass
-	#selectedDate.month += 1
-	#
-	#_refresh_calendar()
+	selectedDate.month += 1
+	
+	_refresh_calendar()
+
+func _refresh_calendar():
+	if selectedDate.month > 12:
+		selectedDate.month = 1
+		selectedDate.year += 1
+	elif selectedDate.month < 1:
+		selectedDate.month = 12
+		selectedDate.year -= 1
+		
+	for column in columns_box.get_children():
+		for node in column.get_children():
+			if node is Label: continue
+			
+			node.queue_free()
+			
+	
+	_set_calendar()
