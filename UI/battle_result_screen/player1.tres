@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=2 format=3 uid="uid://bfr2lq8f24wsv"]
+
+[ext_resource type="Script" uid="uid://dt0hugasxu06e" path="res://battle_result_screen/character_resource.gd" id="1_v13fd"]
+
+[resource]
+script = ExtResource("1_v13fd")
+name = "Player1"
+level = 1
+currentExp = 0
+talentPoints = 0
+metadata/_custom_type_script = "uid://dt0hugasxu06e"
