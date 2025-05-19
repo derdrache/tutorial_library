@@ -8,7 +8,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if catcher:
-		global_position = catcher.global_position + catcher.ray_cast_2d.target_position + offSet
+		var direction = global_position.direction_to(catcher.global_position)
+		global_position = catcher.global_position + (direction.x * catcher.ray_cast_2d.target_position) + offSet
 		
 		if global_position.distance_to(catcher.global_position) < 18:
 			catcher.eat()
