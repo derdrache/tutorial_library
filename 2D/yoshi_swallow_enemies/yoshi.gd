@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	if Input.is_action_just_pressed("circle"):
+	if Input.is_action_just_pressed("circle") and not activeTongue:
 		activeTongue = true
 		animated_sprite_2d.play(tongueAnimation)
 		ray_cast_2d.enabled = true
