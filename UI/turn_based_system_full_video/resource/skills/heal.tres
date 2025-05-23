@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=2 format=3 uid="uid://qd5tvux5rrsa"]
+
+[ext_resource type="Script" uid="uid://ckkyv0irnwbwb" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/skillResource.gd" id="1_makrg"]
+
+[resource]
+script = ExtResource("1_makrg")
+name = "Heal"
+targetType = 1

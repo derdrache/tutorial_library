@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2xe786ia1v62"]
+
+[ext_resource type="Script" uid="uid://bkooatldqtncl" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/turn_based_controller.gd" id="1_ui68u"]
+
+[node name="TurnBasedController" type="Node"]
+script = ExtResource("1_ui68u")

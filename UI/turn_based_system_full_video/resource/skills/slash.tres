@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=2 format=3 uid="uid://dic28mqs5h8qh"]
+
+[ext_resource type="Script" uid="uid://ckkyv0irnwbwb" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/skillResource.gd" id="1_yr7wd"]
+
+[resource]
+script = ExtResource("1_yr7wd")
+name = "Slash"
+targetType = 0

@@ -1,0 +1,94 @@
+[gd_scene load_steps=16 format=3 uid="uid://bfw1x141ng0h8"]
+
+[ext_resource type="PackedScene" uid="uid://bqqe74h3n5fph" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/turn_based_controller.tscn" id="1_l6vab"]
+[ext_resource type="Script" uid="uid://bdmylp0cq4vx2" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/character.gd" id="2_kwfo8"]
+[ext_resource type="Texture2D" uid="uid://brq7nvcsmx0fa" path="res://assets/icon.svg" id="3_3i6jt"]
+[ext_resource type="PackedScene" uid="uid://byvy758rff1s8" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/turn_based_agent.tscn" id="4_pesck"]
+[ext_resource type="Resource" uid="uid://bn6t6oq4gr8vp" path="res://tutorial_collection/turn_based_combat_series/status_bar/resource/enemy1.tres" id="5_6iore"]
+[ext_resource type="Resource" uid="uid://c57bpy17mn2gi" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/Attack.tres" id="6_fp3qo"]
+[ext_resource type="Resource" uid="uid://obxvdcooy1xa" path="res://tutorial_collection/turn_based_combat_series/status_bar/resource/enemy2.tres" id="7_ly7yt"]
+[ext_resource type="Resource" uid="uid://s05qdcgtarmm" path="res://tutorial_collection/turn_based_combat_series/status_bar/resource/enemy3.tres" id="8_y8t4g"]
+[ext_resource type="Resource" uid="uid://du8iibnunpatu" path="res://tutorial_collection/turn_based_combat_series/status_bar/resource/player1.tres" id="9_ipupt"]
+[ext_resource type="Resource" uid="uid://y0eokcelipqm" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/heal.tres" id="10_qdaf2"]
+[ext_resource type="Resource" uid="uid://dlmcrg8a4etwl" path="res://tutorial_collection/turn_based_combat_series/status_bar/resource/player2.tres" id="11_5p2qi"]
+[ext_resource type="Resource" uid="uid://b68hd1we65p73" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/slash.tres" id="12_4ikb4"]
+[ext_resource type="PackedScene" uid="uid://dd7ey27i52xjy" path="res://tutorial_collection/turn_based_combat_series/command_menu/command_menu.tscn" id="13_rbrm3"]
+[ext_resource type="PackedScene" uid="uid://dge5d1pfacnfa" path="res://tutorial_collection/turn_based_combat_series/turn_order_bar/turn_order_bar.tscn" id="14_f1dbr"]
+[ext_resource type="PackedScene" uid="uid://dtunooxbxbire" path="res://tutorial_collection/turn_based_combat_series/status_bar/Player_Status_Display.tscn" id="15_xxm8t"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="TurnBasedController" parent="." instance=ExtResource("1_l6vab")]
+
+[node name="Enemy" type="StaticBody2D" parent="."]
+position = Vector2(398, 149)
+script = ExtResource("2_kwfo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_3i6jt")
+
+[node name="TurnBasedAgent" parent="Enemy" instance=ExtResource("4_pesck")]
+character_resource = ExtResource("5_6iore")
+character_type = 1
+basicAttack = ExtResource("6_fp3qo")
+
+[node name="Enemy2" type="StaticBody2D" parent="."]
+position = Vector2(616, 146)
+script = ExtResource("2_kwfo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_3i6jt")
+
+[node name="TurnBasedAgent" parent="Enemy2" instance=ExtResource("4_pesck")]
+character_resource = ExtResource("7_ly7yt")
+character_type = 1
+basicAttack = ExtResource("6_fp3qo")
+
+[node name="Enemy3" type="StaticBody2D" parent="."]
+position = Vector2(839, 143)
+script = ExtResource("2_kwfo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy3"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_3i6jt")
+
+[node name="TurnBasedAgent" parent="Enemy3" instance=ExtResource("4_pesck")]
+character_resource = ExtResource("8_y8t4g")
+character_type = 1
+basicAttack = ExtResource("6_fp3qo")
+
+[node name="Player" type="StaticBody2D" parent="."]
+position = Vector2(527, 550)
+script = ExtResource("2_kwfo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_3i6jt")
+
+[node name="TurnBasedAgent" parent="Player" instance=ExtResource("4_pesck")]
+character_resource = ExtResource("9_ipupt")
+basicAttack = ExtResource("6_fp3qo")
+skills = Array[Resource]([ExtResource("10_qdaf2")])
+
+[node name="Player2" type="StaticBody2D" parent="."]
+position = Vector2(792, 541)
+script = ExtResource("2_kwfo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_3i6jt")
+
+[node name="TurnBasedAgent" parent="Player2" instance=ExtResource("4_pesck")]
+character_resource = ExtResource("11_5p2qi")
+basicAttack = ExtResource("6_fp3qo")
+skills = Array[Resource]([ExtResource("12_4ikb4")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CommandMenu" parent="CanvasLayer" instance=ExtResource("13_rbrm3")]
+
+[node name="TurnOrderBar" parent="CanvasLayer" instance=ExtResource("14_f1dbr")]
+
+[node name="PlayerStatusDisplay" parent="CanvasLayer" instance=ExtResource("15_xxm8t")]

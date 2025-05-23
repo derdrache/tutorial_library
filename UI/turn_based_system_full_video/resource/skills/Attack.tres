@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=2 format=3 uid="uid://cmjvkomirwig2"]
+
+[ext_resource type="Script" uid="uid://ckkyv0irnwbwb" path="res://tutorial_collection/turn_based_combat_series/turn_and_rounds/skillResource.gd" id="1_wlaq6"]
+
+[resource]
+script = ExtResource("1_wlaq6")
+name = "Attack"
+targetType = 0
