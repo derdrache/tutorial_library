@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm5l4nf8xyshx"]
+
+[ext_resource type="Texture2D" uid="uid://bsn7j0u06nfyd" path="res://yoshis_island/assets/island-objects.png" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://ncgfsaothxgn" path="res://objects_follow_player/yoshi.tscn" id="2_nxogm"]
+[ext_resource type="PackedScene" uid="uid://bv7pcloll63yq" path="res://objects_follow_player/egg.tscn" id="3_3253y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpxcj"]
+size = Vector2(725, 82)
+
+[node name="Test" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(218, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+position = Vector2(362, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+position = Vector2(506, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor"]
+position = Vector2(650, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Floor"]
+position = Vector2(795, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(508.5, 301)
+shape = SubResource("RectangleShape2D_lpxcj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(254, 59)
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="Yoshi" parent="." instance=ExtResource("2_nxogm")]
+position = Vector2(453, 240)
+
+[node name="Egg" parent="Yoshi/eggContainer" index="0" instance=ExtResource("3_3253y")]
+position = Vector2(461, 251)
+
+[node name="Egg2" parent="Yoshi/eggContainer" index="1" instance=ExtResource("3_3253y")]
+position = Vector2(461, 251)
+
+[node name="Egg3" parent="Yoshi/eggContainer" index="2" instance=ExtResource("3_3253y")]
+position = Vector2(461, 251)
+
+[node name="Egg4" parent="Yoshi/eggContainer" index="3" instance=ExtResource("3_3253y")]
+position = Vector2(461, 251)
+
+[node name="Egg5" parent="Yoshi/eggContainer" index="4" instance=ExtResource("3_3253y")]
+position = Vector2(461, 251)
+
+[node name="Egg6" parent="Yoshi/eggContainer" index="5" instance=ExtResource("3_3253y")]
+position = Vector2(461, 251)
+
+[node name="Egg7" parent="Yoshi/eggContainer" index="6" instance=ExtResource("3_3253y")]
+position = Vector2(461, 251)
+
+[editable path="Yoshi"]

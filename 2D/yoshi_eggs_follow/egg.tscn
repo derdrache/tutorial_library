@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv7pcloll63yq"]
+
+[ext_resource type="Texture2D" uid="uid://dkx3pxf7572hh" path="res://yoshis_island/assets/misc1.png" id="1_6upkn"]
+[ext_resource type="Script" uid="uid://xl77egdbfxjl" path="res://objects_follow_player/egg.gd" id="1_60cwx"]
+
+[node name="Egg" type="CharacterBody2D"]
+top_level = true
+script = ExtResource("1_60cwx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6upkn")
+region_enabled = true
+region_rect = Rect2(61, 220, 12, 16)
