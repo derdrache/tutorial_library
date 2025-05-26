@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://d10swh3o43244"]
+
+[ext_resource type="PackedScene" uid="uid://xv36djdjvuhj" path="res://assets/trainings_room/Wall_Doorway.gltf" id="2_y5njw"]
+[ext_resource type="PackedScene" uid="uid://c17pwjlvg2abn" path="res://assets/trainings_room/Door_A_Decorated.gltf" id="3_4xadh"]
+[ext_resource type="PackedScene" uid="uid://cbmlkref8uhvx" path="res://3D_UI_interaction/door_lock.tscn" id="4_50cdl"]
+
+[sub_resource type="GDScript" id="GDScript_0phs7"]
+script/source = "extends Node3D
+
+@onready var doorModel: Node3D = $Wall_Doorway2/Door_A_Decorated2
+
+func _open_door():
+	var tween = create_tween()
+	tween.tween_property(doorModel, \"global_rotation_degrees\", Vector3(0,-90,0), 2)
+
+
+func _on_door_lock_code_accepted() -> void:
+	_open_door()
+"
+
+[node name="Door" type="Node3D"]
+script = SubResource("GDScript_0phs7")
+
+[node name="Wall_Doorway2" parent="." instance=ExtResource("2_y5njw")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Door_A_Decorated2" parent="Wall_Doorway2" instance=ExtResource("3_4xadh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+
+[node name="DoorLock" parent="." instance=ExtResource("4_50cdl")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -1.4, 1.5, -0.3)
+
+[connection signal="code_accepted" from="DoorLock" to="." method="_on_door_lock_code_accepted"]

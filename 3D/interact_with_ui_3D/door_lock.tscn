@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbmlkref8uhvx"]
+
+[ext_resource type="PackedScene" uid="uid://p86761t4obn7" path="res://3D_UI_interaction/ui.tscn" id="1_28bte"]
+[ext_resource type="Script" uid="uid://b5h4oslrwns2w" path="res://3D_UI_interaction/door_lock.gd" id="1_daxc6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_28bte"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daxc6"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_28bte")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_60s8i"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_daxc6")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_28bte"]
+size = Vector3(1, 1, 0.01)
+
+[node name="DoorLock" type="StaticBody3D"]
+script = ExtResource("1_daxc6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_60s8i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_28bte")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Ui" parent="SubViewport" instance=ExtResource("1_28bte")]
+
+[connection signal="code_entered" from="SubViewport/Ui" to="." method="_on_ui_code_entered"]
