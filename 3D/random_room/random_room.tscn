@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://v2ug0pxjhtr3"]
+
+[ext_resource type="Script" uid="uid://4ictwtx13ai5" path="res://collection/random_room/random_room.gd" id="1_karbx"]
+[ext_resource type="MeshLibrary" uid="uid://nt5gbjiflyo8" path="res://dungeon_tile_maps/floor_tile_set.tres" id="2_yu7k4"]
+[ext_resource type="MeshLibrary" uid="uid://vi4mg13ifg8t" path="res://dungeon_tile_maps/wall_tile_set.tres" id="3_mich0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_karbx"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_s1oh3"]
+sky_material = SubResource("ProceduralSkyMaterial_karbx")
+
+[sub_resource type="Environment" id="Environment_sscde"]
+background_mode = 2
+sky = SubResource("Sky_s1oh3")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="RandomRoom" type="Area3D"]
+script = ExtResource("1_karbx")
+minFloorWidth = 5
+minFloorHeight = 5
+maxFloorWidth = 20
+maxFloorHeight = 20
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sscde")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="floorMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_yu7k4")
+cell_size = Vector3(4, 4, 4)
+
+[node name="wallMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_mich0")
+cell_size = Vector3(4, 4, 4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -157.0
+offset_top = 43.0
+offset_right = -70.0
+offset_bottom = 74.0
+grow_horizontal = 0
+text = "new room"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.382683, 0.92388, 0, -0.92388, 0.382683, 21.033, 100, 70)
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

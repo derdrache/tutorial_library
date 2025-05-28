@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://c68fttcgrgrll"]
+
+[ext_resource type="PackedScene" uid="uid://cx78qq2s3ej40" path="res://dungeon_assets/wall.glb" id="1_ht8m6"]
+[ext_resource type="PackedScene" uid="uid://c1y7l5gr5wb5s" path="res://dungeon_assets/wall_corner.gltf.glb" id="2_ymm0k"]
+[ext_resource type="PackedScene" uid="uid://76ug4gai2guk" path="res://dungeon_assets/wall_doorway_Tsplit.gltf.glb" id="3_lcg6g"]
+[ext_resource type="PackedScene" uid="uid://cbmf23lf2j1ml" path="res://dungeon_assets/wall_offset.glb" id="4_d8woi"]
+
+[node name="WallTileSet" type="Node3D"]
+
+[node name="wall2" parent="." instance=ExtResource("1_ht8m6")]
+
+[node name="wall_corner_gltf" parent="." instance=ExtResource("2_ymm0k")]
+
+[node name="wall_doorway_Tsplit_gltf" parent="." instance=ExtResource("3_lcg6g")]
+
+[node name="wall_offset" parent="." instance=ExtResource("4_d8woi")]
