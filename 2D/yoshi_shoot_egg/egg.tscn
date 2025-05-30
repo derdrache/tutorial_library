@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfgt3ejwmia7a"]
+
+[ext_resource type="Script" uid="uid://cnu72q0tvj2yc" path="res://shoot_egg/egg.gd" id="1_60cwx"]
+[ext_resource type="Texture2D" uid="uid://dkx3pxf7572hh" path="res://yoshis_island/assets/misc1.png" id="1_et260"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6upkn"]
+radius = 7.0
+
+[node name="Egg" type="CharacterBody2D"]
+script = ExtResource("1_60cwx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_et260")
+region_enabled = true
+region_rect = Rect2(61, 220, 12, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6upkn")

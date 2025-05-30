@@ -1,0 +1,157 @@
+[gd_scene load_steps=7 format=3 uid="uid://nx1o2igc25ya"]
+
+[ext_resource type="Texture2D" uid="uid://bsn7j0u06nfyd" path="res://yoshis_island/assets/island-objects.png" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://dpsdfndykv1lp" path="res://yoshi.tscn" id="2_nxogm"]
+[ext_resource type="PackedScene" uid="uid://y3scwcxibvst" path="res://yoshis_island/environment/interaction_cloud.tscn" id="3_3253y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpxcj"]
+size = Vector2(725, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g71x5"]
+size = Vector2(14, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3253y"]
+size = Vector2(62, 62)
+
+[node name="Test" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(218, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+position = Vector2(362, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+position = Vector2(506, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor"]
+position = Vector2(650, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Floor"]
+position = Vector2(795, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(508.5, 301)
+shape = SubResource("RectangleShape2D_lpxcj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(254, 59)
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = -1
+position = Vector2(354, 246)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_g71x5")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(197, 124, 14, 32)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+z_index = -1
+position = Vector2(649, 229)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(460, 84, 64, 64)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+z_index = -1
+position = Vector2(649, 165)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(460, 84, 64, 64)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+z_index = -1
+position = Vector2(649, 101)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(460, 84, 64, 64)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+z_index = -1
+position = Vector2(501, 165)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(460, 84, 64, 64)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+z_index = -1
+position = Vector2(501, 101)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6"]
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(460, 84, 64, 64)
+
+[node name="InteractionCloud" parent="." instance=ExtResource("3_3253y")]
+position = Vector2(355, 149)
+
+[node name="InteractionCloud2" parent="." instance=ExtResource("3_3253y")]
+position = Vector2(578, 73)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Yoshi" parent="." instance=ExtResource("2_nxogm")]
+position = Vector2(427, 239)
+
+[editable path="Yoshi"]
