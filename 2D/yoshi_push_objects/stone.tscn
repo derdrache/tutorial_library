@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhnobs00q64eh"]
+
+[ext_resource type="Texture2D" uid="uid://dhsytbjtb0s5o" path="res://yoshis_island/assets/environment/pushable-objects.png" id="1_6s6ed"]
+[ext_resource type="Script" uid="uid://csyli8rwjmx18" path="res://push_objects/stone.gd" id="1_rq0vd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq0vd"]
+size = Vector2(26, 26)
+
+[node name="Stone" type="CharacterBody2D"]
+script = ExtResource("1_rq0vd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6s6ed")
+region_enabled = true
+region_rect = Rect2(9, 75, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rq0vd")
