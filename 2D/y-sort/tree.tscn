@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdiicxg5arnfw"]
+
+[ext_resource type="Texture2D" uid="uid://dqnfjpswjq7te" path="res://tamagotchi_serie/assets/BASIC_propsNature.png" id="1_brfkd"]
+
+[node name="Tree" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_brfkd")
+offset = Vector2(0, -11)
+region_enabled = true
+region_rect = Rect2(38, 16, 21, 32)
