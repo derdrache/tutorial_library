@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuglp8exc7x75"]
+
+[ext_resource type="Script" uid="uid://duw6ekngbff8s" path="res://throw_and_pick_up_weapons/main_char.gd" id="1_2lkcu"]
+[ext_resource type="Script" uid="uid://cd7ti1xquipne" path="res://collection/group_formation_3D/camera_target.gd" id="2_f1fto"]
+[ext_resource type="PackedScene" uid="uid://bcbujl2yb7tei" path="res://assets/platform/character/character_duck.gltf" id="3_xkitq"]
+[ext_resource type="PackedScene" uid="uid://dsq3ffgjettet" path="res://throw_and_pick_up_weapons/gun.tscn" id="4_f1fto"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qknna"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jl3no"]
+size = Vector3(1, 2, 0.706055)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f1fto"]
+height = 1.6
+radius = 1.8
+
+[node name="Character1" type="CharacterBody3D"]
+script = ExtResource("1_2lkcu")
+
+[node name="CapsuleCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_qknna")
+
+[node name="BoxCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+shape = SubResource("BoxShape3D_jl3no")
+disabled = true
+
+[node name="Camera" type="Node3D" parent="." node_paths=PackedStringArray("camera_target")]
+script = ExtResource("2_f1fto")
+camera_target = NodePath("CameraTarget")
+
+[node name="CameraTarget" type="Node3D" parent="Camera"]
+
+[node name="Camera3D" type="Camera3D" parent="Camera/CameraTarget"]
+transform = Transform3D(-1, -5.01436e-08, 7.16125e-08, 0, 0.819152, 0.573576, -8.74228e-08, 0.573576, -0.819152, 0, 16.475, -20.715)
+fov = 20.0
+
+[node name="rotationNode" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="character_duck2" parent="rotationNode" instance=ExtResource("3_xkitq")]
+
+[node name="weaponPositionMarker" type="Marker3D" parent="rotationNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.3, 0.6)
+
+[node name="Gun" parent="rotationNode/weaponPositionMarker" instance=ExtResource("4_f1fto")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_f1fto")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
