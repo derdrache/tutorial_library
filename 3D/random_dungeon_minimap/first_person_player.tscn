@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsemhps0bnmyg"]
+
+[ext_resource type="Script" uid="uid://ep2i7d8vnjwy" path="res://random_dungeon_minimap/first_person_player.gd" id="1_mchh2"]
+[ext_resource type="PackedScene" uid="uid://bcohuoc4mp45t" path="res://random_dungeon_minimap/mini_map.tscn" id="2_670e7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vntxa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_68vwf"]
+
+[sub_resource type="GDScript" id="GDScript_670e7"]
+script/source = "extends PanelContainer
+
+@onready var camera_3d: Camera3D = $SubViewportContainer/SubViewport/Camera3D
+
+
+func _process(delta: float) -> void:
+	var playerPosition = get_tree().get_first_node_in_group(\"player\").global_position
+	playerPosition.y = camera_3d.global_position.y
+	
+	camera_3d.global_position = playerPosition
+"
+
+[sub_resource type="SphereMesh" id="SphereMesh_mchh2"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_670e7"]
+albedo_color = Color(0, 0, 1, 1)
+
+[node name="FirstPersonPlayer" type="CharacterBody3D"]
+script = ExtResource("1_mchh2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vntxa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_68vwf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0.7, 0)
+cull_mask = 1048573
+current = true
+fov = 60.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="miniMap" parent="CanvasLayer" instance=ExtResource("2_670e7")]
+script = SubResource("GDScript_670e7")
+
+[node name="minimapMarker" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71854, 0)
+layers = 2
+mesh = SubResource("SphereMesh_mchh2")
+surface_material_override/0 = SubResource("StandardMaterial3D_670e7")

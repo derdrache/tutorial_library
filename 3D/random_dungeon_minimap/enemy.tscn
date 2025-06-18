@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsu5i72nengww"]
+
+[ext_resource type="Script" uid="uid://bd56u2pm8ji42" path="res://random_dungeon_minimap/enemy.gd" id="1_7k104"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vntxa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xaro"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_68vwf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7k104"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gyqm"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_7k104")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vntxa")
+surface_material_override/0 = SubResource("StandardMaterial3D_7xaro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_68vwf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+layers = 2
+mesh = SubResource("SphereMesh_7k104")
+surface_material_override/0 = SubResource("StandardMaterial3D_4gyqm")
