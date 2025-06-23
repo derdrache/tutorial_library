@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://2ro8oiiq8rr"]
+
+[ext_resource type="Texture2D" uid="uid://bsn7j0u06nfyd" path="res://collection/yoshis_island/assets/environment/island-objects.png" id="1_3253y"]
+[ext_resource type="PackedScene" uid="uid://bfcrxfk74w7xv" path="res://create_enemy/enemy.tscn" id="2_nxogm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpxcj"]
+size = Vector2(145, 82)
+
+[node name="Test" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+position = Vector2(506, 300)
+texture = ExtResource("1_3253y")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(506.5, 301)
+shape = SubResource("RectangleShape2D_lpxcj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(338, 138)
+anchor_mode = 0
+zoom = Vector2(4, 4)
+
+[node name="Enemy" parent="." instance=ExtResource("2_nxogm")]
+position = Vector2(508, 248)
