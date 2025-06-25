@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://c78d5geg2khdt"]
+
+[ext_resource type="Script" uid="uid://bs8s5mmhgotdd" path="res://prepeare/place_object_on_grid/test.gd" id="1_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://d1ii811wkjst6" path="res://prepeare/place_object_on_grid/grid.tscn" id="1_37kl0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8uh7m"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_6uqi0"]
+sky_material = SubResource("ProceduralSkyMaterial_8uh7m")
+
+[sub_resource type="Environment" id="Environment_ppyta"]
+background_mode = 2
+sky = SubResource("Sky_6uqi0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8uh7m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6uqi0"]
+material = SubResource("StandardMaterial3D_8uh7m")
+size = Vector2(10, 10)
+
+[node name="Test" type="Node3D"]
+script = ExtResource("1_8uh7m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ppyta")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_6uqi0")
+
+[node name="Grid" parent="." instance=ExtResource("1_37kl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.01, -4.5)
+gridWidth = 10
+gridHeight = 10
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 12.375, 13.35)
+fov = 25.0

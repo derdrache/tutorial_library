@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1ii811wkjst6"]
+
+[ext_resource type="Script" uid="uid://br7r1mcml5d1b" path="res://prepeare/place_object_on_grid/grid.gd" id="1_ebq2e"]
+
+[node name="Grid" type="Node3D"]
+script = ExtResource("1_ebq2e")

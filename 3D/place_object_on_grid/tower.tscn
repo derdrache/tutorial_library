@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqn13p6m5a1w2"]
+
+[ext_resource type="Script" uid="uid://dk61rvm1sdvxs" path="res://prepeare/place_object_on_grid/building.gd" id="1_vedim"]
+[ext_resource type="PackedScene" uid="uid://dx7862xc7dspw" path="res://tower.glb" id="2_stebd"]
+
+[node name="Tower" type="StaticBody3D"]
+script = ExtResource("1_vedim")
+offset = Vector3(0.5, 0, 0.5)
+
+[node name="tower" parent="." instance=ExtResource("2_stebd")]

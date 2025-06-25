@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx7ec01bot8c6"]
+
+[ext_resource type="Script" uid="uid://dk61rvm1sdvxs" path="res://prepeare/place_object_on_grid/building.gd" id="1_lg3is"]
+[ext_resource type="PackedScene" uid="uid://dtqemep4k30gi" path="res://forge.glb" id="2_lg3is"]
+
+[node name="Forge" type="StaticBody3D"]
+script = ExtResource("1_lg3is")
+size = Vector2(3, 3)
+
+[node name="forge" parent="." instance=ExtResource("2_lg3is")]

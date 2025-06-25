@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnt2sjsngeg70"]
+
+[ext_resource type="Script" uid="uid://dcuci83at0r4j" path="res://prepeare/place_object_on_grid/grid_cell.gd" id="1_024bi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noi3y"]
+resource_local_to_scene = true
+transparency = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_024bi"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_noi3y")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yglvi"]
+size = Vector3(1, 0.01, 1)
+
+[node name="GridCell" type="Area3D"]
+script = ExtResource("1_024bi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_024bi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_yglvi")
