@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5sipf7i41ccq"]
+
+[ext_resource type="Script" uid="uid://cb411gdirwvnw" path="res://scene.gd" id="1_pmqal"]
+[ext_resource type="PackedScene" uid="uid://btp6jgap8npdx" path="res://collection/3D_UI_interaction/first_person_player.tscn" id="2_nxogm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ulcgi"]
+sky_top_color = Color(0.0366329, 0.0532976, 0.0765334, 1)
+sky_horizon_color = Color(0.00582178, 0, 0.287057, 1)
+sky_curve = 0.106066
+ground_bottom_color = Color(0.0352941, 0.054902, 0.0784314, 1)
+ground_horizon_color = Color(0.00392157, 0, 0.286275, 1)
+
+[sub_resource type="Sky" id="Sky_nxogm"]
+sky_material = SubResource("ProceduralSkyMaterial_ulcgi")
+
+[sub_resource type="Environment" id="Environment_3253y"]
+background_mode = 2
+sky = SubResource("Sky_nxogm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ulcgi"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nxogm"]
+points = PackedVector3Array(10.1548, 0.158668, 10.1548, -10.1548, -0.158668, -10.1548, -10.1548, 0.158668, -10.1548, 10.1548, -0.158668, -10.1548, -10.1548, -0.158668, 10.1548, -10.1548, 0.158668, 10.1548, 10.1548, 0.158668, -10.1548, 10.1548, -0.158668, 10.1548)
+
+[sub_resource type="Animation" id="Animation_3253y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.8326, 2.61799, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sun:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_nxogm"]
+resource_name = "day_and_night"
+length = 24.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 23.9874),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.8326, 2.61799, 0), Vector3(-4.45059, 2.61799, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sun:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 23.9874),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3cyc"]
+_data = {
+&"RESET": SubResource("Animation_3253y"),
+&"day_and_night": SubResource("Animation_nxogm")
+}
+
+[node name="Scene" type="Node3D"]
+script = ExtResource("1_pmqal")
+startTime = 0
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, 0.482965, -0.129412, 0, -0.258823, -0.965925, -0.500003, -0.836513, 0.224147, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3253y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.662831, 0)
+mesh = SubResource("PlaneMesh_ulcgi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_nxogm")
+
+[node name="FirstPersonPlayer" parent="." instance=ExtResource("2_nxogm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69765, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u3cyc")
+}
