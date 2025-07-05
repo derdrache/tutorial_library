@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://baqygtgsjhhul"]
+
+[ext_resource type="Script" uid="uid://x6ornxt2d2c7" path="res://prepare/tamagotchi_serie/Egg, Monster and Resources/monster.gd" id="1_mrqeg"]
+[ext_resource type="Texture2D" uid="uid://yog1rac8dlqp" path="res://monster/bear3.png" id="1_s3gyj"]
+[ext_resource type="Shader" uid="uid://d0xh6o2pxc1o3" path="res://prepare/tamagotchi_serie/Egg, Monster and Resources/outline.gdshader" id="2_ga5te"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vr0w3"]
+shader = ExtResource("2_ga5te")
+shader_parameter/clr = Color(0, 0, 0, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 5.0
+
+[node name="Monster" type="CharacterBody2D"]
+script = ExtResource("1_mrqeg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vr0w3")
+position = Vector2(0, -20)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_s3gyj")

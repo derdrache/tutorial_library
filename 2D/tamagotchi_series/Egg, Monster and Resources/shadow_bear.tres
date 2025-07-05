@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=6 format=3 uid="uid://c15oqrxg8yqs2"]
+
+[ext_resource type="Script" uid="uid://chbcmvon4ok54" path="res://prepare/tamagotchi_serie/Egg, Monster and Resources/monster_resource.gd" id="1_8c6ur"]
+[ext_resource type="Texture2D" uid="uid://cpnvllxaphtxr" path="res://eggs/egg3.png" id="1_cqfoc"]
+[ext_resource type="Texture2D" uid="uid://55daf4ttgbg2" path="res://monster/bear1.png" id="2_ef0bw"]
+[ext_resource type="Texture2D" uid="uid://boois5tt2lv8f" path="res://monster/bear2.png" id="3_wsc2t"]
+[ext_resource type="Texture2D" uid="uid://yog1rac8dlqp" path="res://monster/bear3.png" id="4_trhwj"]
+
+[resource]
+script = ExtResource("1_8c6ur")
+eggModel = ExtResource("1_cqfoc")
+monsterEvole1Model = ExtResource("2_ef0bw")
+monsterEvole2Model = ExtResource("3_wsc2t")
+monsterEvole3Model = ExtResource("4_trhwj")
+metadata/_custom_type_script = "uid://chbcmvon4ok54"
