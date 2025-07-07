@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3c76t2oc1xxk"]
+
+[ext_resource type="Script" uid="uid://bumyfrf1r4738" path="res://hexa_interaction/tile_interaction.gd" id="1_j16th"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t8mw"]
+size = Vector2(10, 9)
+
+[node name="TileInteraction" type="Area2D"]
+script = ExtResource("1_j16th")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7t8mw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

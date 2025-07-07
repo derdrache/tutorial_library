@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=4 uid="uid://22ho6m2vxp6i"]
+
+[ext_resource type="Texture2D" uid="uid://dbq86xiih8ywq" path="res://collection/create_hex_grid/Tileset1.png" id="1_i0mu5"]
+[ext_resource type="Texture2D" uid="uid://dk5lcj8qv1fr0" path="res://hexa_interaction/assets/Elements.png" id="2_rm0tp"]
+[ext_resource type="PackedScene" uid="uid://gjtig508lxjv" path="res://hexa_interaction/character_body_2d.tscn" id="3_oy446"]
+[ext_resource type="PackedScene" uid="uid://d3c76t2oc1xxk" path="res://hexa_interaction/tile_interaction.tscn" id="4_gsi3e"]
+[ext_resource type="Texture2D" uid="uid://c7yifub0lpnm3" path="res://hexa_interaction/assets/Orc.png" id="5_6jibh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ud4g0"]
+texture = ExtResource("1_i0mu5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ornxs"]
+tile_shape = 3
+tile_layout = 5
+tile_size = Vector2i(32, 21)
+sources/0 = SubResource("TileSetAtlasSource_ud4g0")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00cvl"]
+texture = ExtResource("2_rm0tp")
+texture_region_size = Vector2i(32, 32)
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4lwpw"]
+tile_shape = 3
+tile_layout = 5
+tile_size = Vector2i(32, 21)
+sources/0 = SubResource("TileSetAtlasSource_00cvl")
+
+[node name="HexGrid" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+modulate = Color(0.992157, 1, 0.992157, 1)
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAMAAAABAAIAAAAAAAMAAAACAAIAAAAAAAMAAAACAAMAAAAAAAMAAAADAAMAAAAAAAMAAAADAAQAAAAAAAMAAAAEAAQAAAAAAAMAAAAEAAUAAAAAAAMAAAAFAAUAAAAAAAMAAAAFAAYAAAAAAAMAAAAGAAYAAAAAAAMAAAAGAAcAAAAAAAMAAAACAAEAAAAAAAMAAAADAAIAAAAAAAMAAAAEAAMAAAAAAAMAAAAFAAMAAAAAAAMAAAAFAAQAAAAAAAMAAAAGAAQAAAAAAAMAAAAGAAUAAAAAAAMAAAADAAAAAAAAAAMAAAADAAEAAAAAAAMAAAAEAAIAAAAAAAMAAAAEAAEAAAAAAAMAAAAFAAIAAAAAAAMAAAAGAAMAAAAAAAMAAAAHAAQAAAAAAAMAAAAHAAUAAAAAAAMAAAAIAAYAAAAAAAMAAAAAAAMAAAAAAAMAAAABAAMAAAAAAAMAAAACAAQAAAAAAAMAAAACAAUAAAAAAAMAAAADAAYAAAAAAAMAAAAEAAYAAAAAAAMAAAADAAUAAAAAAAMAAAAEAAcAAAAAAAMAAAAFAAcAAAAAAAMAAAAFAAgAAAAAAAMAAAAGAAgAAAAAAAMAAAAHAAcAAAAAAAMAAAAHAAYAAAAAAAMAAAAJAAUAAAAAAAMAAAAIAAUAAAAAAAMAAAAIAAQAAAAAAAMAAAAIAAMAAAAAAAMAAAAHAAMAAAAAAAMAAAAHAAIAAAAAAAMAAAAGAAIAAAAAAAMAAAAGAAEAAAAAAAMAAAACAAAAAAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAFAAAAAAAAAAMAAAAFAAEAAAAAAAMAAAAEAAAAAAAAAAMAAAAHAAEAAAAAAAMAAAAGAP//AAAAAAMAAAAGAAAAAAAAAAMAAAAIAAEAAAAAAAMAAAAIAAIAAAAAAAMAAAAJAAIAAAAAAAMAAAAJAAMAAAAAAAMAAAAKAAMAAAAAAAMAAAAKAAQAAAAAAAMAAAAJAAQAAAAAAAMAAAABAAQAAAAAAAMAAAAKAAIAAAAAAAMAAAAJAAEAAAAAAAMAAAAHAAAAAAAAAAMAAAAFAP7/AAAAAAMAAAAEAP7/AAAAAAMAAAADAP//AAAAAAMAAAAAAAIAAAAAAAMAAAALAAMAAAAAAAMAAAAFAP3/AAAAAAMAAAAGAP7/AAAAAAMAAAAHAP//AAAAAAMAAAAIAAAAAAAAAAMAAAD//wMAAAAAAAMAAAAAAAQAAAAAAAMAAAAAAAUAAAAAAAMAAAABAAUAAAAAAAMAAAACAAYAAAAAAAMAAAACAAcAAAAAAAMAAAADAAcAAAAAAAMAAAAEAAgAAAAAAAMAAAAHAAgAAAAAAAMAAAAIAAgAAAAAAAMAAAAJAAgAAAAAAAMAAAAIAAcAAAAAAAMAAAAJAAcAAAAAAAMAAAAJAAYAAAAAAAMAAAAKAAYAAAAAAAMAAAAKAAUAAAAAAAMAAAALAAUAAAAAAAMAAAALAAQAAAAAAAMAAAALAAIAAAAAAAMAAAAKAAEAAAAAAAMAAAAKAAAAAAAAAAMAAAAJAAAAAAAAAAMAAAAIAP//AAAAAAMAAAAIAP7/AAAAAAMAAAAHAP7/AAAAAAMAAAA=")
+tile_set = SubResource("TileSet_ornxs")
+
+[node name="decoration" type="TileMapLayer" parent="."]
+visible = false
+position = Vector2(0, -8)
+tile_map_data = PackedByteArray("AAACAAEAAAAAAAEAAAAEAAAAAAAAAAEAAAADAAMAAAAAAAEAAAAGAAEAAAACAAIAAAADAAIAAAACAAIAAAAGAAUAAAABAAIAAAAJAAMAAAABAAIAAAAGAAMAAAABAAIAAAAIAAUAAAACAAMAAAAIAAIAAAADAAMAAAAEAAQAAAADAAMAAAA=")
+tile_set = SubResource("TileSet_4lwpw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(50, 152)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Player" parent="." instance=ExtResource("3_oy446")]
+z_index = 9
+position = Vector2(47, 130)
+
+[node name="HexAgent" parent="Player" index="1" node_paths=PackedStringArray("tileMap")]
+tileMap = NodePath("../../TileMapLayer")
+
+[node name="TileInteraction" parent="." instance=ExtResource("4_gsi3e")]
+position = Vector2(96, 147)
+scenePath = "res://dungeon_scene.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="TileInteraction"]
+texture = ExtResource("2_rm0tp")
+region_enabled = true
+region_rect = Rect2(66, 66, 33, 31)
+
+[node name="TileInteraction2" parent="." instance=ExtResource("4_gsi3e")]
+position = Vector2(1, 180)
+scenePath = "res://battle_scene.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="TileInteraction2"]
+texture = ExtResource("5_6jibh")
+region_enabled = true
+region_rect = Rect2(40, 39, 26, 24)
+
+[editable path="Player"]
