@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcnpt3fbqn1li"]
+
+[ext_resource type="Script" uid="uid://dq3083dupi1mr" path="res://dateTime_display/date_time_display.gd" id="1_sfg34"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skqjs"]
+bg_color = Color(0.6, 0.6, 0.6, 0.588235)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="DateTimeDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("1_sfg34")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_skqjs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="SeasonLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 7
+text = "Winter"
+
+[node name="DateLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 7
+text = "21.03."
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 7
+text = "08:00 am"
