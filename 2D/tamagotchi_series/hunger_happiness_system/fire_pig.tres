@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=6 format=3 uid="uid://cevqbbpl0brvy"]
+
+[ext_resource type="Script" uid="uid://byygmc6p6fmlu" path="res://prepare/tamagotchi_serie/hunger_happiness_system/monster_resource.gd" id="1_26iju"]
+[ext_resource type="Texture2D" uid="uid://ffsawi4lxof8" path="res://prepare/tamagotchi_serie/assets/eggs/egg1.png" id="1_uo23x"]
+[ext_resource type="Texture2D" uid="uid://cj6h7ga42mun4" path="res://prepare/tamagotchi_serie/assets/monster/pig1.png" id="2_52y8x"]
+[ext_resource type="Texture2D" uid="uid://npn1ontuh3u" path="res://prepare/tamagotchi_serie/assets/monster/pig2.png" id="3_kor43"]
+[ext_resource type="Texture2D" uid="uid://caxtm4d18clmk" path="res://prepare/tamagotchi_serie/assets/monster/pig3.png" id="4_rw1xl"]
+
+[resource]
+script = ExtResource("1_26iju")
+eggModel = ExtResource("1_uo23x")
+monsterEvole1Model = ExtResource("2_52y8x")
+monsterEvole2Model = ExtResource("3_kor43")
+monsterEvole3Model = ExtResource("4_rw1xl")
+metadata/_custom_type_script = "uid://chbcmvon4ok54"

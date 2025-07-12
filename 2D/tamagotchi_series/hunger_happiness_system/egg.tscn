@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8bhws7iykqud"]
+
+[ext_resource type="Texture2D" uid="uid://ffsawi4lxof8" path="res://prepare/tamagotchi_serie/assets/eggs/egg1.png" id="1_6upkn"]
+[ext_resource type="Script" uid="uid://c2ykd3tko5x25" path="res://prepare/tamagotchi_serie/hunger_happiness_system/egg.gd" id="1_60cwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60cwx"]
+size = Vector2(20, 28)
+
+[node name="Egg" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_60cwx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12.5)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_6upkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_60cwx")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

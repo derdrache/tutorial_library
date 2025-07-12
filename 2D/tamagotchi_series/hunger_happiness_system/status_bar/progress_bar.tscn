@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://nsybussstoh2"]
+
+[ext_resource type="Script" uid="uid://bbq3fjur3yvsu" path="res://prepare/tamagotchi_serie/hunger_happiness_system/status_bar/progress_bar.gd" id="1_050m1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ngjm"]
+resource_local_to_scene = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhkt7"]
+resource_local_to_scene = true
+bg_color = Color(0.78, 0.7566, 0.078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="ProgressBar" type="ProgressBar"]
+custom_minimum_size = Vector2(50, 10)
+theme_override_styles/background = SubResource("StyleBoxFlat_8ngjm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uhkt7")
+value = 50.0
+show_percentage = false
+script = ExtResource("1_050m1")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

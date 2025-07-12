@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2rsrhphw8rxj"]
+
+[ext_resource type="Script" uid="uid://bb070mi4khycn" path="res://prepare/tamagotchi_serie/hunger_happiness_system/status_bar/status_bar.gd" id="1_1lacc"]
+[ext_resource type="Shader" uid="uid://d0xh6o2pxc1o3" path="res://prepare/tamagotchi_serie/hunger_happiness_system/outline.gdshader" id="1_urxne"]
+[ext_resource type="Texture2D" uid="uid://uj76xgy4empc" path="res://prepare/tamagotchi_serie/hunger_happiness_system/Sun.png" id="2_1lacc"]
+[ext_resource type="PackedScene" uid="uid://nsybussstoh2" path="res://prepare/tamagotchi_serie/hunger_happiness_system/status_bar/progress_bar.tscn" id="3_yny37"]
+[ext_resource type="Texture2D" uid="uid://c7vdx3dt6pkxh" path="res://prepare/tamagotchi_serie/hunger_happiness_system/PetBowl.png" id="4_ffw0i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6tndq"]
+shader = ExtResource("1_urxne")
+shader_parameter/clr = Color(0, 0, 0, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ngjm"]
+resource_local_to_scene = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhkt7"]
+resource_local_to_scene = true
+bg_color = Color(0.78, 0.7566, 0.078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urxne"]
+resource_local_to_scene = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lacc"]
+resource_local_to_scene = true
+bg_color = Color(0.78, 0.7566, 0.078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="StatusBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -38.0
+offset_top = -70.0
+offset_right = 2.0
+offset_bottom = -30.0
+script = ExtResource("1_1lacc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Happiness" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Happiness"]
+material = SubResource("ShaderMaterial_6tndq")
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("2_1lacc")
+expand_mode = 1
+
+[node name="ProgressBar" parent="VBoxContainer/Happiness" instance=ExtResource("3_yny37")]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8ngjm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uhkt7")
+
+[node name="Hunger" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Hunger"]
+material = SubResource("ShaderMaterial_6tndq")
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("4_ffw0i")
+expand_mode = 1
+
+[node name="ProgressBar" parent="VBoxContainer/Hunger" instance=ExtResource("3_yny37")]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_urxne")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1lacc")
+
+[node name="HappinessTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="HungerTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="HappinessTimer" to="." method="_on_happiness_timer_timeout"]
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
