@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://xf6blrm6kgv0"]
+
+[ext_resource type="Script" uid="uid://bu7skpolgn1en" path="res://ingame_build/first_person_player.gd" id="1_670e7"]
+[ext_resource type="Texture2D" uid="uid://dvocmna1lcinr" path="res://crosshair012.png" id="2_670e7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vntxa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_68vwf"]
+
+[node name="FirstPersonPlayer" type="CharacterBody3D"]
+script = ExtResource("1_670e7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vntxa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_68vwf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+cull_mask = 1048573
+current = true
+fov = 60.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -6)
+billboard = 1
+texture = ExtResource("2_670e7")

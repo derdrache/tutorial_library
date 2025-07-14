@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://di6pnlg2a1cvc"]
+
+[ext_resource type="PackedScene" uid="uid://c1pr7h08t4s1j" path="res://wall.glb" id="1_wy8h5"]
+
+[node name="GridMapCollection" type="Node3D"]
+
+[node name="wall2" parent="." instance=ExtResource("1_wy8h5")]

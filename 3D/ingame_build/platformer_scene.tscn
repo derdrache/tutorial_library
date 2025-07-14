@@ -1,0 +1,156 @@
+[gd_scene load_steps=10 format=3 uid="uid://jp2abtexj84a"]
+
+[ext_resource type="PackedScene" uid="uid://cbjvh1yjabxob" path="res://assets/platform/tiles/tileLarge_desert.gltf.glb" id="1_isrho"]
+[ext_resource type="PackedScene" uid="uid://4nhrd64b1pdi" path="res://assets/platform/tiles/tileHigh_desert.gltf.glb" id="2_hoawl"]
+[ext_resource type="PackedScene" uid="uid://fexjuymc5mbd" path="res://assets/platform/detail_desert.gltf.glb" id="3_cbdxa"]
+[ext_resource type="PackedScene" uid="uid://cqdu2g10kslxn" path="res://assets/platform/tree_desert.gltf.glb" id="4_vj6te"]
+[ext_resource type="MeshLibrary" uid="uid://b447ufrfb7h1a" path="res://ingame_build/gridMapCollection.tres" id="6_8xnf0"]
+[ext_resource type="PackedScene" uid="uid://xf6blrm6kgv0" path="res://ingame_build/first_person_player.tscn" id="6_isrho"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qmcj5"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_fm38k"]
+sky_material = SubResource("ProceduralSkyMaterial_qmcj5")
+
+[sub_resource type="Environment" id="Environment_xhgwa"]
+background_mode = 2
+sky = SubResource("Sky_fm38k")
+
+[node name="PlatformerScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xhgwa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="map" type="Node3D" parent="." groups=["navigation_mesh_source_group"]]
+
+[node name="tileLarge_desert_gltf" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="tileLarge_desert_gltf2" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -14)
+
+[node name="tileLarge_desert_gltf24" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -20)
+
+[node name="tileLarge_desert_gltf3" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="tileLarge_desert_gltf4" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, -8)
+
+[node name="tileLarge_desert_gltf6" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -5)
+
+[node name="tileLarge_desert_gltf7" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 1)
+
+[node name="tileHigh_desert_gltf3" parent="map" instance=ExtResource("2_hoawl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="tileHigh_desert_gltf4" parent="map" instance=ExtResource("2_hoawl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="tileLarge_desert_gltf8" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="tileLarge_desert_gltf9" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="tileHigh_desert_gltf5" parent="map" instance=ExtResource("2_hoawl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -10)
+
+[node name="tileLarge_desert_gltf10" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7)
+
+[node name="tileLarge_desert_gltf12" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -1)
+
+[node name="tileLarge_desert_gltf13" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 5)
+
+[node name="tileHigh_desert_gltf6" parent="map" instance=ExtResource("2_hoawl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
+
+[node name="detail_desert_gltf2" parent="map" instance=ExtResource("3_cbdxa")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -5.93185, 1, 5.48236)
+
+[node name="detail_desert_gltf3" parent="map" instance=ExtResource("3_cbdxa")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 1, -2)
+
+[node name="detail_desert_gltf4" parent="map" instance=ExtResource("3_cbdxa")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6, 1, -6)
+
+[node name="tileLarge_desert_gltf5" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="tileLarge_desert_gltf14" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, -8)
+
+[node name="tileLarge_desert_gltf15" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -6)
+
+[node name="tileLarge_desert_gltf18" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -11)
+
+[node name="tileLarge_desert_gltf22" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -17)
+
+[node name="tileLarge_desert_gltf19" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="tileLarge_desert_gltf23" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
+
+[node name="tileLarge_desert_gltf20" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, -2)
+
+[node name="tileLarge_desert_gltf26" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12)
+
+[node name="tileLarge_desert_gltf27" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -18)
+
+[node name="tileLarge_desert_gltf28" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 6)
+
+[node name="tileLarge_desert_gltf29" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12, 0, -7)
+
+[node name="tileLarge_desert_gltf30" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.51683e-07, 0, 0)
+
+[node name="tileLarge_desert_gltf21" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -13)
+
+[node name="tileLarge_desert_gltf25" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -19)
+
+[node name="tileLarge_desert_gltf16" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -1)
+
+[node name="tileLarge_desert_gltf17" parent="map" instance=ExtResource("1_isrho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 5)
+
+[node name="detail_desert_gltf5" parent="map" instance=ExtResource("3_cbdxa")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6, 1, -6)
+
+[node name="tree_desert_gltf" parent="map" instance=ExtResource("4_vj6te")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, 1, -9)
+
+[node name="tree_desert_gltf2" parent="map" instance=ExtResource("4_vj6te")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2.9, 1, 5)
+
+[node name="FirstPersonPlayer" parent="." instance=ExtResource("6_isrho")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 2.2, -18)
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh_library = ExtResource("6_8xnf0")
+cell_size = Vector3(4, 4, 4)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
