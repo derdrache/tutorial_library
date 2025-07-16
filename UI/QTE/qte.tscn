@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://cluq2rrqh66t4"]
+
+[ext_resource type="Shader" uid="uid://cpsj73pdu6t68" path="res://QTE/qte.gdshader" id="1_fcuux"]
+[ext_resource type="Script" uid="uid://bfn6hmktsr2iy" path="res://QTE/qte.gd" id="1_wcljn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcljn"]
+resource_local_to_scene = true
+shader = ExtResource("1_fcuux")
+shader_parameter/first_color = Color(0.0833333, 1, 0, 1)
+shader_parameter/second_color = Color(0.983333, 1, 0, 1)
+shader_parameter/third_color = Color(1, 0, 0, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/unfilled_color = Color(0.443, 0.443, 0.443, 1)
+shader_parameter/value = 1.0
+shader_parameter/smooth_ = 0.005
+shader_parameter/width_in = 0.78
+shader_parameter/width_out = 0.95
+shader_parameter/border_width = 0.03
+
+[node name="Qte" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wcljn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wcljn")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -20.0
+offset_right = 101.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeyLabel" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -34.5
+offset_right = 20.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 50
+text = "Q"
+
+[node name="SuccsessLabel" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = 11.0
+offset_right = 129.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.436332
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 50
+text = "SUCCSESS"
