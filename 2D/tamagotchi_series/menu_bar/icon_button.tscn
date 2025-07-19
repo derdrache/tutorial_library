@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4kkss3mm201f"]
+
+[ext_resource type="Script" uid="uid://bj64wywfcy8b" path="res://main_ui/icon_button.gd" id="1_rrrnx"]
+[ext_resource type="Texture2D" uid="uid://duiqwyyjncy7r" path="res://tamagotchi_assets/banana.png" id="2_4wnuh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqour"]
+resource_local_to_scene = true
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2d62"]
+
+[node name="IconButton" type="PanelContainer"]
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aqour")
+script = ExtResource("1_rrrnx")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_4wnuh")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g2d62")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g2d62")
