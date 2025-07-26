@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bwyrn5efwymss"]
+
+[ext_resource type="Script" uid="uid://ly2nwydefvys" path="res://tamagotchi/item_resource/item_resource.gd" id="1_t2uht"]
+[ext_resource type="Texture2D" uid="uid://duiqwyyjncy7r" path="res://tamagotchi/tamagotchi_assets/banana.png" id="2_3vjby"]
+
+[resource]
+script = ExtResource("1_t2uht")
+texture = ExtResource("2_3vjby")
+happiness = 0
+hunger = 50
+metadata/_custom_type_script = "uid://ly2nwydefvys"
