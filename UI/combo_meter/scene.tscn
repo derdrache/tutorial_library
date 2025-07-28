@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj16gkshstwss"]
+
+[ext_resource type="Script" uid="uid://gmpe8lalxema" path="res://combo_meter/scene.gd" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://cp6hwiflj4gtc" path="res://combo_meter/combo_meter.tscn" id="1_ulcgi"]
+
+[node name="Scene" type="CanvasLayer"]
+script = ExtResource("1_nxogm")
+
+[node name="ComboMeter" parent="." instance=ExtResource("1_ulcgi")]
+offset_left = -859.0
+offset_top = 124.0
+offset_right = -859.0
+offset_bottom = 124.0
+scale = Vector2(1.5, 1.5)
