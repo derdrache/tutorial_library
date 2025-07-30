@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbmtyc6xe424f"]
+
+[ext_resource type="Script" uid="uid://bdqlx2npuj0fe" path="res://speedButton/battle_speed_button.gd" id="2_vdl3n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tdx3l"]
+load_path = "res://.godot/imported/speed_low.png-217470b8d4f32e0323205e4c8d4313cd.ctex"
+
+[node name="BattleSpeedButton" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1163.0
+offset_top = 41.0
+offset_right = -57.0
+offset_bottom = -619.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+texture_normal = SubResource("CompressedTexture2D_tdx3l")
+texture_pressed = SubResource("CompressedTexture2D_tdx3l")
+texture_hover = SubResource("CompressedTexture2D_tdx3l")
+texture_disabled = SubResource("CompressedTexture2D_tdx3l")
+texture_focused = SubResource("CompressedTexture2D_tdx3l")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_vdl3n")
