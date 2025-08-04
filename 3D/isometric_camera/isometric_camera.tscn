@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b08o7eb7qcllb"]
+
+[ext_resource type="Script" uid="uid://ckxr12lwxxcnc" path="res://prepeare/isometric_camera/isometric_camera.gd" id="1_3lb8t"]
+
+[node name="cameraPivot" type="Node3D"]
+script = ExtResource("1_3lb8t")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 7.5, 22.5, 36.5)
+projection = 1
+size = 20.0
