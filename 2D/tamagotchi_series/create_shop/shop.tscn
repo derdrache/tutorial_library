@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0xec2fqaglxj"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_6u0f2"]
+[ext_resource type="Texture2D" uid="uid://dr4pvs7m3gqye" path="res://tamagotchi/tamagotchi_assets/Buttons-shoping-cart.png" id="2_rd4hw"]
+[ext_resource type="PackedScene" path="res://shop_item.tscn" id="3_boael"]
+[ext_resource type="Resource" path="res://greenEgg.tres" id="4_q14lr"]
+[ext_resource type="Resource" path="res://purpleEgg.tres" id="5_rvxpw"]
+[ext_resource type="Resource" path="res://glasses.tres" id="6_a4nho"]
+[ext_resource type="Resource" path="res://fruit2.tres" id="7_k5dq5"]
+[ext_resource type="PackedScene" path="res://confirm_window.tscn" id="8_eq3rp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7rdd"]
+bg_color = Color(0.6, 0.6, 0.6, 0.588235)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6u0f2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="shopButton" type="TextureButton" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("2_rd4hw")
+texture_pressed = ExtResource("2_rd4hw")
+texture_hover = ExtResource("2_rd4hw")
+texture_disabled = ExtResource("2_rd4hw")
+texture_focused = ExtResource("2_rd4hw")
+
+[node name="ShopPage" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e7rdd")
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopPage"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPage/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="ShopPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 50
+text = "SHOP"
+horizontal_alignment = 1
+
+[node name="shopItemGrid" type="GridContainer" parent="ShopPage/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 4
+
+[node name="ShopItem" parent="ShopPage/MarginContainer/VBoxContainer/shopItemGrid" instance=ExtResource("3_boael")]
+layout_mode = 2
+itemResource = ExtResource("4_q14lr")
+
+[node name="ShopItem2" parent="ShopPage/MarginContainer/VBoxContainer/shopItemGrid" instance=ExtResource("3_boael")]
+layout_mode = 2
+itemResource = ExtResource("5_rvxpw")
+
+[node name="ShopItem3" parent="ShopPage/MarginContainer/VBoxContainer/shopItemGrid" instance=ExtResource("3_boael")]
+layout_mode = 2
+itemResource = ExtResource("6_a4nho")
+
+[node name="ShopItem4" parent="ShopPage/MarginContainer/VBoxContainer/shopItemGrid" instance=ExtResource("3_boael")]
+layout_mode = 2
+itemResource = ExtResource("7_k5dq5")
+
+[node name="ConfirmWindow" parent="." instance=ExtResource("8_eq3rp")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -97.5
+offset_top = -49.0
+offset_right = 97.5
+offset_bottom = 49.0

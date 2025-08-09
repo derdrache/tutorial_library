@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dx0vuc54y033v"]
+
+[ext_resource type="Resource" uid="uid://dcs7tfhpxxh7h" path="res://tamagotchi/monster_resource/plant_bird.tres" id="1_75o6b"]
+[ext_resource type="Script" uid="uid://ly2nwydefvys" path="res://tamagotchi/item_resource/item_resource.gd" id="2_30n3q"]
+[ext_resource type="Texture2D" uid="uid://gdo4abf2ltss" path="res://tamagotchi/tamagotchi_assets/eggs/egg2.png" id="3_gm3ml"]
+
+[resource]
+script = ExtResource("2_30n3q")
+itemName = "Green Egg"
+texture = ExtResource("3_gm3ml")
+monsterResource = ExtResource("1_75o6b")
+happiness = 0
+hunger = 0
+metadata/_custom_type_script = "uid://ly2nwydefvys"
