@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://jlme4ohm6ub1"]
+
+[ext_resource type="PackedScene" uid="uid://wyhbg5kv8l5w" path="res://assets/city/car_taxi.gltf" id="1_7822p"]
+[ext_resource type="Script" uid="uid://c0bj5aalnv8cv" path="res://prepeare/enter_control_leave_car/car.gd" id="1_uoj53"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7822p"]
+size = Vector3(3.5, 3, 7.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uoj53"]
+radius = 4.0
+
+[node name="Car" type="CharacterBody3D"]
+script = ExtResource("1_uoj53")
+
+[node name="car_taxi2" parent="." instance=ExtResource("1_7822p")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_7822p")
+
+[node name="inputLabel" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+billboard = 1
+text = "E"
+font_size = 200
+outline_size = 100
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_uoj53")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.74228e-08, -4.37114e-08, 0.866025, 0.5, 7.57103e-08, 0.5, -0.866025, 0, 8.5, -6)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
