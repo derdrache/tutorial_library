@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb5d5niq1r2p8"]
+
+[ext_resource type="Script" uid="uid://bwpud0kwbmagw" path="res://prepeare/hit_and_hurt_box/hurt_box.gd" id="1_6d2hw"]
+[ext_resource type="PackedScene" uid="uid://soly4tbrwp7m" path="res://collection/damage_indicator/damage_indicator.tscn" id="2_ii4u0"]
+
+[node name="HurtBox" type="Area3D"]
+script = ExtResource("1_6d2hw")
+
+[node name="damageIndicator" parent="." instance=ExtResource("2_ii4u0")]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgk58udgggg7n"]
+
+[ext_resource type="PackedScene" uid="uid://bc1knmag6e70n" path="res://assets/tree/Tree_1_A_Color1.gltf" id="1_brfkd"]
+[ext_resource type="PackedScene" uid="uid://bb5d5niq1r2p8" path="res://prepeare/hit_and_hurt_box/hurt_box.tscn" id="2_nnvrw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnvrw"]
+size = Vector3(2.5, 4.5, 2.5)
+
+[node name="Tree" type="StaticBody3D"]
+
+[node name="Tree" parent="." instance=ExtResource("1_brfkd")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+shape = SubResource("BoxShape3D_nnvrw")
+debug_color = Color(0, 1, 0, 0.419608)
+
+[node name="HurtBox" parent="." instance=ExtResource("2_nnvrw")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+shape = SubResource("BoxShape3D_nnvrw")
+debug_color = Color(0, 1, 0, 0.419608)
