@@ -1,0 +1,158 @@
+[gd_scene load_steps=13 format=3 uid="uid://v3ubea83qmcs"]
+
+[ext_resource type="Script" uid="uid://cngokxn1844ra" path="res://tamagotchi/main_ui/main_ui.gd" id="1_aso7k"]
+[ext_resource type="PackedScene" uid="uid://dloat205uicat" path="res://tamagotchi/main_ui/icon_button.tscn" id="2_tkqjb"]
+[ext_resource type="Texture2D" uid="uid://b7k7kl11ri7oj" path="res://tamagotchi/tamagotchi_assets/PetBowl.png" id="3_650ha"]
+[ext_resource type="Texture2D" uid="uid://suxqud4almg2" path="res://tamagotchi/tamagotchi_assets/Sun.png" id="4_otxa5"]
+[ext_resource type="Texture2D" uid="uid://c5x4j46p3xy8w" path="res://tamagotchi/tamagotchi_assets/CatHead.png" id="5_yvbej"]
+[ext_resource type="Texture2D" uid="uid://duiqwyyjncy7r" path="res://tamagotchi/tamagotchi_assets/banana.png" id="6_1g58x"]
+[ext_resource type="PackedScene" uid="uid://bh8jg7jp0fppm" path="res://tamagotchi/shop/shop_ui.tscn" id="7_4qysp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5yyi"]
+resource_local_to_scene = true
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kiqu"]
+resource_local_to_scene = true
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41q3e"]
+resource_local_to_scene = true
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbq4g"]
+bg_color = Color(0.6, 0.6, 0.6, 0.392157)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm8jh"]
+resource_local_to_scene = true
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MainUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aso7k")
+
+[node name="menu_buttons_bar" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="menu_buttons_bar"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="FoodButton" parent="menu_buttons_bar/HBoxContainer" instance=ExtResource("2_tkqjb")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m5yyi")
+icon = ExtResource("3_650ha")
+
+[node name="PlayButton" parent="menu_buttons_bar/HBoxContainer" instance=ExtResource("2_tkqjb")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6kiqu")
+icon = ExtResource("4_otxa5")
+
+[node name="MonsterButton" parent="menu_buttons_bar/HBoxContainer" instance=ExtResource("2_tkqjb")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_41q3e")
+icon = ExtResource("5_yvbej")
+
+[node name="menu_bar" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -70.0
+offset_right = 350.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_bottom = 150
+
+[node name="PanelContainer" type="PanelContainer" parent="menu_bar"]
+custom_minimum_size = Vector2(700, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kbq4g")
+
+[node name="item_button_bar" type="MarginContainer" parent="menu_bar/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="item_button_bar" type="HBoxContainer" parent="menu_bar/PanelContainer/item_button_bar"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="PlayButton" parent="menu_bar/PanelContainer/item_button_bar/item_button_bar" instance=ExtResource("2_tkqjb")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vm8jh")
+icon = ExtResource("6_1g58x")
+
+[node name="Shop" parent="." instance=ExtResource("7_4qysp")]
+layout_mode = 1
+mouse_filter = 2
+
+[connection signal="pressed" from="menu_buttons_bar/HBoxContainer/FoodButton" to="." method="_on_food_button_pressed"]
+[connection signal="pressed" from="menu_buttons_bar/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="menu_buttons_bar/HBoxContainer/MonsterButton" to="." method="_on_monster_button_pressed"]
