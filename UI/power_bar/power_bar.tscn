@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvkc3pn4hqe08"]
+
+[ext_resource type="Script" uid="uid://dbk12cmi2ckr5" path="res://prepare/power_bar/power_bar.gd" id="1_gs4xm"]
+[ext_resource type="Texture2D" uid="uid://bfv027ybqdtke" path="res://prepare/power_bar/power_bar.png" id="1_xty3s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs4xm"]
+atlas = ExtResource("1_xty3s")
+region = Rect2(128, 0, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atkwe"]
+atlas = ExtResource("1_xty3s")
+region = Rect2(112, 0, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61o8t"]
+atlas = ExtResource("1_xty3s")
+region = Rect2(96, 0, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujb0c"]
+atlas = ExtResource("1_xty3s")
+region = Rect2(80, 0, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65xd2"]
+atlas = ExtResource("1_xty3s")
+region = Rect2(64, 0, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a75qu"]
+atlas = ExtResource("1_xty3s")
+region = Rect2(48, 0, 16, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kgec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs4xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atkwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61o8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujb0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65xd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a75qu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PowerBar" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = 142.0
+offset_right = -16.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_gs4xm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_xty3s")
+region_enabled = true
+region_rect = Rect2(0, 0, 17, 50)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_1kgec")
+autoplay = "default"
+frame_progress = 0.46198
+offset = Vector2(-0.5, 0)
+
+[node name="PowerDisplay" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 80.0
+offset_top = -21.0
+offset_right = 219.0
+offset_bottom = 21.0
+
+[node name="Label" type="Label" parent="PowerDisplay"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "Power: "
+
+[node name="PowerLabel" type="Label" parent="PowerDisplay"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "-1"
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
