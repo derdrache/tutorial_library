@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqg3d3b6ve678"]
+
+[ext_resource type="Script" uid="uid://bxw7sxa8acaed" path="res://fishing_rod/bobber.gd" id="1_i5s1t"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3y1ma"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x0c03"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Bobber" type="CharacterBody3D"]
+script = ExtResource("1_i5s1t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_3y1ma")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_x0c03")
