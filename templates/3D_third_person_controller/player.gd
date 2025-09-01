@@ -6,7 +6,6 @@ extends CharacterBody3D
 @onready var model: Node3D = %model
 @onready var camera_pivot: Node3D = %cameraPivot
 @onready var camera_3d: Camera3D = %Camera3D
-@onready var animation_player: AnimationPlayer = $Knight/AnimationPlayer
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -52,12 +51,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	_set_animation(direction)
-
 	move_and_slide()
 
-func _set_animation(direction):
-	if direction:
-		animation_player.play("Running_A")
-	else:
-		animation_player.play("Idle")
