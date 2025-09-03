@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://djj0q5enduphb"]
+
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_nxogm"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="2_3253y"]
+[ext_resource type="PackedScene" uid="uid://cr88gk6s63quw" path="res://sit_on_chair/chair.tscn" id="4_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://ujtd4dw73bhh" path="res://sit_on_chair/player.tscn" id="4_u3cyc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u3cyc"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7jmp"]
+albedo_texture = ExtResource("2_3253y")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y2354"]
+size = Vector2(20, 20)
+
+[node name="Scene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_nxogm")]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("ConvexPolygonShape3D_u3cyc")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor"]
+material_override = SubResource("StandardMaterial3D_m7jmp")
+mesh = SubResource("PlaneMesh_y2354")
+skeleton = NodePath("../..")
+
+[node name="Player" parent="." instance=ExtResource("4_u3cyc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 0)
+
+[node name="Chair" parent="." instance=ExtResource("4_m7jmp")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)

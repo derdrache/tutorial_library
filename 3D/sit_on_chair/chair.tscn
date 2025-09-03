@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr88gk6s63quw"]
+
+[ext_resource type="Script" uid="uid://dnilkv4hedg3f" path="res://sit_on_chair/chair.gd" id="1_58eu7"]
+[ext_resource type="PackedScene" uid="uid://b4dk7yy35luw2" path="res://assets/dungeon/chair.gltf.glb" id="2_vyh3o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knj3a"]
+size = Vector3(1.05, 1, 1.05)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vyh3o"]
+height = 1.0
+radius = 1.0
+
+[node name="Chair" type="StaticBody3D"]
+script = ExtResource("1_58eu7")
+
+[node name="chair_gltf" parent="." instance=ExtResource("2_vyh3o")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.5, -0.025)
+shape = SubResource("BoxShape3D_knj3a")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_vyh3o")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+billboard = 1
+text = "E"
+font_size = 100
+outline_size = 50
+
+[node name="sitMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.3, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
