@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cleep7jur661q"]
+
+[ext_resource type="Script" uid="uid://cueoe6pex45nc" path="res://pick_up_and throw_gun/gun.gd" id="1_dk5gl"]
+[ext_resource type="Texture2D" uid="uid://dmh57icpli2q7" path="res://assets/free-guns-for-cyberpunk-characters-pixel-art/2 Guns/2_1.png" id="1_vk1bi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ldmg"]
+size = Vector2(8, 8)
+
+[node name="gun" type="CharacterBody2D"]
+script = ExtResource("1_dk5gl")
+
+[node name="gun" type="Sprite2D" parent="."]
+texture = ExtResource("1_vk1bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7ldmg")
