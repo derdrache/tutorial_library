@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://ynxy4ust6a6k"]
+
+[ext_resource type="Script" uid="uid://clowlfxbob6o4" path="res://zip_line/zip_line.gd" id="1_qadoo"]
+
+[sub_resource type="Curve2D" id="Curve2D_mmo74"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 152, 96, 0, 0, 0, 0, 361, 192)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmo74"]
+size = Vector2(232.105, 13.403)
+
+[node name="zipLine" type="Path2D"]
+curve = SubResource("Curve2D_mmo74")
+script = ExtResource("1_qadoo")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(152, 96, 361, 192)
+width = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(256, 143)
+rotation = 0.418879
+shape = SubResource("RectangleShape2D_mmo74")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(152, 96)
+rotation = 0.430586
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
