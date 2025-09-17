@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg3x65k54rf48"]
+
+[ext_resource type="PackedScene" uid="uid://cnfh2kq5asank" path="res://assets/platform/tree_forest.gltf.glb" id="2_3253y"]
+[ext_resource type="PackedScene" uid="uid://bm2tpnnqdtcf5" path="res://momentum_movement/godot_player.tscn" id="2_nxogm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[node name="Scene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+lod_bias = 0.001
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Player" parent="." instance=ExtResource("2_nxogm")]
+
+[node name="tree_forest_gltf" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7.5, 0, 21)
+
+[node name="tree_forest_gltf2" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -22.5, 0, 14)
+
+[node name="tree_forest_gltf3" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -22.5, 0, 49.5)
+
+[node name="tree_forest_gltf4" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 39.5, 0, 49.5)
+
+[node name="tree_forest_gltf5" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 39.5, 0, -26)
+
+[node name="tree_forest_gltf6" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -38.5, 0, -26)
+
+[node name="tree_forest_gltf7" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 55, 0, 13)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm2tpnnqdtcf5"]
+
+[ext_resource type="Script" uid="uid://dr3m4c6md5kp0" path="res://momentum_movement/godot_player.gd" id="1_lkmgh"]
+[ext_resource type="PackedScene" uid="uid://dadq76d6h3ijb" path="res://assets/godot_plush.glb" id="1_xylmn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xylmn"]
+height = 1.8
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_lkmgh")
+
+[node name="godot_plush" parent="." instance=ExtResource("1_xylmn")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_xylmn")
+
+[node name="cameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.5, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="cameraPivot"]
+spring_length = 7.0
+
+[node name="Camera3D" type="Camera3D" parent="cameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+
+[editable path="godot_plush"]
