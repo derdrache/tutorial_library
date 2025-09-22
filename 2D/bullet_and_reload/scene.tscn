@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm1xqf4ptgl8q"]
+
+[ext_resource type="PackedScene" uid="uid://dwvpmrxn72f12" path="res://bullet_and_reload/player.tscn" id="1_ulcgi"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Player" parent="." instance=ExtResource("1_ulcgi")]
+position = Vector2(597, 336)

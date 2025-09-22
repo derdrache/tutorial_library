@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxhts4e8tj2ua"]
+
+[ext_resource type="Script" uid="uid://bldvffhspi86a" path="res://bullet_and_reload/bullet_ammo_display.gd" id="1_r4uwl"]
+[ext_resource type="Texture2D" uid="uid://cibfyj143nyxm" path="res://assets/bullet.png" id="1_w8c2s"]
+[ext_resource type="Texture2D" uid="uid://drpy5nmqv3gdi" path="res://assets/bullet_multi.png" id="2_r4uwl"]
+
+[node name="bulletAmmoDisplay" type="HBoxContainer"]
+offset_left = 918.0
+offset_top = 39.0
+offset_right = 1238.0
+offset_bottom = 81.0
+theme_override_constants/separation = 100
+script = ExtResource("1_r4uwl")
+
+[node name="bulletDisplay" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="bulletDisplay"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_w8c2s")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="bulletDisplay"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_w8c2s")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="bulletDisplay"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_w8c2s")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="bulletDisplay"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_w8c2s")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="bulletDisplay"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_w8c2s")
+expand_mode = 1
+
+[node name="ammoDisplay" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="ammoDisplay"]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+texture = ExtResource("2_r4uwl")
+expand_mode = 1
+
+[node name="ammoCountLabel" type="Label" parent="ammoDisplay"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "45"
