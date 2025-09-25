@@ -36,7 +36,7 @@ func _on_left_click():
 	var selectedNode = _get_selected_node()
 
 	if selectedNode: 
-		if selectedCharacter: _move_char(selectedNode)
+		if selectedCharacter and selectedNode.isSelectable: _move_char(selectedNode)
 	else:
 		selectedCharacter = null
 		_deselect_all()
