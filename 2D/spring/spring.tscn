@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://d23xqxoioqsp4"]
+
+[ext_resource type="Script" uid="uid://8qvrji801rqx" path="res://spring/spring.gd" id="1_boyml"]
+[ext_resource type="Texture2D" uid="uid://cvsuc372ir04i" path="res://spring/spring.png" id="1_ka4py"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka4py"]
+atlas = ExtResource("1_ka4py")
+region = Rect2(0, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boyml"]
+atlas = ExtResource("1_ka4py")
+region = Rect2(24, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpppm"]
+atlas = ExtResource("1_ka4py")
+region = Rect2(48, 0, 24, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvkgp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka4py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boyml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpppm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boyml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka4py")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjfja"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka4py"]
+size = Vector2(14, 17.5)
+
+[node name="Spring" type="StaticBody2D"]
+script = ExtResource("1_boyml")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gvkgp")
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xjfja")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.75)
+shape = SubResource("RectangleShape2D_ka4py")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

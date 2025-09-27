@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjnbsnlk1lpw8"]
+
+[ext_resource type="Texture2D" uid="uid://bsn7j0u06nfyd" path="res://collection/yoshis_island/assets/environment/island-objects.png" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://coticbp5xj286" path="res://collection/yoshis_island/yoshi_tongue/yoshi.tscn" id="2_3253y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpxcj"]
+size = Vector2(725, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g71x5"]
+size = Vector2(14, 30)
+
+[node name="Test" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(218, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+position = Vector2(362, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+position = Vector2(506, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor"]
+position = Vector2(650, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Floor"]
+position = Vector2(795, 300)
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(591, 221, 145, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(508.5, 301)
+shape = SubResource("RectangleShape2D_lpxcj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(254, 59)
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = -1
+position = Vector2(354, 246)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_g71x5")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_nxogm")
+region_enabled = true
+region_rect = Rect2(197, 124, 14, 32)
+
+[node name="Yoshi" parent="." instance=ExtResource("2_3253y")]
+position = Vector2(466, 240)
