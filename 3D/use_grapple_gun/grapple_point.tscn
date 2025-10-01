@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq3q8adjt4mdw"]
+
+[ext_resource type="Texture2D" uid="uid://cvkudxaaf54tm" path="res://use_grapple_gun/focus-points.png" id="1_08247"]
+[ext_resource type="Script" uid="uid://b05bxyiv3xa36" path="res://use_grapple_gun/grapple_point.gd" id="1_hdcm2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08247"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hdcm2"]
+material = SubResource("StandardMaterial3D_08247")
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dteus"]
+points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, 0.05, 0.5, 0.5, 0.05, -0.5, 0.5, -0.05, 0.5, 0.5, 0.05, 0.5)
+
+[node name="GrapplePoint" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_hdcm2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_hdcm2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_dteus")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0.0514147, 0)
+texture = ExtResource("1_08247")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, -0.0500493, 0)
+texture = ExtResource("1_08247")
