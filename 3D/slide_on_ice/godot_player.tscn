@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://gioawbi2kgow"]
+
+[ext_resource type="Script" uid="uid://d4d4eh1opiv67" path="res://slide_on_ice/godot_player.gd" id="1_lkmgh"]
+[ext_resource type="PackedScene" uid="uid://dadq76d6h3ijb" path="res://assets/godot_plush.glb" id="2_di7on"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xylmn"]
+height = 1.8
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_lkmgh")
+
+[node name="godot_plush" parent="." instance=ExtResource("2_di7on")]
+
+[node name="Skeleton3D" parent="godot_plush/Rig" index="0"]
+bones/0/position = Vector3(-7.20058e-23, 0.771006, 8.55712e-10)
+bones/0/rotation = Quaternion(-8.57256e-09, 0.0599598, -2.77028e-16, 0.998201)
+bones/1/rotation = Quaternion(0.125416, -0.226887, 0.907592, -0.330256)
+bones/2/rotation = Quaternion(0.125935, 0.028942, -0.00367552, 0.99161)
+bones/4/rotation = Quaternion(0.0740745, 0.160829, 0.923674, 0.339814)
+bones/5/rotation = Quaternion(0.272695, 0.0280671, -0.00795908, 0.961658)
+bones/7/position = Vector3(-1.17083e-22, 0.771006, -8.5571e-10)
+bones/7/rotation = Quaternion(0.998201, 3.57388e-09, -0.0599597, -3.82139e-08)
+bones/8/rotation = Quaternion(-0.139453, -0.00633841, -0.0925323, 0.985876)
+bones/9/position = Vector3(-1.87097e-08, 0.151421, -2.07611e-09)
+bones/9/rotation = Quaternion(0.340107, -0.190579, 0.0705765, 0.918164)
+bones/10/position = Vector3(1.20714e-08, 0.205209, 5.11328e-09)
+bones/10/rotation = Quaternion(-0.568572, 0.0496918, 0.040212, 0.820146)
+bones/11/position = Vector3(-1.92008e-08, 0.251212, -4.94278e-08)
+bones/11/rotation = Quaternion(-0.000102671, 0.932449, -0.361302, 4.62667e-05)
+bones/12/rotation = Quaternion(-0.0442835, 0.003779, 0.058496, 0.997298)
+bones/13/position = Vector3(4.15267e-08, 0.151858, -2.26255e-08)
+bones/13/rotation = Quaternion(0.287264, 0.196155, -0.0602435, 0.935614)
+bones/14/position = Vector3(-3.25968e-09, 0.205671, -5.51625e-08)
+bones/14/rotation = Quaternion(-0.60112, 0.0707536, -0.0230304, 0.795687)
+bones/15/position = Vector3(-4.84193e-10, 0.251207, -5.00237e-08)
+bones/15/rotation = Quaternion(-2.77896e-05, 0.93246, -0.361272, 0.000277908)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_xylmn")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="cameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.5, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="cameraPivot"]
+spring_length = 7.0
+
+[node name="Camera3D" type="Camera3D" parent="cameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18557e-07, 0.5, 2.5)
+
+[editable path="godot_plush"]

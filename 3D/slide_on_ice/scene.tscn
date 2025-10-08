@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://cr0svqhjrmi0j"]
+
+[ext_resource type="PackedScene" uid="uid://cnfh2kq5asank" path="res://assets/platform/tree_forest.gltf.glb" id="2_3253y"]
+[ext_resource type="PackedScene" uid="uid://gioawbi2kgow" path="res://slide_on_ice/godot_player.tscn" id="2_nxogm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxogm"]
+cull_mode = 2
+albedo_color = Color(0.258055, 0.421752, 0.173828, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+material = SubResource("StandardMaterial3D_nxogm")
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3253y"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u3cyc"]
+material = SubResource("StandardMaterial3D_3253y")
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m7jmp"]
+points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
+
+[node name="Scene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 0, 0)
+lod_bias = 0.001
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="tree_forest_gltf" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7.5, 0, 21)
+
+[node name="tree_forest_gltf2" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -22.5, 0, 14)
+visible = false
+
+[node name="tree_forest_gltf3" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -22.5, 0, 49.5)
+visible = false
+
+[node name="tree_forest_gltf4" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 39.5, 0, 49.5)
+
+[node name="tree_forest_gltf5" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 39.5, 0, -26)
+
+[node name="tree_forest_gltf6" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -38.5, 0, -26)
+visible = false
+
+[node name="tree_forest_gltf7" parent="." instance=ExtResource("2_3253y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 55, 0, 13)
+
+[node name="Player" parent="." instance=ExtResource("2_nxogm")]
+
+[node name="Ice" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ice"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+mesh = SubResource("PlaneMesh_u3cyc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ice"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+shape = SubResource("ConvexPolygonShape3D_m7jmp")
