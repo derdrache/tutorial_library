@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs8x7doq6vd17"]
+
+[ext_resource type="Script" uid="uid://c128mlnjb36tc" path="res://enemy_vision_with_los/vision.gd" id="1_7fojq"]
+[ext_resource type="Script" uid="uid://bo5gxhhkl5lid" path="res://collection/enemy_vision/special_collision.gd" id="1_kuq3k"]
+
+[node name="Vision" type="Area2D"]
+script = ExtResource("1_7fojq")
+
+[node name="specialCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(64, 0, 1024, -768, 1120, -512, 1184, -256, 1216, 0, 1184, 224, 1120, 480, 1024, 768)
+script = ExtResource("1_kuq3k")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(64, 0)
+target_position = Vector2(1152, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(64, 0)
+target_position = Vector2(1152, 0)
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+position = Vector2(64, 0)
+target_position = Vector2(1152, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

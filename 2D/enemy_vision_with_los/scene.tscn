@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://4b55cycx1idb"]
+
+[ext_resource type="PackedScene" uid="uid://1hqvn6iil4ke" path="res://enemy_vision_with_los/player.tscn" id="2_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://b5kogk0uyuu2g" path="res://enemy_vision_with_los/enemy.tscn" id="3_3253y"]
+[ext_resource type="Texture2D" uid="uid://cfodg5ht4kx6a" path="res://assets/Tileset with cell size 256x256.png" id="3_m7jmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wodfp"]
+size = Vector2(128, 512)
+
+[node name="Scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_u3cyc")]
+position = Vector2(8, 304)
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(-208, 8)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+texture = ExtResource("3_m7jmp")
+region_enabled = true
+region_rect = Rect2(1216, 1, 128, 511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("RectangleShape2D_wodfp")
+
+[node name="Enemy" parent="." instance=ExtResource("3_3253y")]
+position = Vector2(4, -1)

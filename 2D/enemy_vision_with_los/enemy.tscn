@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5kogk0uyuu2g"]
+
+[ext_resource type="Script" uid="uid://qxasvfdmh40a" path="res://enemy_vision_with_los/enemy.gd" id="1_iifgy"]
+[ext_resource type="Texture2D" uid="uid://dyuhol6yekjb5" path="res://assets/top_down_shooter/Skins.png" id="2_epg4t"]
+[ext_resource type="Texture2D" uid="uid://d2qalmptgd70m" path="res://assets/top_down_shooter/Weapons.png" id="3_3yqyl"]
+[ext_resource type="PackedScene" uid="uid://bs8x7doq6vd17" path="res://enemy_vision_with_los/vision.tscn" id="4_iifgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+size = Vector2(288, 192)
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_iifgy")
+
+[node name="Head" type="Sprite2D" parent="."]
+z_index = 1
+rotation = -1.5708
+texture = ExtResource("2_epg4t")
+region_enabled = true
+region_rect = Rect2(1181, 111, 172, 196)
+
+[node name="Backback" type="Sprite2D" parent="."]
+position = Vector2(-108, 4)
+rotation = -1.5708
+texture = ExtResource("2_epg4t")
+region_enabled = true
+region_rect = Rect2(960, 129, 213, 154)
+
+[node name="Arms" type="Sprite2D" parent="."]
+position = Vector2(24, 72)
+rotation = -1.5708
+texture = ExtResource("2_epg4t")
+region_enabled = true
+region_rect = Rect2(1405, 113, 140, 270)
+
+[node name="Arms2" type="Sprite2D" parent="."]
+position = Vector2(40, -76)
+rotation = -1.5708
+texture = ExtResource("2_epg4t")
+region_enabled = true
+region_rect = Rect2(1588, 113, 168, 293)
+
+[node name="Weapon" type="Sprite2D" parent="."]
+position = Vector2(124, 8)
+rotation = -1.5708
+texture = ExtResource("3_3yqyl")
+region_enabled = true
+region_rect = Rect2(1103, 431, 87, 396)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 0)
+shape = SubResource("RectangleShape2D_iifgy")
+
+[node name="BulletSpawnMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(320, 8)
+
+[node name="Vision" parent="." instance=ExtResource("4_iifgy")]
+
+[connection signal="player_detecded" from="Vision" to="." method="_on_vision_player_detecded"]
