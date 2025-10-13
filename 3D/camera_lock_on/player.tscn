@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7giqu88xpi5l"]
+
+[ext_resource type="Script" uid="uid://uvgugnftdain" path="res://camera_lock_on/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://p1kht8vp5mn7" path="res://assets/character/Knight.glb" id="2_i3pqv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_onrkg")
+
+[node name="model" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Knight" parent="model" instance=ExtResource("2_i3pqv")]
+
+[node name="1H_Sword_Offhand" parent="model/Knight/Rig/Skeleton3D" index="0"]
+transform = Transform3D(-0.999999, -1.32199e-07, -3.75094e-08, -1.35449e-07, -5.30967e-07, 0.999999, -2.10433e-07, 0.999999, 6.23449e-07, 0.883132, 1.04926, 0.0170111)
+visible = false
+
+[node name="Badge_Shield" parent="model/Knight/Rig/Skeleton3D" index="1"]
+transform = Transform3D(-0.999999, 2.40298e-06, -7.04971e-07, -8.02913e-07, -7.37598e-07, 0.999999, 2.32475e-06, 0.999999, 8.30081e-07, 0.883132, 1.20515, 0.0170112)
+visible = false
+
+[node name="Rectangle_Shield" parent="model/Knight/Rig/Skeleton3D" index="2"]
+transform = Transform3D(-0.999999, 2.40298e-06, -7.04971e-07, -8.02913e-07, -7.37598e-07, 0.999999, 2.32475e-06, 0.999999, 8.30081e-07, 0.883132, 1.20515, 0.0170112)
+visible = false
+
+[node name="Round_Shield" parent="model/Knight/Rig/Skeleton3D" index="3"]
+transform = Transform3D(-0.999999, 2.40298e-06, -7.04971e-07, -8.02913e-07, -7.37598e-07, 0.999999, 2.32475e-06, 0.999999, 8.30081e-07, 0.883132, 1.20515, 0.0170112)
+visible = false
+
+[node name="Spike_Shield" parent="model/Knight/Rig/Skeleton3D" index="4"]
+transform = Transform3D(-0.999999, 2.40298e-06, -7.04971e-07, -8.02913e-07, -7.37598e-07, 0.999999, 2.32475e-06, 0.999999, 8.30081e-07, 0.883132, 1.20515, 0.0170112)
+
+[node name="1H_Sword" parent="model/Knight/Rig/Skeleton3D" index="5"]
+transform = Transform3D(0.999999, 2.0298e-07, -4.52757e-07, -3.93247e-07, -7.95385e-07, -0.999999, -1.32203e-07, 0.999999, -7.42514e-07, -0.883132, 1.04926, 0.0333086)
+
+[node name="2H_Sword" parent="model/Knight/Rig/Skeleton3D" index="6"]
+transform = Transform3D(0.999999, 1.88247e-07, -4.39071e-07, -3.79561e-07, -7.95385e-07, -0.999999, -1.1747e-07, 0.999999, -7.42514e-07, -0.883132, 1.04926, 0.0333086)
+visible = false
+
+[node name="Knight_Helmet" parent="model/Knight/Rig/Skeleton3D" index="7"]
+transform = Transform3D(1, -2.20965e-22, 1.69407e-21, 2.20965e-22, 1, 0, -1.69407e-21, 3.58732e-43, 1, 4.76837e-07, 1.21589, -1.08542e-07)
+
+[node name="Knight_Cape" parent="model/Knight/Rig/Skeleton3D" index="8"]
+transform = Transform3D(1, 1.25214e-21, 0, -1.25214e-21, 1, 0, 0, 0, 1, 0, 1.21589, -1.4066e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_onrkg")
+
+[node name="cameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="cameraPivot"]
+spring_length = 7.0
+
+[node name="Camera3D" type="Camera3D" parent="cameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, 0, -20)
+
+[editable path="model/Knight"]
