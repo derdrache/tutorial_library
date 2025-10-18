@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlddq4i7mb84h"]
+
+[ext_resource type="PackedScene" uid="uid://6kma44fgws4r" path="res://hit_and_hurt_box/player.tscn" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://bte5dlrxinb8f" path="res://hit_and_hurt_box/enemy.tscn" id="2_3253y"]
+
+[sub_resource type="GDScript" id="GDScript_nxogm"]
+script/source = "extends CharacterBody2D
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+func _on_hurt_box_died() -> void:
+	animated_sprite_2d.play(\"die\")
+
+func _on_hurt_box_hurted() -> void:
+	animated_sprite_2d.play(\"hurt\")
+"
+
+[node name="Scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(5, 5)
+
+[node name="Player" parent="." instance=ExtResource("1_nxogm")]
+z_index = 1
+position = Vector2(78, 74)
+
+[node name="Enemy" parent="." instance=ExtResource("2_3253y")]
+position = Vector2(152, 72)
+script = SubResource("GDScript_nxogm")
