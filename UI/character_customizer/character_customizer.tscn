@@ -1,0 +1,123 @@
+[gd_scene load_steps=12 format=3 uid="uid://c1lhikxp3p23r"]
+
+[ext_resource type="Script" uid="uid://cdjmiy7vv7dm4" path="res://character_customizer/character_customizer.gd" id="1_35lcy"]
+[ext_resource type="PackedScene" uid="uid://c4kmny6idedbs" path="res://character_customizer/selection_container.tscn" id="2_8jo8g"]
+[ext_resource type="Texture2D" uid="uid://c211xg1kb67lj" path="res://assets/farmer base sheets/05shrt/shirt1.png" id="3_dwrpx"]
+[ext_resource type="Texture2D" uid="uid://cp4j4cfulofei" path="res://assets/farmer base sheets/05shrt/shirt2.png" id="4_g7jxm"]
+[ext_resource type="Texture2D" uid="uid://bqd4qxakwhge8" path="res://assets/farmer base sheets/04lwr1/pants1.png" id="5_jspdm"]
+[ext_resource type="Texture2D" uid="uid://q1bffbju2b7f" path="res://assets/farmer base sheets/04lwr1/pants2.png" id="6_oxnod"]
+[ext_resource type="Texture2D" uid="uid://c7uk01ap18aep" path="res://assets/farmer base sheets/13hair/hair1.png" id="7_82qot"]
+[ext_resource type="Texture2D" uid="uid://noanvi2y4cpj" path="res://assets/farmer base sheets/03fot1/shoes1.png" id="7_gd0jp"]
+[ext_resource type="Texture2D" uid="uid://jcyigrojx7kf" path="res://assets/farmer base sheets/03fot1/shoes2.png" id="8_4ndjb"]
+[ext_resource type="Texture2D" uid="uid://dguoyyj21ue0n" path="res://assets/farmer base sheets/01body/fbas_1body_human_00.png" id="9_3ls4m"]
+
+[sub_resource type="Theme" id="Theme_ytr4m"]
+default_font_size = 40
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ytr4m")
+script = ExtResource("1_35lcy")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -124.0
+offset_right = 529.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shirt: "
+
+[node name="shirtSelection" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_8jo8g")]
+layout_mode = 2
+textureOptions = Array[CompressedTexture2D]([ExtResource("3_dwrpx"), ExtResource("4_g7jxm")])
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pants:"
+
+[node name="pantSelection" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_8jo8g")]
+layout_mode = 2
+textureOptions = Array[CompressedTexture2D]([ExtResource("5_jspdm"), ExtResource("6_oxnod")])
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shoes: "
+
+[node name="shoesSelection" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_8jo8g")]
+layout_mode = 2
+textureOptions = Array[CompressedTexture2D]([ExtResource("7_gd0jp"), ExtResource("8_4ndjb")])
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(373, 356)
+scale = Vector2(5, 5)
+
+[node name="Body" type="Sprite2D" parent="Player"]
+texture = ExtResource("9_3ls4m")
+region_enabled = true
+region_rect = Rect2(24, 16, 16, 32)
+
+[node name="shoes" type="Sprite2D" parent="Player"]
+texture = ExtResource("7_gd0jp")
+region_enabled = true
+region_rect = Rect2(24, 16, 16, 32)
+
+[node name="pants" type="Sprite2D" parent="Player"]
+texture = ExtResource("5_jspdm")
+region_enabled = true
+region_rect = Rect2(24, 16, 16, 32)
+
+[node name="shirt" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_dwrpx")
+region_enabled = true
+region_rect = Rect2(24, 16, 16, 32)
+
+[node name="hair" type="Sprite2D" parent="Player"]
+texture = ExtResource("7_82qot")
+region_enabled = true
+region_rect = Rect2(24, 16, 16, 32)
+
+[connection signal="refreshed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/shirtSelection" to="." method="_on_shirt_selection_refreshed"]
+[connection signal="refreshed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/pantSelection" to="." method="_on_pant_selection_refreshed"]
+[connection signal="refreshed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/shoesSelection" to="." method="_on_shoes_selection_refreshed"]

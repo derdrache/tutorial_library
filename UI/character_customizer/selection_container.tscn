@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4kmny6idedbs"]
+
+[ext_resource type="Script" uid="uid://dqygfedwl6ab0" path="res://character_customizer/selection_container.gd" id="1_ws3yj"]
+
+[node name="selectionContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+script = ExtResource("1_ws3yj")
+
+[node name="backButton" type="Button" parent="."]
+layout_mode = 2
+text = "<"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "TEST"
+
+[node name="forwardButton" type="Button" parent="."]
+layout_mode = 2
+text = ">"
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="forwardButton" to="." method="_on_forward_button_pressed"]
