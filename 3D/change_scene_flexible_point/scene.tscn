@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1qshp3dmr82w"]
+
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_y2354"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="2_ni31j"]
+[ext_resource type="PackedScene" uid="uid://bgk58udgggg7n" path="res://collection/hit_and_hurt_box/tree.tscn" id="3_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://b3ib86qvp2wwm" path="res://change_scene_flexible_point/house.tscn" id="4_73fnb"]
+[ext_resource type="PackedScene" uid="uid://cti06gsxobmta" path="res://change_scene_flexible_point/player.tscn" id="5_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://gyxxkwxltf1r" path="res://change_scene_flexible_point/changeArea.tscn" id="6_y2354"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni31j"]
+albedo_texture = ExtResource("2_ni31j")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qllfx"]
+albedo_texture = ExtResource("2_ni31j")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p5uto"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bfc4r"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2354"]
+size = Vector3(2.5, 1, 2)
+
+[node name="Scene2" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_y2354")]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Floor2" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Tree" parent="." instance=ExtResource("3_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0.5, 3.5)
+
+[node name="House" parent="." instance=ExtResource("4_73fnb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 30, 0, 11)
+visible = false
+
+[node name="Floor3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.099998, 0, -2.25)
+material_override = SubResource("StandardMaterial3D_qllfx")
+mesh = SubResource("PlaneMesh_p5uto")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_bfc4r")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("5_m7jmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, -4)
+
+[node name="ChangeArea" parent="." instance=ExtResource("6_y2354")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -2)
+changeAreaType = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea"]
+shape = SubResource("BoxShape3D_y2354")
+
+[node name="Marker3D" type="Marker3D" parent="ChangeArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)

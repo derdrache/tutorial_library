@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3ib86qvp2wwm"]
+
+[ext_resource type="PackedScene" uid="uid://cplqb4bo52wyy" path="res://assets/farm/house/Haus_01.glb" id="1_hfkix"]
+[ext_resource type="PackedScene" uid="uid://gyxxkwxltf1r" path="res://change_scene_flexible_point/changeArea.tscn" id="2_jhkqq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hfkix"]
+size = Vector3(6, 5, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jhkqq"]
+size = Vector3(3, 4.5, 1)
+
+[node name="House" type="StaticBody3D"]
+
+[node name="Haus_01" parent="." instance=ExtResource("1_hfkix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89525, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145252, 2, -1)
+shape = SubResource("BoxShape3D_hfkix")
+
+[node name="ChangeArea" parent="." instance=ExtResource("2_jhkqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 2)
+currentAreaType = 1
+changeAreaType = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 1.75, 0.20000005)
+shape = SubResource("BoxShape3D_jhkqq")
+
+[node name="Marker3D" type="Marker3D" parent="ChangeArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
