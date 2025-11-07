@@ -38,7 +38,6 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (camera_pivot.global_transform.basis  * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	direction.y = 0
 	
 	if direction:
 		var targetAngle = atan2(direction.x, direction.z) - rotation.y
