@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://bewsggepnp3pf"]
+
+[ext_resource type="Script" uid="uid://c1vtufys601pt" path="res://quest_part1_get_quest/quest_box.gd" id="1_6w764"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anq0w"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.85490197, 0.85490197, 0.85490197, 0.29411766)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 75)
+theme_override_styles/panel = SubResource("StyleBoxFlat_anq0w")
+script = ExtResource("1_6w764")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="titleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Title"
+
+[node name="briefDescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Descriptionadadada"
+autowrap_mode = 2

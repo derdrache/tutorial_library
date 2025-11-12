@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://dg1umgm28aurk"]
+
+[ext_resource type="Script" uid="uid://8llu8ny8vmgq" path="res://quest_part1_get_quest/quest_resource.gd" id="1_r0h3a"]
+
+[resource]
+script = ExtResource("1_r0h3a")
+name = "Help Someone"
+brief_description = "Talk with 3 Person"
+metadata/_custom_type_script = "uid://8llu8ny8vmgq"

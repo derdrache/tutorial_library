@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://d2ysh1vyvjsq8"]
+
+[ext_resource type="Script" uid="uid://8llu8ny8vmgq" path="res://quest_part1_get_quest/quest_resource.gd" id="1_5w0yi"]
+
+[resource]
+script = ExtResource("1_5w0yi")
+name = "Help Ben"
+brief_description = "Collect 1 Egg"
+metadata/_custom_type_script = "uid://8llu8ny8vmgq"

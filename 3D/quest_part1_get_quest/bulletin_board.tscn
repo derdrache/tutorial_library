@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd0e22eh0mr4g"]
+
+[ext_resource type="Script" uid="uid://ju6yalbpgb2r" path="res://quest_part1_get_quest/bulletin_board.gd" id="1_1pbc8"]
+[ext_resource type="PackedScene" uid="uid://cm16v3rd126s2" path="res://assets/bulletin_board.glb" id="4_oaywd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i7dg7"]
+size = Vector3(3, 3.588, 0.239)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cn0im"]
+size = Vector3(2.959961, 2.6339111, 1.546875)
+
+[node name="BulletinBoard" type="StaticBody3D"]
+script = ExtResource("1_1pbc8")
+
+[node name="bulletin_board" parent="." instance=ExtResource("4_oaywd")]
+transform = Transform3D(-0.9997666, 0, 0.021605391, 0, 1, 0, -0.021605391, 0, -0.9997666, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79422, 0)
+shape = SubResource("BoxShape3D_i7dg7")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3447957, 0)
+shape = SubResource("BoxShape3D_cn0im")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4219155, 0)
+billboard = 1
+text = "\"E\" - Get Quest"
+font_size = 80
+outline_size = 20
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="bulletin_board"]
