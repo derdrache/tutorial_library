@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmhi1j3wker8n"]
+
+[ext_resource type="Script" uid="uid://dy7e3mqbcv3rc" path="res://first_person_player.gd" id="1_6kiwd"]
+[ext_resource type="Texture2D" uid="uid://c736n7cav3ns8" path="res://crosshair046.png" id="2_1u0co"]
+[ext_resource type="PackedScene" uid="uid://dxtfxj1wuf5ua" path="res://assets/kenney_blasterKit/Models/GLTF format/blasterA.glb" id="3_jtv2w"]
+[ext_resource type="PackedScene" uid="uid://bj7iag1thwqe2" path="res://over_heat_ui.tscn" id="4_gg42r"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vntxa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_68vwf"]
+
+[node name="FirstPersonPlayer" type="CharacterBody3D"]
+script = ExtResource("1_6kiwd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vntxa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_68vwf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0.7, 0)
+cull_mask = 1048573
+current = true
+fov = 60.0
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+no_depth_test = true
+texture = ExtResource("2_1u0co")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -20)
+
+[node name="raycastEnd" type="Node3D" parent="Camera3D/RayCast3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="blasterA2" parent="Camera3D" instance=ExtResource("3_jtv2w")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.33, -0.42, -0.885)
+
+[node name="bulletStartMarker" type="Marker3D" parent="Camera3D/blasterA2"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, -2.842171e-14, 0, 1, 0, 0, 0, 1, -0.14594525, 0.10707173, 0.23687989)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OverHeatUi" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_gg42r")]
+player = NodePath("../..")
