@@ -1,5 +1,7 @@
 extends Area3D
 
+signal died()
+
 @onready var damage_indicator: Node3D = $damageIndicator
 
 @export var health:= 50
@@ -9,4 +11,7 @@ func take_damage(damage: int):
 	
 	health -= damage
 	health = clamp(health, 0, 50)
+
+	if health < 0:
+		died.emit()
 	
