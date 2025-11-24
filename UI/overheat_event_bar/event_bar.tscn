@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://uqac50tonjd6"]
+
+[ext_resource type="Texture2D" uid="uid://br1i50ic8ahhh" path="res://overheat_event_bar/overheat_event_bar.png" id="1_3nbd0"]
+[ext_resource type="Script" uid="uid://tvxf4353u87p" path="res://overheat_event_bar/event_bar.gd" id="2_jbk2o"]
+[ext_resource type="Texture2D" uid="uid://bdhfd3f6q1ixg" path="res://overheat_event_bar/indicator.png" id="3_jbk2o"]
+
+[node name="EventBar" type="TextureRect"]
+offset_right = 200.0
+offset_bottom = 30.0
+texture = ExtResource("1_3nbd0")
+script = ExtResource("2_jbk2o")
+
+[node name="Indicator" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 15.0
+offset_bottom = 60.0
+texture = ExtResource("3_jbk2o")

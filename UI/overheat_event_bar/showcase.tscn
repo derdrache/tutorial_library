@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxuiauxucw2k7"]
+
+[ext_resource type="PackedScene" uid="uid://uqac50tonjd6" path="res://overheat_event_bar/event_bar.tscn" id="1_ewnj5"]
+[ext_resource type="Script" uid="uid://d08s2l7hbqiho" path="res://overheat_event_bar/showcase.gd" id="1_lou5n"]
+
+[node name="Showcase" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lou5n")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -226.0
+offset_right = 11.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 50
+
+[node name="EventBar" parent="." instance=ExtResource("1_ewnj5")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -15.0
+offset_right = 100.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="bonus_done" from="EventBar" to="." method="_on_event_bar_bonus_done"]
+[connection signal="fail" from="EventBar" to="." method="_on_event_bar_fail"]
+[connection signal="normal_done" from="EventBar" to="." method="_on_event_bar_normal_done"]
+[connection signal="succsess_done" from="EventBar" to="." method="_on_event_bar_succsess_done"]
