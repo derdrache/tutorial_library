@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://5brn2cut7n8o"]
+
+[ext_resource type="Script" uid="uid://d1eujs4iwvfx2" path="res://catch_a_fish/fish.gd" id="1_titip"]
+[ext_resource type="PackedScene" uid="uid://dtx1wkr3g022k" path="res://assets/yellow_fish.glb" id="2_xjenr"]
+
+[node name="Fish" type="CharacterBody3D"]
+script = ExtResource("1_titip")
+
+[node name="yellow_fish" parent="." instance=ExtResource("2_xjenr")]
