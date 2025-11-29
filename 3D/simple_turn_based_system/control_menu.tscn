@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxixhchaw50j"]
+
+[ext_resource type="Script" uid="uid://dw3oo46608hru" path="res://simple_turn_based_system/control_menu.gd" id="1_taqx6"]
+
+[node name="ControlMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_taqx6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 1000
+theme_override_constants/margin_bottom = 100
+
+[node name="CommandContainer" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="AttackButton" type="Button" parent="MarginContainer/CommandContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "ATTACK"
+
+[node name="DefenseButton" type="Button" parent="MarginContainer/CommandContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DEFENSE"
+
+[node name="RunButton" type="Button" parent="MarginContainer/CommandContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "RUN"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/CommandContainer/AttackButton" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CommandContainer/DefenseButton" to="." method="_on_defense_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CommandContainer/RunButton" to="." method="_on_run_button_pressed"]

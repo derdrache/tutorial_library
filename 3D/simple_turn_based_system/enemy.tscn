@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwelac3f0hlen"]
+
+[ext_resource type="Script" uid="uid://buqxt4aobrfwy" path="res://simple_turn_based_system/enemy.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://c3isku1lqu310" path="res://assets/horse.glb" id="1_7k104"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gyqm"]
+size = Vector3(1, 1, 1.779541)
+
+[sub_resource type="SphereMesh" id="SphereMesh_4gyqm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qi2p4"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_4gyqm")
+
+[node name="horse" parent="." instance=ExtResource("1_7k104")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_4gyqm")
+
+[node name="SelectionMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3.5, 0)
+mesh = SubResource("SphereMesh_4gyqm")
+surface_material_override/0 = SubResource("StandardMaterial3D_qi2p4")
