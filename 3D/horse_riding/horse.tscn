@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddqeq0nxcv1wa"]
+
+[ext_resource type="Script" uid="uid://0mskcqki2bif" path="res://horse_riding/horse.gd" id="1_ayhrb"]
+[ext_resource type="PackedScene" uid="uid://c3isku1lqu310" path="res://assets/horse.glb" id="1_eplvg"]
+[ext_resource type="PackedScene" uid="uid://dnhmep15fkpqy" path="res://horse_riding/third_person_camera.tscn" id="3_2bhuw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eplvg"]
+radius = 0.6166992
+height = 2.8544922
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2bhuw"]
+height = 1.0073242
+radius = 1.9897461
+
+[node name="Horse" type="CharacterBody3D"]
+script = ExtResource("1_ayhrb")
+
+[node name="horse" parent="." instance=ExtResource("1_eplvg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-2.9802322e-08, 4.371139e-08, 1, 1, 1.7763568e-15, 2.9802322e-08, 0, 1, -4.371139e-08, 0, 0.61356413, 0)
+shape = SubResource("CapsuleShape3D_eplvg")
+
+[node name="ridePositionMarker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1005323, 0.29200077)
+
+[node name="dismountPositionMarker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3317093, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4963379, 0)
+shape = SubResource("CylinderShape3D_2bhuw")
+
+[node name="thirdPersonCamera" parent="." instance=ExtResource("3_2bhuw")]
+unique_name_in_owner = true
+transform = Transform3D(-1, 2.262668e-08, -8.444392e-08, 0, 0.9659258, 0.25881904, 8.742278e-08, 0.25881904, -0.9659258, 0, 2.5, 0)
+top_level = true
+
+[node name="Camera3D" parent="thirdPersonCamera/SpringArm3D" index="0"]
+current = false
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="thirdPersonCamera"]
