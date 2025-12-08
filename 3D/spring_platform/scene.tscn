@@ -1,0 +1,99 @@
+[gd_scene load_steps=17 format=3 uid="uid://bg072cov3dlr0"]
+
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_y2354"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="2_ni31j"]
+[ext_resource type="Texture2D" uid="uid://dihcw4uqc43n1" path="res://assets/prototype/Green/texture_01.png" id="3_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://chsio4jhp70dd" path="res://spring_platform/player.tscn" id="4_tdier"]
+[ext_resource type="PackedScene" uid="uid://bx5vt5t75oi1u" path="res://spring_platform/spring_platform.tscn" id="6_255kr"]
+[ext_resource type="Script" uid="uid://cnha7yotsxf3q" path="res://collection/static_body_3d.gd" id="6_xlvrw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni31j"]
+albedo_texture = ExtResource("2_ni31j")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlvrw"]
+albedo_texture = ExtResource("3_xlvrw")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m7jmp"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y2354"]
+points = PackedVector3Array(5, 5, 5, 5, 5, -5, -5, 5, 5, 5, -5, 5, 5, -5, -5, -5, 5, -5, -5, -5, 5, -5, -5, -5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jxkyx"]
+viewport_path = NodePath("StaticBody3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qg4r"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_jxkyx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jxkyx"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_3qg4r")
+size = Vector2(2, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qg4r"]
+size = Vector3(0.23339844, 3.4736328, 1.9716797)
+
+[node name="Scene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_y2354")]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Block" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_xlvrw")
+mesh = SubResource("BoxMesh_m7jmp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_y2354")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("6_xlvrw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 34.995735, 1.4955895, 0)
+mesh = SubResource("PlaneMesh_jxkyx")
+
+[node name="SubViewport" type="SubViewport" parent="StaticBody3D"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="StaticBody3D/SubViewport"]
+transform = Transform3D(-0.65501785, 0, -0.75561345, 0, 1, 0, 0.75561345, 0, -0.65501785, 21.913635, 3.1658106, 5.750865)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.083103, 1.2368164, 0)
+shape = SubResource("BoxShape3D_3qg4r")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("4_tdier")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15025997, 2.6527046e-05, 0.07912159)
+
+[node name="Spring" parent="." instance=ExtResource("6_255kr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32415867, 0.029067956, 6.6179805)
+
+[connection signal="body_entered" from="Area3D" to="StaticBody3D" method="_on_area_3d_body_entered"]

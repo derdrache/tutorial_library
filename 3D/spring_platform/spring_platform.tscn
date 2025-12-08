@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx5vt5t75oi1u"]
+
+[ext_resource type="Script" uid="uid://st2vokqw4rig" path="res://spring_platform/spring_platform.gd" id="1_boyml"]
+[ext_resource type="PackedScene" uid="uid://d0cfc7b3y4i2u" path="res://spring_platform/spring.glb" id="1_ka4py"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_boyml"]
+height = 0.97946167
+radius = 1.1435547
+
+[node name="Spring" type="StaticBody3D"]
+script = ExtResource("1_boyml")
+
+[node name="spring" parent="." instance=ExtResource("1_ka4py")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4781189, 0)
+shape = SubResource("CylinderShape3D_boyml")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51231384, 0)
+shape = SubResource("CylinderShape3D_boyml")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+
+[editable path="spring"]
