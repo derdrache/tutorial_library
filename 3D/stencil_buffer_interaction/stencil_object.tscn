@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdaycirv1sfmy"]
+
+[ext_resource type="Script" uid="uid://7jgku8onha55" path="res://stencil_buffer_interaction/stencil_object.gd" id="1_gjefp"]
+
+[node name="StencilObject" type="StaticBody3D"]
+script = ExtResource("1_gjefp")

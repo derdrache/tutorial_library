@@ -1,0 +1,2 @@
+extends StaticBody3D
+class_name Stencil_Object
