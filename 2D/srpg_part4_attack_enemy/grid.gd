@@ -69,11 +69,11 @@ func _get_movement_sequence(targetPosition) -> Array:
 		_get_grid_position(targetPosition)
 		)
 
-func _get_grid_position(targetPosition):
-	var index = _get_cell(targetPosition).get_index()
+func _get_grid_position(position):
+	var index = _get_cell(position).get_index()
 	
-	var x = index % 5 
-	var y = int(index / 5) 
+	var x = index % width
+	var y = int(index / height) 
 
 	return Vector2(x, y)
 
