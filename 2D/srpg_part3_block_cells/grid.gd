@@ -76,10 +76,10 @@ func _get_movement_sequence(targetPosition) -> Array:
 func _get_grid_position(position):
 	var index = _get_cell(position).get_index()
 	
-	var width = index % 5 
-	var height = int(index / 5) 
+	var x = index % width
+	var y = int(index / height) 
 
-	return Vector2(width, height)
+	return Vector2(x, y)
 
 func _ready() -> void:
 	add_to_group("grid")
