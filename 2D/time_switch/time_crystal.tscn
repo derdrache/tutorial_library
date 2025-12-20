@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://ckq7e44ctk4lh"]
+
+[ext_resource type="Texture2D" uid="uid://bmta23hphkmly" path="res://assets/animated_items_outline.png" id="1_nok4b"]
+[ext_resource type="PackedScene" uid="uid://dy1uk8ecgd8cb" path="res://collection/hit_and_hurt_box/hurt_box.tscn" id="2_hym66"]
+[ext_resource type="Script" uid="uid://cr5bkj6suuqiq" path="res://time_switch/time_crystal.gd" id="2_nspqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hym66"]
+atlas = ExtResource("1_nok4b")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nspqw"]
+atlas = ExtResource("1_nok4b")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5hbo"]
+atlas = ExtResource("1_nok4b")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_be1my"]
+atlas = ExtResource("1_nok4b")
+region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou1hw"]
+atlas = ExtResource("1_nok4b")
+region = Rect2(128, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrxk8"]
+atlas = ExtResource("1_nok4b")
+region = Rect2(160, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu8a4"]
+atlas = ExtResource("1_nok4b")
+region = Rect2(192, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rcvw"]
+atlas = ExtResource("1_nok4b")
+region = Rect2(224, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fiect"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hym66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nspqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5hbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_be1my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou1hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrxk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu8a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rcvw")
+}],
+"loop": true,
+"name": &"animation",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nok4b"]
+
+[node name="TimeCrystal" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_fiect")
+animation = &"animation"
+frame_progress = 0.07870083
+script = ExtResource("2_nspqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nok4b")
+
+[node name="HurtBox" parent="." instance=ExtResource("2_hym66")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_nok4b")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="hurted" from="HurtBox" to="." method="_on_hurt_box_hurted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
