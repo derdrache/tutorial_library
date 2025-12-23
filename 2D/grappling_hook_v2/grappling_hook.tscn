@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://xtuvcdwkrsrl"]
+
+[ext_resource type="Script" uid="uid://dumkfo5lp522n" path="res://grappling_hook/grappling_hook.gd" id="1_pmbmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmbmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfu38"]
+
+[node name="GrapplingHook" type="Node2D"]
+script = ExtResource("1_pmbmu")
+
+[node name="Anchor" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor"]
+shape = SubResource("RectangleShape2D_pmbmu")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Anchor"]
+unique_name_in_owner = true
+node_a = NodePath("..")
+node_b = NodePath("../../PlayerAnchor")
+
+[node name="PlayerAnchor" type="RigidBody2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2, 82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAnchor"]
+shape = SubResource("RectangleShape2D_hfu38")
+
+[node name="Line2D" type="Line2D" parent="."]
+unique_name_in_owner = true
+texture_repeat = 2
+points = PackedVector2Array(0, 0)
