@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqw4hxetefcme"]
+
+[ext_resource type="Script" uid="uid://ccbgsgo54uch7" path="res://change_camera/first_person_camera.gd" id="1_8lhgh"]
+
+[node name="FirstPersonCamera" type="Camera3D"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_8lhgh")
