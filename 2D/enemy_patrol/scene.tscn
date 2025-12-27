@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0jdbq6twxbkb"]
+
+[ext_resource type="Texture2D" uid="uid://cfodg5ht4kx6a" path="res://assets/Tileset with cell size 256x256.png" id="2_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://du88q0hu7p8vx" path="res://enemy_patrol/enemy.tscn" id="3_3253y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wodfp"]
+size = Vector2(128, 512)
+
+[sub_resource type="Curve2D" id="Curve2D_nxogm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -380, -195, 0, 0, 0, 0, 402, -195, 0, 0, 0, 0, 401, 258, 0, 0, 0, 0, -379, 257, 0, 0, 0, 0, -380, -195)
+}
+point_count = 5
+
+[node name="Scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(-208, 8)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+texture = ExtResource("2_u3cyc")
+region_enabled = true
+region_rect = Rect2(1216, 1, 128, 511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("RectangleShape2D_wodfp")
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("path") instance=ExtResource("3_3253y")]
+position = Vector2(45, -197)
+path = NodePath("../patrol1")
+
+[node name="patrol1" type="Path2D" parent="."]
+curve = SubResource("Curve2D_nxogm")
