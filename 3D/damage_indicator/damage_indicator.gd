@@ -37,7 +37,7 @@ func _tween_indicator(label):
 		randf_range(-labelRange,labelRange)
 		)
 	
-	tween.tween_property(label, "position", label.global_position + randomTargetPosition, animationDuration)
+	tween.tween_property(label, "position", label.position + randomTargetPosition, animationDuration)
 	tween.parallel()
 	tween.tween_property(label, "modulate:a", 0, animationDuration)
 	tween.parallel()
