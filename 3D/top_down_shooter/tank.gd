@@ -36,6 +36,9 @@ func _shoot():
 	var bulletNode = BULLET.instantiate()
 	
 	var mouse3D = _get_3d_mouse_position()
+
+	if not mouse3D: return
+
 	bulletNode.direction = global_position.direction_to(mouse3D)
 
 	get_tree().root.add_child(bulletNode)
