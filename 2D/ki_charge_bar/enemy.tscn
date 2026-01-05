@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce420wer55fii"]
+
+[ext_resource type="Script" uid="uid://cx4f1f3i4spl0" path="res://ki_charge_bar/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://mdco4glatiu3" path="res://assets/fighter/Char_5.png" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://dy1uk8ecgd8cb" path="res://collection/2025/hit_and_hurt_box/hurt_box.tscn" id="3_qi2p4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
+atlas = ExtResource("1_7k104")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xaro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gyqm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
+size = Vector2(13, 40)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7xaro")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_7k104")
+
+[node name="HurtBox" parent="." instance=ExtResource("3_qi2p4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_7k104")
+
+[connection signal="hurted" from="HurtBox" to="." method="_on_hurt_box_hurted"]
