@@ -10,7 +10,6 @@ func take_damage(damage: int):
 	damage_indicator.create_indicator_label(-damage)
 	
 	health -= damage
-	health = clamp(health, 0, 50)
 
 	if health < 0:
 		died.emit()
