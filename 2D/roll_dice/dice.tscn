@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcm6q4b18i8e3"]
 
 [ext_resource type="Texture2D" uid="uid://bbbkit8kkwxl1" path="res://assets/dice.png" id="1_ju2fo"]
-[ext_resource type="Script" uid="uid://3vgippdso63w" path="res://roll_dice/dice.gd" id="1_m4jp2"]
+[ext_resource type="Script" uid="uid://3vgippdso63w" path="res://collection/2026/roll_dice/dice.gd" id="1_m4jp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ju2fo"]
 size = Vector2(113, 115)
@@ -54,17 +54,4 @@ region_rect = Rect2(80, 0, 16, 16)
 position = Vector2(5, 156)
 shape = SubResource("RectangleShape2D_ju2fo")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = -26.0
-offset_top = -147.0
-offset_right = 31.0
-offset_bottom = -10.0
-theme_override_constants/outline_size = 50
-theme_override_font_sizes/font_size = 100
-text = "5"
-
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="roll_done" from="." to="." method="_on_roll_done"]
