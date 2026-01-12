@@ -1,0 +1,3 @@
+extends Node
+
+enum COLORS {RED, BLUE, GREEN, YELLOW, NOTHING}

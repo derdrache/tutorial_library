@@ -1,0 +1,310 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwxv3lia115pl"]
+
+[ext_resource type="Script" uid="uid://br3mpuldp21mm" path="res://scene.gd" id="1_3soxv"]
+[ext_resource type="Texture2D" uid="uid://cqsoph76n2mdo" path="res://board_game/board_game_assets/board.png" id="2_ijgy2"]
+[ext_resource type="PackedScene" uid="uid://vtvyf6cwc4u8" path="res://field.tscn" id="3_akadc"]
+[ext_resource type="PackedScene" uid="uid://tpos56yijhn6" path="res://pawn.tscn" id="4_1850w"]
+[ext_resource type="PackedScene" uid="uid://bcm6q4b18i8e3" path="res://collection/roll_dice/dice.tscn" id="5_3iuh7"]
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_3soxv")
+
+[node name="Board" type="Sprite2D" parent="."]
+texture = ExtResource("2_ijgy2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="fields" type="Node2D" parent="."]
+
+[node name="Field" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(414.10587, 82.98332)
+
+[node name="Field2" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(330.10587, 82.98332)
+
+[node name="Field3" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(249.10587, 82.98332)
+
+[node name="Field4" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(166.10587, 82.98332)
+
+[node name="Field5" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(81.105865, 82.98332)
+
+[node name="Field6" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(81.105865, 165.98332)
+
+[node name="Field7" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(81.105865, 251.98332)
+
+[node name="Field8" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(81.105865, 332.98334)
+
+[node name="Field9" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(81.105865, 413.98334)
+
+[node name="Field10" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-0.8941345, 414.98334)
+
+[node name="Field11" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-86.894135, 414.98334)
+
+[node name="Field12" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-86.894135, 330.98334)
+
+[node name="Field13" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-86.894135, 247.98334)
+
+[node name="Field14" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-85.894135, 165.98334)
+
+[node name="Field15" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-85.894135, 81.98334)
+
+[node name="Field16" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-166.89413, 81.98334)
+
+[node name="Field17" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-248.89413, 81.98334)
+
+[node name="Field18" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-333.89413, 81.98334)
+
+[node name="Field19" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-416.89413, 81.98334)
+
+[node name="Field20" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-416.89413, -0.016662598)
+
+[node name="Field21" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-416.89413, -84.01666)
+
+[node name="Field22" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-333.89413, -84.01666)
+
+[node name="Field23" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-249.89413, -84.01666)
+
+[node name="Field24" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-167.89413, -84.01666)
+
+[node name="Field25" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-82.894135, -84.01666)
+
+[node name="Field26" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-82.894135, -168.01666)
+
+[node name="Field27" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-82.894135, -251.01666)
+
+[node name="Field28" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-82.894135, -332.01666)
+
+[node name="Field29" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-82.894135, -417.01666)
+
+[node name="Field30" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(-1.8941345, -417.01666)
+
+[node name="Field31" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(83.105865, -417.01666)
+
+[node name="Field32" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(83.105865, -332.01666)
+
+[node name="Field33" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(83.105865, -250.01666)
+
+[node name="Field34" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(83.105865, -164.01666)
+
+[node name="Field35" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(83.105865, -82.01666)
+
+[node name="Field36" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(165.10587, -82.01666)
+
+[node name="Field37" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(249.10587, -82.01666)
+
+[node name="Field38" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(332.10587, -82.01666)
+
+[node name="Field39" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(413.10587, -82.01666)
+
+[node name="Field40" parent="fields" instance=ExtResource("3_akadc")]
+position = Vector2(413.10587, 0.9833374)
+
+[node name="home" type="Node2D" parent="."]
+
+[node name="Field" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(-334, -416)
+
+[node name="Field2" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(-334, -333)
+
+[node name="Field3" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(-417, -416)
+
+[node name="Field4" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(-417, -331)
+
+[node name="Field5" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(414, -416)
+
+[node name="Field6" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(414, -333)
+
+[node name="Field7" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(331, -416)
+
+[node name="Field8" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(331, -331)
+
+[node name="Field9" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(-334, 330)
+
+[node name="Field10" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(-334, 413)
+
+[node name="Field11" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(-417, 330)
+
+[node name="Field12" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(-417, 415)
+
+[node name="Field13" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(417, 332)
+
+[node name="Field14" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(417, 415)
+
+[node name="Field15" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(334, 332)
+
+[node name="Field16" parent="home" instance=ExtResource("3_akadc")]
+position = Vector2(334, 417)
+
+[node name="goal" type="Node2D" parent="."]
+
+[node name="Field" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(-334, 0)
+
+[node name="Field2" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(-250, 0)
+
+[node name="Field3" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(-166, 0)
+
+[node name="Field4" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(-84, 0)
+
+[node name="Field5" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(82, 0)
+
+[node name="Field9" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(-1, -84)
+
+[node name="Field13" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(0, 85)
+
+[node name="Field14" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(0, 168)
+
+[node name="Field15" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(0, 251)
+
+[node name="Field16" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(0, 334)
+
+[node name="Field10" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(-1, -167)
+
+[node name="Field11" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(-1, -250)
+
+[node name="Field12" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(-1, -332)
+
+[node name="Field6" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(165, 0)
+
+[node name="Field7" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(248, 0)
+
+[node name="Field8" parent="goal" instance=ExtResource("3_akadc")]
+position = Vector2(331, 0)
+
+[node name="pawns" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Pawn" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(-333, 9)
+color = 0
+
+[node name="Pawn2" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(-416, -331)
+color = 0
+
+[node name="Pawn3" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(-416, -416)
+color = 0
+
+[node name="Pawn4" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(-333, -416)
+color = 0
+
+[node name="Pawn5" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(419, -330)
+color = 1
+
+[node name="Pawn6" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(334, -330)
+color = 1
+
+[node name="Pawn7" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(334, -415)
+color = 1
+
+[node name="Pawn8" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(417, -415)
+color = 1
+
+[node name="Pawn9" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(415, 418)
+color = 2
+
+[node name="Pawn10" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(330, 418)
+color = 2
+
+[node name="Pawn11" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(330, 333)
+color = 2
+
+[node name="Pawn12" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(413, 333)
+color = 2
+
+[node name="Pawn13" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(-333, 418)
+color = 3
+
+[node name="Pawn14" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(-417, 421)
+color = 3
+
+[node name="Pawn15" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(-417, 336)
+color = 3
+
+[node name="Pawn16" parent="pawns" instance=ExtResource("4_1850w")]
+position = Vector2(-334, 336)
+color = 3
+
+[node name="Dice" parent="." instance=ExtResource("5_3iuh7")]
+position = Vector2(-821, -264)
+
+[connection signal="roll_done" from="Dice" to="." method="_on_dice_roll_done"]
