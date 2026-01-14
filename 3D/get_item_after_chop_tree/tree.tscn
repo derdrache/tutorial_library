@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://by04whdsdnf8m"]
+
+[ext_resource type="Script" uid="uid://cvx66jwljkea4" path="res://tree.gd" id="1_pge7f"]
+[ext_resource type="Resource" uid="uid://bk4jh0grsoiy2" path="res://wood.tres" id="2_3dtf2"]
+[ext_resource type="Script" uid="uid://dqsh3y73ixwhn" path="res://item_bundle.gd" id="3_bji6b"]
+[ext_resource type="PackedScene" uid="uid://bc1knmag6e70n" path="res://assets/tree/Tree_1_A_Color1.gltf" id="4_5qvev"]
+[ext_resource type="PackedScene" uid="uid://bb5d5niq1r2p8" path="res://collection/2024/hit_and_hurt_box/hurt_box.tscn" id="5_bicjp"]
+
+[sub_resource type="Resource" id="Resource_6vbnm"]
+script = ExtResource("3_bji6b")
+item = ExtResource("2_3dtf2")
+quantity = 7
+metadata/_custom_type_script = "uid://dqsh3y73ixwhn"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnvrw"]
+size = Vector3(2.5, 4.5, 2.5)
+
+[node name="Tree" type="StaticBody3D"]
+script = ExtResource("1_pge7f")
+itemBundle = SubResource("Resource_6vbnm")
+
+[node name="Tree" parent="." instance=ExtResource("4_5qvev")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+shape = SubResource("BoxShape3D_nnvrw")
+
+[node name="HurtBox" parent="." instance=ExtResource("5_bicjp")]
+health = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+shape = SubResource("BoxShape3D_nnvrw")
+
+[connection signal="died" from="HurtBox" to="." method="_on_hurt_box_died"]

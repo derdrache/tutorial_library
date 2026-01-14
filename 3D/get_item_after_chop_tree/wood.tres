@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item_Chop_Tree_Serie" load_steps=3 format=3 uid="uid://j2gaddq0mji3"]
+
+[ext_resource type="Script" uid="uid://purqv7r2n3n7" path="res://item_resource.gd" id="1_8k8i1"]
+[ext_resource type="Texture2D" uid="uid://c04j8s8kbgcc5" path="res://chop_tree/wood.png" id="2_otves"]
+
+[resource]
+script = ExtResource("1_8k8i1")
+name = "Wood"
+texture = ExtResource("2_otves")
+metadata/_custom_type_script = "uid://purqv7r2n3n7"
