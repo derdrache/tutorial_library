@@ -1,0 +1,142 @@
+[gd_scene load_steps=21 format=3 uid="uid://bogc1s0rrfl8j"]
+
+[ext_resource type="Texture2D" uid="uid://bppqjfl867fsr" path="res://character_selection_two_player/assets/character_selection.png" id="1_nxogm"]
+[ext_resource type="Script" uid="uid://b1impnc5tmrsa" path="res://character_selection_two_player/scene.gd" id="1_u3cyc"]
+[ext_resource type="Texture2D" uid="uid://bs4imy6i0lbrk" path="res://character_selection_two_player/assets/character_assets/Balrog.png" id="2_3253y"]
+[ext_resource type="PackedScene" uid="uid://y01jj25kltn7" path="res://character_selection_two_player/character_selection_box.tscn" id="3_3253y"]
+[ext_resource type="Resource" uid="uid://cpd0qg64cxcmo" path="res://character_selection_two_player/characters/1_Ryu.tres" id="5_m7jmp"]
+[ext_resource type="Resource" uid="uid://xj61y31ix7ev" path="res://character_selection_two_player/characters/2_Honda.tres" id="6_xpof7"]
+[ext_resource type="Resource" uid="uid://bvunhdvcdlrpk" path="res://character_selection_two_player/characters/6_Ken.tres" id="6_y2354"]
+[ext_resource type="Resource" uid="uid://dkhoe7k7vfslg" path="res://character_selection_two_player/characters/3_Blanka.tres" id="7_302uq"]
+[ext_resource type="Resource" uid="uid://xwaj2p05lgfe" path="res://character_selection_two_player/characters/4_Guile.tres" id="8_1q4c1"]
+[ext_resource type="Resource" uid="uid://pvpydpfn824p" path="res://character_selection_two_player/characters/5_Balrog.tres" id="9_aobyt"]
+[ext_resource type="Resource" uid="uid://c6rukxicrs1wr" path="res://character_selection_two_player/characters/7_Chun_li.tres" id="11_i6j5g"]
+[ext_resource type="Resource" uid="uid://boe31ph46bxv1" path="res://character_selection_two_player/characters/8_Zangief.tres" id="12_g6g5t"]
+[ext_resource type="Resource" uid="uid://daocysabavtbr" path="res://character_selection_two_player/characters/9_Dhalsim.tres" id="13_iss77"]
+[ext_resource type="Resource" uid="uid://b0jys1otqtgpp" path="res://character_selection_two_player/characters/10_Sagat.tres" id="14_xb05w"]
+[ext_resource type="Resource" uid="uid://cur3xctssds1x" path="res://character_selection_two_player/characters/11_Vega.tres" id="15_wncyr"]
+[ext_resource type="Resource" uid="uid://28xqud4v4onm" path="res://character_selection_two_player/characters/12_Hawk.tres" id="16_pou65"]
+[ext_resource type="Resource" uid="uid://0t7ugvfktc28" path="res://character_selection_two_player/characters/13_Feilong.tres" id="17_otx46"]
+[ext_resource type="Resource" uid="uid://cwfm4j56jj3c2" path="res://character_selection_two_player/characters/14_Dee_jay.tres" id="18_m514l"]
+[ext_resource type="Resource" uid="uid://rt3vmyfdfnuy" path="res://character_selection_two_player/characters/15_Cammy.tres" id="19_llic6"]
+[ext_resource type="Resource" uid="uid://drnulii0kpkwc" path="res://character_selection_two_player/characters/16_Bison.tres" id="20_yjo7n"]
+
+[node name="CharacterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3cyc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -135.0
+offset_right = -115.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_constants/separation = 0
+
+[node name="Player1" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_3253y")
+
+[node name="allCharacters" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_nxogm")
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/allCharacters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 6
+
+[node name="characterSelectionBox" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+selectable = false
+
+[node name="characterSelectionBox2" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("5_m7jmp")
+
+[node name="characterSelectionBox3" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("6_xpof7")
+
+[node name="characterSelectionBox4" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("7_302uq")
+
+[node name="characterSelectionBox5" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("8_1q4c1")
+
+[node name="characterSelectionBox6" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+selectable = false
+
+[node name="characterSelectionBox7" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("9_aobyt")
+
+[node name="characterSelectionBox8" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("6_y2354")
+
+[node name="characterSelectionBox9" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("11_i6j5g")
+
+[node name="characterSelectionBox10" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("12_g6g5t")
+
+[node name="characterSelectionBox11" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("13_iss77")
+
+[node name="characterSelectionBox12" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("14_xb05w")
+
+[node name="characterSelectionBox13" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("15_wncyr")
+
+[node name="characterSelectionBox14" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("16_pou65")
+
+[node name="characterSelectionBox15" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("17_otx46")
+
+[node name="characterSelectionBox16" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("18_m514l")
+
+[node name="characterSelectionBox17" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("19_llic6")
+
+[node name="characterSelectionBox18" parent="HBoxContainer/allCharacters/GridContainer" instance=ExtResource("3_3253y")]
+layout_mode = 2
+character = ExtResource("20_yjo7n")
+
+[node name="Player2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_3253y")

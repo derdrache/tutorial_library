@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://rt3vmyfdfnuy"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_0ll8d"]
+[ext_resource type="Texture2D" uid="uid://je342oxyt2r7" path="res://character_selection_two_player/assets/character_assets/Cammy.png" id="2_g3brs"]
+
+[resource]
+script = ExtResource("1_0ll8d")
+name = "Cammy"
+texture = ExtResource("2_g3brs")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

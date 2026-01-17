@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://boe31ph46bxv1"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_ckrqj"]
+[ext_resource type="Texture2D" uid="uid://bcgcstfxiwh77" path="res://character_selection_two_player/assets/character_assets/Zangief.png" id="2_48txc"]
+
+[resource]
+script = ExtResource("1_ckrqj")
+name = "Zangief"
+texture = ExtResource("2_48txc")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

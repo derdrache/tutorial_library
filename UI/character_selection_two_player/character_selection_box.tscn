@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://y01jj25kltn7"]
+
+[ext_resource type="Texture2D" uid="uid://cf3e2v2djkftq" path="res://character_selection_two_player/assets/P1_selection_cursor.png" id="1_6202p"]
+[ext_resource type="Script" uid="uid://d0gx8ylf1v186" path="res://character_selection_two_player/character_selection_box.gd" id="1_rbktv"]
+[ext_resource type="Texture2D" uid="uid://2sehvo5uuos3" path="res://character_selection_two_player/assets/P2_selection_cursor.png" id="2_rbktv"]
+
+[node name="characterSelectionBox" type="TextureRect"]
+custom_minimum_size = Vector2(21, 32)
+script = ExtResource("1_rbktv")
+
+[node name="P1" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = -3.2649994
+offset_right = 21.0
+offset_bottom = 32.735
+texture = ExtResource("1_6202p")
+
+[node name="P2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = -3.265
+offset_right = 21.0
+offset_bottom = 32.735
+texture = ExtResource("2_rbktv")

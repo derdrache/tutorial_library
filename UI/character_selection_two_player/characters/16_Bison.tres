@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://drnulii0kpkwc"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_nvxtg"]
+[ext_resource type="Texture2D" uid="uid://5xknpx682mud" path="res://character_selection_two_player/assets/character_assets/Bison.png" id="2_ifoj6"]
+
+[resource]
+script = ExtResource("1_nvxtg")
+name = "Bison"
+texture = ExtResource("2_ifoj6")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://bvunhdvcdlrpk"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_h7y81"]
+[ext_resource type="Texture2D" uid="uid://lkq7tiy57hv2" path="res://character_selection_two_player/assets/character_assets/Ken.png" id="2_v4y5k"]
+
+[resource]
+script = ExtResource("1_h7y81")
+name = "Ken"
+texture = ExtResource("2_v4y5k")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

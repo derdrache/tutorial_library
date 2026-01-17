@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://c6rukxicrs1wr"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_uooax"]
+[ext_resource type="Texture2D" uid="uid://bktdoqauf6c7y" path="res://character_selection_two_player/assets/character_assets/Chun_li.png" id="2_4t0v3"]
+
+[resource]
+script = ExtResource("1_uooax")
+name = "Chun li"
+texture = ExtResource("2_4t0v3")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

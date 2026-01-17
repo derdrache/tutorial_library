@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://28xqud4v4onm"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_g78ej"]
+[ext_resource type="Texture2D" uid="uid://bpk7nert0rc14" path="res://character_selection_two_player/assets/character_assets/Hawk.png" id="2_uc5ur"]
+
+[resource]
+script = ExtResource("1_g78ej")
+name = "Hawk"
+texture = ExtResource("2_uc5ur")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

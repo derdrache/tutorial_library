@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://xwaj2p05lgfe"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_8htlw"]
+[ext_resource type="Texture2D" uid="uid://dg88yoktcqvom" path="res://character_selection_two_player/assets/character_assets/Guile.png" id="2_57vqu"]
+
+[resource]
+script = ExtResource("1_8htlw")
+name = "Guile"
+texture = ExtResource("2_57vqu")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

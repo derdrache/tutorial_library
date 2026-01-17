@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://daocysabavtbr"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_7t54b"]
+[ext_resource type="Texture2D" uid="uid://b5vxexwkingtw" path="res://character_selection_two_player/assets/character_assets/Dhalsim.png" id="2_ur7j7"]
+
+[resource]
+script = ExtResource("1_7t54b")
+name = "Dhalsim"
+texture = ExtResource("2_ur7j7")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

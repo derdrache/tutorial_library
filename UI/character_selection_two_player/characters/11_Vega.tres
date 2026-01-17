@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://cur3xctssds1x"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_sabv4"]
+[ext_resource type="Texture2D" uid="uid://do2q4jys154ou" path="res://character_selection_two_player/assets/character_assets/Vega.png" id="2_suopc"]
+
+[resource]
+script = ExtResource("1_sabv4")
+name = "Vega"
+texture = ExtResource("2_suopc")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

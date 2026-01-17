@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://dkhoe7k7vfslg"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_wdemp"]
+[ext_resource type="Texture2D" uid="uid://coofnexnteia5" path="res://character_selection_two_player/assets/character_assets/Blanka.png" id="2_mf5nw"]
+
+[resource]
+script = ExtResource("1_wdemp")
+name = "Blanka"
+texture = ExtResource("2_mf5nw")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

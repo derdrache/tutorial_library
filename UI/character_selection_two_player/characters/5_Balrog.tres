@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://pvpydpfn824p"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_8mh3o"]
+[ext_resource type="Texture2D" uid="uid://bs4imy6i0lbrk" path="res://character_selection_two_player/assets/character_assets/Balrog.png" id="2_sufbq"]
+
+[resource]
+script = ExtResource("1_8mh3o")
+name = "Balrog"
+texture = ExtResource("2_sufbq")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

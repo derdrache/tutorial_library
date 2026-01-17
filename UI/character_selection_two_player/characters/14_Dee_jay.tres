@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://cwfm4j56jj3c2"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_0s2f2"]
+[ext_resource type="Texture2D" uid="uid://cmadu0gl0uawq" path="res://character_selection_two_player/assets/character_assets/Dee_jay.png" id="2_krv4e"]
+
+[resource]
+script = ExtResource("1_0s2f2")
+name = "Dee_jay"
+texture = ExtResource("2_krv4e")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

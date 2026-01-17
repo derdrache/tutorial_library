@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://xj61y31ix7ev"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_7hbrq"]
+[ext_resource type="Texture2D" uid="uid://dw4b0vhplfd56" path="res://character_selection_two_player/assets/character_assets/Honda.png" id="2_ky25g"]
+
+[resource]
+script = ExtResource("1_7hbrq")
+name = "Honda"
+texture = ExtResource("2_ky25g")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"

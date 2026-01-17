@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character_Resource_Fighting" load_steps=3 format=3 uid="uid://b0jys1otqtgpp"]
+
+[ext_resource type="Script" uid="uid://c0ahxorfl6iyj" path="res://character_selection_two_player/characters/character_resource.gd" id="1_av20e"]
+[ext_resource type="Texture2D" uid="uid://clemkrn7hn3jo" path="res://character_selection_two_player/assets/character_assets/Sagat.png" id="2_p63p2"]
+
+[resource]
+script = ExtResource("1_av20e")
+name = "Sagat"
+texture = ExtResource("2_p63p2")
+metadata/_custom_type_script = "uid://c0ahxorfl6iyj"
