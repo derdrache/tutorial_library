@@ -1,5 +1,5 @@
 extends TextureRect
-#class_name CharacterSelectionBox
+class_name CharacterSelectionBox
 
 @export var selectable = true
 @export var character: Character_Resource_Fighting
