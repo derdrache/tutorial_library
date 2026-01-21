@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cntk0uov21x81" path="res://collection/2024/flashlight/player.gd" id="1_grq0q"]
 [ext_resource type="PackedScene" uid="uid://p1kht8vp5mn7" path="res://assets/character/Knight.glb" id="2_8rml4"]
-[ext_resource type="PackedScene" uid="uid://c5crtsea6h2c7" path="res://collection/third_person_camera/third_person_camera.tscn" id="3_hctur"]
+[ext_resource type="PackedScene" uid="uid://ctmcqnjcdjg0g" path="res://collection/third_person_camera/third_person_camera.tscn" id="3_hctur"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
