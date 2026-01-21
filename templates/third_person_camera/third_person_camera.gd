@@ -1,4 +1,3 @@
-@tool
 extends Node3D
 
 @export var enable := true:
@@ -50,14 +49,14 @@ func _mouse_camera_control(event):
 	targetZoom = clamp(targetZoom, minZoom, maxZoom)
 
 func _process(delta: float) -> void:
-	if Engine.is_editor_hint(): return 
+	camera_3d.position.z = lerp(camera_3d.position.z, targetZoom, zoomDelay * delta)
 	
 	var hasgamePad = Input.get_connected_joypads().size() > 0
 	if hasgamePad:
-		_joystick_camera_control(delta)
+		_joystick_camera_control()
 	
 		
-func _joystick_camera_control(delta):
+func _joystick_camera_control():
 	var direction = Input.get_vector("camera_left", "camera_right", "camera_zoom_in", "camera_zoom_out")
 	
 	if Input.is_action_pressed("activate_camera_movement") and direction.y < 0:
@@ -70,4 +69,4 @@ func _joystick_camera_control(delta):
 		rotation.x = clampf(rotation.x, deg_to_rad(xAxisMinLimitDegree), deg_to_rad(xAxisMaxLimitDegree))
 	
 	targetZoom = clamp(targetZoom, minZoom, maxZoom)
-	camera_3d.position.z = lerp(camera_3d.position.z, targetZoom, zoomDelay * delta)
+	
