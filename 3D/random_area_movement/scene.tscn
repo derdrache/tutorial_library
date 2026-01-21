@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfbw7b50kfj0u"]
+
+[ext_resource type="Material" uid="uid://b2etjopasamr0" path="res://assets/water_material.tres" id="2_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://cxbggwqjwsfi4" path="res://orbital_camera.tscn" id="2_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://coocuwvp0u188" path="res://fish_tank/shark.tscn" id="3_3253y"]
+[ext_resource type="PackedScene" uid="uid://d3tsa0yitvnqd" path="res://fish_tank/fish.tscn" id="4_u3cyc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u3cyc"]
+
+[sub_resource type="Sky" id="Sky_m7jmp"]
+sky_material = SubResource("ProceduralSkyMaterial_u3cyc")
+
+[sub_resource type="Environment" id="Environment_m7jmp"]
+background_mode = 2
+sky = SubResource("Sky_m7jmp")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_m7jmp"]
+material = ExtResource("2_m7jmp")
+size = Vector3(20, 20, 20)
+
+[node name="Scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m7jmp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_m7jmp")
+
+[node name="orbitalCamera" parent="." instance=ExtResource("2_u3cyc")]
+
+[node name="Fish" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish2" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish3" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish4" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish5" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish6" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish7" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish8" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish9" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish10" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish11" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish12" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish13" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish14" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish15" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish16" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish17" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish18" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish19" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Fish20" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("4_u3cyc")]
+waterMesh = NodePath("../Water")
+
+[node name="Shark" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("3_3253y")]
+waterMesh = NodePath("../Water")
+
+[node name="Shark2" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("3_3253y")]
+waterMesh = NodePath("../Water")
+
+[node name="Shark3" parent="." node_paths=PackedStringArray("waterMesh") instance=ExtResource("3_3253y")]
+waterMesh = NodePath("../Water")

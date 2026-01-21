@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://coocuwvp0u188"]
+
+[ext_resource type="Script" uid="uid://c6xl7i27486g6" path="res://fish_tank/fish.gd" id="1_d5pdq"]
+[ext_resource type="PackedScene" uid="uid://d24gy301j5u8v" path="res://assets/fish/shark/plushie_shark.glb" id="1_rwmi6"]
+
+[node name="Shark" type="CharacterBody3D"]
+script = ExtResource("1_d5pdq")
+speed = 4.0
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_rwmi6")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3tsa0yitvnqd"]
+
+[ext_resource type="Script" uid="uid://c6xl7i27486g6" path="res://fish_tank/fish.gd" id="1_hgn23"]
+[ext_resource type="PackedScene" uid="uid://c121xf5421mjl" path="res://assets/fish/clown_fish_low_poly_animated.glb" id="2_hgn23"]
+
+[node name="Fish" type="CharacterBody3D"]
+script = ExtResource("1_hgn23")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_hgn23")]
