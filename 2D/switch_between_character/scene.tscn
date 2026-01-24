@@ -1,0 +1,190 @@
+[gd_scene load_steps=9 format=4 uid="uid://fca2my78w2cc"]
+
+[ext_resource type="Texture2D" uid="uid://bvb6ytpexeoxo" path="res://assets/tileset.png" id="1_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://dxjsf0i6imluu" path="res://switch_between_character/fox.tscn" id="2_nxogm"]
+[ext_resource type="PackedScene" uid="uid://don5q3upisqrg" path="res://switch_between_character/frog.tscn" id="4_m7jmp"]
+[ext_resource type="PackedScene" path="res://switch_between_character/door.tscn" id="4_y2354"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_nxogm"]
+tile_data = PackedInt32Array(0, 983040, 14, 1, 1114112, 14, 2, 1245184, 14)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxogm"]
+texture = ExtResource("1_u3cyc")
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+20:4/0 = 0
+22:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+20:5/0 = 0
+22:5/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+17:7/0 = 0
+19:7/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+19:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+7:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+15:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+7:13/0 = 0
+9:13/0 = 0
+11:13/0 = 0
+13:13/0 = 0
+7:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+15:14/0 = 0
+15:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:14/0 = 0
+17:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:14/0 = 0
+19:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:15/0 = 0
+2:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+9:15/0 = 0
+2:16/0 = 0
+4:16/0 = 0
+11:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+11:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+17:18/0 = 0
+19:18/0 = 0
+21:18/0 = 0
+1:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+17:20/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3253y"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nxogm")
+pattern_0 = SubResource("TileMapPattern_nxogm")
+
+[sub_resource type="GDScript" id="GDScript_u3cyc"]
+script/source = "extends Area2D
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+var playerOnDoor = 0
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		playerOnDoor += 1
+		
+		if playerOnDoor == 2:
+			_open_door()
+
+func _open_door():
+	animated_sprite_2d.play(\"open\")
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		playerOnDoor -= 1
+"
+
+[node name="Scene" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAaAB4AAAABAAEAAAAbAB4AAAADAAEAAAAcAB4AAAADAAEAAAAdABYAAAAPAA4AAAAdAB4AAAADAAEAAAAeABYAAAARAA4AAAAeAB4AAAADAAEAAAAfABYAAAATAA4AAAAfAB4AAAADAAEAAAAgAB4AAAADAAEAAAAhAB4AAAADAAEAAAAiAB4AAAADAAEAAAAjAB4AAAADAAEAAAAkAB4AAAADAAEAAAAlABsAAAAPAA4AAAAlAB4AAAADAAEAAAAmABsAAAARAA4AAAAmAB4AAAADAAEAAAAnABsAAAATAA4AAAAnAB4AAAADAAEAAAAoAB4AAAADAAEAAAApAB4AAAADAAEAAAAqABgAAAAPAA4AAAAqAB4AAAADAAEAAAArABgAAAARAA4AAAArAB4AAAADAAEAAAAsABgAAAATAA4AAAAsAB4AAAADAAEAAAAtAB4AAAADAAEAAAAuAB4AAAADAAEAAAAvABYAAAAPAA4AAAAvAB4AAAADAAEAAAAwABYAAAARAA4AAAAwAB4AAAADAAEAAAAxABYAAAATAA4AAAAxAB4AAAADAAEAAAAyAB4AAAADAAEAAAA=")
+tile_set = SubResource("TileSet_3253y")
+
+[node name="Door" parent="." instance=ExtResource("4_y2354")]
+position = Vector2(766, 464)
+script = SubResource("GDScript_u3cyc")
+
+[node name="FrogPlayer" parent="." instance=ExtResource("4_m7jmp")]
+position = Vector2(778, 334)
+
+[node name="FoxPlayer" parent="." instance=ExtResource("2_nxogm")]
+position = Vector2(481, 336)
+active = true
