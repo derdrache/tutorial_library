@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8p4f1xyay0we"]
+
+[ext_resource type="Material" uid="uid://b2etjopasamr0" path="res://assets/water_material.tres" id="1_ulcgi"]
+[ext_resource type="PackedScene" uid="uid://rcmjmiqcgg6n" path="res://swim/shark.tscn" id="2_nxogm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u3cyc"]
+
+[sub_resource type="Sky" id="Sky_m7jmp"]
+sky_material = SubResource("ProceduralSkyMaterial_u3cyc")
+
+[sub_resource type="Environment" id="Environment_m7jmp"]
+background_mode = 2
+sky = SubResource("Sky_m7jmp")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ulcgi"]
+size = Vector3(20, 10, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-10, -5, -10, -10, 5, -10, 10, -5, -10, -10, -5, 10, -10, 5, 10, 10, 5, -10, 10, -5, 10, 10, 5, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nxogm"]
+points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
+
+[node name="Scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m7jmp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -1.0658141e-14, 0, 1.0658141e-14, 1, 0, 0.81144285, 0)
+mesh = SubResource("BoxMesh_ulcgi")
+surface_material_override/0 = ExtResource("1_ulcgi")
+
+[node name="WaterArea" type="Area3D" parent="Water"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/WaterArea"]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5639935, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="underWaterEffect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.5058824, 1, 0.39215687)
+
+[node name="Border" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.2911663, 0)
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Border"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_nxogm")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Border"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.890029, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_nxogm")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Border"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 10.031858, 6.890029, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border/StaticBody3D3"]
+shape = SubResource("ConvexPolygonShape3D_nxogm")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Border"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -9.968142, 6.890029, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border/StaticBody3D4"]
+shape = SubResource("ConvexPolygonShape3D_nxogm")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Border"]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0.031858444, 6.890029, -10)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border/StaticBody3D5"]
+shape = SubResource("ConvexPolygonShape3D_nxogm")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Border"]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0.031858444, 6.890029, 10)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border/StaticBody3D6"]
+shape = SubResource("ConvexPolygonShape3D_nxogm")
+
+[node name="Shark" parent="." instance=ExtResource("2_nxogm")]

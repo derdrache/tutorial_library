@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://rcmjmiqcgg6n"]
+
+[ext_resource type="PackedScene" uid="uid://d24gy301j5u8v" path="res://assets/fish/shark/plushie_shark.glb" id="1_d5pdq"]
+[ext_resource type="Script" uid="uid://c8gfv21pda3fu" path="res://swim/shark.gd" id="1_k17ol"]
+[ext_resource type="PackedScene" uid="uid://c5crtsea6h2c7" path="res://collection/third_person_camera/third_person_camera.tscn" id="3_k17ol"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rwmi6"]
+radius = 0.4
+height = 2.5664063
+
+[node name="Shark" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_k17ol")
+
+[node name="model" parent="." instance=ExtResource("1_d5pdq")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.06606628, -0.15000713)
+shape = SubResource("CapsuleShape3D_rwmi6")
+
+[node name="thirdPersonCamera" parent="." instance=ExtResource("3_k17ol")]
+unique_name_in_owner = true
