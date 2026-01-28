@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccdp3s4kmkbv2"]
+
+[ext_resource type="PackedScene" uid="uid://v3ql7xlm64ru" path="res://assets/fruits/apple.glb" id="1_3ed3y"]
+[ext_resource type="Script" uid="uid://bmp4kj72et7p8" path="res://shake_tree/apple.gd" id="1_n78qv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n78qv"]
+radius = 0.45020345
+
+[node name="Apple" type="CharacterBody3D"]
+script = ExtResource("1_n78qv")
+
+[node name="apple" parent="." instance=ExtResource("1_3ed3y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46310258, 0)
+shape = SubResource("SphereShape3D_n78qv")
