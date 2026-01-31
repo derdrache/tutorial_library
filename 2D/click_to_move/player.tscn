@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://doso6axdveoda"]
+
+[ext_resource type="PackedScene" uid="uid://b4c0cfuvjk63h" path="res://assets/character/Barbarian.glb" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bifwbgpwasben" path="res://click_to_move/player.gd" id="1_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_onrkg")
+
+[node name="Barbarian" parent="." instance=ExtResource("1_4flbx")]
+
+[node name="1H_Axe_Offhand" parent="Barbarian/Rig/Skeleton3D" index="0"]
+transform = Transform3D(-0.99999887, -1.1746522e-07, 2.0090897e-07, 1.0296972e-07, -5.3096744e-07, 0.99999934, -1.9569957e-07, 0.99999934, 6.234488e-07, 0.88313216, 1.0492611, 0.033308275)
+
+[node name="Barbarian_Round_Shield" parent="Barbarian/Rig/Skeleton3D" index="1"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+
+[node name="1H_Axe" parent="Barbarian/Rig/Skeleton3D" index="2"]
+transform = Transform3D(0.999999, 1.8824655e-07, -4.3907139e-07, -3.7956113e-07, -7.9538523e-07, -0.99999946, -1.1746976e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, 0.033308562)
+
+[node name="2H_Axe" parent="Barbarian/Rig/Skeleton3D" index="3"]
+transform = Transform3D(0.999999, 1.8824655e-07, -4.3907139e-07, -3.7956113e-07, -7.9538523e-07, -0.99999946, -1.1746976e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, 0.033308562)
+
+[node name="Mug" parent="Barbarian/Rig/Skeleton3D" index="4"]
+transform = Transform3D(0.999999, 1.8824655e-07, -4.3907139e-07, -3.7956113e-07, -7.9538523e-07, -0.99999946, -1.1746976e-07, 0.99999946, -7.425141e-07, -1.1836982, 1.0492611, -0.015637377)
+
+[node name="Barbarian_Hat" parent="Barbarian/Rig/Skeleton3D" index="5"]
+transform = Transform3D(1, -2.209651e-22, 1.6940659e-21, 2.2096506e-22, 0.99999994, 0, -1.6940659e-21, 3.59e-43, 1, 0, 1.2158736, -1.390987e-07)
+
+[node name="Barbarian_Cape" parent="Barbarian/Rig/Skeleton3D" index="6"]
+transform = Transform3D(1, 1.2521356e-21, 0, -1.2521355e-21, 0.99999994, 0, 0, 0, 1, -1.9073486e-06, 1.2158737, -1.3909872e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_onrkg")
+
+[editable path="Barbarian"]
