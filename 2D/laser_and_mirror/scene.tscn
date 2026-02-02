@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://jirih15pnkp6"]
+
+[ext_resource type="PackedScene" uid="uid://iwpgby07mnri" path="res://laser_and_mirror/mirror.tscn" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://cdgwqcac5h1cl" path="res://laser_and_mirror/laser_start.tscn" id="2_nxogm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxogm"]
+size = Vector2(1290, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3253y"]
+size = Vector2(20, 745)
+
+[node name="Scene" type="Node2D"]
+
+[node name="Border" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+position = Vector2(635, 0)
+shape = SubResource("RectangleShape2D_nxogm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
+position = Vector2(640, 728)
+shape = SubResource("RectangleShape2D_nxogm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border"]
+position = Vector2(0, 364.5)
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
+position = Vector2(1280, 360)
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="LaserStart" parent="." instance=ExtResource("2_nxogm")]
+position = Vector2(672, 416)
+
+[node name="Mirror" parent="." instance=ExtResource("1_nxogm")]
+position = Vector2(672, 160)
+
+[node name="Mirror2" parent="." instance=ExtResource("1_nxogm")]
+position = Vector2(160, 160)
+
+[node name="Mirror3" parent="." instance=ExtResource("1_nxogm")]
+position = Vector2(160, 608)

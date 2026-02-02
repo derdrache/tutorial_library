@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdgwqcac5h1cl"]
+
+[ext_resource type="Texture2D" uid="uid://lvvlkbwe2u43" path="res://assets/icons/icon.svg" id="1_u86cb"]
+[ext_resource type="Script" uid="uid://bru0e6032fkbb" path="res://laser_and_mirror/laser_start.gd" id="2_8ebur"]
+
+[node name="LaserStart" type="Node2D"]
+script = ExtResource("2_8ebur")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_u86cb")
+
+[node name="lasers" type="Node2D" parent="."]

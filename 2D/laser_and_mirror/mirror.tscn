@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://iwpgby07mnri"]
+
+[ext_resource type="Script" uid="uid://dwllt44ytk3t7" path="res://laser_and_mirror/mirror.gd" id="1_nk6sm"]
+[ext_resource type="Texture2D" uid="uid://6sjwnm2bisqp" path="res://laser_and_mirror/mirror.png" id="1_scjey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6sm"]
+size = Vector2(64, 64)
+
+[node name="Mirror" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_nk6sm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_scjey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nk6sm")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
