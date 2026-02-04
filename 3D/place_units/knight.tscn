@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://wem6ra2yhbgm"]
+
+[ext_resource type="PackedScene" uid="uid://p1kht8vp5mn7" path="res://assets/character/Knight.glb" id="1_owtlo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nsuie"]
+
+[node name="Knight" type="CharacterBody3D"]
+
+[node name="Knight" parent="." instance=ExtResource("1_owtlo")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_nsuie")

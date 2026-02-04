@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="unit_resource" load_steps=4 format=3 uid="uid://csatd5sxdw5ck"]
+
+[ext_resource type="Script" uid="uid://bbttuuygxoq0s" path="res://place_units/unit_resource.gd" id="1_6evs8"]
+[ext_resource type="PackedScene" uid="uid://ceugbhjyjgo1s" path="res://place_units/barbarian.tscn" id="1_od678"]
+[ext_resource type="Texture2D" uid="uid://bdmox2kmrg7nd" path="res://place_units/barbarian.png" id="2_esigw"]
+
+[resource]
+script = ExtResource("1_6evs8")
+texture = ExtResource("2_esigw")
+model = ExtResource("1_od678")
+metadata/_custom_type_script = "uid://bbttuuygxoq0s"

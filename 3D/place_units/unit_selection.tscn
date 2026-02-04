@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl48h6qnurd0q"]
+
+[ext_resource type="PackedScene" uid="uid://cu3878ixbvc82" path="res://place_units/unit_box.tscn" id="1_2tafg"]
+[ext_resource type="Script" uid="uid://q0c56w6hbn5b" path="res://place_units/unit_selection.gd" id="1_bxdoy"]
+[ext_resource type="Resource" uid="uid://d3b7txnxvhw7r" path="res://place_units/knight.tres" id="3_ongp6"]
+[ext_resource type="Resource" uid="uid://csatd5sxdw5ck" path="res://place_units/barbarian.tres" id="4_0rmpk"]
+
+[node name="UnitSelection" type="HBoxContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -180.0
+offset_right = 27.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+script = ExtResource("1_bxdoy")
+
+[node name="UnitBox" parent="." instance=ExtResource("1_2tafg")]
+layout_mode = 2
+unitResource = ExtResource("3_ongp6")
+
+[node name="UnitBox2" parent="." instance=ExtResource("1_2tafg")]
+layout_mode = 2
+unitResource = ExtResource("4_0rmpk")

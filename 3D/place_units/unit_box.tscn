@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://cu3878ixbvc82"]
+
+[ext_resource type="Script" uid="uid://dgxf8j064amyu" path="res://place_units/unit_box.gd" id="1_uvhfm"]
+[ext_resource type="Texture2D" uid="uid://bdmox2kmrg7nd" path="res://place_units/barbarian.png" id="1_w3vux"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3vux"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvhfm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhjrk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.48235294, 0.48235294, 0.48235294, 0.33333334)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6stw"]
+
+[node name="UnitBox" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3vux")
+script = ExtResource("1_uvhfm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_w3vux")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uvhfm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yhjrk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e6stw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e6stw")
