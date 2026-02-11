@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cku265cjrtqvs"]
+
+[ext_resource type="Script" uid="uid://ftg64rj2t8ly" path="res://rts_selection/rts.gd" id="1_g8hrr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_27c55"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8hrr"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.5882353)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g8hrr"]
+material = SubResource("StandardMaterial3D_g8hrr")
+
+[node name="RTS" type="Area3D"]
+script = ExtResource("1_g8hrr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_27c55")
+
+[node name="SelectionMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_g8hrr")
