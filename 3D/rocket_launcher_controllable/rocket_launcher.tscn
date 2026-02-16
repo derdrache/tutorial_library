@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5m2jtnief5q7"]
+
+[ext_resource type="Script" uid="uid://5j860cmglajy" path="res://rocket_launcher_controllable/rocket_launcher.gd" id="1_f4skl"]
+[ext_resource type="PackedScene" uid="uid://bbuafv1v3jg7v" path="res://rocketlaunchervariant.glb" id="2_c2pqj"]
+
+[node name="RocketLauncher" type="Node3D"]
+script = ExtResource("1_f4skl")
+
+[node name="rocketlaunchervariant2" parent="." instance=ExtResource("2_c2pqj")]
+
+[editable path="rocketlaunchervariant2"]
