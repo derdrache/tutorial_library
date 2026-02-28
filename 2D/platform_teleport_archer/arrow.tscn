@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://by8pg274yjwbn"]
+
+[ext_resource type="Script" uid="uid://by7m2qve5ecn7" path="res://platform_teleport_archer/arrow.gd" id="1_2ndhl"]
+[ext_resource type="Texture2D" uid="uid://b0hnydjd1h2a7" path="res://assets/Basic Arrow.png" id="2_acd0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ndhl"]
+size = Vector2(19, 5)
+
+[node name="Arrow" type="Area2D"]
+script = ExtResource("1_2ndhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_acd0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_2ndhl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
