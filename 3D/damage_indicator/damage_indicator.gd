@@ -7,7 +7,7 @@ extends Node3D
 func create_indicator_label(value):
 	var indicatorLabel = _get_custom_label_3d(value)
 	
-	get_tree().current_scene.add_child(indicatorLabel)
+	add_child(indicatorLabel)
 	indicatorLabel.global_position = global_position
 	
 	_tween_indicator(indicatorLabel)
