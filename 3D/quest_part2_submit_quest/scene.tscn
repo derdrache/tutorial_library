@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://bfalhi1xi6dp5"]
+
+[ext_resource type="Environment" uid="uid://bgatm5o850n3r" path="res://collection/test_1.tres" id="1_4wwq0"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="2_2f03b"]
+[ext_resource type="PackedScene" uid="uid://ck8dmplyq67s" path="res://collection/2024/third_person_controller_and_camera/player.tscn" id="3_q2aig"]
+[ext_resource type="PackedScene" uid="uid://c4j6jt8bhh6td" path="res://collection/2024/complete_and_submit_quest/bulletin_board.tscn" id="7_5juve"]
+[ext_resource type="PackedScene" uid="uid://qi4hdvurd81e" path="res://collection/2024/complete_and_submit_quest/egg.tscn" id="8_qefrh"]
+[ext_resource type="PackedScene" uid="uid://ci5gw3tm86bpc" path="res://collection/2024/complete_and_submit_quest/anna.tscn" id="9_sb8w6"]
+[ext_resource type="PackedScene" uid="uid://bqefitckbfuer" path="res://collection/2024/complete_and_submit_quest/ben.tscn" id="10_xmcpn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni31j"]
+albedo_texture = ExtResource("2_2f03b")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rvwfq"]
+viewport_path = NodePath("BulletinBoard/SubViewport")
+
+[node name="Scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_4wwq0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_q2aig")]
+
+[node name="Egg" parent="." instance=ExtResource("8_qefrh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.679682, 0, 0.14105415)
+
+[node name="Anna" parent="." instance=ExtResource("9_sb8w6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5894446, 2.6527046e-05, -6.32199)
+
+[node name="Ben" parent="." instance=ExtResource("10_xmcpn")]
+transform = Transform3D(-0.0036826488, 0, -0.9999932, 0, 1, 0, 0.9999932, 0, -0.0036826488, 9.920501, 2.5573372e-05, -0.91064644)
+
+[node name="BulletinBoard" parent="." instance=ExtResource("7_5juve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14710522, 9.536743e-07, 9.234642)
+
+[node name="Sprite3D" type="Sprite3D" parent="BulletinBoard"]
+transform = Transform3D(-0.87895864, 0, 0.47689804, 0, 1, 0, -0.47689804, 0, -0.87895864, 0, 3.8634627, 3.1715384)
+texture = SubResource("ViewportTexture_rvwfq")
+
+[node name="SubViewport" type="SubViewport" parent="BulletinBoard"]
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="BulletinBoard/SubViewport"]
+transform = Transform3D(0.9558238, 0, -0.29394022, 0, 1, 0, 0.29394022, 0, 0.9558238, 0, 3.0649257, 0.7803335)

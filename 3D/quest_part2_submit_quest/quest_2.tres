@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://fdhrsycermwh"]
+
+[ext_resource type="Script" uid="uid://cqw5l6hvd5day" path="res://collection/2024/complete_and_submit_quest/quest_resource.gd" id="1_638q0"]
+
+[resource]
+script = ExtResource("1_638q0")
+questType = 1
+questPerson = 1
+name = "Check on Anna"
+metadata/_custom_type_script = "uid://8llu8ny8vmgq"
