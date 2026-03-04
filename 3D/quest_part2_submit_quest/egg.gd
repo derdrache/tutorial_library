@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@export var item = ""
+@export var item: GameManager.ITEM
 
 var inRange
 
