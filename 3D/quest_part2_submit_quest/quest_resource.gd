@@ -1,5 +1,5 @@
 extends Resource
-#class_name Quest
+class_name Quest
 
 @export_category("Quest Process")
 @export var quantityCollected := 0
