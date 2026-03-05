@@ -31,8 +31,8 @@ func _remove_grid():
 		node.queue_free()
 
 func _create_grid():
-	for height in range(height):
-		for width in range(width):
+	for y in range(height):
+		for x in range(width):
 			var mesh = MeshInstance3D.new()
 			mesh.mesh = PlaneMesh.new()
 			mesh.mesh.size = Vector2(cellSize, cellSize)
@@ -40,9 +40,9 @@ func _create_grid():
 			add_child(mesh)
 			
 			mesh.global_position = global_position + Vector3(
-				width * (mesh.mesh.size.x + margin),
+				x * (mesh.mesh.size.x + margin),
 				0, 
-				height * (mesh.mesh.size.y + margin)
+				y * (mesh.mesh.size.y + margin)
 				)
 				
 			if Engine.is_editor_hint():
