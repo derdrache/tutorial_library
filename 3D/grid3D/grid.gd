@@ -45,5 +45,3 @@ func _create_grid():
 				y * (mesh.mesh.size.y + margin)
 				)
 				
-			if Engine.is_editor_hint():
-				mesh.owner = get_tree().edited_scene_root
