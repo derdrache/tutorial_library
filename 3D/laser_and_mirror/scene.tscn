@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://b66nyi47x2liv"]
+
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="1_3253y"]
+[ext_resource type="PackedScene" uid="uid://bk55vsd5ds7qs" path="res://3D_laser/laser.tscn" id="1_ulcgi"]
+[ext_resource type="PackedScene" uid="uid://cgdmiucj5t81" path="res://3D_laser/mirror.tscn" id="2_nxogm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nxogm"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_3253y"]
+sky_material = SubResource("ProceduralSkyMaterial_nxogm")
+
+[sub_resource type="Environment" id="Environment_u3cyc"]
+background_mode = 2
+sky = SubResource("Sky_3253y")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3cyc"]
+albedo_texture = ExtResource("1_3253y")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m7jmp"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y2354"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[node name="Scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u3cyc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064965725, 0.026575089, 0.031389236)
+material_override = SubResource("StandardMaterial3D_u3cyc")
+mesh = SubResource("PlaneMesh_m7jmp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_y2354")
+
+[node name="LaserStart" parent="." instance=ExtResource("1_ulcgi")]
+transform = Transform3D(1.9470718e-07, 0, -1, 0, 1, 0, 1, 0, 1.9470718e-07, 5, 0, 0)
+startDirection = Vector3(-1, 0, 0)
+
+[node name="Mirror4" parent="." instance=ExtResource("2_nxogm")]
+transform = Transform3D(0.70710653, 0, 0.70710653, 0, 1, 0, -0.70710653, 0, 0.70710653, 0, 0, 0)
+
+[node name="Mirror5" parent="." instance=ExtResource("2_nxogm")]
+transform = Transform3D(-0.8302065, 0, 0.55745506, 0, 1, 0, -0.55745506, 0, -0.8302065, 0, 0, 5.573)
+
+[node name="Mirror6" parent="." instance=ExtResource("2_nxogm")]
+transform = Transform3D(0.6357951, 0, -0.7718573, 0, 1, 0, 0.7718573, 0, 0.6357951, 7.9678073, 0, 2.1445677)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 6.181724e-08, -6.181724e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 3.17, 12.344, -7.908)
+projection = 1
+current = true
+size = 12.0

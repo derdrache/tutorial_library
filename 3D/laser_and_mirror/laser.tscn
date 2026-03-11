@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk55vsd5ds7qs"]
+
+[ext_resource type="PackedScene" uid="uid://gsmydf5721av" path="res://assets/GLB format/pipe-end-colored.glb" id="1_6vqwg"]
+[ext_resource type="Script" uid="uid://ckoumf47jvm8n" path="res://3D_laser/laser.gd" id="1_xw5cg"]
+[ext_resource type="PackedScene" uid="uid://dfh2e818jumee" path="res://assets/GLB format/pipe.glb" id="2_g6b45"]
+[ext_resource type="PackedScene" uid="uid://bnjjn3dw65oq1" path="res://assets/GLB format/pipe-ring.glb" id="3_g6b45"]
+
+[node name="LaserStart" type="StaticBody3D"]
+script = ExtResource("1_xw5cg")
+
+[node name="model" type="Node3D" parent="."]
+
+[node name="pipe-end-colored2" parent="model" instance=ExtResource("1_6vqwg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="pipe2" parent="model" instance=ExtResource("2_g6b45")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.994437, 0)
+
+[node name="pipe-ring2" parent="model" instance=ExtResource("3_g6b45")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.9885287, 0)
+
+[node name="laserStartMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)

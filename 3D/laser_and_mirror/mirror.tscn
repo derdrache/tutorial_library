@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgdmiucj5t81"]
+
+[ext_resource type="PackedScene" uid="uid://gsmydf5721av" path="res://assets/GLB format/pipe-end-colored.glb" id="1_lqb3u"]
+[ext_resource type="PackedScene" uid="uid://dfh2e818jumee" path="res://assets/GLB format/pipe.glb" id="2_p7kto"]
+[ext_resource type="PackedScene" uid="uid://vxt035cgx11c" path="res://assets/GLB format/display-wall.glb" id="3_iquv1"]
+[ext_resource type="Script" uid="uid://036t6k2kllb3" path="res://3D_laser/mirror_area.gd" id="4_lqb3u"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lqb3u"]
+height = 2.1010742
+radius = 0.37158203
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7kto"]
+size = Vector3(0.71875, 1, 0.4907837)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dx1wu"]
+size = Vector3(0.625, 0.7314453, 0.18426514)
+
+[node name="Mirror" type="StaticBody3D"]
+
+[node name="model" type="Node3D" parent="."]
+
+[node name="pipe-end-colored2" parent="model" instance=ExtResource("1_lqb3u")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="pipe2" parent="model" instance=ExtResource("2_p7kto")]
+transform = Transform3D(1, 0, 0, 0, 2.2, 0, 0, 0, 1, 0, 0.994437, 0)
+
+[node name="display-wall2" parent="model" instance=ExtResource("3_iquv1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.087664, 0.11322212)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011291504, 1.0497735, 0)
+shape = SubResource("CylinderShape3D_lqb3u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.077993795)
+shape = SubResource("BoxShape3D_p7kto")
+
+[node name="mirrorArea" type="Area3D" parent="."]
+script = ExtResource("4_lqb3u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mirrorArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0.18966675)
+shape = SubResource("BoxShape3D_dx1wu")
