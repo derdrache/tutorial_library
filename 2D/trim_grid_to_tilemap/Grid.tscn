@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://digq370fiy16v"]
+
+[ext_resource type="Script" uid="uid://c1hx83bby5jfd" path="res://trim_grid/grid.gd" id="1_a433f"]
+
+[node name="Grid" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+script = ExtResource("1_a433f")
