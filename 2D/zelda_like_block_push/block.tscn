@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b106tx41ksem1"]
+
+[ext_resource type="Texture2D" uid="uid://bsd6mw7mtd7ax" path="res://assets/zelda/Legend_Spider_Dungeon.png" id="1_im0tn"]
+[ext_resource type="Script" uid="uid://cspwnmi7u5hm6" path="res://zelda_like_block_push/block.gd" id="1_xfwl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfwl5"]
+size = Vector2(16, 16)
+
+[node name="Block" type="StaticBody2D"]
+script = ExtResource("1_xfwl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_im0tn")
+region_enabled = true
+region_rect = Rect2(16, 192, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xfwl5")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 16)
