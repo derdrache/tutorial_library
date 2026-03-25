@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0shpmdn8ddpa"]
+
+[ext_resource type="Script" uid="uid://dcnp7v161iww4" path="res://object_scatterer/scatter.gd" id="1_pbtgg"]
+
+[node name="Scatter" type="Node3D"]
+script = ExtResource("1_pbtgg")
+
+[node name="objectsContainer" type="Node3D" parent="."]
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

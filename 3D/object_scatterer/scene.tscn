@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://cx5xj5f858tmg"]
+
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_m7jmp"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="2_y2354"]
+[ext_resource type="PackedScene" uid="uid://c0shpmdn8ddpa" path="res://object_scatterer/scatter.tscn" id="3_3253y"]
+[ext_resource type="PackedScene" uid="uid://bc1knmag6e70n" path="res://assets/tree/Tree_1_A_Color1.gltf" id="4_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://6mxc1111hi5n" path="res://assets/tree/Tree_3_A_Color1.gltf" id="5_y2354"]
+[ext_resource type="PackedScene" uid="uid://dg834wikv1wsd" path="res://object_scatterer/cylinderShape.tscn" id="6_y2354"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni31j"]
+albedo_texture = ExtResource("2_y2354")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y2354"]
+resource_local_to_scene = true
+height = 15.976074
+radius = 34.08496
+
+[node name="Scene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7998238, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_m7jmp")]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002986908, 0.04170227, 0.021970749)
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Scatter" parent="." instance=ExtResource("3_3253y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0485077, 0)
+objects = Array[PackedScene]([ExtResource("4_m7jmp"), ExtResource("5_y2354")])
+amount = 70
+randomScale = 1.0
+scatterSeed = 66
+
+[node name="CylinderShape" parent="Scatter" instance=ExtResource("6_y2354")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.0633774, 0)
+shape = SubResource("CylinderShape3D_y2354")

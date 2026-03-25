@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg834wikv1wsd"]
+
+[ext_resource type="Script" uid="uid://dgecqi8uu4mmy" path="res://object_scatterer/cylinder_shape.gd" id="1_5fh4m"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4xh1k"]
+resource_local_to_scene = true
+
+[node name="CylinderShape" type="CollisionShape3D"]
+shape = SubResource("CylinderShape3D_4xh1k")
+debug_color = Color(0.9647059, 0, 0, 1)
+script = ExtResource("1_5fh4m")
