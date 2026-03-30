@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://xm5uw2bojjt"]
+
+[ext_resource type="Script" uid="uid://b6qf2g1ypab8c" path="res://random_spawn_point/scene.gd" id="1_3253y"]
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_y2354"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="2_ni31j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni31j"]
+albedo_texture = ExtResource("2_ni31j")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[node name="Scene" type="Node3D" unique_id=1210467593]
+script = ExtResource("1_3253y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=813321122]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." unique_id=2001467209 instance=ExtResource("1_y2354")]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=483603223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002986908, 0.04170227, 0.021970749)
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=135393699]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1437161868]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1019352591]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 30.205, 31.885)
+fov = 30.0
+
+[node name="spawnPoints" type="Node3D" parent="." unique_id=1927517646]
+
+[node name="Marker3D" type="Marker3D" parent="spawnPoints" unique_id=317493129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="spawnPoints" unique_id=1624881973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="spawnPoints" unique_id=2002401671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -9)
+
+[node name="Marker3D4" type="Marker3D" parent="spawnPoints" unique_id=274031207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 9)
