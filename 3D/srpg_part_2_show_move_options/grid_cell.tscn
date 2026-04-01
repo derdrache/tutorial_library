@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b7s7ojrxgpp6b"]
+
+[ext_resource type="Script" uid="uid://ci5a32j82ynvt" path="res://srpg_part_2_show_move_options/grid_cell.gd" id="1_024bi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noi3y"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_024bi"]
+material = SubResource("StandardMaterial3D_noi3y")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yglvi"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jveu0"]
+material = SubResource("StandardMaterial3D_yglvi")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iusfv"]
+size = Vector3(1, 0.1, 1)
+
+[node name="GridCell" type="Area3D" unique_id=1274929295]
+script = ExtResource("1_024bi")
+
+[node name="mainMesh" type="MeshInstance3D" parent="." unique_id=1620885223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+mesh = SubResource("PlaneMesh_024bi")
+
+[node name="borderMesh" type="MeshInstance3D" parent="." unique_id=2098560584]
+mesh = SubResource("PlaneMesh_jveu0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1237732151]
+shape = SubResource("BoxShape3D_iusfv")
+disabled = true
