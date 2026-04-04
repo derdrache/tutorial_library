@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b16l1x4srxo6w"]
+
+[ext_resource type="Script" uid="uid://civ2fu1qd2qr5" path="res://random_name_generator/name_menu.gd" id="1_ydvnj"]
+[ext_resource type="Texture2D" uid="uid://dubv02hg0nm7s" path="res://assets/icons/dice.png" id="2_up2mf"]
+
+[node name="NameMenu" type="PanelContainer" unique_id=455501650]
+custom_minimum_size = Vector2(400, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -88.5
+offset_right = 200.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ydvnj")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=216485523]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2049397415]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1186230879]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Name your chicken"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1748850800]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=76126337]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1791083104]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1275932065]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("2_up2mf")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1106299454]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1082303275]
+layout_mode = 2
+text = "Submit"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1345829052]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
