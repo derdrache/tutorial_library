@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://wcno4x0j3gag"]
+
+[ext_resource type="Script" uid="uid://cveagqcb3bewc" path="res://hat_jump/player.gd" id="1_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://p1kht8vp5mn7" path="res://assets/character/Knight.glb" id="2_sweqy"]
+[ext_resource type="PackedScene" uid="uid://c5crtsea6h2c7" path="res://collection/third_person_camera/third_person_camera.tscn" id="4_1jxqw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1857933427]
+script = ExtResource("1_i3pqv")
+
+[node name="model" parent="." unique_id=583210889 instance=ExtResource("2_sweqy")]
+
+[node name="1H_Sword_Offhand" parent="model/Rig/Skeleton3D" index="0"]
+transform = Transform3D(-0.99999887, -1.3219872e-07, -3.750938e-08, -1.3544872e-07, -5.3096744e-07, 0.99999934, -2.1043323e-07, 0.99999934, 6.234487e-07, 0.88313216, 1.0492611, 0.017011093)
+
+[node name="Badge_Shield" parent="model/Rig/Skeleton3D" index="1"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+
+[node name="Rectangle_Shield" parent="model/Rig/Skeleton3D" index="2"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+
+[node name="Round_Shield" parent="model/Rig/Skeleton3D" index="3"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+
+[node name="Spike_Shield" parent="model/Rig/Skeleton3D" index="4"]
+transform = Transform3D(-0.99999887, 2.4029803e-06, -7.0497117e-07, -8.029126e-07, -7.3759816e-07, 0.99999934, 2.3247464e-06, 0.99999934, 8.300814e-07, 0.8831321, 1.2051463, 0.01701119)
+
+[node name="1H_Sword" parent="model/Rig/Skeleton3D" index="5"]
+transform = Transform3D(0.999999, 2.0297999e-07, -4.5275735e-07, -3.932471e-07, -7.9538523e-07, -0.99999946, -1.3220324e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, 0.033308562)
+
+[node name="2H_Sword" parent="model/Rig/Skeleton3D" index="6"]
+transform = Transform3D(0.999999, 1.8824655e-07, -4.3907139e-07, -3.7956113e-07, -7.9538523e-07, -0.99999946, -1.1746976e-07, 0.99999946, -7.425141e-07, -0.8831323, 1.049261, 0.033308562)
+
+[node name="Knight_Helmet" parent="model/Rig/Skeleton3D" index="7"]
+transform = Transform3D(1, -2.209651e-22, 1.6940659e-21, 2.2096506e-22, 0.99999994, 0, -1.6940659e-21, 3.59e-43, 1, 4.7683716e-07, 1.2158911, -1.0854231e-07)
+
+[node name="Knight_Cape" parent="model/Rig/Skeleton3D" index="8"]
+transform = Transform3D(1, 1.2521356e-21, 0, -1.2521355e-21, 0.99999994, 0, 0, 0, 1, 0, 1.2158912, -1.406604e-07)
+
+[node name="helmetStartMarker" type="Marker3D" parent="model" unique_id=1192582468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=421442314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_onrkg")
+
+[node name="thirdPersonCamera" parent="." unique_id=2040007780 instance=ExtResource("4_1jxqw")]
+transform = Transform3D(-1, 2.262668e-08, -8.444392e-08, 0, 0.9659258, 0.25881904, 8.742278e-08, 0.25881904, -0.9659258, 0, 2, 0)
+
+[editable path="model"]
