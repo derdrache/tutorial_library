@@ -1,0 +1,169 @@
+[gd_scene format=4 uid="uid://dvfm1wxrxba18"]
+
+[ext_resource type="PackedScene" uid="uid://dc3ici2jvq7qe" path="res://moving_platform/fox.tscn" id="2_6alwj"]
+[ext_resource type="Texture2D" uid="uid://bvb6ytpexeoxo" path="res://assets/tileset.png" id="2_nxogm"]
+[ext_resource type="PackedScene" uid="uid://cntqmufrh2ekq" path="res://moving_platform/platform.tscn" id="3_3g6ud"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p6vnh"]
+texture = ExtResource("2_nxogm")
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+22:1/0 = 0
+22:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 0, 8, 8, -8, 8)
+23:1/0 = 0
+23:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 8, 8, 8, -8, 8)
+13:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+20:4/0 = 0
+22:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+20:5/0 = 0
+22:5/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+17:7/0 = 0
+19:7/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+19:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+7:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+15:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+7:13/0 = 0
+9:13/0 = 0
+11:13/0 = 0
+13:13/0 = 0
+7:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+15:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+9:15/0 = 0
+2:16/0 = 0
+4:16/0 = 0
+11:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+11:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+17:18/0 = 0
+19:18/0 = 0
+21:18/0 = 0
+1:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+17:20/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8ymh6"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_p6vnh")
+
+[sub_resource type="Curve2D" id="Curve2D_0ugxk"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 1, 0, 0, 0, 0, -1, 91, 0, 0, 0, 0, 130, 93)
+}
+point_count = 3
+
+[node name="FoxLevel" type="Node2D" unique_id=16611679]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=434323633]
+tile_map_data = PackedByteArray("AAAAAAcAAAADAAEAAAABAAcAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAADAAEAAAAEAAcAAAADAAEAAAAFAAcAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAIAAcAAAADAAEAAAAJAAcAAAADAAEAAAAWAA0AAAADAAEAAAAXAA0AAAADAAEAAAAYAA0AAAADAAEAAAAZAA0AAAADAAEAAAAaAA0AAAADAAEAAAAAAAgAAAADAAMAAAAAAAkAAAADAAMAAAAAAAoAAAADAAMAAAAAAAsAAAADAAMAAAAAAAwAAAADAAMAAAAAAA0AAAADAAMAAAAAAA4AAAADAAMAAAABAAgAAAADAAMAAAABAAkAAAADAAMAAAABAAoAAAADAAMAAAABAAsAAAADAAMAAAABAAwAAAADAAMAAAABAA0AAAADAAMAAAABAA4AAAADAAMAAAACAAgAAAADAAMAAAACAAkAAAADAAMAAAACAAoAAAADAAMAAAACAAsAAAADAAMAAAACAAwAAAADAAMAAAACAA0AAAADAAMAAAACAA4AAAADAAMAAAADAAgAAAADAAMAAAADAAkAAAADAAMAAAADAAoAAAADAAMAAAADAAsAAAADAAMAAAADAAwAAAADAAMAAAADAA0AAAADAAMAAAADAA4AAAADAAMAAAAEAAgAAAADAAMAAAAEAAkAAAADAAMAAAAEAAoAAAADAAMAAAAEAAsAAAADAAMAAAAEAAwAAAADAAMAAAAEAA0AAAADAAMAAAAEAA4AAAADAAMAAAAFAAgAAAADAAMAAAAFAAkAAAADAAMAAAAFAAoAAAADAAMAAAAFAAsAAAADAAMAAAAFAAwAAAADAAMAAAAFAA0AAAADAAMAAAAFAA4AAAADAAMAAAAGAAgAAAADAAMAAAAGAAkAAAADAAMAAAAGAAoAAAADAAMAAAAGAAsAAAADAAMAAAAGAAwAAAADAAMAAAAGAA0AAAADAAMAAAAGAA4AAAADAAMAAAAHAAgAAAADAAMAAAAHAAkAAAADAAMAAAAHAAoAAAADAAMAAAAHAAsAAAADAAMAAAAHAAwAAAADAAMAAAAHAA0AAAADAAMAAAAHAA4AAAADAAMAAAAIAAgAAAADAAMAAAAIAAkAAAADAAMAAAAIAAoAAAADAAMAAAAIAAsAAAADAAMAAAAIAAwAAAADAAMAAAAIAA0AAAADAAMAAAAIAA4AAAADAAMAAAAJAAgAAAAFAAMAAAAJAAkAAAAFAAMAAAAJAAoAAAAFAAMAAAAJAAsAAAAFAAMAAAAJAAwAAAAFAAMAAAAJAA0AAAAFAAMAAAAJAA4AAAAFAAMAAAAWAA4AAAADAAMAAAAXAA4AAAADAAMAAAAYAA4AAAADAAMAAAAZAA4AAAADAAMAAAAaAA4AAAADAAMAAAA=")
+tile_set = SubResource("TileSet_8ymh6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1551541433]
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="FoxPlayer" parent="." unique_id=663609783 instance=ExtResource("2_6alwj")]
+position = Vector2(54, 94)
+
+[node name="Platform" parent="." unique_id=1872537623 instance=ExtResource("3_3g6ud")]
+position = Vector2(195, 116)
+curve = SubResource("Curve2D_0ugxk")
