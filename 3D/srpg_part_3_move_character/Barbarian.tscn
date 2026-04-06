@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b35ujdlojc07s"]
+
+[ext_resource type="PackedScene" uid="uid://b4c0cfuvjk63h" path="res://assets/character/Barbarian.glb" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://811sqbeub2ag" path="res://player_character.gd" id="1_ks13n"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j6vfc"]
+radius = 0.25
+height = 1.0
+
+[node name="Barbarian" type="CharacterBody3D" unique_id=1687611941]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ks13n")
+
+[node name="Barbarian" parent="." unique_id=1443005983 instance=ExtResource("1_4flbx")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1647772354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_j6vfc")
