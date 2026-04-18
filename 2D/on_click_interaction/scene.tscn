@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dfuoc6ondfrh5"]
+
+[ext_resource type="PackedScene" uid="uid://tefw1jgo6tnd" path="res://on_click_interaction/chest.tscn" id="1_ulcgi"]
+
+[node name="Node2D" type="Node2D" unique_id=612868463]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=498135221]
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="Chest" parent="." unique_id=1069301170 instance=ExtResource("1_ulcgi")]
+position = Vector2(54, 51)
+
+[node name="Chest2" parent="." unique_id=284058852 instance=ExtResource("1_ulcgi")]
+position = Vector2(319, 55)
+
+[node name="Chest3" parent="." unique_id=1040465528 instance=ExtResource("1_ulcgi")]
+position = Vector2(189, 117)
+
+[node name="Chest4" parent="." unique_id=1638483973 instance=ExtResource("1_ulcgi")]
+position = Vector2(56, 196)
+
+[node name="Chest5" parent="." unique_id=478152562 instance=ExtResource("1_ulcgi")]
+position = Vector2(338, 205)
