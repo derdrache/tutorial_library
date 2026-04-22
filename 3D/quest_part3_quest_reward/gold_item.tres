@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest_System_Item" format=3 uid="uid://bhb4xsnmqtlsh"]
+
+[ext_resource type="Script" uid="uid://be5gnaijuuwwe" path="res://quest_reward/item_resource.gd" id="1_wbb4x"]
+
+[resource]
+script = ExtResource("1_wbb4x")
+name = "Gold"
+itemType = 2
+metadata/_custom_type_script = "uid://be5gnaijuuwwe"

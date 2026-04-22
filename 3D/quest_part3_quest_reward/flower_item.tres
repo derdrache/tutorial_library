@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest_System_Item" format=3 uid="uid://hfqeh16ut03h"]
+
+[ext_resource type="Script" uid="uid://be5gnaijuuwwe" path="res://quest_reward/item_resource.gd" id="1_uc2ov"]
+
+[resource]
+script = ExtResource("1_uc2ov")
+name = "Flower"
+itemType = 1
+metadata/_custom_type_script = "uid://be5gnaijuuwwe"

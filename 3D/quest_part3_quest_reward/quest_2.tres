@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://fdhrsycermwh"]
+
+[ext_resource type="Script" uid="uid://cqw5l6hvd5day" path="res://quest_reward/quest_resource.gd" id="1_638q0"]
+[ext_resource type="Resource" uid="uid://hfqeh16ut03h" path="res://quest_reward/flower_item.tres" id="1_jxkrs"]
+
+[resource]
+script = ExtResource("1_638q0")
+questType = 1
+questPerson = 1
+questReward = ExtResource("1_jxkrs")
+name = "Check on Anna"

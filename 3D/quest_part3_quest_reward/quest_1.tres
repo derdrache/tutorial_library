@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://bfim2cv8o651h"]
+
+[ext_resource type="Resource" uid="uid://bhb4xsnmqtlsh" path="res://quest_reward/gold_item.tres" id="1_0vfdu"]
+[ext_resource type="Script" uid="uid://cqw5l6hvd5day" path="res://quest_reward/quest_resource.gd" id="1_tkanh"]
+
+[resource]
+script = ExtResource("1_tkanh")
+questReward = ExtResource("1_0vfdu")
+name = "Help Ben"
