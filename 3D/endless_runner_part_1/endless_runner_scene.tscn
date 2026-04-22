@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dd1ccmplvx5kb"]
+
+[ext_resource type="Script" uid="uid://cdn7fexkf6s0p" path="res://endless_runner_scene.gd" id="1_ys5w3"]
+[ext_resource type="PackedScene" uid="uid://fbng5c6r2cg1" path="res://room_scene.tscn" id="2_jg7iy"]
+[ext_resource type="PackedScene" uid="uid://bsrfhm3b0enr6" path="res://player.tscn" id="3_3441n"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vr5v6"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fhit3"]
+sky_material = SubResource("ProceduralSkyMaterial_vr5v6")
+
+[sub_resource type="Environment" id="Environment_av562"]
+background_mode = 2
+sky = SubResource("Sky_fhit3")
+
+[node name="EndlessRunnerScene" type="Node3D" unique_id=824984515]
+script = ExtResource("1_ys5w3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=449607914]
+environment = SubResource("Environment_av562")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=422894541]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="RoomScene" parent="." unique_id=555247351 instance=ExtResource("2_jg7iy")]
+
+[node name="RoomScene2" parent="." unique_id=600216155 instance=ExtResource("2_jg7iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28)
+
+[node name="Player" parent="." unique_id=2126288942 instance=ExtResource("3_3441n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1442211179]
+transform = Transform3D(-1, 4.371139e-08, -7.5710346e-08, 0, 0.8660254, 0.5, 8.742278e-08, 0.5, -0.8660254, 0, 14.5, -31)
+fov = 20.0
+
+[node name="endPositionMarker" type="Marker3D" parent="." unique_id=1048393811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28)
