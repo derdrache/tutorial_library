@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d6nxcuygmvcx"]
+
+[ext_resource type="Script" uid="uid://yv1pvttdwbdj" path="res://select_and_move_grid_path/scene.gd" id="1_3253y"]
+[ext_resource type="PackedScene" uid="uid://dgv1uyimhp2u3" path="res://select_and_move_grid_path/grid.tscn" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://67efoguk48uo" path="res://select_and_move_grid_path/Barbarian.tscn" id="2_3253y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4y3rv"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wpc22"]
+sky_material = SubResource("ProceduralSkyMaterial_4y3rv")
+
+[sub_resource type="Environment" id="Environment_tf2jk"]
+background_mode = 2
+sky = SubResource("Sky_wpc22")
+
+[node name="Scene" type="Node3D" unique_id=1387449231]
+script = ExtResource("1_3253y")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1712215278]
+environment = SubResource("Environment_tf2jk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2058796187]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=583222398]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 10.5, 37.50557, 48.109093)
+fov = 23.3
+size = 15.0
+
+[node name="Barbarian" parent="." unique_id=1687611941 instance=ExtResource("2_3253y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0.05, 10.3)
+
+[node name="Grid" parent="." unique_id=1191727765 instance=ExtResource("1_nxogm")]
+width = 11
+height = 11
+margin = 0.1

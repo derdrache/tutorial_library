@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cogm2fwfksiy8"]
+
+[ext_resource type="Script" uid="uid://ok7tw6urr2f0" path="res://select_and_move_grid_path/grid_cell.gd" id="1_q1uxf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_024bi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yglvi"]
+
+[node name="GridCell" type="MeshInstance3D" unique_id=269461298]
+mesh = SubResource("PlaneMesh_024bi")
+surface_material_override/0 = SubResource("StandardMaterial3D_yglvi")
+script = ExtResource("1_q1uxf")
