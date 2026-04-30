@@ -11,11 +11,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		_use_switch()
 
 func _use_switch():
-	if isActive:
-		animated_sprite_2d.play_backwards("activate")
-	else:
-		animated_sprite_2d.play("activate")
-		
-	await animated_sprite_2d.animation_finished
 	connectedObject.activate(not isActive)
 	isActive = not isActive
