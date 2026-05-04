@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c14mh2v122iug"]
+
+[ext_resource type="Script" uid="uid://bvoqmycomu8d7" path="res://tower_beam_connection/beam.gd" id="1_i4dc2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxbo3"]
+albedo_color = Color(18.892157, 18.892157, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i4dc2"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_rxbo3")
+top_radius = 0.1
+bottom_radius = 0.1
+
+[node name="Beam" type="Node3D" unique_id=255084770]
+script = ExtResource("1_i4dc2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=18765107]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_i4dc2")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bn80h7myeimtq"]
+
+[ext_resource type="PackedScene" uid="uid://cdgh6ulc862ps" path="res://assets/building_tower_A_blue.gltf" id="1_k1sas"]
+[ext_resource type="Script" uid="uid://pblytiex04pm" path="res://tower_beam_connection/tower.gd" id="1_vedim"]
+
+[node name="Tower" type="Node3D" unique_id=1372726117]
+script = ExtResource("1_vedim")
+
+[node name="building_tower_A_blue2" parent="." unique_id=533767425 instance=ExtResource("1_k1sas")]
+
+[node name="beamConnectionMarker" type="Marker3D" parent="." unique_id=1457472903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.9, 0)
