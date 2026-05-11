@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b7ilkn07xnpof"]
+
+[ext_resource type="Script" uid="uid://8wp6ylerumio" path="res://3D_trajectory/trajectory_display.gd" id="1_gsk44"]
+
+[node name="TrajectoryDisplay" type="Node3D" unique_id=1419103]
+script = ExtResource("1_gsk44")
+speed = 8.0
