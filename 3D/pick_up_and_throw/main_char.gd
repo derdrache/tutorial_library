@@ -19,13 +19,13 @@ func _input(event: InputEvent) -> void:
 			_pick_up_object()
 
 func _throw_object():
-	var direction = (pickedObject.global_position - global_position).normalized()
+	var direction = (pickedObject.global_position - global_position).normalized() + Vector3.UP
 	
 	pickedObject.reparent(get_tree().current_scene)
 	pickedObject.set_collision(true)
 	
 	pickedObject.global_position += direction
-	pickedObject.apply_central_impulse(Vector3.ONE * THROW_FORCE * direction)
+	pickedObject.apply_central_impulse(direction * THROW_FORCE)
 	
 	pickedObject = null
 
@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction := (camera_target.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := (camera_target.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
