@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cubxblrjlo312"]
+
+[ext_resource type="Script" uid="uid://b5efpwo57eqg4" path="res://endless_runner_part_5 - game over and restart/object_spawner.gd" id="1_txpvb"]
+
+[node name="ObjectSpawner" type="Node3D" unique_id=793052287]
+script = ExtResource("1_txpvb")
+
+[node name="Timer" type="Timer" parent="." unique_id=1842713048]
+wait_time = 0.4
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

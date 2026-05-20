@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dnwxfh75a6lj3"]
+
+[ext_resource type="Script" uid="uid://b5c876yux5vgo" path="res://endless_runner_part_5 - game over and restart/coin.gd" id="1_0t63x"]
+[ext_resource type="PackedScene" uid="uid://d1wrj8nxa1ya7" path="res://assets/prototype/Coin_A.gltf" id="2_v7riw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pdq0q"]
+size = Vector3(1, 1, 0.3)
+
+[node name="Coin" type="Area3D" unique_id=1326205981]
+script = ExtResource("1_0t63x")
+
+[node name="Coin_A2" parent="." unique_id=526137101 instance=ExtResource("2_v7riw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=670059956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_pdq0q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

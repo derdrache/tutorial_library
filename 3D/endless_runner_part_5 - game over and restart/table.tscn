@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://di8ltl4ay03is"]
+
+[ext_resource type="PackedScene" uid="uid://3qdums6jfwmx" path="res://assets/dungeon/table_long_tablecloth.gltf.glb" id="1_jd0nb"]
+[ext_resource type="Script" uid="uid://cdfohtlqn4tbv" path="res://endless_runner_part_5 - game over and restart/object.gd" id="1_v5i0k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5i0k"]
+size = Vector3(15.75, 1, 1.8000001)
+
+[node name="Table" type="StaticBody3D" unique_id=1070792548]
+script = ExtResource("1_v5i0k")
+
+[node name="table_long_tablecloth_gltf" parent="." unique_id=1278286417 instance=ExtResource("1_jd0nb")]
+transform = Transform3D(-4.371139e-08, 0, -4, 0, 1, 0, 1, 0, -1.7484555e-07, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=213544789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_v5i0k")
