@@ -1,0 +1,163 @@
+[gd_scene format=4 uid="uid://242cfteal807"]
+
+[ext_resource type="PackedScene" uid="uid://cpury4bqkg2k2" path="res://collection/grassyMountains.tscn" id="1_u3cyc"]
+[ext_resource type="Texture2D" uid="uid://bvb6ytpexeoxo" path="res://assets/tileset.png" id="2_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://dpfy6ut2x0ede" path="res://collection/2026/simple_attack/enemy.tscn" id="3_y2354"]
+[ext_resource type="PackedScene" uid="uid://dgq7tlsmnv1sg" path="res://jump_kick/character.tscn" id="4_u3cyc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3253y"]
+texture = ExtResource("2_m7jmp")
+1:1/0 = 0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+20:4/0 = 0
+22:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+20:5/0 = 0
+22:5/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+17:7/0 = 0
+19:7/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+19:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+7:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+15:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+7:13/0 = 0
+9:13/0 = 0
+11:13/0 = 0
+13:13/0 = 0
+7:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+15:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+9:15/0 = 0
+2:16/0 = 0
+4:16/0 = 0
+11:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+11:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+17:18/0 = 0
+19:18/0 = 0
+21:18/0 = 0
+1:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+17:20/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u3cyc"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_3253y")
+
+[node name="Scene" type="Node2D" unique_id=464148206]
+
+[node name="GrassyMountains" parent="." unique_id=977508702 instance=ExtResource("1_u3cyc")]
+scale = Vector2(1.75, 1.75)
+transform = Transform2D(1.75, 0, 0, 1.75, 0, 0)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=499024037]
+position = Vector2(54, 143)
+tile_map_data = PackedByteArray("AAAAAA0AAAADAAEAAAABAA0AAAADAAEAAAACAA0AAAADAAEAAAADAA0AAAADAAEAAAAEAA0AAAADAAEAAAAFAA0AAAADAAEAAAAGAA0AAAADAAEAAAAHAA0AAAADAAEAAAAIAA0AAAADAAEAAAAJAA0AAAADAAEAAAAKAA0AAAADAAEAAAALAA0AAAADAAEAAAAMAA0AAAADAAEAAAANAA0AAAADAAEAAAAOAA0AAAADAAEAAAAPAA0AAAADAAEAAAAQAA0AAAADAAEAAAARAA0AAAADAAEAAAASAA0AAAADAAEAAAATAA0AAAADAAEAAAAUAA0AAAADAAEAAAAVAA0AAAADAAEAAAAWAA0AAAADAAEAAAAXAA0AAAADAAEAAAD8/w0AAAADAAEAAAD9/w0AAAADAAEAAAD+/w0AAAADAAEAAAD//w0AAAADAAEAAAAYAA0AAAADAAEAAAAZAA0AAAADAAEAAAAaAA0AAAADAAEAAAAbAA0AAAADAAEAAAAcAA0AAAADAAEAAAAdAA0AAAADAAEAAAAeAA0AAAADAAEAAAAfAA0AAAADAAEAAAAgAA0AAAADAAEAAAAhAA0AAAADAAEAAAAiAA0AAAADAAEAAAAjAA0AAAADAAEAAAAkAA0AAAADAAEAAAAlAA0AAAADAAEAAAAmAA0AAAADAAEAAAAnAA0AAAADAAEAAAA=")
+tile_set = SubResource("TileSet_u3cyc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2024436263]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="Enemy" parent="." unique_id=1908552139 instance=ExtResource("3_y2354")]
+position = Vector2(383, 330)
+
+[node name="Character" parent="." unique_id=756239578 instance=ExtResource("4_u3cyc")]
+position = Vector2(228, 329)
