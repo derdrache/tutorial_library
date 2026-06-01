@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bximpqvjav6vp"]
+
+[ext_resource type="Texture2D" uid="uid://dfe6i0wy16364" path="res://assets/jungle decoration.png" id="1_ehphq"]
+[ext_resource type="Script" uid="uid://cf5vj6todkyhw" path="res://climb_liana/liana.gd" id="1_yj18x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehphq"]
+size = Vector2(8, 111)
+
+[node name="Liana" type="Area2D" unique_id=831995878]
+script = ExtResource("1_yj18x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1829619860]
+texture = ExtResource("1_ehphq")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=722403027]
+position = Vector2(0, 16)
+texture = ExtResource("1_ehphq")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=699723938]
+position = Vector2(0, 31)
+texture = ExtResource("1_ehphq")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1423659437]
+position = Vector2(0, 46)
+texture = ExtResource("1_ehphq")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1319655467]
+position = Vector2(0, 61)
+texture = ExtResource("1_ehphq")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1579919136]
+position = Vector2(0, 77)
+texture = ExtResource("1_ehphq")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=784488626]
+position = Vector2(0, 93)
+texture = ExtResource("1_ehphq")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=477392857]
+position = Vector2(0, 45.5)
+shape = SubResource("RectangleShape2D_ehphq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
