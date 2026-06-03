@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cd83bx3w0wvcd"]
+
+[ext_resource type="Script" uid="uid://dna4dgiy4ycr8" path="res://first_person_player_rework/first_person_camera.gd" id="1_8lhgh"]
+
+[node name="firstPersonCamera" type="Camera3D" unique_id=463550304]
+script = ExtResource("1_8lhgh")
