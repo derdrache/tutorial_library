@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dpfy6ut2x0ede"]
+
+[ext_resource type="Script" uid="uid://5tsq1oothlbr" path="res://simple_attack/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://mdco4glatiu3" path="res://assets/fighter/Char_5.png" id="2_iifgy"]
+[ext_resource type="PackedScene" uid="uid://bsrrtc847ljjx" path="res://prepare/damageLabelIndicator.tscn" id="3_qi2p4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
+atlas = ExtResource("2_iifgy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xaro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gyqm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
+size = Vector2(13, 40)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1908552139]
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=881524790]
+sprite_frames = SubResource("SpriteFrames_7xaro")
+animation = &"idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=25238431]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_7k104")
+
+[node name="DamageLabelIndicator" parent="." unique_id=1627707269 instance=ExtResource("3_qi2p4")]
