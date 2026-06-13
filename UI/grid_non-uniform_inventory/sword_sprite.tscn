@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://r6cn2cyr7pik"]
+
+[ext_resource type="Texture2D" uid="uid://bmmr2t6ej8t6t" path="res://grid_non-uniform_inventory/weapons.png" id="1_o8n8c"]
+
+[node name="Sword_sprite" type="Sprite2D" unique_id=925414630]
+scale = Vector2(2, 2)
+texture = ExtResource("1_o8n8c")
+centered = false
+region_enabled = true
+region_rect = Rect2(64, 16, 32, 16)

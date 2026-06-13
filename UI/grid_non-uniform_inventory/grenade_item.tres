@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Grid_Based_Item" format=3 uid="uid://cghxdf88c4g8i"]
+
+[ext_resource type="PackedScene" uid="uid://861fb1o60nx0" path="res://grid_non-uniform_inventory/grenade_sprite.tscn" id="1_4jvtj"]
+[ext_resource type="Script" uid="uid://dwhr8umc5wekn" path="res://grid_non-uniform_inventory/item_resource.gd" id="1_b1csl"]
+
+[resource]
+script = ExtResource("1_b1csl")
+itemScene = ExtResource("1_4jvtj")
+metadata/_custom_type_script = "uid://dwhr8umc5wekn"

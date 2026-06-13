@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Grid_Based_Item" format=3 uid="uid://bydmklcov42bd"]
+
+[ext_resource type="PackedScene" uid="uid://r6cn2cyr7pik" path="res://grid_non-uniform_inventory/sword_sprite.tscn" id="1_dtqql"]
+[ext_resource type="Script" uid="uid://dwhr8umc5wekn" path="res://grid_non-uniform_inventory/item_resource.gd" id="1_f1mur"]
+
+[resource]
+script = ExtResource("1_f1mur")
+itemScene = ExtResource("1_dtqql")
+metadata/_custom_type_script = "uid://dwhr8umc5wekn"

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://861fb1o60nx0"]
+
+[ext_resource type="Texture2D" uid="uid://bmmr2t6ej8t6t" path="res://grid_non-uniform_inventory/weapons.png" id="1_drony"]
+
+[node name="Grenade_sprite" type="Sprite2D" unique_id=925414630]
+scale = Vector2(2, 2)
+texture = ExtResource("1_drony")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)

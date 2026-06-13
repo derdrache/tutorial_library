@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dipxemv8cmnqb"]
+
+[ext_resource type="Script" uid="uid://cffqps87naq0g" path="res://grid_non-uniform_inventory/item.gd" id="1_ttk8k"]
+
+[node name="Item" type="Control" unique_id=882434302]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 1
+script = ExtResource("1_ttk8k")
