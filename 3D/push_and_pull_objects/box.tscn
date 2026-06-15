@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://csua2ax1wt8ld"]
+
+[ext_resource type="Script" uid="uid://c2k2yngp3b2k1" path="res://push_and_pull_objects/box.gd" id="1_oq5cr"]
+[ext_resource type="PackedScene" uid="uid://bmssngn0wv637" path="res://assets/dungeon/box_large.gltf.glb" id="2_bqn3j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3n43a"]
+size = Vector3(1.5, 1.5, 1.4)
+
+[node name="Box" type="CharacterBody3D" unique_id=1643167415]
+script = ExtResource("1_oq5cr")
+
+[node name="box_large_gltf" parent="." unique_id=2010911335 instance=ExtResource("2_bqn3j")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1688787481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("BoxShape3D_3n43a")

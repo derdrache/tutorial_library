@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://hay7ax4pesg5"]
+
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_y2354"]
+[ext_resource type="Texture2D" uid="uid://dihcw4uqc43n1" path="res://assets/prototype/Green/texture_01.png" id="2_ni31j"]
+[ext_resource type="PackedScene" uid="uid://covvip4d5d3u4" path="res://collection/2026/chop_tree/tree.tscn" id="3_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://dxxmisq81go0c" path="res://push_and_pull_objects/player.tscn" id="5_m7jmp"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="6_fy5k1"]
+[ext_resource type="PackedScene" uid="uid://csua2ax1wt8ld" path="res://push_and_pull_objects/box.tscn" id="6_y2354"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlvrw"]
+albedo_texture = ExtResource("2_ni31j")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m7jmp"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y2354"]
+points = PackedVector3Array(5, 5, 5, 5, 5, -5, -5, 5, 5, 5, -5, 5, 5, -5, -5, -5, 5, -5, -5, -5, 5, -5, -5, -5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni31j"]
+albedo_texture = ExtResource("6_fy5k1")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f8q0j"]
+size = Vector3(200, 2, 200)
+
+[node name="Scene" type="Node3D" unique_id=50537297]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=74530962]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." unique_id=1066633600 instance=ExtResource("1_y2354")]
+
+[node name="Block" type="MeshInstance3D" parent="." unique_id=1790528403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.97248, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_xlvrw")
+mesh = SubResource("BoxMesh_m7jmp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block" unique_id=156244303]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block/StaticBody3D" unique_id=799634029]
+shape = SubResource("ConvexPolygonShape3D_y2354")
+
+[node name="Tree" parent="." unique_id=1976808159 instance=ExtResource("3_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41.602493)
+
+[node name="Floor" type="CSGCombiner3D" parent="." unique_id=519859571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_ni31j")
+use_collision = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Floor" unique_id=1685528290]
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("BoxMesh_f8q0j")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floor" unique_id=1090214074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.425, 0)
+operation = 2
+size = Vector3(1.8000001, 1.65, 1.75)
+
+[node name="Player" parent="." unique_id=1857933427 instance=ExtResource("5_m7jmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -7)
+
+[node name="Box" parent="." unique_id=1643167415 instance=ExtResource("6_y2354")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 1, 2.5)
