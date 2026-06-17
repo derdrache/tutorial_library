@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b46sl4vlqanld"]
+
+[ext_resource type="Script" uid="uid://dpnca3pww4r7q" path="res://_prepare/frist_player_mobile_control_video/frist_player_mobile_control/first_person_player.gd" id="1_670e7"]
+[ext_resource type="PackedScene" uid="uid://cd83bx3w0wvcd" path="res://_prepare/frist_player_mobile_control_video/frist_player_mobile_control/first_person_camera.tscn" id="2_1u0co"]
+[ext_resource type="PackedScene" uid="uid://56m1x3cud6ho" path="res://touch_joystick/joystick.tscn" id="3_1u0co"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_670e7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1u0co"]
+
+[node name="FirstPersonPlayer" type="CharacterBody3D" unique_id=2057337830]
+script = ExtResource("1_670e7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=636622684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_670e7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=973095284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_1u0co")
+
+[node name="firstPersonCamera" parent="." unique_id=463550304 instance=ExtResource("2_1u0co")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1148844744]
+
+[node name="Joystick" parent="CanvasLayer" unique_id=1899428702 instance=ExtResource("3_1u0co")]
+offset_left = 581.0
+offset_top = 348.0
+offset_right = -619.0
+offset_bottom = -292.0
