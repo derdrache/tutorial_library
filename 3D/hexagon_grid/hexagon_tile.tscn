@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://byc03e5g1pel5"]
+
+[ext_resource type="PackedScene" uid="uid://cauvfj8mtpt7a" path="res://hexagon_grid/hexagon_tile.glb" id="1_xecpw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og5b8"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h3gno"]
+_surfaces = [{
+"aabb": AABB(-0.53810424, -0.031237787, -0.53691214, 1.0762085, 0.08753011, 1.0738243),
+"attribute_data": PackedByteArray("AAAAAAAAAD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAAD8AAAAAAACAPwAAgD8AAIA/AAAAAAAAAD8AAIA/AAAAAAAAgD8AAAA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAPwAAgD8AAAA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAAAAAAAAPwAAAAAAAAA/AAAAAAAAAAAAAIA/AAAAPwAAgD8AAAAAAACAPwAAAAAAAIA/AAAAPwAAAAAAAAA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAAA/"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("AAACAAEAAAABAAMABAAAAAMABAADAAUABgAIAAcABgAHAAkACgAIAAYACgALAAgADAAOAA0ADAANAA8AEAASABEAEAARABMAFAAWABUAFAAVABcAGAAaABkAGAAZABsAHAAeAB0AHAAdAB8AIAAiACEAIAAhACMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("M8EJv2Pm/7yFSAu8Sq6UPmNx87wTcwm/Sq6UvmNx87wTcwm/M8EJP2Pm/7yFSAs8Sq6UvmNx87wTcwk/TWKaPmNx87yLmwc/M8EJv8aSZj2GSAu8Sq6UPkZYYD0Tcwm/M8EJP8aSZj2GSAs8Sq6UvkZYYD0Tcwm/Sq6UvkZYYD0Tcwk/TWKaPkZYYD2Lmwc/TWKaPmNx87yLmwc/M8EJP8aSZj2GSAs8M8EJP2Pm/7yFSAs8TWKaPkZYYD2Lmwc/Sq6UPmNx87wTcwm/Sq6UvkZYYD0Tcwm/Sq6UvmNx87wTcwm/Sq6UPkZYYD0Tcwm/Sq6UvmNx87wTcwk/TWKaPkZYYD2Lmwc/TWKaPmNx87yLmwc/Sq6UvkZYYD0Tcwk/Sq6UvmNx87wTcwm/M8EJv8aSZj2GSAu8M8EJv2Pm/7yFSAu8Sq6UvkZYYD0Tcwm/M8EJP2Pm/7yFSAs8Sq6UPkZYYD0Tcwm/Sq6UPmNx87wTcwm/M8EJP8aSZj2GSAs8M8EJv2Pm/7yFSAu8Sq6UvkZYYD0Tcwk/Sq6UvmNx87wTcwk/M8EJv8aSZj2GSAu8AIAAAP///z8AgAAA////PwCAAAD///8/AIAAAP///z8AgAAA////PwCAAAD///8/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/NNj/f////z802P9/////PzTY/3////8/NNj/f////z//////////v/////////+//////////7//////////v/9//3////8//3//f////z//f/9/////P/9//3////8/AADKp////78AAMqn////vwAAyqf///+/AADKp////7///8qn////v///yqf///+////Kp////7///8qn////v8on/3////8/yif/f////z/KJ/9/////P8on/3////8/")
+}]
+
+[node name="HexagonTile" type="Node3D" unique_id=294675937]
+
+[node name="hexagon_tile" parent="." unique_id=55689657 instance=ExtResource("1_xecpw")]
+
+[node name="outline" type="MeshInstance3D" parent="hexagon_tile" unique_id=967461187]
+material_override = SubResource("StandardMaterial3D_og5b8")
+mesh = SubResource("ArrayMesh_h3gno")
+skeleton = NodePath("../Plane")
+
+[editable path="hexagon_tile"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djx6x6jem2v22"]
+
+[ext_resource type="Script" uid="uid://djjsj8t76jy7d" path="res://hexagon_grid/grid.gd" id="1_65i6o"]
+
+[node name="Grid" type="Node3D" unique_id=564171379]
+script = ExtResource("1_65i6o")
+widthRows = 70
+heightRows = 50
