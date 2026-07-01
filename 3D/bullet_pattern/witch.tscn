@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://n3rre8xyssl"]
+
+[ext_resource type="Script" uid="uid://cju7ghjpjj618" path="res://bullet_pattern/witch.gd" id="1_bv18x"]
+[ext_resource type="PackedScene" uid="uid://ba03re86xjy8e" path="res://assets/character/Mage.glb" id="1_lf1iu"]
+[ext_resource type="PackedScene" uid="uid://dnxyhvxa0oefk" path="res://bullet_pattern/bullet_pattern.tscn" id="2_08n5d"]
+
+[node name="Witch" type="CharacterBody3D" unique_id=1890061877]
+script = ExtResource("1_bv18x")
+
+[node name="Mage" parent="." unique_id=1244071937 instance=ExtResource("1_lf1iu")]
+
+[node name="handslot_l" parent="Mage/Rig/Skeleton3D" parent_id_path=PackedInt32Array(1244071937, 1033571719) index="0" unique_id=735266596]
+visible = false
+
+[node name="1H_Wand" parent="Mage/Rig/Skeleton3D/handslot_r" parent_id_path=PackedInt32Array(1244071937, 426536103) index="0" unique_id=1777610135]
+visible = false
+
+[node name="BulletPatternContainer" type="Node3D" parent="." unique_id=1562706553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
+
+[node name="BulletPattern" parent="BulletPatternContainer" unique_id=861027180 instance=ExtResource("2_08n5d")]
+bulletsPerWave = 30
+
+[node name="BulletPattern2" parent="BulletPatternContainer" unique_id=561066124 instance=ExtResource("2_08n5d")]
+sphereSpread = 0.0
+
+[node name="BulletPattern3" parent="BulletPatternContainer" unique_id=2104969348 instance=ExtResource("2_08n5d")]
+maxDegree = 180
+sphereSpread = 0.0
+
+[node name="BulletPattern4" parent="BulletPatternContainer" unique_id=1270656421 instance=ExtResource("2_08n5d")]
+bulletsPerWave = 20
+sphereSpread = 1.0
+
+[editable path="Mage"]

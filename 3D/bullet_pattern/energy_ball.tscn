@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d2ayqnussu52y"]
+
+[ext_resource type="Script" uid="uid://cmg0aqwxsi2eb" path="res://bullet_pattern/energy_ball.gd" id="1_2hwwp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mfbs7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfbs7"]
+albedo_color = Color(3.2944162, 2.0867462, 0.7919251, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mfbs7"]
+radius = 0.105
+
+[node name="EnergyBall" type="CharacterBody3D" unique_id=1522035968]
+collision_layer = 2
+script = ExtResource("1_2hwwp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1459666593]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("SphereMesh_mfbs7")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfbs7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809626793]
+transform = Transform3D(0.9999966, 0.0024785844, 0.000823443, -0.0024774203, 0.99999595, -0.0014088531, -0.0008269387, 0.0014068042, 0.9999987, 0, 0, 0)
+shape = SubResource("SphereShape3D_mfbs7")
