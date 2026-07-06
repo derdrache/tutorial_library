@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://fo52ccvihbni"]
+
+[ext_resource type="Script" uid="uid://crysbf2kctc4u" path="res://level_selection/level_container.gd" id="1_r0ew7"]
+[ext_resource type="Texture2D" uid="uid://dbnvm4tb1ss3y" path="res://assets/check.png" id="2_tyml3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyml3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+
+[node name="LevelContainer" type="PanelContainer" unique_id=1003630619]
+custom_minimum_size = Vector2(150, 150)
+theme_override_styles/panel = SubResource("StyleBoxFlat_tyml3")
+script = ExtResource("1_r0ew7")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1586871221]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=593458809]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="icon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1942837602]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_tyml3")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1463716064]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LEVEL"
+
+[node name="levelLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1936372336]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
