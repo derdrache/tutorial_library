@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dh2vny3k0bb4r"]
+
+[ext_resource type="Script" uid="uid://x03byl3td8nw" path="res://paddle.gd" id="1_ogynf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbytw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.46229059, 0.46229059, 0.46229059, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Paddle" type="CharacterBody2D" unique_id=687564880]
+script = ExtResource("1_ogynf")
+
+[node name="Panel" type="Panel" parent="." unique_id=2006084675]
+offset_right = 125.0
+offset_bottom = 25.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbytw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1979016997]
+polygon = PackedVector2Array(0, 24, 125, 24, 125, 10, 74.4323, 0, 41, 0, 0, 9)
