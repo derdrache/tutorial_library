@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dnbm7jqk1da67"]
+
+[ext_resource type="Script" uid="uid://cors48sppmebu" path="res://player.gd" id="1_46pwf"]
+[ext_resource type="PackedScene" uid="uid://p1kht8vp5mn7" path="res://assets/character/Knight.glb" id="2_f8knx"]
+[ext_resource type="PackedScene" uid="uid://c5crtsea6h2c7" path="res://collection/third_person_camera/third_person_camera.tscn" id="3_xarov"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1857933427]
+script = ExtResource("1_46pwf")
+
+[node name="model" parent="." unique_id=583210889 instance=ExtResource("2_f8knx")]
+
+[node name="1H_Sword_Offhand" parent="model/Rig/Skeleton3D" parent_id_path=PackedInt32Array(583210889, 2023352176) index="0" unique_id=254451280]
+visible = false
+
+[node name="Badge_Shield" parent="model/Rig/Skeleton3D" parent_id_path=PackedInt32Array(583210889, 2023352176) index="1" unique_id=2118106251]
+visible = false
+
+[node name="Rectangle_Shield" parent="model/Rig/Skeleton3D" parent_id_path=PackedInt32Array(583210889, 2023352176) index="2" unique_id=805326512]
+visible = false
+
+[node name="Round_Shield" parent="model/Rig/Skeleton3D" parent_id_path=PackedInt32Array(583210889, 2023352176) index="3" unique_id=478990105]
+visible = false
+
+[node name="Spike_Shield" parent="model/Rig/Skeleton3D" parent_id_path=PackedInt32Array(583210889, 2023352176) index="4" unique_id=1649662755]
+visible = false
+
+[node name="1H_Sword" parent="model/Rig/Skeleton3D" parent_id_path=PackedInt32Array(583210889, 2023352176) index="5" unique_id=1580296640]
+visible = false
+
+[node name="2H_Sword" parent="model/Rig/Skeleton3D" parent_id_path=PackedInt32Array(583210889, 2023352176) index="6" unique_id=2042577883]
+visible = false
+
+[node name="RayCast3D" type="RayCast3D" parent="model" unique_id=2127281493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, -2, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=421442314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_onrkg")
+
+[node name="thirdPersonCamera" parent="." unique_id=2040007780 instance=ExtResource("3_xarov")]
+transform = Transform3D(-1, 2.262668e-08, -8.444392e-08, 0, 0.9659258, 0.25881904, 8.742278e-08, 0.25881904, -0.9659258, 0, 2, 0)
+
+[editable path="model"]

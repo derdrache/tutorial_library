@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://couq2deyhrs6d"]
+
+[ext_resource type="Script" uid="uid://cbgyjv71oir18" path="res://grid.gd" id="1_owfui"]
+[ext_resource type="PackedScene" uid="uid://064rp6nm3jai" path="res://ground.tscn" id="2_pmox5"]
+[ext_resource type="Script" uid="uid://cjxtngd1cpqkk" path="res://ground.gd" id="3_cwj2u"]
+
+[node name="Grid" type="Node3D" unique_id=15684402]
+script = ExtResource("1_owfui")
+margin = 0.0
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=600037325 instance=ExtResource("2_pmox5")]
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46231" type="StaticBody3D" parent="." unique_id=750668296 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46232" type="StaticBody3D" parent="." unique_id=250681757 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46233" type="StaticBody3D" parent="." unique_id=1502978106 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46234" type="StaticBody3D" parent="." unique_id=657526160 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46235" type="StaticBody3D" parent="." unique_id=252207323 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46236" type="StaticBody3D" parent="." unique_id=830847481 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46237" type="StaticBody3D" parent="." unique_id=542228936 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46238" type="StaticBody3D" parent="." unique_id=1146900877 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46239" type="StaticBody3D" parent="." unique_id=858850637 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46240" type="StaticBody3D" parent="." unique_id=475507049 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46241" type="StaticBody3D" parent="." unique_id=797922116 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46242" type="StaticBody3D" parent="." unique_id=2013775326 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46243" type="StaticBody3D" parent="." unique_id=467089921 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46244" type="StaticBody3D" parent="." unique_id=1770816975 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46245" type="StaticBody3D" parent="." unique_id=998978082 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46246" type="StaticBody3D" parent="." unique_id=1823813980 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46247" type="StaticBody3D" parent="." unique_id=1008504615 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46248" type="StaticBody3D" parent="." unique_id=1320002049 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46249" type="StaticBody3D" parent="." unique_id=283096617 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46250" type="StaticBody3D" parent="." unique_id=550786553 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46251" type="StaticBody3D" parent="." unique_id=1991948658 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46252" type="StaticBody3D" parent="." unique_id=1135201928 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46253" type="StaticBody3D" parent="." unique_id=835609068 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+script = ExtResource("3_cwj2u")
+
+[node name="@StaticBody3D@46254" type="StaticBody3D" parent="." unique_id=445121709 instance=ExtResource("2_pmox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+script = ExtResource("3_cwj2u")

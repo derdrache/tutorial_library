@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c3ehx1yub30pc"]
+
+[ext_resource type="Script" uid="uid://cjxtngd1cpqkk" path="res://ground.gd" id="1_t78ne"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yh8r4"]
+albedo_color = Color(0.35302523, 0.16429153, 0.0025941993, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t7tip"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tv015"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnojy"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.19607843)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vkp31"]
+size = Vector2(1, 1)
+
+[node name="Ground" type="StaticBody3D" unique_id=600037325]
+script = ExtResource("1_t78ne")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1609769254]
+material_override = SubResource("StandardMaterial3D_yh8r4")
+mesh = SubResource("BoxMesh_t7tip")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=576442286]
+shape = SubResource("BoxShape3D_tv015")
+
+[node name="selectionMesh" type="MeshInstance3D" parent="." unique_id=2017590646]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+material_override = SubResource("StandardMaterial3D_wnojy")
+mesh = SubResource("PlaneMesh_vkp31")
