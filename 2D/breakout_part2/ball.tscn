@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://wj7uj4a38e5o"]
+
+[ext_resource type="Script" uid="uid://db35101n55822" path="res://ball.gd" id="1_siubg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbx31"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x8fbi"]
+radius = 20.024984
+
+[node name="Ball" type="CharacterBody2D" unique_id=96263272]
+script = ExtResource("1_siubg")
+
+[node name="Panel" type="Panel" parent="." unique_id=1211590249]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cbx31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=250236001]
+shape = SubResource("CircleShape2D_x8fbi")

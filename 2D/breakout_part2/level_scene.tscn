@@ -1,0 +1,341 @@
+[gd_scene format=3 uid="uid://dqbinsyqpod3n"]
+
+[ext_resource type="PackedScene" uid="uid://c7gd30pguyy1v" path="res://paddle.tscn" id="1_c37fv"]
+[ext_resource type="PackedScene" uid="uid://dssjalm3nuhgg" path="res://ball.tscn" id="2_lbts8"]
+[ext_resource type="PackedScene" uid="uid://bbccnx1lwqwt8" path="res://level_generator.tscn" id="3_1q28u"]
+[ext_resource type="PackedScene" uid="uid://cju21g00pnput" path="res://stone.tscn" id="4_gmxwh"]
+[ext_resource type="Script" uid="uid://4h5ioq16bvqv" path="res://stone.gd" id="5_e1wem"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lwxgr"]
+
+[node name="LevelScene" type="Node2D" unique_id=590527968]
+
+[node name="Paddle" parent="." unique_id=687564880 instance=ExtResource("1_c37fv")]
+position = Vector2(532, 605)
+
+[node name="Ball" parent="." unique_id=96263272 instance=ExtResource("2_lbts8")]
+position = Vector2(587, 453)
+
+[node name="Border" type="StaticBody2D" parent="." unique_id=397234241]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border" unique_id=1912845920]
+position = Vector2(585, 0)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_lwxgr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border" unique_id=255331262]
+position = Vector2(0, 371)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_lwxgr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border" unique_id=1081789522]
+position = Vector2(1282, 360)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_lwxgr")
+
+[node name="LevelGenerator" parent="." unique_id=775434143 instance=ExtResource("3_1q28u")]
+color = Color(0.2848643, 0.62970406, 0, 1)
+
+[node name="Stone" type="StaticBody2D" parent="LevelGenerator" unique_id=1823041010 instance=ExtResource("4_gmxwh")]
+position = Vector2(200, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73056" type="StaticBody2D" parent="LevelGenerator" unique_id=2140981962 instance=ExtResource("4_gmxwh")]
+position = Vector2(200, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73057" type="StaticBody2D" parent="LevelGenerator" unique_id=810767248 instance=ExtResource("4_gmxwh")]
+position = Vector2(200, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73058" type="StaticBody2D" parent="LevelGenerator" unique_id=1602973450 instance=ExtResource("4_gmxwh")]
+position = Vector2(200, 175)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73059" type="StaticBody2D" parent="LevelGenerator" unique_id=806067183 instance=ExtResource("4_gmxwh")]
+position = Vector2(200, 200)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73060" type="StaticBody2D" parent="LevelGenerator" unique_id=1367048135 instance=ExtResource("4_gmxwh")]
+position = Vector2(200, 225)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73061" type="StaticBody2D" parent="LevelGenerator" unique_id=1379311075 instance=ExtResource("4_gmxwh")]
+position = Vector2(200, 250)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73062" type="StaticBody2D" parent="LevelGenerator" unique_id=2131581382 instance=ExtResource("4_gmxwh")]
+position = Vector2(200, 275)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73063" type="StaticBody2D" parent="LevelGenerator" unique_id=1058401782 instance=ExtResource("4_gmxwh")]
+position = Vector2(280, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73064" type="StaticBody2D" parent="LevelGenerator" unique_id=497025532 instance=ExtResource("4_gmxwh")]
+position = Vector2(280, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73065" type="StaticBody2D" parent="LevelGenerator" unique_id=1078603794 instance=ExtResource("4_gmxwh")]
+position = Vector2(280, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73066" type="StaticBody2D" parent="LevelGenerator" unique_id=1839840463 instance=ExtResource("4_gmxwh")]
+position = Vector2(280, 175)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73067" type="StaticBody2D" parent="LevelGenerator" unique_id=65192510 instance=ExtResource("4_gmxwh")]
+position = Vector2(280, 200)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73068" type="StaticBody2D" parent="LevelGenerator" unique_id=1240947893 instance=ExtResource("4_gmxwh")]
+position = Vector2(280, 225)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73069" type="StaticBody2D" parent="LevelGenerator" unique_id=1817177487 instance=ExtResource("4_gmxwh")]
+position = Vector2(280, 250)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73070" type="StaticBody2D" parent="LevelGenerator" unique_id=561720269 instance=ExtResource("4_gmxwh")]
+position = Vector2(280, 275)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73071" type="StaticBody2D" parent="LevelGenerator" unique_id=1242397147 instance=ExtResource("4_gmxwh")]
+position = Vector2(360, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73072" type="StaticBody2D" parent="LevelGenerator" unique_id=1635011380 instance=ExtResource("4_gmxwh")]
+position = Vector2(360, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73073" type="StaticBody2D" parent="LevelGenerator" unique_id=718002420 instance=ExtResource("4_gmxwh")]
+position = Vector2(360, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73074" type="StaticBody2D" parent="LevelGenerator" unique_id=289054404 instance=ExtResource("4_gmxwh")]
+position = Vector2(360, 175)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73075" type="StaticBody2D" parent="LevelGenerator" unique_id=611689672 instance=ExtResource("4_gmxwh")]
+position = Vector2(360, 200)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73076" type="StaticBody2D" parent="LevelGenerator" unique_id=1672126553 instance=ExtResource("4_gmxwh")]
+position = Vector2(360, 225)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73077" type="StaticBody2D" parent="LevelGenerator" unique_id=40322464 instance=ExtResource("4_gmxwh")]
+position = Vector2(360, 250)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73078" type="StaticBody2D" parent="LevelGenerator" unique_id=355137968 instance=ExtResource("4_gmxwh")]
+position = Vector2(360, 275)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73079" type="StaticBody2D" parent="LevelGenerator" unique_id=178537765 instance=ExtResource("4_gmxwh")]
+position = Vector2(440, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73080" type="StaticBody2D" parent="LevelGenerator" unique_id=307737336 instance=ExtResource("4_gmxwh")]
+position = Vector2(440, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73081" type="StaticBody2D" parent="LevelGenerator" unique_id=1680497996 instance=ExtResource("4_gmxwh")]
+position = Vector2(440, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73082" type="StaticBody2D" parent="LevelGenerator" unique_id=1520021834 instance=ExtResource("4_gmxwh")]
+position = Vector2(440, 175)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73083" type="StaticBody2D" parent="LevelGenerator" unique_id=1624907602 instance=ExtResource("4_gmxwh")]
+position = Vector2(440, 200)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73084" type="StaticBody2D" parent="LevelGenerator" unique_id=1675249797 instance=ExtResource("4_gmxwh")]
+position = Vector2(440, 225)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73085" type="StaticBody2D" parent="LevelGenerator" unique_id=1662490595 instance=ExtResource("4_gmxwh")]
+position = Vector2(440, 250)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73086" type="StaticBody2D" parent="LevelGenerator" unique_id=795849077 instance=ExtResource("4_gmxwh")]
+position = Vector2(440, 275)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73087" type="StaticBody2D" parent="LevelGenerator" unique_id=626015554 instance=ExtResource("4_gmxwh")]
+position = Vector2(520, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73088" type="StaticBody2D" parent="LevelGenerator" unique_id=67400418 instance=ExtResource("4_gmxwh")]
+position = Vector2(520, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73089" type="StaticBody2D" parent="LevelGenerator" unique_id=1576842882 instance=ExtResource("4_gmxwh")]
+position = Vector2(520, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73095" type="StaticBody2D" parent="LevelGenerator" unique_id=687431854 instance=ExtResource("4_gmxwh")]
+position = Vector2(600, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73096" type="StaticBody2D" parent="LevelGenerator" unique_id=1583010075 instance=ExtResource("4_gmxwh")]
+position = Vector2(600, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73097" type="StaticBody2D" parent="LevelGenerator" unique_id=1758647220 instance=ExtResource("4_gmxwh")]
+position = Vector2(600, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73103" type="StaticBody2D" parent="LevelGenerator" unique_id=41679976 instance=ExtResource("4_gmxwh")]
+position = Vector2(680, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73104" type="StaticBody2D" parent="LevelGenerator" unique_id=1918240207 instance=ExtResource("4_gmxwh")]
+position = Vector2(680, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73105" type="StaticBody2D" parent="LevelGenerator" unique_id=1422336422 instance=ExtResource("4_gmxwh")]
+position = Vector2(680, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73111" type="StaticBody2D" parent="LevelGenerator" unique_id=101216657 instance=ExtResource("4_gmxwh")]
+position = Vector2(760, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73112" type="StaticBody2D" parent="LevelGenerator" unique_id=1331894881 instance=ExtResource("4_gmxwh")]
+position = Vector2(760, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73113" type="StaticBody2D" parent="LevelGenerator" unique_id=1887493530 instance=ExtResource("4_gmxwh")]
+position = Vector2(760, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73119" type="StaticBody2D" parent="LevelGenerator" unique_id=1137493859 instance=ExtResource("4_gmxwh")]
+position = Vector2(840, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73120" type="StaticBody2D" parent="LevelGenerator" unique_id=287192430 instance=ExtResource("4_gmxwh")]
+position = Vector2(840, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73121" type="StaticBody2D" parent="LevelGenerator" unique_id=1528777664 instance=ExtResource("4_gmxwh")]
+position = Vector2(840, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73122" type="StaticBody2D" parent="LevelGenerator" unique_id=1290433811 instance=ExtResource("4_gmxwh")]
+position = Vector2(840, 175)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73123" type="StaticBody2D" parent="LevelGenerator" unique_id=1378935951 instance=ExtResource("4_gmxwh")]
+position = Vector2(840, 200)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73124" type="StaticBody2D" parent="LevelGenerator" unique_id=1063033610 instance=ExtResource("4_gmxwh")]
+position = Vector2(840, 225)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73125" type="StaticBody2D" parent="LevelGenerator" unique_id=697815571 instance=ExtResource("4_gmxwh")]
+position = Vector2(840, 250)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73126" type="StaticBody2D" parent="LevelGenerator" unique_id=931476576 instance=ExtResource("4_gmxwh")]
+position = Vector2(840, 275)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73127" type="StaticBody2D" parent="LevelGenerator" unique_id=1630316986 instance=ExtResource("4_gmxwh")]
+position = Vector2(920, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73128" type="StaticBody2D" parent="LevelGenerator" unique_id=2062134117 instance=ExtResource("4_gmxwh")]
+position = Vector2(920, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73129" type="StaticBody2D" parent="LevelGenerator" unique_id=200996346 instance=ExtResource("4_gmxwh")]
+position = Vector2(920, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73130" type="StaticBody2D" parent="LevelGenerator" unique_id=45542417 instance=ExtResource("4_gmxwh")]
+position = Vector2(920, 175)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73131" type="StaticBody2D" parent="LevelGenerator" unique_id=1964935271 instance=ExtResource("4_gmxwh")]
+position = Vector2(920, 200)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73132" type="StaticBody2D" parent="LevelGenerator" unique_id=275645304 instance=ExtResource("4_gmxwh")]
+position = Vector2(920, 225)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73133" type="StaticBody2D" parent="LevelGenerator" unique_id=244813113 instance=ExtResource("4_gmxwh")]
+position = Vector2(920, 250)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73134" type="StaticBody2D" parent="LevelGenerator" unique_id=1068148979 instance=ExtResource("4_gmxwh")]
+position = Vector2(920, 275)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73135" type="StaticBody2D" parent="LevelGenerator" unique_id=725598710 instance=ExtResource("4_gmxwh")]
+position = Vector2(1000, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73136" type="StaticBody2D" parent="LevelGenerator" unique_id=1509423465 instance=ExtResource("4_gmxwh")]
+position = Vector2(1000, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73137" type="StaticBody2D" parent="LevelGenerator" unique_id=298506680 instance=ExtResource("4_gmxwh")]
+position = Vector2(1000, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73138" type="StaticBody2D" parent="LevelGenerator" unique_id=1594566606 instance=ExtResource("4_gmxwh")]
+position = Vector2(1000, 175)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73139" type="StaticBody2D" parent="LevelGenerator" unique_id=1000180069 instance=ExtResource("4_gmxwh")]
+position = Vector2(1000, 200)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73140" type="StaticBody2D" parent="LevelGenerator" unique_id=687889296 instance=ExtResource("4_gmxwh")]
+position = Vector2(1000, 225)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73141" type="StaticBody2D" parent="LevelGenerator" unique_id=817949373 instance=ExtResource("4_gmxwh")]
+position = Vector2(1000, 250)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73142" type="StaticBody2D" parent="LevelGenerator" unique_id=203060082 instance=ExtResource("4_gmxwh")]
+position = Vector2(1000, 275)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73143" type="StaticBody2D" parent="LevelGenerator" unique_id=1292885759 instance=ExtResource("4_gmxwh")]
+position = Vector2(1080, 100)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73144" type="StaticBody2D" parent="LevelGenerator" unique_id=124779267 instance=ExtResource("4_gmxwh")]
+position = Vector2(1080, 125)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73145" type="StaticBody2D" parent="LevelGenerator" unique_id=1591794510 instance=ExtResource("4_gmxwh")]
+position = Vector2(1080, 150)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73146" type="StaticBody2D" parent="LevelGenerator" unique_id=1961826889 instance=ExtResource("4_gmxwh")]
+position = Vector2(1080, 175)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73147" type="StaticBody2D" parent="LevelGenerator" unique_id=1240094484 instance=ExtResource("4_gmxwh")]
+position = Vector2(1080, 200)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73148" type="StaticBody2D" parent="LevelGenerator" unique_id=940878308 instance=ExtResource("4_gmxwh")]
+position = Vector2(1080, 225)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73149" type="StaticBody2D" parent="LevelGenerator" unique_id=1668412173 instance=ExtResource("4_gmxwh")]
+position = Vector2(1080, 250)
+script = ExtResource("5_e1wem")
+
+[node name="@StaticBody2D@73150" type="StaticBody2D" parent="LevelGenerator" unique_id=1911051498 instance=ExtResource("4_gmxwh")]
+position = Vector2(1080, 275)
+script = ExtResource("5_e1wem")
