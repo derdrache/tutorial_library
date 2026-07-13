@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c0gy0v6orq6id"]
+
+[ext_resource type="Script" uid="uid://cb6hx0f86w3nt" path="res://aim_mode/main_char.gd" id="1_jl3no"]
+[ext_resource type="PackedScene" uid="uid://dvrwsghyg2g8a" path="res://aim_mode/third_person_camera.tscn" id="3_jl3no"]
+[ext_resource type="PackedScene" uid="uid://bcbujl2yb7tei" path="res://assets/platform/character/character_duck.gltf" id="3_u17qb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qknna"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jl3no"]
+size = Vector3(1, 2, 0.706055)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jl3no"]
+height = 0.560547
+radius = 1.0
+
+[node name="Player" type="CharacterBody3D" unique_id=920450596]
+script = ExtResource("1_jl3no")
+
+[node name="CapsuleCollider" type="CollisionShape3D" parent="." unique_id=1963623512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_qknna")
+
+[node name="BoxCollider" type="CollisionShape3D" parent="." unique_id=504026448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+shape = SubResource("BoxShape3D_jl3no")
+disabled = true
+
+[node name="rotationNode" type="Node3D" parent="." unique_id=2126281]
+unique_name_in_owner = true
+
+[node name="character_duck2" parent="rotationNode" unique_id=714777173 instance=ExtResource("3_u17qb")]
+
+[node name="ObjectPositionMarker" type="Marker3D" parent="rotationNode" unique_id=1230876224]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.7)
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1156240854]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=99400716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.304246, 0)
+shape = SubResource("CylinderShape3D_jl3no")
+
+[node name="thirdPersonCamera" parent="." unique_id=1739008134 instance=ExtResource("3_jl3no")]
+transform = Transform3D(-1, 2.262668e-08, -8.444392e-08, 0, 0.9659258, 0.25881904, 8.742278e-08, 0.25881904, -0.9659258, 0, 1.2, 0)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

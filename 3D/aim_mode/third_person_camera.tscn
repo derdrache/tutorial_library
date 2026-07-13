@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dvrwsghyg2g8a"]
+
+[ext_resource type="Script" uid="uid://nnmrqfcumd5v" path="res://aim_mode/third_person_camera.gd" id="1_rqakr"]
+[ext_resource type="Texture2D" uid="uid://drfbcd4rv0386" path="res://collection/2025/battlefron_2_overheat_system/crosshair046.png" id="2_cll53"]
+
+[node name="thirdPersonCamera" type="Node3D" unique_id=1739008134]
+transform = Transform3D(-1, 2.262668e-08, -8.444392e-08, 0, 0.9659258, 0.25881904, 8.742278e-08, 0.25881904, -0.9659258, 0, 0, 0)
+script = ExtResource("1_rqakr")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=903885360]
+spring_length = 9.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=639157585]
+unique_name_in_owner = true
+current = true
+
+[node name="aimSprite" type="Sprite3D" parent="." unique_id=47361971]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+no_depth_test = true
+texture = ExtResource("2_cll53")
