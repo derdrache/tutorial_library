@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bt5efbi7mk342"]
+
+[ext_resource type="Script" uid="uid://yghv0x0a6df2" path="res://farming_serie/farming_part_2/item_bar/item_bar.gd" id="1_wevgw"]
+[ext_resource type="PackedScene" uid="uid://r5lftn83tk17" path="res://farming_serie/farming_part_2/item_bar/slot.tscn" id="2_m2rmx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3i8up"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="ItemBar" type="Control" unique_id=400076013]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wevgw")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1900352272]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 200
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=892659510]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_3i8up")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1393650586]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="slotContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=754325540]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Slot" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=722779295 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot2" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=1191478485 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot3" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=80848615 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot4" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=661480931 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot5" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=191700507 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot6" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=165693310 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot7" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=335824447 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot8" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=1084186288 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot9" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=1723329445 instance=ExtResource("2_m2rmx")]
+layout_mode = 2
+
+[node name="Slot10" parent="MarginContainer/PanelContainer/MarginContainer/slotContainer" unique_id=1713471107 instance=ExtResource("2_m2rmx")]
+layout_mode = 2

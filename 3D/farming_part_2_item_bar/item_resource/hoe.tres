@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ITEM_BAR_ITEM" format=3 uid="uid://bpy7xuforl6u5"]
+
+[ext_resource type="Script" uid="uid://cf0dygahelmln" path="res://farming_serie/farming_part_2/item_resource/item_resource.gd" id="1_d05vw"]
+[ext_resource type="Texture2D" uid="uid://c74fvs6npt08y" path="res://icons/hoe.png" id="2_7khh5"]
+
+[resource]
+script = ExtResource("1_d05vw")
+texture = ExtResource("2_7khh5")
+metadata/_custom_type_script = "uid://qcybgkl4l5g6"
