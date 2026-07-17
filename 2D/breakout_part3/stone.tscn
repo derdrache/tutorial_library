@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dmioq4x35ri5f"]
+
+[ext_resource type="Script" uid="uid://4h5ioq16bvqv" path="res://stone.gd" id="1_f01ha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rq0vd"]
+resource_local_to_scene = true
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.2848643, 0.62970406, 0, 1)
+corner_detail = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxlo0"]
+size = Vector2(70, 20)
+
+[node name="Stone" type="StaticBody2D" unique_id=1823041010]
+script = ExtResource("1_f01ha")
+
+[node name="Panel" type="Panel" parent="." unique_id=1718863755]
+offset_right = 70.0
+offset_bottom = 20.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rq0vd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=716948775]
+position = Vector2(35, 10)
+shape = SubResource("RectangleShape2D_cxlo0")

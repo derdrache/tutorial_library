@@ -1,0 +1,284 @@
+[gd_scene format=3 uid="uid://vrkto7cnvbs8"]
+
+[ext_resource type="Script" uid="uid://buy7wndu16cov" path="res://level_scene.gd" id="1_2dylp"]
+[ext_resource type="PackedScene" uid="uid://c7gd30pguyy1v" path="res://paddle.tscn" id="2_dx31g"]
+[ext_resource type="PackedScene" uid="uid://dssjalm3nuhgg" path="res://ball.tscn" id="3_2rx7y"]
+[ext_resource type="PackedScene" uid="uid://bbccnx1lwqwt8" path="res://level_generator.tscn" id="4_2w86r"]
+[ext_resource type="PackedScene" uid="uid://cju21g00pnput" path="res://stone.tscn" id="5_vnn55"]
+[ext_resource type="PackedScene" uid="uid://ckbd4vby1e4j4" path="res://ui.tscn" id="6_yvqbx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lwxgr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8wodn"]
+
+[node name="LevelScene" type="Node2D" unique_id=590527968]
+script = ExtResource("1_2dylp")
+
+[node name="Paddle" parent="." unique_id=687564880 instance=ExtResource("2_dx31g")]
+position = Vector2(617, 597)
+
+[node name="Ball" parent="." unique_id=96263272 instance=ExtResource("3_2rx7y")]
+position = Vector2(672, 445)
+
+[node name="Border" type="StaticBody2D" parent="." unique_id=397234241]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border" unique_id=1912845920]
+position = Vector2(585, 0)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_lwxgr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border" unique_id=255331262]
+position = Vector2(0, 371)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_lwxgr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border" unique_id=1081789522]
+position = Vector2(1282, 360)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_lwxgr")
+
+[node name="LevelGenerator" parent="." unique_id=775434143 instance=ExtResource("4_2w86r")]
+color = Color(0.2848643, 0.62970406, 0, 1)
+
+[node name="Stone" parent="LevelGenerator" unique_id=1823041010 instance=ExtResource("5_vnn55")]
+position = Vector2(200, 100)
+
+[node name="@StaticBody2D@73056" parent="LevelGenerator" unique_id=2140981962 instance=ExtResource("5_vnn55")]
+position = Vector2(200, 125)
+
+[node name="@StaticBody2D@73057" parent="LevelGenerator" unique_id=810767248 instance=ExtResource("5_vnn55")]
+position = Vector2(200, 150)
+
+[node name="@StaticBody2D@73058" parent="LevelGenerator" unique_id=1602973450 instance=ExtResource("5_vnn55")]
+position = Vector2(200, 175)
+
+[node name="@StaticBody2D@73059" parent="LevelGenerator" unique_id=806067183 instance=ExtResource("5_vnn55")]
+position = Vector2(200, 200)
+
+[node name="@StaticBody2D@73060" parent="LevelGenerator" unique_id=1367048135 instance=ExtResource("5_vnn55")]
+position = Vector2(200, 225)
+
+[node name="@StaticBody2D@73061" parent="LevelGenerator" unique_id=1379311075 instance=ExtResource("5_vnn55")]
+position = Vector2(200, 250)
+
+[node name="@StaticBody2D@73062" parent="LevelGenerator" unique_id=2131581382 instance=ExtResource("5_vnn55")]
+position = Vector2(200, 275)
+
+[node name="@StaticBody2D@73063" parent="LevelGenerator" unique_id=1058401782 instance=ExtResource("5_vnn55")]
+position = Vector2(280, 100)
+
+[node name="@StaticBody2D@73064" parent="LevelGenerator" unique_id=497025532 instance=ExtResource("5_vnn55")]
+position = Vector2(280, 125)
+
+[node name="@StaticBody2D@73065" parent="LevelGenerator" unique_id=1078603794 instance=ExtResource("5_vnn55")]
+position = Vector2(280, 150)
+
+[node name="@StaticBody2D@73066" parent="LevelGenerator" unique_id=1839840463 instance=ExtResource("5_vnn55")]
+position = Vector2(280, 175)
+
+[node name="@StaticBody2D@73067" parent="LevelGenerator" unique_id=65192510 instance=ExtResource("5_vnn55")]
+position = Vector2(280, 200)
+
+[node name="@StaticBody2D@73068" parent="LevelGenerator" unique_id=1240947893 instance=ExtResource("5_vnn55")]
+position = Vector2(280, 225)
+
+[node name="@StaticBody2D@73069" parent="LevelGenerator" unique_id=1817177487 instance=ExtResource("5_vnn55")]
+position = Vector2(280, 250)
+
+[node name="@StaticBody2D@73070" parent="LevelGenerator" unique_id=561720269 instance=ExtResource("5_vnn55")]
+position = Vector2(280, 275)
+
+[node name="@StaticBody2D@73071" parent="LevelGenerator" unique_id=1242397147 instance=ExtResource("5_vnn55")]
+position = Vector2(360, 100)
+
+[node name="@StaticBody2D@73072" parent="LevelGenerator" unique_id=1635011380 instance=ExtResource("5_vnn55")]
+position = Vector2(360, 125)
+
+[node name="@StaticBody2D@73073" parent="LevelGenerator" unique_id=718002420 instance=ExtResource("5_vnn55")]
+position = Vector2(360, 150)
+
+[node name="@StaticBody2D@73074" parent="LevelGenerator" unique_id=289054404 instance=ExtResource("5_vnn55")]
+position = Vector2(360, 175)
+
+[node name="@StaticBody2D@73075" parent="LevelGenerator" unique_id=611689672 instance=ExtResource("5_vnn55")]
+position = Vector2(360, 200)
+
+[node name="@StaticBody2D@73076" parent="LevelGenerator" unique_id=1672126553 instance=ExtResource("5_vnn55")]
+position = Vector2(360, 225)
+
+[node name="@StaticBody2D@73077" parent="LevelGenerator" unique_id=40322464 instance=ExtResource("5_vnn55")]
+position = Vector2(360, 250)
+
+[node name="@StaticBody2D@73078" parent="LevelGenerator" unique_id=355137968 instance=ExtResource("5_vnn55")]
+position = Vector2(360, 275)
+
+[node name="@StaticBody2D@73079" parent="LevelGenerator" unique_id=178537765 instance=ExtResource("5_vnn55")]
+position = Vector2(440, 100)
+
+[node name="@StaticBody2D@73080" parent="LevelGenerator" unique_id=307737336 instance=ExtResource("5_vnn55")]
+position = Vector2(440, 125)
+
+[node name="@StaticBody2D@73081" parent="LevelGenerator" unique_id=1680497996 instance=ExtResource("5_vnn55")]
+position = Vector2(440, 150)
+
+[node name="@StaticBody2D@73082" parent="LevelGenerator" unique_id=1520021834 instance=ExtResource("5_vnn55")]
+position = Vector2(440, 175)
+
+[node name="@StaticBody2D@73083" parent="LevelGenerator" unique_id=1624907602 instance=ExtResource("5_vnn55")]
+position = Vector2(440, 200)
+
+[node name="@StaticBody2D@73084" parent="LevelGenerator" unique_id=1675249797 instance=ExtResource("5_vnn55")]
+position = Vector2(440, 225)
+
+[node name="@StaticBody2D@73085" parent="LevelGenerator" unique_id=1662490595 instance=ExtResource("5_vnn55")]
+position = Vector2(440, 250)
+
+[node name="@StaticBody2D@73086" parent="LevelGenerator" unique_id=795849077 instance=ExtResource("5_vnn55")]
+position = Vector2(440, 275)
+
+[node name="@StaticBody2D@73087" parent="LevelGenerator" unique_id=626015554 instance=ExtResource("5_vnn55")]
+position = Vector2(520, 100)
+
+[node name="@StaticBody2D@73088" parent="LevelGenerator" unique_id=67400418 instance=ExtResource("5_vnn55")]
+position = Vector2(520, 125)
+
+[node name="@StaticBody2D@73089" parent="LevelGenerator" unique_id=1576842882 instance=ExtResource("5_vnn55")]
+position = Vector2(520, 150)
+
+[node name="@StaticBody2D@73095" parent="LevelGenerator" unique_id=687431854 instance=ExtResource("5_vnn55")]
+position = Vector2(600, 100)
+
+[node name="@StaticBody2D@73096" parent="LevelGenerator" unique_id=1583010075 instance=ExtResource("5_vnn55")]
+position = Vector2(600, 125)
+
+[node name="@StaticBody2D@73097" parent="LevelGenerator" unique_id=1758647220 instance=ExtResource("5_vnn55")]
+position = Vector2(600, 150)
+
+[node name="@StaticBody2D@73103" parent="LevelGenerator" unique_id=41679976 instance=ExtResource("5_vnn55")]
+position = Vector2(680, 100)
+
+[node name="@StaticBody2D@73104" parent="LevelGenerator" unique_id=1918240207 instance=ExtResource("5_vnn55")]
+position = Vector2(680, 125)
+
+[node name="@StaticBody2D@73105" parent="LevelGenerator" unique_id=1422336422 instance=ExtResource("5_vnn55")]
+position = Vector2(680, 150)
+
+[node name="@StaticBody2D@73111" parent="LevelGenerator" unique_id=101216657 instance=ExtResource("5_vnn55")]
+position = Vector2(760, 100)
+
+[node name="@StaticBody2D@73112" parent="LevelGenerator" unique_id=1331894881 instance=ExtResource("5_vnn55")]
+position = Vector2(760, 125)
+
+[node name="@StaticBody2D@73113" parent="LevelGenerator" unique_id=1887493530 instance=ExtResource("5_vnn55")]
+position = Vector2(760, 150)
+
+[node name="@StaticBody2D@73119" parent="LevelGenerator" unique_id=1137493859 instance=ExtResource("5_vnn55")]
+position = Vector2(840, 100)
+
+[node name="@StaticBody2D@73120" parent="LevelGenerator" unique_id=287192430 instance=ExtResource("5_vnn55")]
+position = Vector2(840, 125)
+
+[node name="@StaticBody2D@73121" parent="LevelGenerator" unique_id=1528777664 instance=ExtResource("5_vnn55")]
+position = Vector2(840, 150)
+
+[node name="@StaticBody2D@73122" parent="LevelGenerator" unique_id=1290433811 instance=ExtResource("5_vnn55")]
+position = Vector2(840, 175)
+
+[node name="@StaticBody2D@73123" parent="LevelGenerator" unique_id=1378935951 instance=ExtResource("5_vnn55")]
+position = Vector2(840, 200)
+
+[node name="@StaticBody2D@73124" parent="LevelGenerator" unique_id=1063033610 instance=ExtResource("5_vnn55")]
+position = Vector2(840, 225)
+
+[node name="@StaticBody2D@73125" parent="LevelGenerator" unique_id=697815571 instance=ExtResource("5_vnn55")]
+position = Vector2(840, 250)
+
+[node name="@StaticBody2D@73126" parent="LevelGenerator" unique_id=931476576 instance=ExtResource("5_vnn55")]
+position = Vector2(840, 275)
+
+[node name="@StaticBody2D@73127" parent="LevelGenerator" unique_id=1630316986 instance=ExtResource("5_vnn55")]
+position = Vector2(920, 100)
+
+[node name="@StaticBody2D@73128" parent="LevelGenerator" unique_id=2062134117 instance=ExtResource("5_vnn55")]
+position = Vector2(920, 125)
+
+[node name="@StaticBody2D@73129" parent="LevelGenerator" unique_id=200996346 instance=ExtResource("5_vnn55")]
+position = Vector2(920, 150)
+
+[node name="@StaticBody2D@73130" parent="LevelGenerator" unique_id=45542417 instance=ExtResource("5_vnn55")]
+position = Vector2(920, 175)
+
+[node name="@StaticBody2D@73131" parent="LevelGenerator" unique_id=1964935271 instance=ExtResource("5_vnn55")]
+position = Vector2(920, 200)
+
+[node name="@StaticBody2D@73132" parent="LevelGenerator" unique_id=275645304 instance=ExtResource("5_vnn55")]
+position = Vector2(920, 225)
+
+[node name="@StaticBody2D@73133" parent="LevelGenerator" unique_id=244813113 instance=ExtResource("5_vnn55")]
+position = Vector2(920, 250)
+
+[node name="@StaticBody2D@73134" parent="LevelGenerator" unique_id=1068148979 instance=ExtResource("5_vnn55")]
+position = Vector2(920, 275)
+
+[node name="@StaticBody2D@73135" parent="LevelGenerator" unique_id=725598710 instance=ExtResource("5_vnn55")]
+position = Vector2(1000, 100)
+
+[node name="@StaticBody2D@73136" parent="LevelGenerator" unique_id=1509423465 instance=ExtResource("5_vnn55")]
+position = Vector2(1000, 125)
+
+[node name="@StaticBody2D@73137" parent="LevelGenerator" unique_id=298506680 instance=ExtResource("5_vnn55")]
+position = Vector2(1000, 150)
+
+[node name="@StaticBody2D@73138" parent="LevelGenerator" unique_id=1594566606 instance=ExtResource("5_vnn55")]
+position = Vector2(1000, 175)
+
+[node name="@StaticBody2D@73139" parent="LevelGenerator" unique_id=1000180069 instance=ExtResource("5_vnn55")]
+position = Vector2(1000, 200)
+
+[node name="@StaticBody2D@73140" parent="LevelGenerator" unique_id=687889296 instance=ExtResource("5_vnn55")]
+position = Vector2(1000, 225)
+
+[node name="@StaticBody2D@73141" parent="LevelGenerator" unique_id=817949373 instance=ExtResource("5_vnn55")]
+position = Vector2(1000, 250)
+
+[node name="@StaticBody2D@73142" parent="LevelGenerator" unique_id=203060082 instance=ExtResource("5_vnn55")]
+position = Vector2(1000, 275)
+
+[node name="@StaticBody2D@73143" parent="LevelGenerator" unique_id=1292885759 instance=ExtResource("5_vnn55")]
+position = Vector2(1080, 100)
+
+[node name="@StaticBody2D@73144" parent="LevelGenerator" unique_id=124779267 instance=ExtResource("5_vnn55")]
+position = Vector2(1080, 125)
+
+[node name="@StaticBody2D@73145" parent="LevelGenerator" unique_id=1591794510 instance=ExtResource("5_vnn55")]
+position = Vector2(1080, 150)
+
+[node name="@StaticBody2D@73146" parent="LevelGenerator" unique_id=1961826889 instance=ExtResource("5_vnn55")]
+position = Vector2(1080, 175)
+
+[node name="@StaticBody2D@73147" parent="LevelGenerator" unique_id=1240094484 instance=ExtResource("5_vnn55")]
+position = Vector2(1080, 200)
+
+[node name="@StaticBody2D@73148" parent="LevelGenerator" unique_id=940878308 instance=ExtResource("5_vnn55")]
+position = Vector2(1080, 225)
+
+[node name="@StaticBody2D@73149" parent="LevelGenerator" unique_id=1668412173 instance=ExtResource("5_vnn55")]
+position = Vector2(1080, 250)
+
+[node name="@StaticBody2D@73150" parent="LevelGenerator" unique_id=1911051498 instance=ExtResource("5_vnn55")]
+position = Vector2(1080, 275)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1097800083]
+
+[node name="Ui" parent="CanvasLayer" unique_id=1400320752 instance=ExtResource("6_yvqbx")]
+
+[node name="outArea" type="Area2D" parent="." unique_id=1297767955]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outArea" unique_id=649435194]
+position = Vector2(677, 719)
+shape = SubResource("WorldBoundaryShape2D_8wodn")
+
+[node name="ballSpawnMarker" type="Marker2D" parent="." unique_id=714087627]
+position = Vector2(671, 386)
+
+[connection signal="body_entered" from="outArea" to="." method="_on_out_area_body_entered"]

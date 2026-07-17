@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://ck476jbq7vivj"]
+
+[ext_resource type="Script" uid="uid://q5jby1y2xa8p" path="res://ui.gd" id="1_pl4ni"]
+
+[node name="Ui" type="Control" unique_id=1400320752]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pl4ni")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1549706267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2088733518]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1443997465]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=520565045]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "Score "
+
+[node name="scoreLabel" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=2061630105]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=11245581]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer2" unique_id=1959780132]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "Balls "
+
+[node name="ballLabel" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer2" unique_id=107103493]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="GameOver" type="Control" parent="." unique_id=1609001015]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver" unique_id=1037224007]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -41.5
+offset_right = 172.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="GameOver/VBoxContainer" unique_id=2038639516]
+layout_mode = 2
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+
+[node name="GameOverButton" type="Button" parent="GameOver/VBoxContainer" unique_id=513866065]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Restart"
+
+[node name="GameClear" type="Control" parent="." unique_id=1952030576]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameClear" unique_id=704831075]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -41.5
+offset_right = 172.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="GameClear/VBoxContainer" unique_id=1097845242]
+layout_mode = 2
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 60
+text = "WIN"
+horizontal_alignment = 1
+
+[node name="GameClearButton" type="Button" parent="GameClear/VBoxContainer" unique_id=2073211263]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Next Level"
+
+[connection signal="pressed" from="GameOver/VBoxContainer/GameOverButton" to="." method="_on_game_over_button_pressed"]
+[connection signal="pressed" from="GameClear/VBoxContainer/GameClearButton" to="." method="_on_game_clear_button_pressed"]
