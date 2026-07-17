@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c8bpe2se2io06"]
+
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_m7jmp"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="2_y2354"]
+[ext_resource type="PackedScene" uid="uid://dn8lu6e47122w" path="res://air_juggeling/player.tscn" id="3_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://c4wv8w6wk25ap" path="res://air_juggeling/slime.tscn" id="4_m7jmp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni31j"]
+albedo_texture = ExtResource("2_y2354")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[node name="Scene" type="Node3D" unique_id=50537297]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=74530962]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." unique_id=1066633600 instance=ExtResource("1_m7jmp")]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=402463697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002986908, 0.04170227, 0.021970749)
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=380379441]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1203664378]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Player" parent="." unique_id=1857933427 instance=ExtResource("3_u3cyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="Slime" parent="." unique_id=2071258046 instance=ExtResource("4_m7jmp")]
+transform = Transform3D(-1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, -1, -0.033154488, 0, 6.34007)
