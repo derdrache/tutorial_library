@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ITEM_BAR_ITEM" format=3 uid="uid://ddwss4bbslepe"]
+
+[ext_resource type="Script" uid="uid://cmnrxqu6aboc8" path="res://farming_serie/farming_part_3/item_resource/item_resource.gd" id="1_qt5d2"]
+[ext_resource type="Texture2D" uid="uid://bk3fiq476ywov" path="res://icons/watering-can.png" id="2_vcmwy"]
+
+[resource]
+script = ExtResource("1_qt5d2")
+texture = ExtResource("2_vcmwy")
+itemType = 1
+metadata/_custom_type_script = "uid://qcybgkl4l5g6"

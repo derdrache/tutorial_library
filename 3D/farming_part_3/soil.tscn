@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cslrvadrx76kp"]
+
+[ext_resource type="PackedScene" uid="uid://c473a4ktyk1hc" path="res://soil_solo.glb" id="1_f3rfc"]
+[ext_resource type="Script" uid="uid://d084qtgi2kt1c" path="res://soil.gd" id="2_763jh"]
+
+[node name="Soil" unique_id=1178097335 instance=ExtResource("1_f3rfc")]
+script = ExtResource("2_763jh")

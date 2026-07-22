@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dg11lrrrocge0"]
+
+[ext_resource type="Script" uid="uid://dch2i6vkneu8b" path="res://farming_serie/farming_part_3/item_bar/slot.gd" id="1_5dmhc"]
+[ext_resource type="Texture2D" uid="uid://gl4mjt8mms0s" path="res://assets/icons/icon.svg" id="2_0hmcr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0ow0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv0mc"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_radsk"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Slot" type="PanelContainer" unique_id=722779295]
+custom_minimum_size = Vector2(50, 50)
+focus_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g0ow0")
+script = ExtResource("1_5dmhc")
+styleboxSelected = SubResource("StyleBoxFlat_rv0mc")
+styleboxUnselected = SubResource("StyleBoxFlat_radsk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=132712595]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_0hmcr")
+expand_mode = 1
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
