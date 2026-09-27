@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b4wvohwxdo7y0"]
+
+[ext_resource type="Script" uid="uid://locmj2saqibc" path="res://overworld_level_selection/level_node.gd" id="1_at6ie"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h4hm"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.77, 0.6416667, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52qdk"]
+
+[node name="LevelNode" type="Area2D" unique_id=2058884340]
+script = ExtResource("1_at6ie")
+
+[node name="Panel" type="Panel" parent="." unique_id=179912458]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8h4hm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140220404]
+shape = SubResource("RectangleShape2D_52qdk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1530914844]
+offset_left = -19.0
+offset_top = -55.0
+offset_right = 21.0
+offset_bottom = -15.0
+
+[node name="levelNameLabel" type="Label" parent="VBoxContainer" unique_id=1851440770]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 10
+text = "LEVEL 1"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=755639647]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "press \"space\"
+to enter"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

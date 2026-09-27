@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://uyld4utdog8r"]
+
+[ext_resource type="Script" uid="uid://p756fu3hea0v" path="res://overworld_level_selection/level.gd" id="1_bkn1p"]
+
+[node name="Level1" type="Node2D" unique_id=70852957]
+script = ExtResource("1_bkn1p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=817037679]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=611035675]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 120
+text = "Level 6"

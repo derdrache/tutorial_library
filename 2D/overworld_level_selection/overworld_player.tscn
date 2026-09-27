@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bq0ndnim8xped"]
+
+[ext_resource type="Script" uid="uid://dysq0e8hv1ebb" path="res://overworld_level_selection/overworld_player.gd" id="1_2f6cg"]
+[ext_resource type="Texture2D" uid="uid://beeg2hrabfaiw" path="res://assets/base_idle_strip9.png" id="2_kx4fc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3cyc"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7jmp"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2354"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni31j"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlvrw"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73fnb"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5juve"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy5k1"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c1cw"]
+atlas = ExtResource("2_kx4fc")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_52qdk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3cyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7jmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2354")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni31j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlvrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73fnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5juve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy5k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c1cw")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52qdk"]
+size = Vector2(6, 3)
+
+[node name="OverworldPlayer" type="CharacterBody2D" unique_id=1934650594]
+script = ExtResource("1_2f6cg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=730707634]
+position = Vector2(-1, -5)
+sprite_frames = SubResource("SpriteFrames_52qdk")
+animation = &"idle"
+frame_progress = 0.24958678
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1934808624]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_52qdk")
