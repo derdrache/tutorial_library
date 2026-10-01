@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dl0cdpg6ee0ko"]
+
+[ext_resource type="Script" uid="uid://8ace85qld4ub" path="res://enemy_vision/enemy_vision.gd" id="1_2gh8c"]
+
+[node name="EnemyVision" type="Area3D" unique_id=1186375870]
+script = ExtResource("1_2gh8c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
