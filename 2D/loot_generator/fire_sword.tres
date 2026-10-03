@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d2fiwswevuutk"]
+
+[ext_resource type="Script" uid="uid://b08fhd8mwr8kw" path="res://loot_generator/item_resource.gd" id="1_6orqf"]
+[ext_resource type="Texture2D" uid="uid://vt48jay8rs5h" path="res://loot_generator/fire sword.png" id="1_pvt3h"]
+
+[resource]
+script = ExtResource("1_6orqf")
+icon = ExtResource("1_pvt3h")
+tierLevel = 2
+metadata/_custom_type_script = "uid://b08fhd8mwr8kw"

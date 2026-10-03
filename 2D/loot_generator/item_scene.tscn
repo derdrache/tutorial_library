@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dh1pawb7d1icu"]
+
+[ext_resource type="Script" uid="uid://bv67l731hd8mx" path="res://loot_generator/item_scene.gd" id="1_tc7eu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52qdk"]
+
+[node name="ItemScene" type="Area2D" unique_id=1428938377]
+script = ExtResource("1_tc7eu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1818464298]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2090695553]
+shape = SubResource("RectangleShape2D_52qdk")

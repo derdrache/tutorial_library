@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d0oqjjbukp7nq"]
+
+[ext_resource type="Texture2D" uid="uid://c4pin2teyg7dv" path="res://loot_generator/silver sword.png" id="1_gqldu"]
+[ext_resource type="Script" uid="uid://b08fhd8mwr8kw" path="res://loot_generator/item_resource.gd" id="1_mys5x"]
+
+[resource]
+script = ExtResource("1_mys5x")
+icon = ExtResource("1_gqldu")
+metadata/_custom_type_script = "uid://b08fhd8mwr8kw"

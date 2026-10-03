@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://djobbkoa7xcep"]
+
+[ext_resource type="Script" uid="uid://b3an111kv0ory" path="res://loot_generator/chest.gd" id="1_8uwsg"]
+[ext_resource type="Texture2D" uid="uid://bhkch7ntbvu10" path="res://assets/Chests.png" id="2_bp1or"]
+[ext_resource type="PackedScene" uid="uid://bpw3k6caqlp4j" path="res://loot_generator/loot_generator.tscn" id="3_bp1or"]
+[ext_resource type="Script" uid="uid://b08fhd8mwr8kw" path="res://loot_generator/item_resource.gd" id="4_day8l"]
+[ext_resource type="Resource" uid="uid://d2fiwswevuutk" path="res://loot_generator/fire_sword.tres" id="5_t3ekh"]
+[ext_resource type="Resource" uid="uid://fqp6vc7hdc0i" path="res://loot_generator/gold_sword.tres" id="6_x6u83"]
+[ext_resource type="Resource" uid="uid://d0oqjjbukp7nq" path="res://loot_generator/silver_sword.tres" id="7_v4ow6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twpm2"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(0, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uwsg"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(48, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp1or"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(96, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trlyu"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(144, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7mpe"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(192, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv3sb"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(0, 160, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_day8l"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(48, 160, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ekh"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(96, 160, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6u83"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(144, 160, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4ow6"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(192, 160, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oh7c0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twpm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uwsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp1or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trlyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7mpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv3sb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_day8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3ekh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6u83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4ow6")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6g14"]
+size = Vector2(25, 20)
+
+[node name="Chest" type="StaticBody2D" unique_id=1069301170]
+input_pickable = true
+script = ExtResource("1_8uwsg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1949908077]
+position = Vector2(10, -5)
+sprite_frames = SubResource("SpriteFrames_oh7c0")
+animation = &"open"
+frame = 1
+frame_progress = 0.1656518
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=495087551]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_q6g14")
+
+[node name="lootGenerator" parent="." unique_id=133235140 instance=ExtResource("3_bp1or")]
+loot_items = Array[ExtResource("4_day8l")]([ExtResource("5_t3ekh"), ExtResource("6_x6u83"), ExtResource("7_v4ow6")])
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

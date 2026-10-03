@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bpw3k6caqlp4j"]
+
+[ext_resource type="Script" uid="uid://dwe5c5hsc2le4" path="res://loot_generator/loot_generator.gd" id="1_qsk3b"]
+
+[node name="lootGenerator" type="Node2D" unique_id=133235140]
+script = ExtResource("1_qsk3b")
