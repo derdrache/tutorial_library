@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d2mc1hmk7gul"]
+
+[ext_resource type="Script" uid="uid://dqo0ppfo6j4ft" path="res://interaction_area/tree.gd" id="1_d2g23"]
+[ext_resource type="PackedScene" uid="uid://bc1knmag6e70n" path="res://assets/tree/Tree_1_A_Color1.gltf" id="2_d2g23"]
+[ext_resource type="PackedScene" uid="uid://dxgept87veem1" path="res://interaction_area/interaction_area.tscn" id="3_d2g23"]
+[ext_resource type="Texture2D" uid="uid://cojas4l0ugplv" path="res://assets/icons/deforestation.png" id="4_44ud8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnvrw"]
+size = Vector3(2.5, 4.5, 2.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_52qdk"]
+radius = 1.8000001
+
+[node name="Tree" type="StaticBody3D" unique_id=1181112718]
+script = ExtResource("1_d2g23")
+
+[node name="Tree" parent="." unique_id=1271302141 instance=ExtResource("2_d2g23")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1869687956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+shape = SubResource("BoxShape3D_nnvrw")
+
+[node name="InteractionArea" parent="." unique_id=1062399460 instance=ExtResource("3_d2g23")]
+icon = ExtResource("4_44ud8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=960768537]
+shape = SubResource("CylinderShape3D_52qdk")
+
+[connection signal="interaction_started" from="InteractionArea" to="." method="_on_interaction_area_interaction_started"]

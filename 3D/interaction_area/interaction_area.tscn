@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dxgept87veem1"]
+
+[ext_resource type="Texture2D" uid="uid://gl4mjt8mms0s" path="res://assets/icons/icon.svg" id="1_bfcvi"]
+[ext_resource type="Script" uid="uid://c83rmewjo8mlg" path="res://interaction_area/interaction_area.gd" id="1_xx523"]
+
+[node name="InteractionArea" type="Area3D" unique_id=1062399460]
+script = ExtResource("1_xx523")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1778900284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+texture = ExtResource("1_bfcvi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
