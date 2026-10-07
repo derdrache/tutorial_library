@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dtddp2beok8vb"]
+
+[ext_resource type="Shader" uid="uid://dt81tp5h4haix" path="res://shader_grid/grid.gdshader" id="1_ebq2e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chwvg"]
+render_priority = 0
+shader = ExtResource("1_ebq2e")
+shader_parameter/borderWidth = 0.05
+shader_parameter/gridSize = Vector2(10, 10)
+shader_parameter/borderColor = Color(0, 0, 0, 1)
+shader_parameter/cellColor = Color(1, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_52qdk"]
+
+[node name="Grid" type="Node3D" unique_id=2096386018]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1227647695]
+material_override = SubResource("ShaderMaterial_chwvg")
+mesh = SubResource("PlaneMesh_52qdk")
