@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dal6pwp5af0"]
+
+[ext_resource type="PackedScene" uid="uid://dvjm88to25quv" path="res://to_do_lines/to_do_item.tscn" id="1_doocs"]
+
+[node name="Note" type="Control" unique_id=1085608046]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1714662695]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=801724894]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=2070468267]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ToDoItem" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=375048921 instance=ExtResource("1_doocs")]
+layout_mode = 2
+
+[node name="ToDoItem2" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2014623170 instance=ExtResource("1_doocs")]
+layout_mode = 2
+
+[node name="ToDoItem3" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1560119113 instance=ExtResource("1_doocs")]
+layout_mode = 2
+
+[node name="ToDoItem4" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1296754081 instance=ExtResource("1_doocs")]
+layout_mode = 2
+
+[node name="ToDoItem5" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1714037828 instance=ExtResource("1_doocs")]
+layout_mode = 2
+
+[node name="ToDoItem6" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=306052718 instance=ExtResource("1_doocs")]
+layout_mode = 2
+
+[node name="ToDoItem7" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2042289285 instance=ExtResource("1_doocs")]
+layout_mode = 2

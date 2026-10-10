@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dvjm88to25quv"]
+
+[ext_resource type="Script" uid="uid://bpkb41xt767yb" path="res://to_do_lines/to_do_item.gd" id="1_tvnjq"]
+
+[node name="ToDoItem" type="HBoxContainer" unique_id=375048921]
+theme_override_constants/separation = 10
+script = ExtResource("1_tvnjq")
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=2110149684]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=876374822]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 24
+text = "create Player sprite"
+fit_content = true
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
