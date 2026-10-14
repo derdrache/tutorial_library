@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dtddp2beok8vb"]
+
+[ext_resource type="Script" uid="uid://bhk2bd1isdwpy" path="res://shader_grid_interaction/grid.gd" id="1_65i6o"]
+[ext_resource type="Shader" uid="uid://dt81tp5h4haix" path="res://shader_grid_interaction/grid.gdshader" id="2_nycpo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chwvg"]
+render_priority = 0
+shader = ExtResource("2_nycpo")
+shader_parameter/borderWidth = 0.05
+shader_parameter/gridSize = Vector2(20, 20)
+shader_parameter/borderColor = Color(0, 0, 0, 1)
+shader_parameter/cellColor = Color(1, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_52qdk"]
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwjma"]
+size = Vector3(20, 0.01, 20)
+
+[node name="Grid" type="StaticBody3D" unique_id=1268703242]
+script = ExtResource("1_65i6o")
+
+[node name="gridMesh" type="MeshInstance3D" parent="." unique_id=1227647695]
+material_override = SubResource("ShaderMaterial_chwvg")
+mesh = SubResource("PlaneMesh_52qdk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1704443912]
+shape = SubResource("BoxShape3D_xwjma")
