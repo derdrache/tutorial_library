@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b2b4ychngxuk3"]
+
+[ext_resource type="Texture2D" uid="uid://cw0uqpx8uqik5" path="res://assets/Stardew_Valley/Stardew Valley - Tilesets - Craftables.png" id="1_art1s"]
+[ext_resource type="Script" uid="uid://bqpaa4l56ppo6" path="res://refine_items/machine.gd" id="1_rhjwx"]
+[ext_resource type="Resource" uid="uid://ccy6re541v5sn" path="res://refine_items/egg.tres" id="2_loq51"]
+[ext_resource type="Resource" uid="uid://csd3tcxy1ha1p" path="res://refine_items/mayo.tres" id="3_ioi8x"]
+[ext_resource type="PackedScene" uid="uid://38eckqclycy8" path="res://refine_items/item.tscn" id="5_ioi8x"]
+
+[sub_resource type="Animation" id="Animation_art1s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tkmfx"]
+resource_name = "start"
+length = 1.33
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1.1), Vector2(1, 1), Vector2(1.1, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vqy3x"]
+_data = {
+&"RESET": SubResource("Animation_art1s"),
+&"start": SubResource("Animation_tkmfx")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52qdk"]
+size = Vector2(15, 25)
+
+[node name="Machine" type="StaticBody2D" unique_id=1747013343]
+script = ExtResource("1_rhjwx")
+usableItems = Array[Resource]([ExtResource("2_loq51")])
+productionItems = Array[Resource]([ExtResource("3_ioi8x")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1490451467]
+texture = ExtResource("1_art1s")
+region_enabled = true
+region_rect = Rect2(0, 96, 16, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1569312285]
+libraries/ = SubResource("AnimationLibrary_vqy3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=284456242]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_52qdk")
+
+[node name="ItemScene" parent="." unique_id=1973782569 instance=ExtResource("5_ioi8x")]
+position = Vector2(0, -18)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Timer" type="Timer" parent="." unique_id=461999719]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

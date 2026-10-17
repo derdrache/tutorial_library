@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ba088iauxgn3f"]
+
+[ext_resource type="Script" uid="uid://di100ddc1ri6h" path="res://refine_items/scene.gd" id="1_3253y"]
+[ext_resource type="PackedScene" uid="uid://b2b4ychngxuk3" path="res://refine_items/machine.tscn" id="1_ulcgi"]
+[ext_resource type="PackedScene" uid="uid://38eckqclycy8" path="res://refine_items/item.tscn" id="2_nxogm"]
+[ext_resource type="Resource" uid="uid://ccy6re541v5sn" path="res://refine_items/egg.tres" id="3_3253y"]
+[ext_resource type="Resource" uid="uid://csd3tcxy1ha1p" path="res://refine_items/mayo.tres" id="4_m7jmp"]
+
+[node name="Scene" type="Node2D" unique_id=1822640439]
+script = ExtResource("1_3253y")
+
+[node name="Machine" parent="." unique_id=1747013343 instance=ExtResource("1_ulcgi")]
+position = Vector2(602, 358)
+usableItems = Array[Resource]([ExtResource("3_3253y")])
+productionItems = Array[Resource]([ExtResource("4_m7jmp")])
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1877016462]
+position = Vector2(443, 274)
+anchor_mode = 0
+zoom = Vector2(4, 4)
+
+[node name="ItemScene" parent="." unique_id=1973782569 instance=ExtResource("2_nxogm")]
+position = Vector2(510, 320)
+item = ExtResource("3_3253y")
+
+[node name="ItemScene2" parent="." unique_id=37678025 instance=ExtResource("2_nxogm")]
+position = Vector2(536, 402)
+item = ExtResource("3_3253y")
+
+[node name="ItemScene3" parent="." unique_id=1060021120 instance=ExtResource("2_nxogm")]
+position = Vector2(564, 312)
+item = ExtResource("3_3253y")
+
+[node name="ItemScene4" parent="." unique_id=1233605065 instance=ExtResource("2_nxogm")]
+position = Vector2(509, 381)
+item = ExtResource("3_3253y")
+
+[node name="ItemScene5" parent="." unique_id=1529083411 instance=ExtResource("2_nxogm")]
+position = Vector2(557, 364)
+item = ExtResource("3_3253y")

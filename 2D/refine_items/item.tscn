@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://38eckqclycy8"]
+
+[ext_resource type="Script" uid="uid://b425kdbdp7pq8" path="res://refine_items/item.gd" id="1_ttk8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52qdk"]
+size = Vector2(8, 10)
+
+[node name="ItemScene" type="StaticBody2D" unique_id=1973782569]
+script = ExtResource("1_ttk8k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=932204712]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2023158057]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_52qdk")

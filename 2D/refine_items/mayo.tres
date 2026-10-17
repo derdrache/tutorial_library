@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://csd3tcxy1ha1p"]
+
+[ext_resource type="Script" uid="uid://c4v4wo4yef65r" path="res://refine_items/item_resource.gd" id="1_l8m8e"]
+[ext_resource type="Texture2D" uid="uid://crybe76w2ar8j" path="res://assets/Stardew_Valley/Stardew Valley - Miscellaneous - Harvested Crops, Seed Packets, Minerals, Food, Equipment, & Miscellaneous Objects.png" id="2_l8m8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6touq"]
+atlas = ExtResource("2_l8m8e")
+region = Rect2(288, 192, 16, 16)
+
+[resource]
+script = ExtResource("1_l8m8e")
+texture = SubResource("AtlasTexture_6touq")
+itemType = 1
+metadata/_custom_type_script = "uid://c4v4wo4yef65r"
