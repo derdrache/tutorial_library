@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dhbfsubnxqilt"]
-
-[ext_resource type="Script" uid="uid://fflxa4fohkdr" path="res://mouse_interaction_node.gd" id="1_10w1h"]
-
-[node name="MouseInteractionNode" type="Node3D" unique_id=2110289866]
-script = ExtResource("1_10w1h")

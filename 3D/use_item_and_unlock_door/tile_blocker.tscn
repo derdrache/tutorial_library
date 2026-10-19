@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://c7ofnixy558f3"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_52qdk"]
-size = Vector3(4, 4, 4)
-
-[node name="TileBlocker" type="StaticBody3D" unique_id=1925296996]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=529843462]
-shape = SubResource("BoxShape3D_52qdk")
