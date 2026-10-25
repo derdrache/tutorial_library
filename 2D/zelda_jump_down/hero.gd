@@ -29,8 +29,9 @@ func _physics_process(_delta: float) -> void:
 			return
 	
 	_set_animation(direction)
-	
-	lastDirection = direction
+
+	if direction:
+		lastDirection = direction
 
 func _do_jump(directionText):
 	onAction = true
