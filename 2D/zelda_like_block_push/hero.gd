@@ -27,8 +27,9 @@ func _physics_process(_delta: float) -> void:
 		interaction_timer.stop()
 
 	_set_animation(direction)
-	
-	lastDirection = direction
+
+	if direction:
+		lastDirection = direction
 
 func _set_animation(direction):
 	if direction.x > 0:
