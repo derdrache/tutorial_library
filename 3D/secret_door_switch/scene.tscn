@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dyuxx70t273mu"]
+
+[ext_resource type="PackedScene" uid="uid://blry2h3h0ih3s" path="res://rooms/cross_room.tscn" id="1_gc4am"]
+[ext_resource type="PackedScene" uid="uid://7hu62ayugdt" path="res://rooms/straight_room.tscn" id="2_11o0a"]
+[ext_resource type="PackedScene" uid="uid://dw17n6ymavcvk" path="res://rooms/t_room.tscn" id="3_6b3oq"]
+[ext_resource type="PackedScene" uid="uid://d2m46l0qrpj7l" path="res://rooms/corner_room.tscn" id="4_xs8or"]
+[ext_resource type="PackedScene" uid="uid://bfpofi23iepqf" path="res://assets/dungeon/wall.gltf.glb" id="5_11o0a"]
+[ext_resource type="PackedScene" uid="uid://oindkbqwq2sl" path="res://character.tscn" id="6_6b3oq"]
+[ext_resource type="PackedScene" uid="uid://ct0t1gra2s483" path="res://first_person_dungeon_crawler/secret_door_switch/door.tscn" id="7_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://cxy0tlf3dp1is" path="res://first_person_dungeon_crawler/secret_door_switch/torch.tscn" id="8_73fnb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6b3oq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xs8or"]
+sky_material = SubResource("ProceduralSkyMaterial_6b3oq")
+
+[sub_resource type="Environment" id="Environment_p5jf8"]
+background_mode = 2
+sky = SubResource("Sky_xs8or")
+glow_enabled = true
+
+[node name="Scene" type="Node3D" unique_id=701249366]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1510797662]
+environment = SubResource("Environment_p5jf8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2099855790]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="wall_gltf" parent="." unique_id=1275538624 instance=ExtResource("5_11o0a")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, 0)
+
+[node name="Character" parent="." unique_id=1132149451 instance=ExtResource("6_6b3oq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="rooms" type="Node3D" parent="." unique_id=2128961299]
+
+[node name="crossRoom" parent="rooms" unique_id=471245845 instance=ExtResource("1_gc4am")]
+
+[node name="straightRoom" parent="rooms" unique_id=1260966164 instance=ExtResource("2_11o0a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 0, 0)
+
+[node name="straightRoom6" parent="rooms" unique_id=852072058 instance=ExtResource("2_11o0a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 0, 24)
+
+[node name="straightRoom7" parent="rooms" unique_id=831249264 instance=ExtResource("2_11o0a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 0, -24)
+
+[node name="straightRoom2" parent="rooms" unique_id=799217141 instance=ExtResource("2_11o0a")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24, 0, 12)
+
+[node name="straightRoom3" parent="rooms" unique_id=1730560540 instance=ExtResource("2_11o0a")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 12)
+
+[node name="straightRoom4" parent="rooms" unique_id=1804426373 instance=ExtResource("2_11o0a")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -12)
+
+[node name="straightRoom5" parent="rooms" unique_id=1662681773 instance=ExtResource("2_11o0a")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24, 0, -12)
+
+[node name="TRoom" parent="rooms" unique_id=1314915878 instance=ExtResource("3_6b3oq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24, 0, 0)
+
+[node name="cornerRoom" parent="rooms" unique_id=1914434366 instance=ExtResource("4_xs8or")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24, 0, -24)
+
+[node name="cornerRoom2" parent="rooms" unique_id=547727606 instance=ExtResource("4_xs8or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="cornerRoom3" parent="rooms" unique_id=1093305237 instance=ExtResource("4_xs8or")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 24)
+
+[node name="cornerRoom4" parent="rooms" unique_id=1140699468 instance=ExtResource("4_xs8or")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -24, 0, 24)
+
+[node name="Door" parent="." unique_id=2093121974 instance=ExtResource("7_xlvrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)
+
+[node name="Torch" parent="." unique_id=1922460346 node_paths=PackedStringArray("interactionObject") instance=ExtResource("8_73fnb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5001884, 1.5, -16)
+interactionObject = NodePath("../Door")
