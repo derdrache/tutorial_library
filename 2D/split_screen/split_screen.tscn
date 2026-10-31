@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://djm486d3b1fkt"]
+
+[ext_resource type="Script" uid="uid://1ywuo6gmlm84" path="res://split_screen/split_screen.gd" id="1_ue6qg"]
+
+[node name="SplitScreen" type="CanvasLayer" unique_id=1539772556]
+script = ExtResource("1_ue6qg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1709723867]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer" unique_id=171259187]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SubViewport0" type="SubViewport" parent="VBoxContainer/SubViewportContainer" unique_id=1472073328]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(1280, 360)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer" unique_id=2096652753]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="VBoxContainer" unique_id=1869743397]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SubViewport1" type="SubViewport" parent="VBoxContainer/SubViewportContainer2" unique_id=2028320738]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(1280, 360)
+render_target_update_mode = 4
