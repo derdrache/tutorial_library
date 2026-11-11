@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dmxrnpx3swvaj"]
+
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_xwr3c"]
+[ext_resource type="Texture2D" uid="uid://dihcw4uqc43n1" path="res://assets/prototype/Green/texture_01.png" id="2_r4t7q"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="3_3oede"]
+[ext_resource type="PackedScene" uid="uid://bgmws13gpf6xw" path="res://player.tscn" id="4_c54ty"]
+[ext_resource type="PackedScene" uid="uid://bpi26lifyfufk" path="res://npc.tscn" id="5_xdtd5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlvrw"]
+albedo_texture = ExtResource("2_r4t7q")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m7jmp"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y2354"]
+points = PackedVector3Array(5, 5, 5, 5, 5, -5, -5, 5, 5, 5, -5, 5, 5, -5, -5, -5, 5, -5, -5, -5, 5, -5, -5, -5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3253y"]
+albedo_texture = ExtResource("3_3oede")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u3cyc"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m7jmp"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_52qdk"]
+vertices = PackedVector3Array(-99.50299, -1.4582977, -99.47803, -99.50299, -1.4582977, 99.52197, 99.49701, -1.4582977, 99.52197, 99.49701, -1.4582977, -99.47803)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_source_geometry_mode = 1
+
+[node name="Scene" type="Node3D" unique_id=50537297]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=74530962]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." unique_id=2051013469 instance=ExtResource("1_xwr3c")]
+
+[node name="Block" type="MeshInstance3D" parent="." unique_id=1790528403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.97248, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_xlvrw")
+mesh = SubResource("BoxMesh_m7jmp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block" unique_id=156244303]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block/StaticBody3D" unique_id=799634029]
+shape = SubResource("ConvexPolygonShape3D_y2354")
+
+[node name="Floor2" type="MeshInstance3D" parent="." unique_id=1300406404 groups=["navigation_mesh_source_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002986908, -1.9582977, 0.021970749)
+material_override = SubResource("StandardMaterial3D_3253y")
+mesh = SubResource("PlaneMesh_u3cyc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor2" unique_id=477139435]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/StaticBody3D" unique_id=1167905741]
+shape = SubResource("ConvexPolygonShape3D_m7jmp")
+
+[node name="Player" parent="." unique_id=1857933427 instance=ExtResource("4_c54ty")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -2, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1231831189]
+navigation_mesh = SubResource("NavigationMesh_52qdk")
+
+[node name="NPC" parent="." unique_id=2039478418 instance=ExtResource("5_xdtd5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14.797636, -1.9582673, -6.387128)
+
+[node name="NPC2" parent="." unique_id=291192853 instance=ExtResource("5_xdtd5")]
+transform = Transform3D(-0.57360137, 0, 0.8191346, 0, 1, 0, -0.8191346, 0, -0.57360137, 14.797636, -1.9582673, -17.73)
+
+[node name="NPC3" parent="." unique_id=654156160 instance=ExtResource("5_xdtd5")]
+transform = Transform3D(-0.57360137, 0, 0.8191346, 0, 1, 0, -0.8191346, 0, -0.57360137, 19.545233, -1.9582673, -13.27256)
+
+[node name="NPC4" parent="." unique_id=2052893810 instance=ExtResource("5_xdtd5")]
+transform = Transform3D(0.50577694, 0, -0.8626643, 0, 1, 0, 0.8626643, 0, 0.50577694, 15.944754, -1.9582673, -18.72744)
+
+[node name="NPC5" parent="." unique_id=1690474203 instance=ExtResource("5_xdtd5")]
+transform = Transform3D(0.50577694, 0, -0.8626643, 0, 1, 0, 0.8626643, 0, 0.50577694, 15.944754, -1.9582673, -7.658247)
+
+[node name="NPC6" parent="." unique_id=271435007 instance=ExtResource("5_xdtd5")]
+transform = Transform3D(0.24463877, 0, 0.96961427, 0, 1, 0, -0.96961427, 0, 0.24463877, 13.635942, -1.9582673, -7.658247)
