@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cdgt8obp5m61c"]
+
+[ext_resource type="Script" uid="uid://sjhinqdsv327" path="res://color_fog_of_war/fog_of_war.gd" id="1_8iahg"]
+[ext_resource type="Shader" uid="uid://ugmoalt1ysnm" path="res://color_fog_of_war/fog_of_war.tres" id="1_pcqbo"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u20wp"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pv83n"]
+noise = SubResource("FastNoiseLite_u20wp")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfq1e"]
+shader = ExtResource("1_pcqbo")
+shader_parameter/Color2 = Color(0.047558, 0.047558, 0.047558, 1)
+shader_parameter/Color1 = Color(0.303233, 0.303233, 0.303233, 1)
+shader_parameter/NoiseTexture = SubResource("NoiseTexture2D_pv83n")
+
+[node name="FogOfWar" type="Sprite2D" unique_id=1939672796]
+z_index = 99
+material = SubResource("ShaderMaterial_vfq1e")
+offset = Vector2(1500, 750)
+script = ExtResource("1_8iahg")
