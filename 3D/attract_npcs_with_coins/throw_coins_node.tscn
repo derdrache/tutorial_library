@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://vngd5uyb8ds8"]
+
+[ext_resource type="Script" uid="uid://daqjqclygw8je" path="res://throw_coins_node.gd" id="1_38n7a"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_52qdk"]
+height = 0.1
+radius = 4.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_chwvg"]
+radius = 14.0
+
+[node name="ThrowCoinsNode" type="Node3D" unique_id=74009984]
+script = ExtResource("1_38n7a")
+
+[node name="coins" type="Node3D" parent="." unique_id=733628674]
+
+[node name="throwAreaShape" type="CollisionShape3D" parent="." unique_id=1921798475]
+shape = SubResource("CylinderShape3D_52qdk")
+
+[node name="AttractionArea" type="Area3D" parent="." unique_id=285057438]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractionArea" unique_id=1823490496]
+shape = SubResource("CylinderShape3D_chwvg")
