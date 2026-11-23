@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://jbui3swphx2n"]
+
+[ext_resource type="Script" uid="uid://c4q5ys8crjb7x" path="res://gun_menu/weapon_slot.gd" id="1_x8jt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8jt7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twi78"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.91, 0.80383337, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+corner_detail = 20
+
+[node name="PanelContainer" type="PanelContainer" unique_id=117110002]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_x8jt7")
+script = ExtResource("1_x8jt7")
+selectedSyleBox = SubResource("StyleBoxFlat_twi78")
+unselectedStyleBox = SubResource("StyleBoxFlat_x8jt7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=61668919]
+unique_name_in_owner = true
+layout_mode = 2

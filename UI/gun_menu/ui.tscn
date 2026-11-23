@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://ba7uxhav8hpw"]
+
+[ext_resource type="Script" uid="uid://bnsx8nrspm68b" path="res://gun_menu/ui.gd" id="1_nltto"]
+[ext_resource type="PackedScene" uid="uid://jbui3swphx2n" path="res://gun_menu/weapon_slot.tscn" id="3_ibotj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyqef"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6e0p"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.593533, 0.5935331, 0.593533, 0.302)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27fn8"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[node name="Ui" type="Control" unique_id=661958400]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nltto")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=27758863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=758964468]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fyqef")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=1513306030]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=1317521440]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=572678062]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="AmmoLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=731428313]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 120
+text = "30 / 120"
+
+[node name="weaponTextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=190521192]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=432251639]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_m6e0p")
+theme_override_styles/fill = SubResource("StyleBoxFlat_27fn8")
+value = 50.0
+show_percentage = false
+
+[node name="WeaponSelectionContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1396246872]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WeaponSlot" parent="VBoxContainer/WeaponSelectionContainer" unique_id=117110002 instance=ExtResource("3_ibotj")]
+layout_mode = 2
+
+[node name="WeaponSlot2" parent="VBoxContainer/WeaponSelectionContainer" unique_id=970495690 instance=ExtResource("3_ibotj")]
+layout_mode = 2
+
+[node name="WeaponSlot3" parent="VBoxContainer/WeaponSelectionContainer" unique_id=1366944053 instance=ExtResource("3_ibotj")]
+layout_mode = 2
