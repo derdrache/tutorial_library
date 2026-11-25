@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://vaqt2up1yetc"]
+
+[ext_resource type="PackedScene" uid="uid://cal53gbed2hrs" path="res://collection/world_environment.tscn" id="1_u3cyc"]
+[ext_resource type="Texture2D" uid="uid://2p6a0hw0jqgg" path="res://assets/prototype/Dark/texture_01.png" id="2_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://ymtj4clvoti7" path="res://collection/2026/sound_coin_throw/player.tscn" id="4_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://dqwo45s5wyni4" path="res://collection/2026/sound_coin_throw/throw_coins_node.tscn" id="5_m7jmp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni31j"]
+albedo_texture = ExtResource("2_m7jmp")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxogm"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3253y"]
+points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+
+[node name="Scene" type="Node3D" unique_id=50537297]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=74530962]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." unique_id=2051013469 instance=ExtResource("1_u3cyc")]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=402463697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002986908, 0.04170227, 0.021970749)
+material_override = SubResource("StandardMaterial3D_ni31j")
+mesh = SubResource("PlaneMesh_nxogm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=380379441]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1203664378]
+shape = SubResource("ConvexPolygonShape3D_3253y")
+
+[node name="Player" parent="." unique_id=1857933427 instance=ExtResource("4_u3cyc")]
+transform = Transform3D(-0.9672803, 0, 0.2537099, 0, 1, 0, -0.2537099, 0, -0.9672803, 0.23601222, 0.0417288, -4.070488)
+
+[node name="ThrowCoinsNode" parent="." unique_id=74009984 instance=ExtResource("5_m7jmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5658092, -4.1220064)
+
+[node name="ThrowCoinsNode2" parent="." unique_id=1820111896 instance=ExtResource("5_m7jmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5658092, 8.902127)
+wait = 1.5
+
+[node name="ThrowCoinsNode3" parent="." unique_id=93625506 instance=ExtResource("5_m7jmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5658092, -19.931477)
+wait = 3.0
+
+[node name="ThrowCoinsNode4" parent="." unique_id=9758981 instance=ExtResource("5_m7jmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.807415, 2.5658092, -4.233465)
+wait = 4.5
+
+[node name="ThrowCoinsNode5" parent="." unique_id=1819902153 instance=ExtResource("5_m7jmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.159184, 2.5658092, -4.233465)
+wait = 6.0
+
+[node name="ThrowCoinsNode6" parent="." unique_id=1574995101 instance=ExtResource("5_m7jmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4672165, 2.5658092, -4.233465)
+wait = 7.5
